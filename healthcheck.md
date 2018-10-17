@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018
-lastupdated: "2018-10-02"
+lastupdated: "2018-10-17"
 
 ---
 
@@ -16,25 +16,40 @@ lastupdated: "2018-10-02"
 # Using a health check in your Go app
 {: #healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Many deployment environments, such as [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) and [Kubernetes](https://www.ibm.com/cloud/container-service), can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service) and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 
 ## Health check overview
 {: #overview}
 
-Health checks are typically accessed over `HTTP`, and use standard return codes for indicating `UP` or `DOWN` status. Examples include returning `200` for `UP`, and `5xx` for `DOWN`. For example, a `503` return code is used when the application can’t handle requests, and a `500` is used when the server experiences an error condition. The return value of a health check is variable, but a minimal JSON response, like `{“status”: “UP”}` provides consistency.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. They're typically accessed over HTTP and use standard return codes to indicate UP or DOWN status. The return value of a health check is variable, but a minimal JSON response, like `{"status": "UP"}`, is typical.
 
-Kubernetes defines both [liveness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) and [readiness](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/) probes:
+Kubernetes has a nuanced notion of process health. It defines two probes:
 
-* The liveness probe allows an application to indicate whether the process can be restarted. A subset of considerations applies: a `liveness` check might fail if a memory threshold is reached, for example. If your app is running on Kubernetes, consider adding a `liveness` endpoint to ensure that your process is restarted when necessary.
+- A _**readiness**_ probe is used to indicate whether the process can handle requests (is routable).
 
-* The readiness probe is used for automatic routing decisions. The success or failure indicates whether the application can receive new work. This endpoint can include considerations for required downstream services. Consider caching the result of downstream service checks to minimize overall load on the system (for example, test database connectivity at most once per second).
+  Kubernetes doesn't route work to a container with a failing readiness probe. A readiness probe can fail if a service isn't finished initializing, or is otherwise busy, overloaded, or unable to process requests.
 
-Cloud Foundry uses only one health endpoint. If this check fails, Cloud Foundry restarts the process. But if it succeeds, Cloud Foundry assumes that the process can handle new work. This health check makes the single endpoint something of a combination between liveness and readiness.
+- A _**liveness**_ probe is used to indicate whether the process is to be restarted.
+
+  Kubernetes stops and restarts a container with a failing liveness probe. Use liveness probes to clean up processes in an unrecoverable state, for example, if memory is exhausted, or if the container didn't stop properly after an internal process failed.
+
+As a note for comparison, Cloud Foundry uses one health endpoint. If this check fails, the process is restarted, but if it succeeds, requests are routed to it. In this environment, the endpoint minimally succeeds when the process is live. An initial delay is configured to defer health checking until the service is finished initializing to avoid restart cycles.
+
+The following table provides guidance on the responses that readiness, liveness, and singular health endpoints are to provide.
+
+| State    | Readiness                   | Liveness                   | Health                    |
+|----------|-----------------------------|----------------------------|---------------------------|
+|          | Non-OK causes no load       | Non-OK causes restart      | Non-OK causes restart     |
+| Starting | 503 - Unavailable           | 200 - OK                   | Use delay to avoid test   |
+| Up       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| Stopping | 503 - Unavailable           | 200 - OK                   | 503 - Unavailable         |
+| Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
+| Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
 
 ## Adding a health check to an existing Go app
 {: #add-healthcheck-existing}
 
-Add Health check to an existing app by introducing a new route as shown in the following example:
+You can add a minimal health or liveness check to an existing `Gin-Gonic` application by introducing a new route as shown in the following example:
 ```go
 func HealthGET(c *gin.Context) {
   c.JSON(200, gin.H{
@@ -45,9 +60,9 @@ func HealthGET(c *gin.Context) {
 
 Check the status of the app with a browser by accessing the `/health` endpoint.
 
-Health check is extensible, as you can add time stamps or other meaningful criteria.
+There are more extensive libraries available, like [`http-healthcheck`](https://github.com/robzienert/http-healthcheck), which allow definition of extensible health checks with support for caching checks that are run against backing services. In this case, you would want to separate the simple liveness test in the example from the more robust, detailed readiness check that is built from the health check package.
 
-## Accessing Health check from Go Starter Kit apps
+## Accessing the health check endpoint in Go Starter Kit apps
 {: #healthcheck-starterkit}
 
 By default, when you generate a Go app by using a Starter Kit,
@@ -69,4 +84,52 @@ func HealthGET(c *gin.Context) {
 ```
 {: codeblock}
 
+## Recommendations for readiness and liveness probes
+{: #recommendations}
 
+Readiness probes should include the viability of connections to downstream services in their result when there isn’t an acceptable fallback if the downstream service is unavailable. This doesn't mean calling the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services: this might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
+
+A liveness probe, by contrast, is deliberate about what is checked, as a failure results in immediate termination of the process. A simple HTTP endpoint that always returns `{"status": "UP"}` with status code `200` is a reasonable choice.
+
+## Configuring readiness and liveness probes in Kubernetes
+{: #config_probes}
+
+Declare liveness and readiness probes alongside your Kubernetes deployment. Both probes use the same configuration parameters:
+
+* The kubelet waits for `initialDelaySeconds` before the first probe.
+
+* The kubelet probes the service every `periodSeconds` seconds. The default is 1.
+
+* The probe times out after `timeoutSeconds` seconds. The default and minimum value is 1.
+
+* The probe is successful if it succeeds `successThreshold` times after a failure. The default and minimum value is 1. The value must be 1 for liveness probes.
+
+* When a pod starts and the probe fails, Kubernetes tries `failureThreshold` times to restart the pod and then gives up. The minimum value is 1 and the default value is 3.
+    - For a liveness probe, "giving up" means restarting the pod.
+    - For a readiness probe, "giving up" means marking the pod `Unready`.
+
+To avoid restart cycles, set `livenessProbe.initialDelaySeconds` to be safely longer than it takes your service to initialize. You can then use a shorter value for `readinessProbe.initialDelaySeconds` to route requests to the service as soon as it's ready.
+
+An example configuration might look something like this:
+```yaml
+spec:
+  containers:
+  - name: ...
+    image: ...
+    readinessProbe:
+      httpGet:
+        path: /health
+        port: 8080
+      initialDelaySeconds: 120
+      timeoutSeconds: 5
+    livenessProbe:
+      httpGet:
+        path: /liveness
+        port: 8080
+      initialDelaySeconds: 130
+      timeoutSeconds: 10
+      failureThreshold: 10
+```
+{: codeblock}
+
+For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
