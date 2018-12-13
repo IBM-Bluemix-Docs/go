@@ -1,0 +1,33 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="go" audience="platform" arm="4088037" href="/docs/go/index.html" path="go"}
+Programmierung mit Go in IBM Cloud
+
+    {: .navgroup id="learn"}
+    index.md
+       
+    {: .topicgroup}
+    Zugehörige Links
+        [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    configuration.md
+    healthcheck.md
+    logging.md
+    tracing.md
+    appmetrics.md
+    fault_tolerance.md
+    deploying_apps.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API-Dokumente](https://console.bluemix.net/apidocs)
+    [Beispiel einer 'Hello World'-App in Go](https://github.com/IBM-Cloud/get-started-go)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    [dW Answers](https://developer.ibm.com/answers/topics/go/)
+    support.md
+    {: .navgroup-end}
