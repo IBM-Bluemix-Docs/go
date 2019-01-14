@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -57,9 +57,9 @@ For more information about customizing the log messages with appenders, log leve
 
 Learn more about viewing the logs in each of our deployment environments:
 * [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
-* [Cloud Foundry logs](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [{{site.data.keyword.openwhisk}} Logs and monitoring](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Cloud Foundry logs](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
+* [{{site.data.keyword.openwhisk}} Logs and monitoring](https://cloud.ibm.com/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 Learn more about using a log aggregator:
-* [{{site.data.keyword.cloud_notm}} Log analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log analysis](https://cloud.ibm.com/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

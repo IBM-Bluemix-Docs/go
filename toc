@@ -23,7 +23,7 @@ Programming with Go on IBM Cloud
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API Docs](https://console.bluemix.net/apidocs)
+    [API Docs](https://cloud.ibm.com/apidocs)
     [Sample Go hello world app](https://github.com/IBM-Cloud/get-started-go)
     {: .navgroup-end}
 

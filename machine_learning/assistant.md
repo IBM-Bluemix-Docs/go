@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -136,7 +136,7 @@ go get github.com/watson-developer-cloud/go-sdk
 
 With Starter Kits, you can quickly and easily use the native capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using a Starter Kit. The Chatbot for iOS with Watson Starter Kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}}, by adding a natural language interface to your application that automates interactions with your users.
 
-1. Select the [Starter Kit](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
+1. Select the [Starter Kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
 2. Create the project with the default services.
 3. Click **Add Resources > Watson > {{site.data.keyword.conversationshort}}**.
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.

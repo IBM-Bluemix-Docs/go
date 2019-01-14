@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -107,7 +107,7 @@ func main() {
 
 With starter kits, you can quickly and easily use the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.text_to_speech}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.text_to_speech}}, by adding a natural language interface to your application that automates interactions with your end users.
 
-1. Select the [starter kit](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
+1. Select the [starter kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
 2. Create the project with the default services.
 3. Click **Add Resources > Watson > {{site.data.keyword.text_to_speech}}**.
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.

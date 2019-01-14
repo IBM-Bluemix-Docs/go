@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -34,17 +34,17 @@ To add performance monitoring to your Go application, you can use the comprehens
 The `promhttp` package has many extension points, including [Prometheus configuration](https://github.com/prometheus/client_golang).
 
 1. For example, use the following simple “Hello World” Go + Gin application:
-  ```go
-  // imports above
-  func main() {
-      router := gin.Default()
-      router.GET("/", func(c *gin.Context) {
-          c.String(http.StatusOK, "Hello, World!")
-      }
-      router.Run(":3000")
-  }
-  ```
-  {: codeblock}
+    ```go
+    // imports above
+    func main() {
+        router := gin.Default()
+        router.GET("/", func(c *gin.Context) {
+            c.String(http.StatusOK, "Hello, World!")
+        }
+        router.Run(":3000")
+    }
+    ```
+    {: codeblock}
 
 2. Get the package with the following command:
   ```

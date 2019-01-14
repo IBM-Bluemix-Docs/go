@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -90,7 +90,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 {: codeblock}
 
 ## Using the Go configuration manager from Starter Kit apps
-Go apps that are created with [Starter Kits](https://console.bluemix.net/developer/appservice/starter-kits/) automatically come with credentials and configurations that are needed to run in many cloud deployment environments (CF, K8s, and Functions).
+Go apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appservice/starter-kits/) automatically come with credentials and configurations that are needed to run in many cloud deployment environments (CF, K8s, and Functions).
 
 ### Understanding service credentials
 
@@ -105,7 +105,6 @@ When you push your application to {{site.data.keyword.cloud_notm}}, these values
 * **Cloud Foundry**: Service credentials are taken from the `VCAP_SERVICES` environment variable.
 
 * **Kubernetes**: Service credentials are taken from individual environment variables per service.
-
 
 ## Next Steps
 {: #next_steps notoc}
