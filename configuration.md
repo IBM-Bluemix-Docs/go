@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -105,6 +105,8 @@ When you push your application to {{site.data.keyword.cloud_notm}}, these values
 * **Cloud Foundry**: Service credentials are taken from the `VCAP_SERVICES` environment variable.
 
 * **Kubernetes**: Service credentials are taken from individual environment variables per service.
+
+* **{{site.data.keyword.cloud_notm}} Container Service**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}} (Openwhisk).
 
 ## Next Steps
 {: #next_steps notoc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-04"
 
 ---
 
@@ -34,10 +34,11 @@ The following tutorial walks you through the steps to create and deploy a Go app
 {: #deploy_dashboard}
 
 1. From the App Details page, click **Deploy to Cloud**.
-2. Next, select one of the following deployment methods:
-    * **Deploy to Kubernetes** - You must create a set of worker nodes. For example, you can use VMs to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
-    * **Deploy to Cloud Foundry** - You do not need to manage the underlying infrastructure.
-    * **Deploy to a Virtual Server (Beta)** - A [Pay-As-You-Go account](https://cloud.ibm.com/dashboard/ibm-iaas-g1) is required to access virtual servers.
+2. Set up your deployment method according to the instructions for the method you choose:
+  * **Deploy to [Kubernetes](/docs/apps/deploying/containers.html#containers)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
+  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
+  * **Deploy to a [Virtual Server](/docs/apps/vsi-deploy.html#vsi-deploy)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the first deployment cycle for you.
+
 3. Select your options, and then click **Create**. A toolchain is created for you and deploys your app automatically.
 
 ## Step 3. Adding a service (Optional)
@@ -64,6 +65,6 @@ To learn more about the {{site.data.keyword.dev_cli_long}}, see the complete [CL
 ## Exploring alternative deployment methods
 {: #deploy_cloud notoc}
 
-Learn how to deploy your application to Cloud Foundry or Kubernetes under the Deployments tab [here](/docs/go/deploying_apps.html). 
+Learn how to deploy your application under the Deployments tab [here](/docs/go/deploying_apps.html). 
 
 To expand your Go application, continue checking out the topics in the Go programming guide.
