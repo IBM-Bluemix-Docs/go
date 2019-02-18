@@ -43,6 +43,8 @@ In the following steps, two small applications (one front-end, one back-end) are
   {: codeblock}
 
 ### Adding tracing to your server application
+{: #tracing-go}
+
 A few statements are needed to add tracing to your server application. First, you must create a tracer.
 
 To create a tracer, supply the following:

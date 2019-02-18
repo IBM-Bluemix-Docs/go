@@ -21,11 +21,13 @@ Standardized guidelines are available to follow for developing Go applications t
 Whether you need to add Cloud support to existing Go applications or create Go apps with Starter Kits, the goal is to provide portability for use with any development platform.
 
 ## Adding Cloud support to existing Go applications
-{: #add-ibm-cloud-env-golang}
+{: #add-cloud-support}
 
 The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang) module aggregates environment variables from various Cloud providers, such as CloudFoundry and Kubernetes, so the application is independent of the environment.
 
 ### Installing the `ibm-cloud-env-golang` module
+{: #install-module}
+
 1. Install the `ibm-cloud-env-golang` module with the following command:
   ```bash
   go get github.com/ibm-developer/ibm-cloud-env-golang
@@ -66,6 +68,8 @@ The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-gola
   {: codeblock}
 
 ### Using the values in a Go app
+{: #values-config}
+
 Retrieve the values in your application by using the following commands.
 
 1. Retrieve variable `service1credentials`:
@@ -93,6 +97,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 Go apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appservice/starter-kits/) automatically come with credentials and configurations that are needed to run in many cloud deployment environments (CF, K8s, and Functions).
 
 ### Understanding service credentials
+{: credentials-config}
 
 Your application configuration information for services is stored in the `localdev-config.json` file in the `/server/config` directory. The file is in the `.gitignore` directory to prevent sensitive information from being stored in Git. The connection information for any configured service that runs locally, such as user name, password, and host name, is stored in this file.
 
@@ -109,6 +114,6 @@ When you push your application to {{site.data.keyword.cloud_notm}}, these values
 * **{{site.data.keyword.cloud_notm}} Container Service**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}} (Openwhisk).
 
 ## Next Steps
-{: #next_steps notoc}
+{: #next_steps-config notoc}
 
 The `ibm-cloud-env-golang` supports searching for values by using four search pattern types: `user-provided`, `cloudfoundry`, `env`, and `file`. If you would like to check out other supported search patterns and search pattern examples, check the [Usage](https://github.com/ibm-developer/ibm-cloud-env-golang#usage) section.

@@ -14,7 +14,7 @@ lastupdated: "2019-01-14"
 {:pre: .pre}
 
 # Adding Text to Speech 
-{: #assistant}
+{: #assistant-text}
 
 You can use the {{site.data.keyword.text_to_speech}} service to build Go applications that understand natural-language text input, and convert it into audio. 
 
@@ -27,7 +27,7 @@ How the integration works:
 * Your app displays the response for the user.
 
 ## Before you begin
-{: #before-you-begin}
+{: #prereqs-text}
 
 Install the {{site.data.keyword.watson}} Go SDK:
 ```bash
@@ -36,7 +36,7 @@ go get github.com/watson-developer-cloud/go-sdk
 {: pre}
 
 ## Adding Text to Speech to your app
-{: #add-a-text-to-speech-to-your-app}
+{: #existing-text}
 
 1. After you download your code, open your project. 
 2. Add an import statement for {{site.data.keyword.text_to_speech}}
@@ -103,7 +103,7 @@ func main() {
 {: codeblock}
 
 ## Using starter kits
-{: #text_to_speech_starterkits}
+{: #starterkits-text}
 
 With starter kits, you can quickly and easily use the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.text_to_speech}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.text_to_speech}}, by adding a natural language interface to your application that automates interactions with your end users.
 
@@ -113,7 +113,7 @@ With starter kits, you can quickly and easily use the capabilities of {{site.dat
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.
 
 ## Next steps
-{: #assistant_next}
+{: #next-text}
 
 Great job! You added Text To Speech to your app. Keep the momentum by trying one of the following options:
 * Check out the [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.

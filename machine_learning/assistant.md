@@ -14,7 +14,7 @@ lastupdated: "2019-01-14"
 {:pre: .pre}
 
 # Adding a chatbot
-{: #assistant}
+{: #assistant-chatbot}
 
 You can use the {{site.data.keyword.conversationshort}} service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
 
@@ -29,7 +29,7 @@ How the integration works:
 You can add the virtual assistant to a new Go Starter Kit app, or to an existing Go app.
 
 ## Before you begin
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 Install the {{site.data.keyword.watson}} Go SDK:
 ```bash
@@ -38,7 +38,7 @@ go get github.com/watson-developer-cloud/go-sdk
 {: codeblock}
 
 ## Adding a virtual assistant to your existing Go app
-{: #add-a-virtual-assistant-to-your-app}
+{: #existing-chatbot}
 
 1. After you download the code, open your project.
 
@@ -132,7 +132,7 @@ go get github.com/watson-developer-cloud/go-sdk
   {: codeblock}
 
 ## Adding a chatbot by using starter kits
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
 With Starter Kits, you can quickly and easily use the native capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.conversationshort}} to any server-side back end by using a Starter Kit. The Chatbot for iOS with Watson Starter Kit illustrates how to use the deep learning capabilities of {{site.data.keyword.conversationshort}}, by adding a natural language interface to your application that automates interactions with your users.
 
@@ -142,7 +142,7 @@ With Starter Kits, you can quickly and easily use the native capabilities of {{s
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.
 
 ## Next steps
-{: #assistant_next}
+{: #next-chatbot}
 
 Great job! You added an AI assistant to your app. Keep the momentum by trying one of the following options:
 * Check out the [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.

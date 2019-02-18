@@ -13,12 +13,12 @@ lastupdated: "2019-01-14"
 {:pre: .pre}
 
 #  SDKs
-{: #sdk}
+{: #sdk-go}
 
 To add {{site.data.keyword.cloud_notm}} SDKs to your app, choose the SDKs that you want to use, and configure your dependency manager to pull the SDKs into your app.
 
 ## Client SDKs
-{: #client_sdk}
+{: #client_sdk-go}
 
 You can use the following SDKs in your Go application:
 * [MongoDB Go SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/mongodb/mongo-go-driver)

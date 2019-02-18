@@ -16,7 +16,7 @@ lastupdated: "2019-02-04"
 # Logging in Go
 {: #logging_golang}
 
-Log messages are strings with contextual information in them about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [metrics](appmetrics.html) in monitoring application health.
+Log messages are strings with contextual information in them about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [metrics](/docs/go/appmetrics.html) in monitoring application health.
 
 Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
@@ -53,14 +53,14 @@ Given the transient nature of processes in Cloud environments, logs must be coll
 For more information about customizing the log messages with appenders, log levels, and configuration details, see the official [Logrus documentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0).
 
 ## Next Steps
-{: #next_steps}
+{: #next_steps-logging}
 
 Learn more about viewing the logs in each of our deployment environments:
 * [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
-* [Cloud Foundry logs](https://cloud.ibm.com/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
+* [Cloud Foundry logs](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
 * [Cloud Foundry Enterprise Environment - Auditing and logging](docs/cloud-foundry/auditing-logging.html#auditing-logging)
-* [{{site.data.keyword.openwhisk}} Logs and monitoring](https://cloud.ibm.com/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [{{site.data.keyword.openwhisk}} Logs and monitoring](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 Learn more about using a log aggregator:
-* [{{site.data.keyword.cloud_notm}} Log analysis](https://cloud.ibm.com/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

@@ -14,7 +14,7 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Using Application Metrics with Go apps
-{: #metrics}
+{: #appmetrics}
 
 Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure your application is running effectively over time. You can use a cloud service like Cloud Foundry's [autoscaling](/docs/services/Auto-Scaling/index.html) that relies on metrics to dynamically scale instances to match current workload. By using application metrics, you are informed precisely when to scale up, down, or clean up instances that are no longer needed to keep costs low.
 
@@ -75,6 +75,7 @@ The `promhttp` package has many extension points, including [Prometheus configur
   {: codeblock}
 
 ## Using Application Metrics in Starter Kits
+{: #starterkits-appmetrics}
 
 The server-side Go applications that are created from Starter Kits automatically come with the [Prometheus endpoint](https://prometheus.io/) under `http://<hostname>:<port>/metrics`. The code for this endpoint is in `server.go`.
 

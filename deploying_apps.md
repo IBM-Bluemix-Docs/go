@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-07"
+lastupdated: "2019-02-18"
 
 ---
 
@@ -19,7 +19,7 @@ lastupdated: "2019-02-07"
 You can deploy your Go apps with a toolchain or by using the command-line interface. A toolchain is a set of tool integrations to help build and automate application deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery/index.html#cd_getting_started). This topic helps you find useful information on different deployment methodologies for Go applications such as CLI, Kubernetes, containers, VSI, and private cloud.
 
 ## Deploying to a Kubernetes cluster
-{: #deploy_kube}
+{: #deploy_kube-go}
 
 You can learn how to use {{site.data.keyword.cloud_notm}} Kubernetes Service to deploy a containerized Go app. Check out the [tutorial steps](/docs/containers/cs_cluster.html#cs_cluster) for more information on setting up a Kubernetes cluster in {{site.data.keyword.cloud_notm}}.
 
@@ -28,7 +28,7 @@ Related blogs that use the CLI:
 * [Deploying to IBM Cloud Private with IBM Cloud Developer Tools CLI](https://www.ibm.com/blogs/bluemix/2017/09/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli/).
 
 ## Deploying to container services with the CLI
-{: #cf-deploy}
+{: #go-deploy-container}
 
 Use the `ibmcloud dev deploy` command to deploy to {{site.data.keyword.cloud_notm}}. 
 
@@ -38,19 +38,19 @@ ibmcloud dev deploy –target container
 ```
 {: codeblock}
 
-For more information about `ibmcloud dev` commands, see [Developing and deploying your apps](/docs/cli/idt/index.html#overview).
+For more information about `ibmcloud dev` commands, see [Developing and deploying your apps](/docs/cli/index.html).
 
 ## Deploying to Cloud Foundry
 {: #go-deploy-cf}
 
 This option deploys your cloud-native app without you needing to manage the underlying infrastructure.
 
-If you plan to deploy your app to [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry/index.html#about), you must [prepare your {{site.data.keyword.cloud_notm}} account](/docs/cloud-foundry/prepare-account.html#prepare).
+If you plan to deploy your app to [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry/index.html), you must [prepare your {{site.data.keyword.cloud_notm}} account](/docs/cloud-foundry/prepare-account.html).
 
 If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public/about-cf.html#about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public/cfee.html#cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
 
 ## Deploying to a virtual server
-{: #vsi-deploy}
+{: #go-vsi-deploy}
 
 Deploy {{site.data.keyword.cloud}} App Service apps into virtual server instances to enable your platform and infrastructure developer activities to work together and increase app control and flexibility.
 

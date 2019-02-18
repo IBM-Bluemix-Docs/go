@@ -14,7 +14,7 @@ lastupdated: "2019-01-14"
 {:pre: .pre}
 
 # Adding Visual Recognition
-{: #assistant}
+{: #assistant-vr}
 
 You can use the {{site.data.keyword.vr}} service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
 
@@ -27,14 +27,14 @@ How the integration works:
 * Your app displays the response for the user.
 
 ## Before you begin
-{: #before-you-begin}
+{: #prereqs-vr}
 
 Install the {{site.data.keyword.watson}} Go SDK:
 ```bash
 go get github.com/watson-developer-cloud/go-sdk
 ```
 ## Adding a Visual Recognition to your app
-{: #add-a-virtual-assistant-to-your-app}
+{: #add-vr}
 
 1. After you have downloaded your code, open your project. 
 2. Add an import statement for {{site.data.keyword.conversationshort}}
@@ -182,7 +182,7 @@ func main() {
 {: codeblock}
 
 ## Using starter kits
-{: #vr_starterkits}
+{: #starterkits-vr}
 
 With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.vr}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.vr}}, by adding a natural language interface to your application that automates interactions with your end users.
 
@@ -192,7 +192,7 @@ With starter kits, you can quickly and easily leverage the capabilities of {{sit
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.
 
 ## Next steps
-{: #assistant_next}
+{: #next-vr}
 
 Great job! You added Visual Recognition to your app. Keep the momentum by trying one of the following options:
 * Check out the [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
