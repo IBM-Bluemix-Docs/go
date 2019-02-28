@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -16,12 +16,12 @@ lastupdated: "2019-01-14"
 # Adding Visual Recognition
 {: #assistant-vr}
 
-You can use the {{site.data.keyword.vr}} service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
+You can use the {{site.data.keyword.visualrecognitionshort}} service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
 
 How the integration works:
 
 * Users interact with the front-end user interface of your app.
-* Your app sends user input to the {{site.data.keyword.vr}} by using the {{site.data.keyword.watson}} Go SDK.
+* Your app sends user input to the {{site.data.keyword.visualrecognitionshort}} by using the {{site.data.keyword.watson}} Go SDK.
 * The {{site.data.keyword.watson}} Go SDK connects to a workspace, which is a container for your dialog flow and training data.
 * The workspace interprets the user input and directs the flow of the conversation, sending a response to your app.
 * Your app displays the response for the user.
@@ -184,11 +184,11 @@ func main() {
 ## Using starter kits
 {: #starterkits-vr}
 
-With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.vr}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.vr}}, by adding a natural language interface to your application that automates interactions with your end users.
+With starter kits, you can quickly and easily leverage the capabilities of {{site.data.keyword.cloud_notm}}. You can add {{site.data.keyword.visualrecognitionshort}} to any server-side back end by using the starter kits. The Chatbot for iOS with Watson starter kit illustrates how to use the deep learning capabilities of {{site.data.keyword.visualrecognitionshort}}, by adding a natural language interface to your application that automates interactions with your end users.
 
 1. Select the [starter kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} with which you want to work.
 2. Create the project with the default services.
-3. Click **Add Resources > Watson > {{site.data.keyword.vr}}**.
+3. Click **Add Resources > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Download the project by clicking **Download Code**. You can find the service credentials in the `config/local-dev.json` file.
 
 ## Next steps
@@ -196,4 +196,4 @@ With starter kits, you can quickly and easily leverage the capabilities of {{sit
 
 Great job! You added Visual Recognition to your app. Keep the momentum by trying one of the following options:
 * Check out the [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Take advantage of all of the features that [{{site.data.keyword.vr}}](/docs/services/vr/index.html) has to offer.
+* Take advantage of all of the features that [{{site.data.keyword.visualrecognitionshort}}](/docs/services/vr/index.html) has to offer.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-02-28"
 
 ---
 
@@ -58,7 +58,7 @@ For more information about customizing the log messages with appenders, log leve
 Learn more about viewing the logs in each of our deployment environments:
 * [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
 * [Cloud Foundry logs](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - Auditing and logging](docs/cloud-foundry/auditing-logging.html#auditing-logging)
+* [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
 * [{{site.data.keyword.openwhisk}} Logs and monitoring](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 Learn more about using a log aggregator:
