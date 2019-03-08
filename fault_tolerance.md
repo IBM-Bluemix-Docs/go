@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
+
+subcollection: go
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-14"
 # Setting up fault tolerance in Go apps
 {: #fault-tolerance}
 
-Fault tolerance allows an application to continue running if a component fails, or becomes unresponsive. You can add fault tolerance to an existing Go application, or enable these features from a generated Go Application. This tutorial focuses on using the [Hystrix package](https://godoc.org/github.com/afex/hystrix-go/hystrix) to add fault tolerance support to a Go application.
+Fault tolerance allows an application to continue running if a component fails, or becomes unresponsive. You can add fault tolerance to an existing Go application, or enable these features from a generated Go Application. This tutorial focuses on using the [Hystrix package](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") to add fault tolerance support to a Go application.
 
 ## Adding fault tolerance to an existing Go app
 {: #add-fault-tolerance}

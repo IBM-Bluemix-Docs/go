@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-08"
+
+keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
+
+subcollection: go
 
 ---
 
@@ -14,16 +18,16 @@ lastupdated: "2019-02-28"
 {:tip: .tip}
 
 # Logging in Go
-{: #logging_golang}
+{: #logging-golang}
 
-Log messages are strings with contextual information in them about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [metrics](/docs/go/appmetrics.html) in monitoring application health.
+Log messages are strings with contextual information in them about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [metrics](/docs/go?topic=go-appmetrics#appmetrics) in monitoring application health.
 
-Given the transient nature of processes in Cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
+Given the transient nature of processes in cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
 ## Adding Logrus support to Go app
-{: #add_logrus}
+{: #add-logrus-go}
 
-[Logrus](https://github.com/sirupsen/logrus) is a popular logging framework for Go and provides many native benefits, which include: 
+[Logrus](https://github.com/sirupsen/logrus){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") is a popular logging framework for Go and provides many native benefits, which include: 
  * Logging to `stdout` or `stderr`
  * Various appending options
  * Configurable log message layout and patterns
@@ -50,17 +54,17 @@ Given the transient nature of processes in Cloud environments, logs must be coll
   ```
   {: screen}
 
-For more information about customizing the log messages with appenders, log levels, and configuration details, see the official [Logrus documentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0).
+For more information about customizing the log messages with appenders, log levels, and configuration details, see the official [Logrus documentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 ## Next Steps
-{: #next_steps-logging}
+{: #go-logging-next notoc}
 
 Learn more about viewing the logs in each of our deployment environments:
-* [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
-* [Cloud Foundry logs](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
-* [{{site.data.keyword.openwhisk}} Logs and monitoring](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Cloud Foundry logs](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
+* [{{site.data.keyword.openwhisk}} Logs and monitoring](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
 
 Learn more about using a log aggregator:
-* [{{site.data.keyword.cloud_notm}} Log analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
-* [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)
+* [{{site.data.keyword.cloud_notm}} Log analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
+
+subcollection: go
 
 ---
 
@@ -14,12 +18,12 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Using a health check in your Go app
-{: #healthcheck}
+{: #go-healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service) and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon"), can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 
 ## Health check overview
-{: #overview}
+{: #go-healtcheck-overview}
 
 Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. They're typically accessed over HTTP and use standard return codes to indicate UP or DOWN status. The return value of a health check is variable, but a minimal JSON response, like `{"status": "UP"}`, is typical.
 
@@ -47,7 +51,7 @@ The following table provides guidance on the responses that readiness, liveness,
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
 
 ## Adding a health check to an existing Go app
-{: #add-healthcheck-existing}
+{: #go-add-healthcheck-existing}
 
 You can add a minimal health or liveness check to an existing `Gin-Gonic` application by introducing a new route as shown in the following example:
 ```go
@@ -60,10 +64,10 @@ func HealthGET(c *gin.Context) {
 
 Check the status of the app with a browser by accessing the `/health` endpoint.
 
-There are more extensive libraries available, like [`http-healthcheck`](https://github.com/robzienert/http-healthcheck), which allow definition of extensible health checks with support for caching checks that are run against backing services. In this case, you would want to separate the simple liveness test in the example from the more robust, detailed readiness check that is built from the health check package.
+There are more extensive libraries available, like [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon"), which allow definition of extensible health checks with support for caching checks that are run against backing services. In this case, you would want to separate the simple liveness test in the example from the more robust, detailed readiness check that is built from the health check package.
 
 ## Accessing the health check endpoint in Go Starter Kit apps
-{: #healthcheck-starterkit}
+{: #go-healthcheck-starterkit}
 
 By default, when you generate a Go app by using a Starter Kit,
 a basic (unauthorized) health check endpoint is available at `/health` to check the status of the app (UP/DOWN).
@@ -85,14 +89,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Recommendations for readiness and liveness probes
-{: #recommend-healthcheck}
+{: #go-recommend-healthcheck}
 
 Readiness probes should include the viability of connections to downstream services in their result when there isn’t an acceptable fallback if the downstream service is unavailable. This doesn't mean calling the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services: this might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
 
 A liveness probe, by contrast, is deliberate about what is checked, as a failure results in immediate termination of the process. A simple HTTP endpoint that always returns `{"status": "UP"}` with status code `200` is a reasonable choice.
 
 ## Configuring readiness and liveness probes in Kubernetes
-{: #config_probes-healthcheck}
+{: #go-config-probes-healthcheck}
 
 Declare liveness and readiness probes alongside your Kubernetes deployment. Both probes use the same configuration parameters:
 
@@ -132,4 +136,4 @@ spec:
 ```
 {: codeblock}
 
-For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").

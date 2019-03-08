@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
+
+subcollection: go
 
 ---
 
@@ -14,9 +18,9 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Using Application Metrics with Go apps
-{: #appmetrics}
+{: #go-appmetrics}
 
-Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure your application is running effectively over time. You can use a cloud service like Cloud Foundry's [autoscaling](/docs/services/Auto-Scaling/index.html) that relies on metrics to dynamically scale instances to match current workload. By using application metrics, you are informed precisely when to scale up, down, or clean up instances that are no longer needed to keep costs low.
+Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure your application is running effectively over time. You can use a cloud service like Cloud Foundry's [autoscaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) that relies on metrics to dynamically scale instances to match current workload. By using application metrics, you are informed precisely when to scale up, down, or clean up instances that are no longer needed to keep costs low.
 
 Application metrics are captured as time series data. Aggregating and visualizing captured metrics can help to identify common performance problems such as:
 
@@ -27,11 +31,11 @@ Application metrics are captured as time series data. Aggregating and visualizin
 * High or growing memory usage (potential memory leak)
 
 ## Adding Application Metrics to your existing Go application
-{: #add-appmetrics-existing}
+{: #go-add-appmetrics-existing}
 
 To add performance monitoring to your Go application, you can use the comprehensive aggregation of metrics that are provided by the `promhttp` package.
 
-The `promhttp` package has many extension points, including [Prometheus configuration](https://github.com/prometheus/client_golang).
+The `promhttp` package has many extension points, including [Prometheus configuration](https://github.com/prometheus/client_golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 1. For example, use the following simple “Hello World” Go + Gin application:
     ```go
@@ -75,8 +79,8 @@ The `promhttp` package has many extension points, including [Prometheus configur
   {: codeblock}
 
 ## Using Application Metrics in Starter Kits
-{: #starterkits-appmetrics}
+{: #go-starterkits-appmetrics}
 
-The server-side Go applications that are created from Starter Kits automatically come with the [Prometheus endpoint](https://prometheus.io/) under `http://<hostname>:<port>/metrics`. The code for this endpoint is in `server.go`.
+The server-side Go applications that are created from Starter Kits automatically come with the [Prometheus endpoint](https://prometheus.io/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") under `http://<hostname>:<port>/metrics`. The code for this endpoint is in `server.go`.
 
-For more information, see the [GitHub Repository for Prometheus](https://github.com/prometheus/client_golang/).
+For more information, see the [GitHub Repository for Prometheus](https://github.com/prometheus/client_golang/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").

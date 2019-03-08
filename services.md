@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: watson services go, add watson go app, visual recognition gos
+
+subcollection: go
 
 ---
 
@@ -14,23 +18,23 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Adding Watson services to Go apps
-{: #add-watson-services}
+{: #add-watson-go}
 
 You can easily add IBM Watson services to Go apps by using the following tutorials.
 
 <!-- Need topic links once they are moved to the Watson repo. Add links to each section "For more information..." -->
 
 ## Adding a chatbot with Watson assistant
-{: #add-chatbot-watson}
+{: #add-chatbot-go}
 
 You can use the Watson Assistant service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
 
 ## Adding text-to-speech support
-{: #add-text-to-speech}
+{: #add-text-to-speech-go}
 
 You can use the Watson Text-to-Speech service to build Go applications that understand natural-language text input, and convert it into audio.
 
 ## Adding visual recognition
-{: #add-vr-watson}
+{: #add-vr-watson-go}
 
 You can use the Watons Visual Recognition service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
