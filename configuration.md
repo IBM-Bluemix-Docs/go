@@ -102,7 +102,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Using the Go configuration manager from Starter Kit apps
 {: #go-config-manager}
 
-Go apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment environments (CF, K8s, and Functions).
+Go apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as Cloud Foundry, Kubernetes, VSI, and Functions).
 
 ### Understanding service credentials
 {: #go-credentials-config}

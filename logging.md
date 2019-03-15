@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-03-12"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -59,7 +59,7 @@ For more information about customizing the log messages with appenders, log leve
 ## Next Steps
 {: #go-logging-next notoc}
 
-Learn more about viewing the logs in each of our deployment environments:
+Learn more about viewing the logs in each of your deployment targets:
 * [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
 * [Cloud Foundry logs](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
 * [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)

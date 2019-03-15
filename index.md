@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-03-12"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -38,22 +38,22 @@ The following tutorial walks you through the steps to create and deploy a Go app
 ## Step 2. Deploying with the dashboard
 {: #deploy-go}
 
-1. From the App Details page, click **Deploy to Cloud**.
-2. Set up your deployment method according to the instructions for the method you choose:
-  * **Deploy to [Kubernetes](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
+1. From the **App details** page, click **Deploy**.
+2. Set up your deployment target according to the instructions for the method you choose:
+  * **Deploy to [IBM Kubernetes Service](/docs/apps/deploying?topic=creating-apps-containers-kube#containers)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available application containers. You can create a cluster or deploy to an existing cluster.
   * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf#about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee#cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
   * **Deploy to a [Virtual Server](/docs/apps?topic=creating-apps-vsi-deploy#vsi-deploy)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the first deployment cycle for you.
 
 3. Select your options, and then click **Create**. A toolchain is created for you and deploys your app automatically.
 
-## Step 3. Adding a resource (Optional)
+## Step 3. Adding a service (Optional)
 {: #add-resource-go}
 
 You can quickly add services like security or storage to your Go app from within the dashboard.
 
 1. Return to your Go app in the [{{site.data.keyword.cloud_notm}} {{site.data.keyword.dev_console}}](https://cloud.ibm.com/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-2. Click **Add Resource**, select the category of the service you want to add, click **Next**, then choose your service. {{site.data.keyword.cloud_notm}} {{site.data.keyword.dev_console}} creates the service for you based on the selected plan. If you previously created the service that you plan to use, choose the **Existing** category.
-3. After the service is created, click **Download Code** to regenerate the project with the SDK that connects to your service.
+2. Click **Add service**, select the category of the service you want to add, click **Next**, then choose your service. {{site.data.keyword.cloud_notm}} {{site.data.keyword.dev_console}} creates the service for you based on the selected plan. If you previously created the service that you plan to use, choose the **Existing** category.
+3. After the service is created, click **Download code** to regenerate the project with the SDK that connects to your service.
 
 ## Step 4. Testing and accessing your Go app locally
 {: #run_local-go}
