@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -21,11 +21,13 @@ Las directrices estandarizadas están disponibles para el desarrollo de aplicaci
 Tanto si necesita añadir soporte para la nube a las aplicaciones Go existentes como crear apps Go con los Kits de inicio, el objetivo es proporcionar portabilidad para utilizarlas en cualquier plataforma de desarrollo.
 
 ## Adición del soporte de Cloud a aplicaciones Go existentes
-{: #add-ibm-cloud-env-golang}
+{: #add-cloud-support}
 
 El módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang) agrega las variables de entorno de diversos proveedores de nube, como CloudFoundry y Kubernetes, por lo que la aplicación es independiente del entorno.
 
 ### Instalación del módulo `ibm-cloud-env-golang`
+{: #install-module}
+
 1. Instale el módulo `ibm-cloud-env-golang` con el siguiente mandato:
   ```bash
   go get github.com/ibm-developer/ibm-cloud-env-golang
@@ -66,6 +68,8 @@ El módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-e
   {: codeblock}
 
 ### Utilización de los valores en una app Go
+{: #values-config}
+
 Recupere los valores de la aplicación utilizando los mandatos siguientes.
 
 1. Recuperar la variable `service1credentials`:
@@ -90,9 +94,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 {: codeblock}
 
 ## Utilización del gestor de configuración de Go desde apps del Kit de inicio
-Las apps Go creadas con [Kits de inicio](https://console.bluemix.net/developer/appservice/starter-kits/) se proporcionan automáticamente con las credenciales y la configuración necesarias para ejecutarse en muchos entornos de despliegue de nube (CF, K8s y Functions).
+Las apps Go creadas con [Kits de inicio](https://cloud.ibm.com/developer/appservice/starter-kits/) se proporcionan automáticamente con las credenciales y la configuración necesarias para ejecutarse en muchos entornos de despliegue de nube (CF, K8s y Functions).
 
 ### Comprensión de las credenciales de servicio
+{: credentials-config}
 
 La información de configuración de aplicación de servicios se almacena en el archivo `localdev-config.json` en el directorio `/server/config`. El archivo se encuentra en el directorio `.gitignore` para evitar que se almacene información confidencial en Git. La información de conexión para cualquier servicio configurado que se ejecute localmente, como el nombre de usuario, la contraseña y el nombre de host, se almacena en este archivo.
 
@@ -106,8 +111,9 @@ Cuando envía la aplicación a {{site.data.keyword.cloud_notm}}, estos valores y
 
 * **Kubernetes**: Las credenciales de servicio se toman de variables de entorno individuales por servicio.
 
+* **{{site.data.keyword.cloud_notm}} Container Service**: Las credenciales de servicio se toman de las instancias de servidor virtual o {{site.data.keyword.openwhisk}} (Openwhisk).
 
 ## Pasos siguientes
-{: #next_steps notoc}
+{: #next_steps-config notoc}
 
 `ibm-cloud-env-golang` soporta la búsqueda de valores utilizando cuatro tipos de patrón de búsqueda: `user-provided`, `cloudfoundry`, `env` y `file`. Si desea obtener información sobre otros patrones de búsqueda soportados y ejemplos de patrón de búsqueda, consulte la sección [Uso](https://github.com/ibm-developer/ibm-cloud-env-golang#usage).

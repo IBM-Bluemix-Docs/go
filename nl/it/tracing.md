@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2018-10-02"
 
 La seguente esercitazione si concentra sui pacchetti Opentracing e Jaeger per la traccia delle applicazioni Go. Per ulteriori informazioni sull'utilizzo di Jaeger, consulta il [portale della documentazione di Jaeger](https://www.jaegertracing.io/docs/).
 
-Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di frontend e una di backend) per la traccia tra due endpoint utilizzando il modulo Jaeger. Puoi iniziare da zero oppure applicare i principi qui descritti alle tue applicazioni Go esistenti. 
+Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di frontend e una di backend) per la traccia tra due endpoint utilizzando il modulo Jaeger. Puoi iniziare da zero oppure applicare i principi qui descritti alle tue applicazioni Go esistenti.
 
 ## Passo 1. Installazione e abilitazione dei pacchetti Opentracing e Jaeger
 {: #install-packages}
@@ -42,13 +42,15 @@ Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di fr
   ```
   {: codeblock}
 
-### Aggiunta della traccia alla tua applicazione server 
+### Aggiunta della traccia alla tua applicazione server
+{: #tracing-go}
+
 Sono necessarie alcune istruzioni per aggiungere la traccia alla tua applicazione server. Prima di tutto, devi creare un programma di traccia.
 
 Per creare un programma di traccia, fornisci quanto segue:
  * Programma di trasporto
- * Programma di report 
- * Programma di esportazione delle metriche facoltativo 
+ * Programma di report
+ * Programma di esportazione delle metriche facoltativo
  
 In questa esercitazione, Jaeger esporta le metriche in stile Prometheus. Un oggetto delle metriche consente a Jaeger di segnalare le metriche a Prometheus.
 
@@ -174,7 +176,7 @@ In questa esercitazione, Jaeger esporta le metriche in stile Prometheus. Un ogge
 I server Jaeger sono composti da tre servizi separati:
  * Agent
  * Raccoglitori
- * Query 
+ * Query
  
 I servizi Go si collegano all'agent utilizzando l'oggetto `UDPTransport`. Gli agent segnalano quindi i dati ai raccoglitori, che archiviano i dati di span in un database. Il servizio di query consente quindi all'utente di richiamare le estensioni nel database. I servizi vengono separati per consentire la flessibilità perché tutti i servizi devono avere i propri agent a cui collegarsi, mentre il numero dei servizi di raccolta e di query può essere ridimensionato in base alle esigenze.
 

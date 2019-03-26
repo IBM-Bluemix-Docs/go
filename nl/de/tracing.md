@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -23,7 +23,7 @@ In den folgenden Schritten werden zwei kleine Anwendungen (eine Front-End-Anwend
 ## Schritt 1. OpenTracing- und Jaeger-Pakete installieren und aktivieren
 {: #install-packages}
 
-1. Geben Sie an der Position, an der sich auch die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet, die folgenden Befehle ein, um die erforderlichen Pakete in Ihre Abhängigkeitsliste einzufügen:
+1. Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet: 
   ```go
   dep ensure -add "github.com/opentracing/opentracing-go"
   dep ensure -add "github.com/uber/jaeger-client-go"
@@ -43,6 +43,8 @@ In den folgenden Schritten werden zwei kleine Anwendungen (eine Front-End-Anwend
   {: codeblock}
 
 ### Tracing zur Serveranwendung hinzufügen
+{: #tracing-go}
+
 Es sind einige Anweisungen notwendig, um Tracing zu Ihrer Serveranwendung hinzuzufügen. Als Erstes müssen Sie einen Tracer erstellen.
 
 Geben Sie zum Erstellen eines Tracers Folgendes an:
@@ -148,7 +150,7 @@ In diesem Lernprogramm exportiert Jaeger Metriken im Stil von Prometheus. Ein Me
 
   Diese Anweisung richtet eine Anwendung ein, die ein Span-Element extrahieren und dann neue Span-Daten melden kann. Standardmäßig implementieren alle Go-Starter-Kits die serverseitige OpenTracing-Version vollständig.
 
-9. Damit die Span-Daten von einem Service zu einem anderen Service gesendet werden, müssen Sie einige weitere Anweisungen hinzufügen. Betrachten Sie die folgende Beispielanforderung: 
+9. Damit die Span-Daten von einem Service zu einem anderen Service gesendet werden, müssen Sie einige weitere Anweisungen hinzufügen. Betrachten Sie die folgende Beispielanforderung:
   ```go
   client := http.Client{}
   req, _ := http.NewRequest("GET", "http://localhost:3000", nil)
@@ -221,7 +223,8 @@ Führen Sie zum Bereitstellen des Jaeger-Servers die folgenden Schritte aus:
   ```
   {: codeblock}
 
-4. Nach der Bereitstellung der Anwendung können Sie die Tracedaten anzeigen, indem Sie <*IP-adresse_des_öffentlichen_clusters*>:<*port*> öffnen. Sie erfahren die IP-Adresse des öffentlichen Clusters, wenn Sie `bx cs workers <*clustername*> ` ausführen. Die Portnummer können Sie durch Ausführen von `kubectl get service jaeger-query` in Erfahrung bringen.
+4. Nach der Bereitstellung der Anwendung können Sie die Tracedaten anzeigen, indem Sie <*IP-adresse_des_öffentlichen_clusters*>:<*port*> öffnen. Sie erfahren die IP-Adresse des öffentlichen Clusters, wenn Sie `bx cs workers <*clustername*> ` ausführen.
+Die Portnummer können Sie durch Ausführen von `kubectl get service jaeger-query` in Erfahrung bringen.
 
 ## Schritt 3. Beispielszenario testen
 {: #example-scenario}

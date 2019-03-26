@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,29 +14,29 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Aggiunta di Visual Recognition
-{: #assistant}
+{: #assistant-vr}
 
-Puoi utilizzare il servizio {{site.data.keyword.vr}} per creare applicazioni Go che comprendono l'input in linguaggio naturale e rispondono agli utenti con una conversazione simile a quella umana.
+Puoi utilizzare il servizio {{site.data.keyword.visualrecognitionshort}} per creare applicazioni Go che comprendono l'input in linguaggio naturale e rispondono agli utenti con una conversazione simile a quella umana.
 
 Come funziona l'integrazione:
 
 * Gli utenti interagiscono con l'interfaccia utente di frontend della tua applicazione.
-* La tua applicazione invia l'input utente a {{site.data.keyword.vr}} utilizzando l'SDK Go {{site.data.keyword.watson}}.
+* La tua applicazione invia l'input utente a {{site.data.keyword.visualrecognitionshort}} utilizzando l'SDK Go {{site.data.keyword.watson}}.
 * L'SDK Go {{site.data.keyword.watson}} stabilisce una connessione a uno spazio di lavoro, che è un contenitore per il tuo flusso di dialogo e i tuoi dati di training.
 * Lo spazio di lavoro interpreta l'input utente e indirizza il flusso della conversazione, inviando una risposta alla tua applicazione.
-* La tua applicazione visualizza la risposta per l'utente. 
+* La tua applicazione visualizza la risposta per l'utente.
 
 ## Prima di cominciare
-{: #before-you-begin}
+{: #prereqs-vr}
 
 Installa l'SDK Go {{site.data.keyword.watson}}:
 ```bash
 go get github.com/watson-developer-cloud/go-sdk
 ```
-## Aggiunta di un Visual Recognition alla tua applicazione 
-{: #add-a-virtual-assistant-to-your-app}
+## Aggiunta di un Visual Recognition alla tua applicazione
+{: #add-vr}
 
-1. Dopo aver scaricato il tuo codice, apri il tuo progetto.  
+1. Dopo aver scaricato il tuo codice, apri il tuo progetto. 
 2. Aggiungi un'istruzione di importazione per {{site.data.keyword.conversationshort}}
 3. Istanzia il servizio. L'esempio ne utilizza uno denominato `visualRecognition`.
 4. Il seguente è un esempio di come puoi interagire con il servizio. Questo esempio include i metodi 'GET' e 'LIST' di uno spazio di lavoro. 
@@ -182,18 +182,18 @@ func main() {
 {: codeblock}
 
 ## Utilizzo dei kit starter
-{: #vr_starterkits}
+{: #starterkits-vr}
 
-Con i kit starter, puoi velocemente e facilmente utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi aggiungere {{site.data.keyword.vr}} a qualsiasi backend lato server utilizzando i kit starter. Il kit starter Watson Chatbot for iOS illustra come utilizzare le funzionalità di apprendimento approfondito di {{site.data.keyword.vr}}, aggiungendo un'interfaccia di linguaggio naturale alla tua applicazione che automatizza le interazioni con i tuoi utenti finali.
+Con i kit starter, puoi velocemente e facilmente utilizzare le funzionalità di {{site.data.keyword.cloud_notm}}. Puoi aggiungere {{site.data.keyword.visualrecognitionshort}} a qualsiasi backend lato server utilizzando i kit starter. Il kit starter Watson Chatbot for iOS illustra come utilizzare le funzionalità di apprendimento approfondito di {{site.data.keyword.visualrecognitionshort}}, aggiungendo un'interfaccia di linguaggio naturale alla tua applicazione che automatizza le interazioni con i tuoi utenti finali.
 
-1. Seleziona il [kit starter](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} con cui vuoi lavorare. 
+1. Seleziona il [kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} con cui vuoi lavorare.
 2. Crea il progetto con i servizi predefiniti.
-3. Fai clic su **Add Resources > Watson > {{site.data.keyword.vr}}**.
+3. Fai clic su **Add Resources > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Scarica il progetto facendo clic su **Download Code**. Puoi trovare le credenziali del servizio nel file `config/local-dev.json`.
 
 ## Passi successivi
-{: #assistant_next}
+{: #next-vr}
 
 Ottimo lavoro. Hai aggiunto Visual Recognition alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
 * Consulta l'[SDK Go {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Avvaliti di tutte le funzioni che [{{site.data.keyword.vr}}](/docs/services/vr/index.html) ha da offrire.
+* Avvaliti di tutte le funzioni che [{{site.data.keyword.visualrecognitionshort}}](/docs/services/vr/index.html) ha da offrire.

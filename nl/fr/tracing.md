@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -42,7 +42,9 @@ Dans les étapes suivantes, deux petites applications (une frontale et une dorsa
   ```
   {: codeblock}
 
-### Ajout du traçage à votre application serveur 
+### Ajout du traçage à votre application serveur
+{: #tracing-go}
+
 Quelques instructions sont nécessaires pour ajouter un traçage à votre application serveur. Vous devez commencer par créer un traceur.
 
 Pour créer un traceur, fournissez les informations suivantes :

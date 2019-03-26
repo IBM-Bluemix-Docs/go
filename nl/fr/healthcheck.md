@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-17"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -46,7 +46,7 @@ Le tableau suivant donne des indications sur les réponses fournies par les noeu
 | Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
 
-## Ajout d'un diagnostic d'intégrité à une application Go existante 
+## Ajout d'un diagnostic d'intégrité à une application Go existante
 {: #add-healthcheck-existing}
 
 Ajoutez un diagnostic d'intégrité ou de vivacité minimal à une application `Gin-Gonic` existante en introduisant une nouvelle route, comme illustré dans l'exemple suivant :
@@ -84,14 +84,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Recommandations pour les sondes de préparation et de vivacité
-{: #recommendations}
+{: #recommend-healthcheck}
 
 Les sondes de préparation doivent inclure la viabilité des connexions aux services situés en aval dans leur résultat si aucune rétromigration acceptable n'existe lorsque le service en aval n'est pas disponible. Il ne s'agit pas d'appeler directement le diagnostic d'intégrité qui est fourni par le service en aval, car l'infrastructure le vérifie pour vous. Vous devez plutôt envisager de vérifier l'état des références existantes de votre application aux services en aval : il peut s'agir d'une connexion JMS à WebSphere MQ, ou d'un consommateur ou producteur Kafka initialisé. Si vous vérifiez la viabilité des références internes aux services en aval, mettez en cache le résultat pour minimiser l'impact de la vérification de santé sur votre application.
 
 Une sonde de vivacité, en revanche, est délibérée quant à ce qui est vérifié, car une défaillance entraîne l'arrêt immédiat du processus. Un noeud final HTTP simple qui renvoie toujours `{"status" : "UP"}` avec le code d'état `200` est un choix raisonnable.
 
-## Configuration des sondes de préparation et de vivacité dans Kubernetes 
-{: #config_probes}
+## Configuration des sondes de préparation et de vivacité dans Kubernetes
+{: #config_probes-healthcheck}
 
 Sondez la vivacité et l'état de préparation en même temps que votre déploiement Kubernetes. Les deux sondes utilisent les mêmes paramètres de configuration :
 

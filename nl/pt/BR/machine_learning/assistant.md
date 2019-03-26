@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Incluindo um robô de bate-papo
-{: #assistant}
+{: #assistant-chatbot}
 
 É possível usar o serviço do {{site.data.keyword.conversationshort}} para construir aplicativos Go que entendem a entrada de língua natural e respondem aos usuários com conversa semelhante à humana.
 
@@ -29,7 +29,7 @@ Como a integração funciona:
 É possível incluir o assistente virtual em um novo app do kit do iniciador do Go ou em um app Go existente.
 
 ## Antes de começar
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 Instale o {{site.data.keyword.watson}} Go SDK:
 ```bash
@@ -38,7 +38,7 @@ go get github.com/watson-developer-cloud/go-sdk
 {: codeblock}
 
 ## Incluindo um assistente virtual em seu app Go existente
-{: #add-a-virtual-assistant-to-your-app}
+{: #existing-chatbot}
 
 1. Depois de fazer download do código, abra seu projeto.
 
@@ -132,17 +132,17 @@ go get github.com/watson-developer-cloud/go-sdk
   {: codeblock}
 
 ## Incluindo um robô de bate-papo usando kits do iniciador
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
 Com Kits do iniciador, é possível usar os recursos nativos do {{site.data.keyword.cloud_notm}} de maneira rápida e fácil. É possível incluir {{site.data.keyword.conversationshort}} em qualquer back-end do lado do servidor usando um Kit do Iniciador. O kit do iniciador do Chatbot for iOS with Watson ilustra como usar os recursos de deep learning do {{site.data.keyword.conversationshort}}, incluindo uma interface de língua natural em seu aplicativo que automatiza interações com seus usuários.
 
-1. Selecione o [Kit do iniciador](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
+1. Selecione o [Kit do iniciador](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
 2. Crie o projeto com os serviços padrão.
 3. Clique em **Incluir recursos > Watson > {{site.data.keyword.conversationshort}}**.
 4. Faça download do projeto clicando em **Fazer download do código**. É possível localizar as credenciais de serviço no arquivo `config/local-dev.json`.
 
 ## Etapas Seguintes
-{: #assistant_next}
+{: #next-chatbot}
 
 Ótimo trabalho! Você incluiu um assistente de AI em seu app. Tente uma das opções a seguir para manter o ritmo:
 * Confira o [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.

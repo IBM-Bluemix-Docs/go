@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-10"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -13,7 +13,7 @@ lastupdated: "2018-10-10"
 {:pre: .pre}
 {:tip: .tip}
 
-# Configurazione della tolleranza dell'errore nelle applicazioni Go 
+# Configurazione della tolleranza dell'errore nelle applicazioni Go
 {: #fault-tolerance}
 
 La tolleranza dell'errore consente di continuare l'esecuzione di un'applicazione se un componente ha un malfunzionamento o smette di rispondere. Puoi aggiungere la tolleranza dell'errore a un'applicazione Go esistente o abilitare queste funzioni da un'applicazione Go generata. Questa esercitazione si concentra sull'utilizzo del [pacchetto Hystrix](https://godoc.org/github.com/afex/hystrix-go/hystrix) per aggiungere il supporto di tolleranza dell'errore a un'applicazione Go.
@@ -62,6 +62,7 @@ router.Use(HystrixHandler("mycommand"))
 {: codeblock}
 
 ## Esposizione delle metriche Hystrix a Prometheus (facoltativo)
+{: #hystrix-optional}
 
 Prima di aggiungere Hystrix a Prometheus, la tua applicazione deve essere configurata con le metriche dell'applicazione. Puoi seguire la procedura nell'argomento [Utilizzo delle metriche dell'applicazione con le applicazioni Go](/docs/go/appmetrics.html) per aggiungere il supporto delle metriche dell'applicazione.
 

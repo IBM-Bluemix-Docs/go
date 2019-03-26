@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,27 +14,27 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Incluindo o Reconhecimento Visual
-{: #assistant}
+{: #assistant-vr}
 
-É possível usar o serviço do {{site.data.keyword.vr}} para construir aplicativos Go que entendem a entrada de língua natural e respondem aos usuários com conversa semelhante à humana.
+É possível usar o serviço do {{site.data.keyword.visualrecognitionshort}} para construir aplicativos Go que entendem a entrada de língua natural e respondem aos usuários com conversa semelhante à humana.
 
 Como a integração funciona:
 
 * Os usuários interagem com a interface com o usuário de front-end de seu app.
-* Seu app envia a entrada do usuário para o {{site.data.keyword.vr}} usando o {{site.data.keyword.watson}} Go SDK.
+* Seu app envia a entrada do usuário para o {{site.data.keyword.visualrecognitionshort}} usando o {{site.data.keyword.watson}} Go SDK.
 * O {{site.data.keyword.watson}} Go SDK se conecta a uma área de trabalho, que é um contêiner para o seu fluxo de diálogo e os seus dados de treinamento.
 * A área de trabalho interpreta a entrada do usuário e direciona o fluxo da conversa, enviando uma resposta para o app.
 * Seu app exibe a resposta para o usuário.
 
 ## Antes de começar
-{: #before-you-begin}
+{: #prereqs-vr}
 
 Instale o {{site.data.keyword.watson}} Go SDK:
 ```bash
 go get github.com/watson-developer-cloud/go-sdk
 ```
 ## Incluindo um Reconhecimento Visual em seu app
-{: #add-a-virtual-assistant-to-your-app}
+{: #add-vr}
 
 1. Após ter transferido seu código por download, abra seu projeto. 
 2. Inclua uma instrução de importação para {{site.data.keyword.conversationshort}}
@@ -182,18 +182,18 @@ func main() {
 {: codeblock}
 
 ## Usando kits iniciadores
-{: #vr_starterkits}
+{: #starterkits-vr}
 
-Com kits do iniciador, é possível alavancar de forma rápida e fácil os recursos do {{site.data.keyword.cloud_notm}}. É possível incluir o {{site.data.keyword.vr}} em qualquer back-end do lado do servidor usando os kits do iniciador. O kit do iniciador do Chatbot for iOS with Watson ilustra como usar os recursos de deep learning do {{site.data.keyword.vr}}, incluindo uma interface de língua natural em seu aplicativo que automatiza interações com seus usuários finais.
+Com kits do iniciador, é possível alavancar de forma rápida e fácil os recursos do {{site.data.keyword.cloud_notm}}. É possível incluir o {{site.data.keyword.visualrecognitionshort}} em qualquer back-end do lado do servidor usando os kits do iniciador. O kit do iniciador do Chatbot for iOS with Watson ilustra como usar os recursos de deep learning do {{site.data.keyword.visualrecognitionshort}}, incluindo uma interface de língua natural em seu aplicativo que automatiza interações com seus usuários finais.
 
-1. Selecione o [kit do iniciador](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
+1. Selecione o [kit do iniciador](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
 2. Crie o projeto com os serviços padrão.
-3. Clique em **Incluir recursos > Watson > {{site.data.keyword.vr}}**.
+3. Clique em **Incluir recursos > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Faça download do projeto clicando em **Fazer download do código**. É possível localizar as credenciais de serviço no arquivo `config/local-dev.json`.
 
-## Próximas Etapas
-{: #assistant_next}
+## Etapas Seguintes
+{: #next-vr}
 
 Ótimo trabalho! Você incluiu o Reconhecimento Visual em seu app. Tente uma das opções a seguir para manter o ritmo:
 * Confira o [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Aproveite todos os recursos que o [{{site.data.keyword.vr}}](/docs/services/vr/index.html) tem para oferecer.
+* Aproveite todos os recursos que o [{{site.data.keyword.visualrecognitionshort}}](/docs/services/vr/index.html) tem para oferecer.

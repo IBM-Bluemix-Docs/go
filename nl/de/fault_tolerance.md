@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-10"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -62,6 +62,7 @@ router.Use(HystrixHandler("mycommand"))
 {: codeblock}
 
 ## Hystrix-Metriken gegenüber Prometheus zugänglich machen (optional)
+{: #hystrix-optional}
 
 Bevor Sie Hystrix zu Prometheus hinzufügen können, muss Ihre App mit Anwendungsmetriken konfiguriert werden. Zum Hinzufügen von Unterstützung für das Modul 'appmetrics' können Sie gemäß den Schritten im Abschnitt [Anwendungsmetriken mit Go-Apps](/docs/go/appmetrics.html) vorgehen.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,20 +14,20 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Text to Speech の追加 
-{: #assistant}
+{: #assistant-text}
 
-{{site.data.keyword.text_to_speech}} サービスを使用して、自然言語のテキスト入力を理解して音声に変換する Go アプリケーションを作成できます。 
+{{site.data.keyword.texttospeechfull}} サービスを使用して、自然言語のテキスト入力を理解して音声に変換する Go アプリケーションを作成できます。 
 
 統合の仕組み:
 
 * ユーザーは、アプリのフロントエンド・ユーザー・インターフェースと対話します。
-* アプリは、ユーザーの入力内容を {{site.data.keyword.watson}} Go SDK を使用して {{site.data.keyword.text_to_speech}} に送信します。
+* アプリは、ユーザーの入力内容を {{site.data.keyword.watson}} Go SDK を使用して {{site.data.keyword.texttospeechshort}} に送信します。
 * {{site.data.keyword.watson}} Go SDK はワークスペースに接続します。ワークスペースはダイアログ・フローとトレーニング・データのコンテナーです。
 * ワークスペースはユーザー入力を解釈し、音声応答をアプリに送信します。
 * アプリはユーザーに応答を表示します。
 
 ## 始める前に
-{: #before-you-begin}
+{: #prereqs-text}
 
 以下のようにして {{site.data.keyword.watson}} Go SDK をインストールします。
 ```bash
@@ -36,11 +36,11 @@ go get github.com/watson-developer-cloud/go-sdk
 {: pre}
 
 ## アプリへの Text to Speech の追加
-{: #add-a-text-to-speech-to-your-app}
+{: #existing-text}
 
 1. コードをダウンロードしたら、プロジェクトを開きます。 
-2. {{site.data.keyword.text_to_speech}} の import ステートメントを追加します。
-3. サービスをインスタンス化します。以下の例では、`textToSpeech` というサービスを使用します。 
+2. {{site.data.keyword.texttospeechshort}} の import ステートメントを追加します。
+3. サービスをインスタンス化します。 以下の例では、`textToSpeech` というサービスを使用します。 
 4. 以下の例は、SDK と対話して Text To Speech サービスを合成する方法を示しています。
 
 ```golang
@@ -103,18 +103,18 @@ func main() {
 {: codeblock}
 
 ## スターター・キットの使用
-{: #text_to_speech_starterkits}
+{: #starterkits-text}
 
-スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。スターター・キットを使用して、{{site.data.keyword.text_to_speech}} を任意のサーバー・サイドのバックエンドに追加できます。 Chatbot for iOS with Watson Starter Kit では、エンド・ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.text_to_speech}} のディープ・ラーニング機能を使用する方法について説明しています。
+スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。 スターター・キットを使用して、{{site.data.keyword.texttospeechshort}} を任意のサーバー・サイドのバックエンドに追加できます。Chatbot for iOS with Watson Starter Kit では、エンド・ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.texttospeechshort}} のディープ・ラーニング機能を使用する方法について説明しています。
 
-1. 使用する[スターター・キット](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}を選択します。
+1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}を選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
-3. **「リソースの追加」>「Watson」>「{{site.data.keyword.text_to_speech}}」**をクリックします。
-4. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。サービス資格情報は、`config/local-dev.json` ファイルにあります。
+3. **「リソースの追加」>「Watson」>「{{site.data.keyword.texttospeechshort}}」**をクリックします。
+4. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。 サービス資格情報は、`config/local-dev.json` ファイルにあります。
 
 ## 次のステップ
-{: #assistant_next}
+{: #next-text}
 
-お疲れさまでした。Text To Speech がアプリに追加されました。この調子で、以下のいずれかのオプションを試してみてください。
+お疲れさまでした。Text To Speech がアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 * [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window} を使ってみる。
-* [{{site.data.keyword.text_to_speech}}](/docs/services/text_to_speech/index.html) が提供するすべての機能を利用する。
+* [{{site.data.keyword.texttospeechshort}}](/docs/services/text_to_speech/index.html) が提供するすべての機能を利用する。

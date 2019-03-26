@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -13,23 +13,23 @@ lastupdated: "2018-09-25"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Aggiunta di una chatbot 
-{: #assistant}
+# Aggiunta di una chatbot
+{: #assistant-chatbot}
 
 Puoi utilizzare il servizio {{site.data.keyword.conversationshort}} per creare applicazioni Go che comprendono l'input in linguaggio naturale e rispondono agli utenti con una conversazione simile a quella umana.
 
-Come funziona l'integrazione: 
+Come funziona l'integrazione:
 
 * Gli utenti interagiscono con l'interfaccia utente di frontend della tua applicazione.
 * La tua applicazione invia l'input utente a {{site.data.keyword.conversationshort}} utilizzando l'SDK Go {{site.data.keyword.ibmwatson}}.
 * L'SDK Go {{site.data.keyword.watson}} stabilisce una connessione a uno spazio di lavoro, che è un contenitore per il tuo flusso di dialogo e i tuoi dati di training.
-* Lo spazio di lavoro interpreta l'input utente e indirizza il flusso della conversazione, inviando una risposta alla tua applicazione. 
+* Lo spazio di lavoro interpreta l'input utente e indirizza il flusso della conversazione, inviando una risposta alla tua applicazione.
 * Il frontend della tua applicazione condivide la risposta audio con l'utente come un `mp3` riproducibile o un file scaricabile.
 
 Puoi aggiungere l'assistente virtuale a una nuova applicazione kit starter Go o a un'applicazione Go esistente.
 
-## Prima di cominciare 
-{: #before-you-begin}
+## Prima di cominciare
+{: #prereqs-chatbot}
 
 Installa l'SDK Go {{site.data.keyword.watson}}:
 ```bash
@@ -38,9 +38,9 @@ go get github.com/watson-developer-cloud/go-sdk
 {: codeblock}
 
 ## Aggiunta di un assistente virtuale alla tua applicazione Go esistente
-{: #add-a-virtual-assistant-to-your-app}
+{: #existing-chatbot}
 
-1. Dopo aver scaricato il codice, apri il tuo progetto. 
+1. Dopo aver scaricato il codice, apri il tuo progetto.
 
 2. Aggiungi un'istruzione di importazione per {{site.data.keyword.conversationshort}}.
 
@@ -132,18 +132,18 @@ go get github.com/watson-developer-cloud/go-sdk
   {: codeblock}
 
 ## Aggiunta di una chatbot utilizzando i kit starter
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
 Con i kit starter, puoi velocemente e facilmente utilizzare le funzionalità native di {{site.data.keyword.cloud_notm}}. Puoi aggiungere {{site.data.keyword.conversationshort}} a qualsiasi backend lato server utilizzando un kit starter. Il kit starter Watson Chatbot for iOS illustra come utilizzare le funzionalità di apprendimento approfondito di {{site.data.keyword.conversationshort}}, aggiungendo un'interfaccia di linguaggio naturale alla tua applicazione che automatizza le interazioni con i tuoi utenti.
 
-1. Seleziona il [kit starter](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} con cui vuoi lavorare. 
-2. Crea il progetto con i servizi predefiniti. 
+1. Seleziona il [kit starter](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} con cui vuoi lavorare.
+2. Crea il progetto con i servizi predefiniti.
 3. Fai clic su **Add Resources > Watson > {{site.data.keyword.conversationshort}}**.
-4. Scarica il progetto facendo clic su **Download Code**. Puoi trovare le credenziali del servizio nel file `config/local-dev.json`. 
+4. Scarica il progetto facendo clic su **Download Code**. Puoi trovare le credenziali del servizio nel file `config/local-dev.json`.
 
 ## Passi successivi
-{: #assistant_next}
+{: #next-chatbot}
 
-Ottimo lavoro. Hai aggiunto un assistente di intelligenza artificiale alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni: 
+Ottimo lavoro. Hai aggiunto un assistente di intelligenza artificiale alla tua applicazione. Non fermarti ora e continua provando una delle seguenti opzioni:
 * Consulta l'[SDK Go {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
 * Avvaliti di tutte le funzioni che [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) ha da offrire.

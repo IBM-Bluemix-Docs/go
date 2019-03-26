@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,20 +14,20 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Incluindo texto para fala 
-{: #assistant}
+{: #assistant-text}
 
-É possível usar o serviço {{site.data.keyword.text_to_speech}} para construir aplicativos Go que entendem a entrada de texto de língua natural e a convertem em áudio. 
+É possível usar o serviço {{site.data.keyword.texttospeechfull}} para construir aplicativos Go que entendem a entrada de texto de língua natural e a convertem em áudio. 
 
 Como a integração funciona:
 
 * Os usuários interagem com a interface com o usuário de front-end de seu app.
-* Seu app envia a entrada do usuário para o {{site.data.keyword.text_to_speech}} usando o {{site.data.keyword.watson}} Go SDK.
+* Seu app envia a entrada do usuário para o {{site.data.keyword.texttospeechshort}} usando o {{site.data.keyword.watson}} Go SDK.
 * O {{site.data.keyword.watson}} Go SDK se conecta a uma área de trabalho, que é um contêiner para o seu fluxo de diálogo e os seus dados de treinamento.
 * A área de trabalho interpreta a entrada do usuário e envia uma resposta de áudio para seu app.
 * Seu app exibe a resposta para o usuário.
 
 ## Antes de começar
-{: #before-you-begin}
+{: #prereqs-text}
 
 Instale o {{site.data.keyword.watson}} Go SDK:
 ```bash
@@ -36,10 +36,10 @@ go get github.com/watson-developer-cloud/go-sdk
 {: pre}
 
 ## Incluindo texto para fala em seu app
-{: #add-a-text-to-speech-to-your-app}
+{: #existing-text}
 
 1. Depois de fazer download do código, abra seu projeto. 
-2. Inclua uma instrução de importação para {{site.data.keyword.text_to_speech}}
+2. Inclua uma instrução de importação para {{site.data.keyword.texttospeechshort}}
 3. Instancie o serviço. O exemplo usa um chamado `textToSpeech`. 
 4. O exemplo a seguir mostra como é possível interagir com o SDK para sintetizar um serviço de Texto para Fala.
 
@@ -103,18 +103,18 @@ func main() {
 {: codeblock}
 
 ## Usando kits iniciadores
-{: #text_to_speech_starterkits}
+{: #starterkits-text}
 
-Com kits do iniciador, é possível usar os recursos do {{site.data.keyword.cloud_notm}} de maneira rápida e fácil. É possível incluir o {{site.data.keyword.text_to_speech}} em qualquer back-end do lado do servidor usando os kits do iniciador. O kit do iniciador do Chatbot for iOS with Watson ilustra como usar os recursos de deep learning do {{site.data.keyword.text_to_speech}}, incluindo uma interface de língua natural em seu aplicativo que automatiza interações com seus usuários finais.
+Com kits do iniciador, é possível usar os recursos do {{site.data.keyword.cloud_notm}} de maneira rápida e fácil. É possível incluir o {{site.data.keyword.texttospeechshort}} em qualquer back-end do lado do servidor usando os kits do iniciador. O kit do iniciador do Chatbot for iOS with Watson ilustra como usar os recursos de deep learning do {{site.data.keyword.texttospeechshort}}, incluindo uma interface de língua natural em seu aplicativo que automatiza interações com seus usuários finais.
 
-1. Selecione o [kit do iniciador](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
+1. Selecione o [kit do iniciador](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} com o qual você deseja trabalhar.
 2. Crie o projeto com os serviços padrão.
-3. Clique em **Incluir recursos > Watson > {{site.data.keyword.text_to_speech}}**.
+3. Clique em **Incluir recursos > Watson > {{site.data.keyword.texttospeechshort}}**.
 4. Faça download do projeto clicando em **Fazer download do código**. É possível localizar as credenciais de serviço no arquivo `config/local-dev.json`.
 
-## Próximas Etapas
-{: #assistant_next}
+## Etapas Seguintes
+{: #next-text}
 
 Ótimo trabalho! Você incluiu Texto para Fala em seu app. Tente uma das opções a seguir para manter o ritmo:
 * Confira o [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Tire proveito de todos os recursos que o [{{site.data.keyword.text_to_speech}}](/docs/services/text_to_speech/index.html) oferece.
+* Tire proveito de todos os recursos que o [{{site.data.keyword.texttospeechshort}}](/docs/services/text_to_speech/index.html) oferece.

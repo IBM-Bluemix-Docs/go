@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-10"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-10-10"
 # Go アプリでのフォールト・トレランスのセットアップ
 {: #fault-tolerance}
 
-フォールト・トレランスを使用すると、コンポーネントで障害が発生した場合や応答しなくなった場合に、アプリケーションを実行し続けることができます。既存の Go アプリケーションにフォールト・トレランスを追加したり、生成された Go アプリケーションからこれらの機能を有効にしたりすることもできます。このチュートリアルでは、[Hystrix パッケージ](https://godoc.org/github.com/afex/hystrix-go/hystrix)を使用して Go アプリケーションにフォールト・トレランス・サポートを追加する方法を中心に説明します。
+フォールト・トレランスを使用すると、コンポーネントで障害が発生した場合や応答しなくなった場合に、アプリケーションを実行し続けることができます。 既存の Go アプリケーションにフォールト・トレランスを追加したり、生成された Go アプリケーションからこれらの機能を有効にしたりすることもできます。 このチュートリアルでは、[Hystrix パッケージ](https://godoc.org/github.com/afex/hystrix-go/hystrix)を使用して Go アプリケーションにフォールト・トレランス・サポートを追加する方法を中心に説明します。
 
 ## 既存の Go アプリへのフォールト・トレランスの追加
 {: #add-fault-tolerance}
@@ -43,9 +43,9 @@ func HystrixHandler(command string) gin.HandlerFunc {
 ``` 
 {: codeblock}
 
-障害の処理は、使用されている Go アプリケーションのタイプによって異なります。Web アプリの場合、障害が発生すると 500 ページにリダイレクトされます。マイクロサービスの場合は、エラーを指定する JSON オブジェクトが返されます。
+障害の処理は、使用されている Go アプリケーションのタイプによって異なります。 Web アプリの場合、障害が発生すると 500 ページにリダイレクトされます。マイクロサービスの場合は、エラーを指定する JSON オブジェクトが返されます。
 
-このミドルウェアは、構成済みコマンドであるストリングを使用します。コマンドの構成は、`main` 関数で以下のように実行する必要があります。
+このミドルウェアは、構成済みコマンドであるストリングを使用します。 コマンドの構成は、`main` 関数で以下のように実行する必要があります。
 ```go
 hystrix.ConfigureCommand("mycommand", hystrix.CommandConfig{
   Timeout:               1000,
@@ -62,16 +62,17 @@ router.Use(HystrixHandler("mycommand"))
 {: codeblock}
 
 ## Hystrix メトリックの Prometheus への公開 (オプション)
+{: #hystrix-optional}
 
-Hystrix を Prometheus に追加する前に、アプリケーション・メトリックを使用してアプリを構成する必要があります。『[Go アプリでのアプリケーション・メトリックの使用](/docs/go/appmetrics.html)』トピックの手順に従って、アプリケーション・メトリック・サポートを追加できます。
+Hystrix を Prometheus に追加する前に、アプリケーション・メトリックを使用してアプリを構成する必要があります。 『[Go アプリでのアプリケーション・メトリックの使用](/docs/go/appmetrics.html)』トピックの手順に従って、アプリケーション・メトリック・サポートを追加できます。
 
-Hystrix は、メトリック・データを取得してメトリック・コレクターに公開する機能を提供します。Hystrix を prometheus に公開するには、以下のようにして metric_collector パッケージも追加する必要があります。
+Hystrix は、メトリック・データを取得してメトリック・コレクターに公開する機能を提供します。 Hystrix を prometheus に公開するには、以下のようにして metric_collector パッケージも追加する必要があります。
 ```
 dep ensure -add "github.com/afex/hystrix-go/hystrix/metric_collector"
 ```
 {: codeblock}
 
-`metric_collector` の他に、追加ファイル `prometheus_collector.go` を Go アプリケーションに追加する必要があります。このファイルは[こちら](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go)にあります。 このファイルは `plugins` パッケージに追加する必要があります。
+`metric_collector` の他に、追加ファイル `prometheus_collector.go` を Go アプリケーションに追加する必要があります。 このファイルは[こちら](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go)にあります。 このファイルは `plugins` パッケージに追加する必要があります。
 
 2 つの追加インポートが必要です。
 ```go

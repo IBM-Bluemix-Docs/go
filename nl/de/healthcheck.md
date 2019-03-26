@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-17"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -37,19 +37,19 @@ Im Vergleich hierzu verwendet Cloud Foundry einen Statusendpunkt. Wenn diese Pr�
 
 Die folgende Tabelle stellt eine Orientierungshilfe für die Antworten dar, die Bereitschaft (Readiness), Aktivität (Liveness) und einzelne Zustandsendpunkte liefern müssten.
 
-| Zustand        | Bereitschaft/Readiness      | Aktivität/Liveness         | Status                    |
+| Zustand    | Bereitschaft/Readiness                   | Aktivität/Liveness                   | Status                    |
 |----------|-----------------------------|----------------------------|---------------------------|
-|                | Wenn nicht 'OK', kein Laden | Wenn nicht 'OK', Neustart  | Wenn nicht 'OK', Neustart |
-| Wird gestartet | 503 - Nicht verfügbar       | 200 - OK                   | Test durch Verzögerung vermeiden |
-| Aktiv          | 200 - OK                    | 200 - OK                   | 200 - OK                  |
-| Wird gestoppt  | 503 - Nicht verfügbar       | 200 - OK                   | 503 - Nicht verfügbar     |
-| Inaktiv        | 503 - Nicht verfügbar       | 503 - Nicht verfügbar      | 503 - Nicht verfügbar     |
+|          | Wenn nicht 'OK', kein Laden       | Wenn nicht 'OK', Neustart      | Wenn nicht 'OK', Neustart     |
+| Wird gestartet | 503 - Nicht verfügbar           | 200 - OK                   | Test durch Verzögerung vermeiden   |
+| Aktiv       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| Wird gestoppt | 503 - Nicht verfügbar           | 200 - OK                   | 503 - Nicht verfügbar         |
+| Inaktiv     | 503 - Nicht verfügbar           | 503 - Nicht verfügbar          | 503 - Nicht verfügbar         |
 | Mit Fehler(n)  | 500 - Serverfehler          | 500 - Serverfehler         | 500 - Serverfehler        |
 
 ## Statusprüfung zu einer vorhandenen Go-App hinzufügen
 {: #add-healthcheck-existing}
 
-Zu einer vorhandenen `Gin-Gonic`-Anwendung können Sie eine minimale Prüfung des Status oder der Aktivität (Liveness) hinzufügen, indem Sie eine neue Route einführen, wie im folgenden Beispiel dargestellt: 
+Zu einer vorhandenen `Gin-Gonic`-Anwendung können Sie eine minimale Prüfung des Status oder der Aktivität (Liveness) hinzufügen, indem Sie eine neue Route einführen, wie im folgenden Beispiel dargestellt:
 ```go
 func HealthGET(c *gin.Context) {
   c.JSON(200, gin.H{
@@ -84,14 +84,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Empfehlungen für Prüfungen der Bereitschaft (Readiness) und Aktivität (Liveness)
-{: #recommendations}
+{: #recommend-healthcheck}
 
 Prüfungen der Bereitschaft (Readiness) sollten die Funktionsfähigkeit von Verbindungen zu nachgeschalteten Services in ihrem Ergebnis berücksichtigen, wenn es keine vertretbare Fallbacklösung für den Fall gibt, dass der nachgeschaltete Service nicht verfügbar ist. Dies bedeutet nicht, dass die durch den nachgeschalteten Service bereitgestellte Statusprüfung direkt aufgerufen wird, da die Infrastruktur dies für Sie prüft. Erwägen Sie stattdessen eine Überprüfung des Status der vorhandenen Referenzen, die Ihre Anwendung zu nachgeschalteten Services hat. Dabei könnte es sich um eine JMS-Verbindung zu WebSphere MQ oder um einen initialisierten Kafka-Konsumenten oder -Produzenten handeln. Wenn Sie die Funktionsfähigkeit interner Referenzen zu nachgeschalteten Services überprüfen, sollten Sie das Ergebnis zwischenspeichern, um die Auswirkungen der Statusüberprüfung auf Ihre Anwendung zu minimieren.
 
 Im Gegensatz dazu wird bei einer Prüfung der Aktivität (Liveness) ganz bewusst entschieden, was geprüft wird, da ein Fehlschlagen der Prüfung die sofortige Beendigung des Prozesses zur Folge hat. Ein einfacher HTTP-Endpunkt, der stets `{"status": "UP"}` mit dem Statuscode `200` zurückgibt, ist eine angemessene Wahl.
 
 ## Prüfungen der Bereitschaft (Readiness) und Aktivität (Liveness) in Kubernetes konfigurieren
-{: #config_probes}
+{: #config_probes-healthcheck}
 
 Deklarieren Sie gemeinsam mit Ihrer Kubernetes-Bereitstellung Prüfungen der Bereitschaft (Readiness) und der Aktivität (Liveness). Beide Prüfungen verwenden dieselben Konfigurationsparameter:
 

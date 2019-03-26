@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -43,6 +43,8 @@ Nas etapas a seguir, dois aplicativos pequenos (um front-end, um back-end) são 
   {: codeblock}
 
 ### Incluindo rastreio no aplicativo do servidor
+{: #tracing-go}
+
 Algumas instruções são necessárias para incluir o rastreio em seu aplicativo do servidor. Primeiro, deve-se criar um rastreador.
 
 Para criar um rastreador, forneça o seguinte:

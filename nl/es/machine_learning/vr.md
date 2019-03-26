@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,27 +14,27 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Adición de Visual Recognition
-{: #assistant}
+{: #assistant-vr}
 
-Puede utilizar el servicio {{site.data.keyword.vr}} para crear aplicaciones Go que comprendan la entrada de lenguaje natural y respondan a los usuarios con conversación de tipo humano.
+Puede utilizar el servicio {{site.data.keyword.visualrecognitionshort}} para crear aplicaciones Go que comprendan la entrada de lenguaje natural y respondan a los usuarios con conversación de tipo humano.
 
 Funcionamiento de la integración:
 
 * Los usuarios interactúan con la interfaz de usuario frontal de su app.
-* La app envía la entrada de usuario a {{site.data.keyword.vr}} utilizando el SDK de Go de {{site.data.keyword.watson}}.
+* La app envía la entrada de usuario a {{site.data.keyword.visualrecognitionshort}} utilizando el SDK de Go de {{site.data.keyword.watson}}.
 * El SDK de Go de {{site.data.keyword.watson}} se conecta a un espacio de trabajo, que es un contenedor para el flujo de diálogo y los datos de entrenamiento.
 * El espacio de trabajo interpreta la entrada de usuario y dirige el flujo de la conversación, enviando una respuesta a la app.
 * La app muestra la respuesta para el usuario.
 
 ## Antes de empezar
-{: #before-you-begin}
+{: #prereqs-vr}
 
 Instale el SDK de Go de {{site.data.keyword.watson}}:
 ```bash
 go get github.com/watson-developer-cloud/go-sdk
 ```
 ## Adición del servicio Visual Recognition a la app
-{: #add-a-virtual-assistant-to-your-app}
+{: #add-vr}
 
 1. Tras descargar su código, abra el proyecto. 
 2. Añada una sentencia de importación para {{site.data.keyword.conversationshort}}.
@@ -182,18 +182,18 @@ func main() {
 {: codeblock}
 
 ## Utilización de los kits de inicio
-{: #vr_starterkits}
+{: #starterkits-vr}
 
-Con los kits de inicio, puede aprovechar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.vr}} a cualquier programa de fondo de lado del servidor utilizando los kits de inicio. El Kit de inicio Chatbot for iOS with Watson ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.vr}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios finales.
+Con los kits de inicio, puede aprovechar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.visualrecognitionshort}} a cualquier programa de fondo de lado del servidor utilizando los kits de inicio. El Kit de inicio Chatbot for iOS with Watson ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.visualrecognitionshort}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios finales.
 
-1. Seleccione el [kit de inicio](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} con el que desee trabajar.
+1. Seleccione el [kit de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} con el que desee trabajar.
 2. Cree el proyecto con los servicios predeterminados.
-3. Pulse **Añadir recursos > Watson > {{site.data.keyword.vr}}**.
+3. Pulse **Añadir recursos > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Descargue el proyecto pulsando **Descargar código**. Puede encontrar las credenciales de servicio en el archivo `config/local-dev.json`.
 
 ## Siguientes pasos
-{: #assistant_next}
+{: #next-vr}
 
 ¡Buen trabajo! Ha añadido el servicio Visual Recognition a la app. Mantenga el ritmo probando una de las opciones siguientes:
 * Consulte el [SDK de Go de {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Aproveche todas las características que [{{site.data.keyword.vr}}](/docs/services/vr/index.html) tiene que ofrecer.
+* Aproveche todas las características que [{{site.data.keyword.visualrecognitionshort}}](/docs/services/vr/index.html) tiene que ofrecer.

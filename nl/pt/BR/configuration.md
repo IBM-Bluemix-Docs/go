@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -21,11 +21,13 @@ Diretrizes padronizadas estão disponíveis para seguir para o desenvolvimento d
 Se for necessário incluir o suporte de Nuvem nos aplicativos Go existentes ou criar aplicativos Go com Kits do Iniciador, o objetivo será fornecer portabilidade para uso com qualquer plataforma de desenvolvimento.
 
 ## Incluindo suporte de Nuvem em aplicativos Go existentes
-{: #add-ibm-cloud-env-golang}
+{: #add-cloud-support}
 
 O módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang) agrega variáveis de ambiente de vários provedores em Nuvem, como CloudFoundry e Kubernetes, portanto, o aplicativo é independente do ambiente.
 
 ### Instalando o módulo `ibm-cloud-env-golang`
+{: #install-module}
+
 1. Instale o módulo `ibm-cloud-env-golang` com o comando a seguir:
   ```bash
   go get github.com/ibm-developer/ibm-cloud-env-golang
@@ -39,7 +41,7 @@ O módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-en
   ```
   {: codeblock}
 
-  Como o Go não suporta parâmetros padrão, um arquivo padrão `mappings.json` não é fornecido. Se o caminho de arquivo de mapeamentos não estiver especificado em `IBMCloudEnv.Initialize()`, um erro será registrado.
+  Como o Go não suporta parâmetros padrão, um arquivo padrão `mappings.json` não é fornecido. Se o caminho de arquivo de mapeamentos não estiver especificado em `IBMCloudEnv.Initialize()`, um erro será registrado. 
   {: tip}
 
   Arquivo `mappings.json` de exemplo:
@@ -66,11 +68,13 @@ O módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-en
   {: codeblock}
 
 ### Usando os valores em um app Go
+{: #values-config}
+
 Recupere os valores em seu aplicativo usando os comandos a seguir.
 
 1. Recuperar a variável `service1credentials`:
   ```golang
-  service1credentials := IBMCloudEnv.GetDictionary("service1-credentials");
+  service1credentials := IBMCloudEnv.GetDictionary("service1-credentials"); 
   ```
   {: codeblock}
 
@@ -90,9 +94,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 {: codeblock}
 
 ## Usando o gerenciador de configuração Go dos apps do Kit do Iniciador
-Os apps Go que são criados com [Kits do Iniciador](https://console.bluemix.net/developer/appservice/starter-kits/) vêm automaticamente com credenciais e configurações necessárias para execução em muitos ambientes de implementação na nuvem (CF, K8s e Functions).
+Os apps Go que são criados com [Kits do Iniciador](https://cloud.ibm.com/developer/appservice/starter-kits/) vêm automaticamente com credenciais e configurações necessárias para execução em muitos ambientes de implementação na nuvem (CF, K8s e Functions).
 
 ### Entendendo credenciais de serviço
+{: credentials-config}
 
 Suas informações de configuração de aplicativo para serviços são armazenadas no arquivo `localdev-config.json` no diretório `/server/config`. O arquivo fica no diretório `.gitignore` para evitar que informações confidenciais sejam armazenadas no Git. As informações de conexão de qualquer serviço configurado que é executado localmente, como nome do usuário, senha e nome do host, são armazenadas nesse arquivo.
 
@@ -106,8 +111,9 @@ Quando você enviar seu aplicativo por push para o {{site.data.keyword.cloud_not
 
 * **Kubernetes**: as credenciais de serviço são obtidas de variáveis de ambiente individuais por serviço.
 
+* **{{site.data.keyword.cloud_notm}} Container Service**: credenciais de serviço são obtidas de instâncias do servidor virtual ou do {{site.data.keyword.openwhisk}} (Openwhisk).
 
 ## Próximas Etapas
-{: #next_steps notoc}
+{: #next_steps-config notoc}
 
 O `ibm-cloud-env-golang` suporta a procura de valores usando quatro tipos de padrão de procura: `user-provided`, `cloudfoundry`, `env` e `file`. Se quiser verificar outros padrões de procura suportados e exemplos de padrão de procura, verifique a seção [Uso](https://github.com/ibm-developer/ibm-cloud-env-golang#usage).

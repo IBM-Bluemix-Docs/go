@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-02"
+  years: 2017, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -13,12 +13,12 @@ lastupdated: "2018-10-02"
 {:pre: .pre}
 
 #  SDKs
-{: #sdk}
+{: #sdk-go}
 
 Wenn Sie {{site.data.keyword.cloud_notm}}-SDKs zu Ihrer App hinzufügen wollen, wählen Sie zunächst die SDKs aus, die Sie verwenden wollen, und konfigurieren Sie dann Ihren Abhängigkeitsmanager so, dass er die SDKs mit einer Pull-Operation in Ihre App extrahiert.
 
 ## Client-SDKs
-{: #client_sdk}
+{: #client_sdk-go}
 
 Sie können die folgenden SDKs in Ihrer Go-Anwendung verwenden:
 * [Go-SDK für MongoDB ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/mongodb/mongo-go-driver)

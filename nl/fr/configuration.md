@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -21,11 +21,13 @@ Des directives normalisées sont disponibles pour le développement d'applicatio
 Que vous ayez besoin d'ajouter la prise en charge du cloud aux applications Go existantes ou de créer des applications Go avec des kits de démarrage, l'objectif est de fournir une portabilité pour permettre une utilisation avec n'importe quelle plateforme de développement.
 
 ## Ajout de la prise en charge du cloud aux applications Go existantes
-{: #add-ibm-cloud-env-golang}
+{: #add-cloud-support}
 
 Le module [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang) regroupe les variables d'environnement de différents fournisseurs de cloud, tels que CloudFoundry et Kubernetes, de sorte que l'application est indépendante de l'environnement.
 
-### Installation du module `ibm-cloud-env-golang` 
+### Installation du module `ibm-cloud-env-golang`
+{: #install-module}
+
 1. Installez le module `ibm-cloud-env-golang` avec la commande suivante :
   ```bash
   go get github.com/ibm-developer/ibm-cloud-env-golang
@@ -39,7 +41,8 @@ Le module [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-en
   ```
   {: codeblock}
 
-  Comme Go ne prend pas en charge les paramètres par défaut, aucun fichier `mappings.json` par défaut n'est fourni. Si le chemin d'accès au fichier de mappage n'est pas spécifié dans `IBMCloudEnv.Initialize()`, une erreur est consignée.   {: tip}
+  Comme Go ne prend pas en charge les paramètres par défaut, aucun fichier `mappings.json` par défaut n'est fourni. Si le chemin d'accès au fichier de mappage n'est pas spécifié dans `IBMCloudEnv.Initialize()`, une erreur est consignée. 
+  {: tip}
 
   Exemple de fichier `mappings.json` :
   ```javascript
@@ -65,6 +68,8 @@ Le module [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-en
   {: codeblock}
 
 ### Utilisation des valeurs dans une application Go
+{: #values-config}
+
 Récupérez les valeurs de votre application à l'aide des commandes suivantes.
 
 1. Pour extraire la variable `service1credentials` :
@@ -89,9 +94,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 {: codeblock}
 
 ## Utilisation du gestionnaire de configuration Go depuis les applications du kit de démarrage
-Les applications Go créées avec les [kits de démarrage](https://console.bluemix.net/developer/appservice/starter-kits/) obtiennent automatiquement des données d'identification et des configurations qui sont requises pour une exécution dans de nombreux environnements de déploiement (CF, K8s et Functions).
+Les applications Go créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appservice/starter-kits/) obtiennent automatiquement des données d'identification et des configurations qui sont requises pour une exécution dans de nombreux environnements de déploiement (CF, K8s et Functions).
 
 ### Présentation des données d'identification de service
+{: credentials-config}
 
 Vos informations de configuration d'application pour les services sont stockées dans le fichier `localdev-config.json` du répertoire `/server/config`. Le fichier se trouve dans le répertoire `.gitignore` afin d'empêcher que les informations sensibles ne soient stockées dans Git. Les informations de connexion de tout service configuré qui s'exécute en local, comme le nom d'utilisateur, le mot de passe et le nom d'hôte, sont stockées dans ce fichier.
 
@@ -105,8 +111,9 @@ Lorsque vous envoyez par commande push votre application à {{site.data.keyword.
 
 * **Kubernetes** : Les données d'identification du service sont récupérées par service, à partir de variables d'environnement individuelles.
 
+* **{{site.data.keyword.cloud_notm}} Container Service** : Les données d'identification du service sont récupérées des instances de serveurs virtuels ou d'{{site.data.keyword.openwhisk}} (Openwhisk).
 
 ## Etapes suivantes
-{: #next_steps notoc}
+{: #next_steps-config notoc}
 
 Le module `ibm-cloud-env-golang` permet de rechercher des valeurs à l'aide de quatre types de modèles de recherche : `user-provided`, `cloudfoundry`, `env` et `file`. Si vous souhaitez consulter d'autres exemples de modèle de recherche, reportez-vous à la section [Usage](https://github.com/ibm-developer/ibm-cloud-env-golang#usage).

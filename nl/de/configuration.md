@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-02-04"
 
 ---
 
@@ -21,11 +21,13 @@ Es stehen standardisierte Richtlinien zur Verfügung, deren Einhaltung bei der E
 Unabhängig davon, ob Sie Cloud-Support zu vorhandenen Go-Anwendungen hinzufügen oder Go-Apps mit Starter-Kits erstellen müssen, ist als Ziel die Portierbarkeit zur Verwendung mit jeder beliebigen Entwicklungsplattform angestrebt.
 
 ## Cloud-Support zu vorhandenen Go-Anwendungen hinzufügen
-{: #add-ibm-cloud-env-golang}
+{: #add-cloud-support}
 
 Da das Modul [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang) Umgebungsvariablen von unterschiedlichen Cloud-Providern wie Cloud Foundry und Kubernetes aggregiert, ist die Anwendung umgebungsunabhängig.
 
 ### Modul `ibm-cloud-env-golang` installieren
+{: #install-module}
+
 1. Installieren Sie das Modul `ibm-cloud-env-golang` mit dem folgenden Befehl:
   ```bash
   go get github.com/ibm-developer/ibm-cloud-env-golang
@@ -39,7 +41,7 @@ Da das Modul [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud
   ```
   {: codeblock}
 
-  Da Go keine Standardparameter unterstützt, wird keine Standardversion der Datei `mappings.json` bereitgestellt. Wenn der Pfad der Zuordnungsdatei nicht in `IBMCloudEnv.Initialize()` angegeben ist, wird ein Fehler protokolliert.
+  Da Go keine Standardparameter unterstützt, wird keine Standardversion der Datei `mappings.json` bereitgestellt. Wenn der Pfad der Zuordnungsdatei nicht in `IBMCloudEnv.Initialize()` angegeben ist, wird ein Fehler protokolliert. 
   {: tip}
 
   Beispielversion der Datei `mappings.json`:
@@ -66,11 +68,13 @@ Da das Modul [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud
   {: codeblock}
 
 ### Werte in einer Go-App verwenden
+{: #values-config}
+
 Rufen Sie die Werte in Ihrer Anwendung mit den nachfolgend aufgeführten Befehlen ab.
 
 1. Variable `service1credentials` abrufen:
   ```golang
-  service1credentials := IBMCloudEnv.GetDictionary("service1-credentials");
+  service1credentials := IBMCloudEnv.GetDictionary("service1-credentials"); 
   ```
   {: codeblock}
 
@@ -90,9 +94,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 {: codeblock}
 
 ## Go-Konfigurationsmanager von Starter-Kit-Apps verwenden
-Go-Apps, die mit [Starter-Kits](https://console.bluemix.net/developer/appservice/starter-kits/) erstellt werden, werden automatisch mit den Berechtigungsnachweisen und Konfigurationen ausgestattet, die für die Ausführung in zahlreichen Cloud-Bereitstellungsumgebungen (CF, K8s und Functions) erforderlich sind.
+Go-Apps, die mit [Starter-Kits](https://cloud.ibm.com/developer/appservice/starter-kits/) erstellt werden, werden automatisch mit den Berechtigungsnachweisen und Konfigurationen ausgestattet, die für die Ausführung in zahlreichen Cloud-Bereitstellungsumgebungen (CF, K8s und Functions) erforderlich sind.
 
 ### Wissenswertes zu Serviceberechtigungsnachweisen
+{: credentials-config}
 
 Ihre Anwendungskonfigurationsdaten für Services werden in der Datei `localdev-config.json` im Verzeichnis `/server/config` gespeichert. Die Datei befindet sich im Verzeichnis `.gitignore`, um zu verhindern, dass sensible Informationen in Git gespeichert werden. In dieser Datei werden die Verbindungsinformationen (wie Benutzername, Kennwort und Hostname) für jeden konfigurierten Service gespeichert, der lokal ausgeführt wird.
 
@@ -106,8 +111,9 @@ Wenn Sie Ihre Anwendung mit einer Push-Operation an {{site.data.keyword.cloud_no
 
 * **Kubernetes**: Die Serviceberechtigungsnachweise werden aus einzelnen Umgebungsvariablen pro Service abgerufen.
 
+* **{{site.data.keyword.cloud_notm}} Container Service**: Die Serviceberechtigungsnachweise werden aus virtuellen Serverinstanzen oder {{site.data.keyword.openwhisk}} (Openwhisk) abgerufen. 
 
 ## Nächste Schritte
-{: #next_steps notoc}
+{: #next_steps-config notoc}
 
 Das Modul `ibm-cloud-env-golang` unterstützt die Suche nach Werten unter Verwendung von vier Suchmustertypen: `user-provided`, `cloudfoundry`, `env` und `file`. Wenn Sie weitere unterstützte Suchmuster und Suchmusterbeispiele ansehen möchten, überprüfen Sie den Inhalt des Abschnitts [Usage](https://github.com/ibm-developer/ibm-cloud-env-golang#usage) zur Syntax.

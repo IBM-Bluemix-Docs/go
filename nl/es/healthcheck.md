@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-17"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -41,7 +41,7 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 |----------|-----------------------------|----------------------------|---------------------------|
 |          | No es correcta y no se carga       | No es correcta y provoca un reinicio      | No es correcto y provoca un reinicio     |
 | Iniciando | 503 - No disponible           | 200 - Correcta                   | Utilizar retraso para evitar la prueba   |
-| Activo       | 200 - Bien                    | 200 - Bien                   | 200 - Bien                  |
+| Activo       | 200 - Bien                    | 200 - Correcta                   | 200 - Bien                  |
 | Deteniendo | 503 - No disponible           | 200 - Correcta                   | 503 - No disponible         |
 | Inactivo     | 503 - No disponible           | 503 - No disponible          | 503 - No disponible         |
 | Con errores  | 500 - Error del servidor          | 500 - Error del servidor         | 500 - Error del servidor        |
@@ -84,14 +84,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Recomendaciones para pruebas de actividad y preparación
-{: #recommendations}
+{: #recommend-healthcheck}
 
 Las pruebas de comprobación deben incluir la viabilidad de conexiones a servicios en sentido descendente en el resultado cuando no haya una reserva aceptable si el servicio en sentido descendente no está disponible. Esto no implica llamar a la comprobación de estado que proporciona directamente el servicio en sentido descendente, puesto que la infraestructura realiza la comprobación. En su lugar, considere la posibilidad de verificar el estado de las referencias existentes que tiene la aplicación en los servicios en sentido descendente: puede ser una conexión JMS a WebSphere MQ o un consumidor o productor Kafka inicializado. Si comprueba la viabilidad de referencias internas en servicios en sentido descendente, almacene en memoria caché el resultado para minimizar el impacto que tiene la comprobación de estado en la aplicación.
 
 Una prueba de actividad, por el contrario, tiene en cuenta lo que se comprueba, ya que un error puede provocar una terminación inmediata del proceso. Un punto final HTTP simple que siempre devuelva `{"status": "UP"}` con el código de estado `200` es una elección razonable.
 
 ## Configuración de pruebas de actividad y preparación en Kubernetes
-{: #config_probes}
+{: #config_probes-healthcheck}
 
 Declare las pruebas de actividad y preparación junto con el despliegue de Kubernetes. Ambas pruebas utilizan los mismos parámetros de configuración:
 
@@ -131,4 +131,4 @@ spec:
 ```
 {: codeblock}
 
-Para obtener más información, consulte cómo [Configurar pruebas de actividad y comprobación](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Para obtener más información, consulte cómo [Configurar pruebas de actividad y preparación](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).

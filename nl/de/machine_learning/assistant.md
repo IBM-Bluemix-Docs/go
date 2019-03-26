@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Chatbot hinzufügen
-{: #assistant}
+{: #assistant-chatbot}
 
 Mit dem {{site.data.keyword.conversationshort}}-Service können Sie Go-Anwendungen erstellen, die Eingaben in natürlicher Sprache verstehen und mit einer menschenähnlichen Unterhaltung auf Benutzer reagieren.
 
@@ -29,7 +29,7 @@ Funktionsweise der Integration:
 Sie können den virtuellen Assistenten zu einer neuen Go-Starter-Kit-App oder zu einer vorhandenen Go-App hinzufügen.
 
 ## Vorbereitende Schritte
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 Installieren Sie das {{site.data.keyword.watson}} Go-SDK:
 ```bash
@@ -38,7 +38,7 @@ go get github.com/watson-developer-cloud/go-sdk
 {: codeblock}
 
 ## Virtuellen Assistenten zu einer vorhandenen Go-App hinzufügen
-{: #add-a-virtual-assistant-to-your-app}
+{: #existing-chatbot}
 
 1. Öffnen Sie nach dem Herunterladen des Codes Ihr Projekt.
 
@@ -132,17 +132,17 @@ go get github.com/watson-developer-cloud/go-sdk
   {: codeblock}
 
 ## Chatbot unter Verwendung von Starter-Kits hinzufügen
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
 Mithilfe von Starter-Kits können Sie das Leistungsspektrum von {{site.data.keyword.cloud_notm}} rasch und ohne großen Aufwand nutzen. Mit einem Starter-Kit können Sie {{site.data.keyword.conversationshort}} zu jedem beliebigen serverseitigen Back-End-Programm hinzufügen. Das Starter-Kit 'Chatbot for iOS with Watson' veranschaulicht, wie Sie die Deep-Learning-Funktionalität von {{site.data.keyword.conversationshort}} nutzen können, indem Sie zu Ihrer Anwendung eine Schnittstelle für natürliche Sprache hinzufügen, die die Interaktionen mit den Benutzern automatisiert.
 
-1. Wählen Sie das [Starter-Kit](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} aus, mit dem Sie arbeiten möchten.
+1. Wählen Sie das [Starter-Kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} aus, mit dem Sie arbeiten möchten.
 2. Erstellen Sie das Projekt mit den Standardservices.
 3. Klicken Sie auf **Ressourcen hinzufügen > Watson > {{site.data.keyword.conversationshort}}**.
 4. Laden Sie das Projekt herunter, indem Sie auf **Code herunterladen** klicken. Die entsprechenden Serviceberechtigungsnachweise befinden sich in der Datei `config/local-dev.json`.
 
 ## Nächste Schritte
-{: #assistant_next}
+{: #next-chatbot}
 
 Hervorragende Arbeit! Sie haben einen AI-Assistenten zu Ihrer App hinzugefügt. Erhalten Sie die Dynamik aufrecht, indem Sie eine der folgenden Optionen ausprobieren:
 * Informieren Sie sich über das [Go-SDK für {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/go-sdk){:new_window}.

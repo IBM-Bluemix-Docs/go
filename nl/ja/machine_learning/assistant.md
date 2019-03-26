@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # チャットボットの追加
-{: #assistant}
+{: #assistant-chatbot}
 
 {{site.data.keyword.conversationshort}} サービスを使用して、自然言語による入力を理解して人間と会話しているかのようにユーザーに応答する Go アプリケーションを構築することができます。
 
@@ -29,7 +29,7 @@ lastupdated: "2018-09-25"
 新しい Go スターター・キット・アプリまたは既存の Go アプリに、仮想アシスタントを追加できます。
 
 ## 始める前に
-{: #before-you-begin}
+{: #prereqs-chatbot}
 
 以下のようにして {{site.data.keyword.watson}} Go SDK をインストールします。
 ```bash
@@ -38,7 +38,7 @@ go get github.com/watson-developer-cloud/go-sdk
 {: codeblock}
 
 ## 既存の Go アプリへの仮想アシスタントの追加
-{: #add-a-virtual-assistant-to-your-app}
+{: #existing-chatbot}
 
 1. コードをダウンロードしたら、プロジェクトを開きます。
 
@@ -64,7 +64,7 @@ go get github.com/watson-developer-cloud/go-sdk
   ```
   {: codeblock}
 
-3. サービスをインスタンス化します。以下の例では、`assistant` というサービスを使用します。
+3. サービスをインスタンス化します。 以下の例では、`assistant` というサービスを使用します。
 
   ```golang
   func main() {
@@ -84,7 +84,7 @@ go get github.com/watson-developer-cloud/go-sdk
   ```
   {: codeblock}
 
-4. ワークスペースに対して「GET」および「LIST」メソッドを使用して、サービスと対話します。
+4. ワークスペースに対して「GET」メソッドおよび「LIST」メソッドを使用して、サービスと対話します。
 
   以下のようにしてワークスペースをリストします。
   ```golang
@@ -132,18 +132,18 @@ go get github.com/watson-developer-cloud/go-sdk
   {: codeblock}
 
 ## スターター・キットを使用したチャットボットの追加
-{: #conversation_starterkits}
+{: #starterkits-chatbot}
 
-スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} のネイティブ機能を素早く簡単に利用できます。スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。Chatbot for iOS with Watson Starter Kit では、ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
+スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} のネイティブ機能を素早く簡単に利用できます。 スターター・キットを使用して、{{site.data.keyword.conversationshort}} を任意のサーバー・サイドのバックエンドに追加できます。 Chatbot for iOS with Watson Starter Kit では、ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.conversationshort}} のディープ・ラーニング機能を使用する方法について説明しています。
 
-1. 使用する[スターター・キット](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}を選択します。
+1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}を選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
 3. **「リソースの追加」>「Watson」>「{{site.data.keyword.conversationshort}}」**をクリックします。
-4. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。サービス資格情報は、`config/local-dev.json` ファイルにあります。
+4. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。 サービス資格情報は、`config/local-dev.json` ファイルにあります。
 
 ## 次のステップ
-{: #assistant_next}
+{: #next-chatbot}
 
-お疲れさまでした。 AI アシスタントがアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
+お疲れさまでした。AI アシスタントがアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 * [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window} を使ってみる。
 * [{{site.data.keyword.conversationshort}}](/docs/services/conversation/index.html) が提供するすべての機能を利用する。

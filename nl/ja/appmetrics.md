@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,9 +14,9 @@ lastupdated: "2018-10-02"
 {:tip: .tip}
 
 # Go アプリでのアプリケーション・メトリックの使用
-{: #metrics}
+{: #appmetrics}
 
-アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 CPU、メモリー、待ち時間、HTTP などのメトリックをライブで表示できることは、時間の経過とともにアプリケーションが効果的に実行されていることを確認するために不可欠です。メトリックに依存するクラウド・サービス (例えば、Cloud Foundry の[自動スケーリング](/docs/services/Auto-Scaling/index.html)など) を使用して、現行作業負荷に合わせて動的にインスタンスをスケーリングできます。 アプリケーション・メトリックを使用することによって、インスタンスのスケーリングや不要インスタンスのクリーンアップを行うタイミングを正確に把握して、コストを低く抑えることができます。
+アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 CPU、メモリー、待ち時間、HTTP などのメトリックをライブで表示できることは、時間の経過とともにアプリケーションが効果的に実行されていることを確認するために不可欠です。 メトリックに依存するクラウド・サービス (例えば、Cloud Foundry の[自動スケーリング](/docs/services/Auto-Scaling/index.html)など) を使用して、現行作業負荷に合わせて動的にインスタンスをスケーリングできます。 アプリケーション・メトリックを使用することによって、インスタンスのスケーリングや不要インスタンスのクリーンアップを行うタイミングを正確に把握して、コストを低く抑えることができます。
 
 アプリケーション・メトリックは、時系列データとして収集されます。 収集されたメトリックを集約して視覚化することは、以下のような一般的なパフォーマンス上の問題を特定するのに役立ちます。
 
@@ -34,17 +34,17 @@ Go アプリケーションにパフォーマンス・モニターを追加す�
 `promhttp` パッケージには、[Prometheus 構成](https://github.com/prometheus/client_golang)など、多くの拡張ポイントがあります。
 
 1. 例として、以下の単純な Go + Gin アプリケーション「Hello World」を使用します。
-  ```go
-  // imports above
-  func main() {
-      router := gin.Default()
+    ```go
+    // imports above
+    func main() {
+        router := gin.Default()
       router.GET("/", func(c *gin.Context) {
-          c.String(http.StatusOK, "Hello, World!")
+            c.String(http.StatusOK, "Hello, World!")
       }
-      router.Run(":3000")
+        router.Run(":3000")
   }
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 2. 以下のコマンドを使用して、パッケージを取得します。
   ```
@@ -75,7 +75,8 @@ Go アプリケーションにパフォーマンス・モニターを追加す�
   {: codeblock}
 
 ## スターター・キットでのアプリケーション・メトリックの使用
+{: #starterkits-appmetrics}
 
-スターター・キットで作成されたサーバー・サイドの Go アプリケーションは、`http://<hostname>:<port>/metrics` の [Prometheus エンドポイント](https://prometheus.io/)に自動的に付属します。このエンドポイントのコードは `server.go` にあります。
+スターター・キットで作成されたサーバー・サイドの Go アプリケーションには、`http://<hostname>:<port>/metrics` の下に [Prometheus エンドポイント](https://prometheus.io/)が自動的に付属します。 このエンドポイントのコードは `server.go` にあります。
 
 詳しくは、[GitHub Repository for Prometheus](https://github.com/prometheus/client_golang/) を参照してください。

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -16,7 +16,7 @@ lastupdated: "2018-10-02"
 # In Go protokollieren
 {: #logging_golang}
 
-Protokollnachrichten sind Zeichenfolgen, die Kontextinformationen zum Status und zur Aktivität des Microservice zum Zeitpunkt des Protokolls enthalten. Protokolle sind erforderlich, um zu diagnostizieren, wie und aus welchem Grund Services fehlschlagen, und spielen eine wichtige Rolle für die Überwachung von [Metriken](appmetrics.html) bei der Überwachung des Anwendungsstatus.
+Protokollnachrichten sind Zeichenfolgen, die Kontextinformationen zum Status und zur Aktivität des Microservice zum Zeitpunkt des Protokolls enthalten. Protokolle sind erforderlich, um zu diagnostizieren, wie und aus welchem Grund Services fehlschlagen, und spielen eine wichtige Rolle für die Überwachung von [Metriken](/docs/go/appmetrics.html) bei der Überwachung des Anwendungsstatus.
 
 Aufgrund der temporären Natur von Prozessen in Cloud-Umgebungen müssen Protokolle erfasst und zur Analyse an einen anderen Ort gesendet werden, normalerweise an eine zentrale Stelle. Die konsistenteste Methode für die Anmeldung in Cloud-Umgebungen besteht darin, Protokolleinträge an Standardausgabe- und Fehlerdatenströme zu senden und der Infrastruktur die übrige Verarbeitung zu überlassen.
 
@@ -53,13 +53,14 @@ Aufgrund der temporären Natur von Prozessen in Cloud-Umgebungen müssen Protoko
 Weitere Information zum Anpassen der Protokollnachrichten mit Appendern, Protokollebenen und Konfigurationsdetails enthält die offizielle [Logrus-Dokumentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0).
 
 ## Nächste Schritte
-{: #next_steps}
+{: #next_steps-logging}
 
 Hier erhalten Sie weitere Informationen zum Anzeigen der Protokolle in den einzelnen Bereitstellungsumgebungen:
 * [Kubernetes-Protokolle](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
-* [Cloud Foundry-Protokolle](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Aktivität in {{site.data.keyword.openwhisk}} protokollieren und überwachen](https://console.bluemix.net/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+* [Cloud Foundry-Protokolle](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - Audit und Protokollierung](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
+* [{{site.data.keyword.openwhisk}} - Protokolle und Überwachung](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 Hier erfahren Sie mehr über die Verwendung eines Protokollaggregators:
-* [{{site.data.keyword.cloud_notm}} Log Analysis](https://console.bluemix.net/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
 * [ELK-Stack in {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -43,6 +43,8 @@ En los pasos siguientes, se utilizan dos pequeñas aplicaciones (una frontal y u
   {: codeblock}
 
 ### Adición del rastreo a la aplicación de servidor
+{: #tracing-go}
+
 Son necesarias unas sentencias para añadir el rastreo a la aplicación de servidor. Primero, debe crear un rastreador.
 
 Para crear un rastreador, proporcione lo siguiente:

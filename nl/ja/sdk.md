@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-02"
+  years: 2017, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -13,12 +13,12 @@ lastupdated: "2018-10-02"
 {:pre: .pre}
 
 #  SDK
-{: #sdk}
+{: #sdk-go}
 
 {{site.data.keyword.cloud_notm}} SDK をアプリに追加するには、使用する SDK を選択し、依存関係マネージャーを構成して SDK をアプリにプルします。
 
 ## Client SDK
-{: #client_sdk}
+{: #client_sdk-go}
 
 Go アプリケーションでは、以下の SDK を使用できます。
 * [MongoDB Go SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/mongodb/mongo-go-driver)

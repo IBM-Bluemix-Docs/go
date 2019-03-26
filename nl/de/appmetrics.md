@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,11 +14,11 @@ lastupdated: "2018-10-02"
 {:tip: .tip}
 
 # Anwendungsmetriken mit Go-Apps verwenden
-{: #metrics}
+{: #appmetrics}
 
 Anwendungsmetriken sind wichtig für die Überwachung der Leistung Ihrer Anwendung. Eine Liveansicht von Metriken wie CPU, Speicher, Latenzzeit und HTTP-Metriken ist unverzichtbar, um sicherzustellen, dass Ihre Anwendung im Zeitablauf effektiv ausgeführt wird. Zur Anpassung an die aktuelle Workload durch dynamische Skalierung von Instanzen können Sie einen Cloud-Service wie den [Auto-Scaling-Service](/docs/services/Auto-Scaling/index.html) von Cloud Foundry verwenden, der sich auf Metriken stützt. Durch die Verwendung von Anwendungsmetriken werden Sie genau informiert, wann Sie Instanzen durch Scale-up oder Scale-down vertikal nach oben bzw. nach unten skalieren oder nicht mehr benötigte Instanzen bereinigen müssen, um die Kosten niedrig zu halten.
 
-Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Aggregieren und Visualisieren erfasster Metriken kann dabei helfen, allgemeine Leistungsprobleme zu erkennen, wie zum Beispiel die Folgenden: 
+Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Aggregieren und Visualisieren erfasster Metriken kann dabei helfen, allgemeine Leistungsprobleme zu erkennen, wie zum Beispiel die Folgenden:
 
 * Schleppende HTTP-Antwortzeiten auf manchen oder allen Routen
 * Geringer Durchsatz in der Anwendung
@@ -34,17 +34,17 @@ Zum Hinzufügen der Leistungsüberwachung zu Ihrer Go-Anwendung können Sie die 
 Das Paket `promhttp` enthält zahlreiche Erweiterungspunkte, unter anderem auch [Prometheus-Konfiguration](https://github.com/prometheus/client_golang).
 
 1. Sie können zum Beispiel die folgende einfache Go- und Gin-Anwendung vom Typ 'Hello World' verwenden:
-  ```go
-  // Obiges importieren
-  func main() {
-      router := gin.Default()
+    ```go
+    // Oben aufgeführte Daten importieren
+    func main() {
+        router := gin.Default()
       router.GET("/", func(c *gin.Context) {
-          c.String(http.StatusOK, "Hello, World!")
+            c.String(http.StatusOK, "Hello, World!")
       }
-      router.Run(":3000")
+        router.Run(":3000")
   }
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 2. Rufen Sie das Paket mit dem folgenden Befehl ab:
   ```
@@ -75,6 +75,7 @@ Das Paket `promhttp` enthält zahlreiche Erweiterungspunkte, unter anderem auch 
   {: codeblock}
 
 ## Anwendungsmetriken in Starter-Kits verwenden
+{: #starterkits-appmetrics}
 
 Die serverseitigen Go-Anwendungen, die aus Starter-Kits erstellt werden, sind automatisch mit dem [Prometheus-Endpunkt](https://prometheus.io/) unter `http://<hostname>:<port>/metrics` ausgestattet. Der Code für diesen Endpunkt befindet sich in `server.go`.
 

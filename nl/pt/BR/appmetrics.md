@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-10-02"
 {:tip: .tip}
 
 # Usando as métricas do aplicativo com apps Go
-{: #metrics}
+{: #appmetrics}
 
 Métricas de aplicativo são importantes para monitorar o desempenho de seu aplicativo. Ter uma visualização em tempo real de métricas como métricas de CPU, Memória, Latência e HTTP é essencial para assegurar que seu aplicativo esteja em execução efetivamente ao longo do tempo. É possível usar um serviço de nuvem como o [autoscaling](/docs/services/Auto-Scaling/index.html) do Cloud Foundry que depende de métricas para escalar dinamicamente instâncias para corresponder à carga de trabalho atual. Ao usar métricas do aplicativo, você é informado com precisão quando aumentar a escala, reduzir a escala ou limpar instâncias que não são mais necessárias para manter os custos baixos.
 
@@ -34,17 +34,17 @@ Para incluir monitoramento de desempenho em seu aplicativo Go, é possível usar
 O pacote `promhttp` possui muitos pontos de extensão, incluindo a [configuração de Prometheus](https://github.com/prometheus/client_golang).
 
 1. Por exemplo, use o aplicativo simples “Hello World” Go + Gin a seguir:
-  ```go
-  // imports above
-  func main() {
-      router := gin.Default()
+    ```go
+    // imports above
+    func main() {
+        router := gin.Default()
       router.GET("/", func(c *gin.Context) {
-          c.String(http.StatusOK, "Hello, World!")
+            c.String(http.StatusOK, "Hello, World!")
       }
-      router.Run(":3000")
+        router.Run(":3000")
   }
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 2. Obtenha o pacote com o comando a seguir:
   ```
@@ -75,6 +75,7 @@ O pacote `promhttp` possui muitos pontos de extensão, incluindo a [configuraç�
   {: codeblock}
 
 ## Usando as métricas do aplicativo em kits do iniciador
+{: #starterkits-appmetrics}
 
 Os aplicativos Go do lado do servidor que são criados pelos Kits do Iniciador vêm automaticamente com o [terminal Prometheus](https://prometheus.io/) sob `http://<hostname>:<port>/metrics`. O código para esse terminal está em `server.go`.
 

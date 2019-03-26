@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-17"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -37,14 +37,14 @@ Como uma nota para comparação, o Cloud Foundry usa um terminal de funcionament
 
 A tabela a seguir fornece orientação sobre as respostas que os terminais de prontidão, de atividade e de funcionamento singular devem fornecer.
 
-| Estado    | Prontidão                  | Atividade                  | Funcionamento             |
+| Estado    | Prontidão                   | Atividade                   | Funcionamento                    |
 |----------|-----------------------------|----------------------------|---------------------------|
-|          | Não OK não causa carregamento | Não OK causa reinicialização  | Não OK causa reinicialização |
+|          | Não OK não causa carregamento       | Não OK causa reinicialização      | Não OK causa reinicialização     |
 | Iniciando | 503 - Indisponível           | 200 - OK                   | Usar atraso para evitar teste   |
-| Ativado   | 200 - OK                     | 200 - OK                   | 200 - OK                        |
-| Parando   | 503 - Indisponível           | 200 - OK                   | 503 - Indisponível              |
-| Inativo   | 503 - Indisponível           | 503 - Indisponível         | 503 - Indisponível              |
-| Com erro  | 500 - Erro do servidor       | 500 - Erro do servidor     | 500 - Erro do servidor          |
+| Ativado       | 200 - OK                    | 200 - OK                   | 200 - OK                  |
+| Parando | 503 - Indisponível           | 200 - OK                   | 503 - Indisponível         |
+| Inativo     | 503 - Indisponível           | 503 - Indisponível          | 503 - Indisponível         |
+| Com erro  | 500 - Erro do servidor          | 500 - Erro do servidor         | 500 - Erro do servidor        |
 
 ## Incluindo uma verificação de funcionamento em um app Go existente
 {: #add-healthcheck-existing}
@@ -85,14 +85,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Recomendações para análises de prontidão e de atividade
-{: #recommendations}
+{: #recommend-healthcheck}
 
 Análises de prontidão deverão incluir a viabilidade das conexões com serviços de recebimento de dados em seu resultado quando não houver um fallback aceitável, caso o serviço de recebimento de dados esteja indisponível. Isso não significa chamar a verificação de funcionamento que é fornecida pelo serviço de recebimento de dados diretamente, pois a infraestrutura verifica isso para você. Em vez disso, considere verificar o funcionamento das referências existentes que seu aplicativo possui para os serviços de recebimento de dados: essa pode ser uma conexão JMS com o WebSphere MQ ou um consumidor ou produtor Kafka inicializado. Se você verificar a viabilidade das referências internas com relação aos serviços de recebimento de dados, armazene em cache o resultado para minimizar o impacto que a verificação de funcionamento tem em seu aplicativo.
 
 Em contrapartida, uma análise de atividade é deliberada sobre o que é verificado, uma vez que uma falha resulta em finalização imediata do processo. Um terminal HTTP simples que sempre retorna `{"status": "UP"}` com código de status `200` é uma opção razoável.
 
 ## Configurando análises de prontidão e de atividade no Kubernetes
-{: #config_probes}
+{: #config_probes-healthcheck}
 
 Declare análises de atividade e prontidão juntamente com a implementação do Kubernetes. Ambas as análises usam os mesmos parâmetros de configuração:
 

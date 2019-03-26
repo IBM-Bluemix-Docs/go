@@ -1,0 +1,33 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="go" audience="platform" arm="4088037" href="/docs/go/index.html" path="go"}
+Go on IBM Cloud로 프로그래밍
+
+    {: .navgroup id="learn"}
+    index.md
+       
+    {: .topicgroup}
+    관련 링크
+        [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures)
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    configuration.md
+    healthcheck.md
+    logging.md
+    tracing.md
+    appmetrics.md
+    fault_tolerance.md
+    deploying_apps.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API 문서](https://cloud.ibm.com/apidocs)
+    [샘플 Go Hello world 앱](https://github.com/IBM-Cloud/get-started-go)
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    [dW Answers](https://developer.ibm.com/answers/topics/go/)
+    support.md
+    {: .navgroup-end}

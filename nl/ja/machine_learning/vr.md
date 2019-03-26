@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,32 +14,32 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Visual Recognition の追加
-{: #assistant}
+{: #assistant-vr}
 
-{{site.data.keyword.vr}} サービスを使用して、自然言語による入力を理解して人間と会話しているかのようにユーザーに応答する Go アプリケーションを構築することができます。
+{{site.data.keyword.visualrecognitionshort}} サービスを使用して、自然言語による入力を理解して人間と会話しているかのようにユーザーに応答する Go アプリケーションを構築することができます。
 
 統合の仕組み:
 
 * ユーザーは、アプリのフロントエンド・ユーザー・インターフェースと対話します。
-* アプリは、ユーザーの入力内容を {{site.data.keyword.watson}} Go SDK を使用して {{site.data.keyword.vr}} に送信します。
+* アプリは、ユーザーの入力内容を {{site.data.keyword.watson}} Go SDK を使用して {{site.data.keyword.visualrecognitionshort}} に送信します。
 * {{site.data.keyword.watson}} Go SDK はワークスペースに接続します。ワークスペースはダイアログ・フローとトレーニング・データのコンテナーです。
 * ワークスペースはユーザー入力を解釈し、対話のフローを指図し、応答をアプリに送信します。
 * アプリはユーザーに応答を表示します。
 
 ## 始める前に
-{: #before-you-begin}
+{: #prereqs-vr}
 
 以下のようにして {{site.data.keyword.watson}} Go SDK をインストールします。
 ```bash
 go get github.com/watson-developer-cloud/go-sdk
 ```
 ## アプリへの Visual Recognition の追加
-{: #add-a-virtual-assistant-to-your-app}
+{: #add-vr}
 
 1. コードをダウンロードしたら、プロジェクトを開きます。 
 2. {{site.data.keyword.conversationshort}} の import ステートメントを追加します。
-3. サービスをインスタンス化します。以下の例では、`visualRecognition` というサービスを使用します。
-4. 以下に、サービスと対話する方法の例を示します。この例には、ワークスペースの「GET」および「LIST」が含まれています。 
+3. サービスをインスタンス化します。 以下の例では、`visualRecognition` というサービスを使用します。
+4. 以下に、サービスと対話する方法の例を示します。 この例には、ワークスペースの「GET」および「LIST」が含まれています。 
 
 ```golang
 package main
@@ -182,18 +182,18 @@ func main() {
 {: codeblock}
 
 ## スターター・キットの使用
-{: #vr_starterkits}
+{: #starterkits-vr}
 
-スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。スターター・キットを使用して、{{site.data.keyword.vr}} を任意のサーバー・サイドのバックエンドに追加できます。Chatbot for iOS with Watson Starter Kit では、エンド・ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.vr}} のディープ・ラーニング機能を使用する方法について説明しています。
+スターター・キットを使用すると、{{site.data.keyword.cloud_notm}} の機能を素早く簡単に利用できます。 スターター・キットを使用して、{{site.data.keyword.visualrecognitionshort}} を任意のサーバー・サイドのバックエンドに追加できます。Chatbot for iOS with Watson Starter Kit では、エンド・ユーザーとの対話を自動化するアプリケーションに自然言語インターフェースを追加することによって {{site.data.keyword.visualrecognitionshort}} のディープ・ラーニング機能を使用する方法について説明しています。
 
-1. 使用する[スターター・キット](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window}を選択します。
+1. 使用する[スターター・キット](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window}を選択します。
 2. デフォルト・サービスを使用してプロジェクトを作成します。
-3. **「リソースの追加」>「Watson」>「{{site.data.keyword.vr}}」**をクリックします。
-4. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。サービス資格情報は、`config/local-dev.json` ファイルにあります。
+3. **「リソースの追加」>「Watson」>「{{site.data.keyword.visualrecognitionshort}}」**をクリックします。
+4. **「コードのダウンロード」**をクリックして、プロジェクトをダウンロードします。 サービス資格情報は、`config/local-dev.json` ファイルにあります。
 
 ## 次のステップ
-{: #assistant_next}
+{: #next-vr}
 
-お疲れさまでした。Visual Recognition がアプリに追加されました。この調子で、以下のいずれかのオプションを試してみてください。
+お疲れさまでした。Visual Recognition がアプリに追加されました。 この調子で、以下のいずれかのオプションを試してみてください。
 * [{{site.data.keyword.watson}} Go SDK](https://github.com/watson-developer-cloud/go-sdk){:new_window} を使ってみる。
-* [{{site.data.keyword.vr}}](/docs/services/vr/index.html) が提供するすべての機能を利用する。
+* [{{site.data.keyword.visualrecognitionshort}}](/docs/services/vr/index.html) が提供するすべての機能を利用する。

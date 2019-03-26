@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,20 +14,20 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Adición de Text to Speech 
-{: #assistant}
+{: #assistant-text}
 
-Puede utilizar el servicio {{site.data.keyword.text_to_speech}} para crear aplicaciones Go que comprendan la entrada de lenguaje natural y la conviertan en audio. 
+Puede utilizar el servicio {{site.data.keyword.texttospeechfull}} para crear aplicaciones Go que comprendan la entrada de lenguaje natural y la conviertan en audio. 
 
 Funcionamiento de la integración:
 
 * Los usuarios interactúan con la interfaz de usuario frontal de su app.
-* La app envía la entrada de usuario a {{site.data.keyword.text_to_speech}} utilizando el SDK de Go de {{site.data.keyword.watson}}.
+* La app envía la entrada de usuario a {{site.data.keyword.texttospeechshort}} utilizando el SDK de Go de {{site.data.keyword.watson}}.
 * El SDK de Go de {{site.data.keyword.watson}} se conecta a un espacio de trabajo, que es un contenedor para el flujo de diálogo y los datos de entrenamiento.
 * El espacio de trabajo interpreta la entrada de usuario y envía una respuesta de audio a la app.
 * La app muestra la respuesta para el usuario.
 
 ## Antes de empezar
-{: #before-you-begin}
+{: #prereqs-text}
 
 Instale el SDK de Go de {{site.data.keyword.watson}}:
 ```bash
@@ -36,10 +36,10 @@ go get github.com/watson-developer-cloud/go-sdk
 {: pre}
 
 ## Adición del servicio Text to Speech a la app
-{: #add-a-text-to-speech-to-your-app}
+{: #existing-text}
 
 1. Tras descargar su código, abra el proyecto. 
-2. Añada una sentencia de importación para {{site.data.keyword.text_to_speech}}.
+2. Añada una sentencia de importación para {{site.data.keyword.texttospeechshort}}.
 3. Cree una instancia del servicio. En el ejemplo se utiliza uno llamado `textToSpeech`. 
 4. En el ejemplo siguiente se muestra cómo interactuar con el SDK para sintetizar un servicio Text to Speech.
 
@@ -103,18 +103,18 @@ func main() {
 {: codeblock}
 
 ## Utilización de los kits de inicio
-{: #text_to_speech_starterkits}
+{: #starterkits-text}
 
-Con los kits de inicio, puede utilizar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.text_to_speech}} a cualquier programa de fondo de lado del servidor utilizando los kits de inicio. El Kit de inicio Chatbot for iOS with Watson ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.text_to_speech}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios finales.
+Con los kits de inicio, puede utilizar de forma rápida y sencilla las funciones de {{site.data.keyword.cloud_notm}}. Puede añadir {{site.data.keyword.texttospeechshort}} a cualquier programa de fondo de lado del servidor utilizando los kits de inicio. El Kit de inicio Chatbot for iOS with Watson ilustra cómo utilizar las funciones de aprendizaje profundo de {{site.data.keyword.texttospeechshort}} añadiendo una interfaz de lenguaje natural a la aplicación que automatiza las interacciones con los usuarios finales.
 
-1. Seleccione el [kit de inicio](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} con el que desee trabajar.
+1. Seleccione el [kit de inicio](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} con el que desee trabajar.
 2. Cree el proyecto con los servicios predeterminados.
-3. Pulse **Añadir recursos > Watson > {{site.data.keyword.text_to_speech}}**.
+3. Pulse **Añadir recursos > Watson > {{site.data.keyword.texttospeechshort}}**.
 4. Descargue el proyecto pulsando **Descargar código**. Puede encontrar las credenciales de servicio en el archivo `config/local-dev.json`.
 
 ## Siguientes pasos
-{: #assistant_next}
+{: #next-text}
 
 ¡Buen trabajo! Ha añadido el servicio Text to Speech a la app. Mantenga el ritmo probando una de las opciones siguientes:
 * Consulte el [SDK de Go de {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Aproveche todas las características que [{{site.data.keyword.text_to_speech}}](/docs/services/text_to_speech/index.html) ofrece.
+* Aproveche todas las características que [{{site.data.keyword.texttospeechshort}}](/docs/services/text_to_speech/index.html) ofrece.

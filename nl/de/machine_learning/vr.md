@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-09-25"
+  years: 2018, 2019
+lastupdated: "2019-02-28"
 
 ---
 
@@ -14,27 +14,27 @@ lastupdated: "2018-09-25"
 {:pre: .pre}
 
 # Visual Recognition hinzufügen
-{: #assistant}
+{: #assistant-vr}
 
-Mit dem {{site.data.keyword.vr}}-Service können Sie Go-Anwendungen erstellen, die Eingaben in natürlicher Sprache verstehen und mit einer menschenähnlichen Unterhaltung auf Benutzer reagieren.
+Mit dem {{site.data.keyword.visualrecognitionshort}}-Service können Sie Go-Anwendungen erstellen, die Eingaben in natürlicher Sprache verstehen und mit einer menschenähnlichen Unterhaltung auf Benutzer reagieren.
 
 Funktionsweise der Integration:
 
 * Benutzer interagieren mit der Front-End-Benutzerschnittstelle Ihrer App.
-* Ihre App sendet Benutzereingaben unter Verwendung des {{site.data.keyword.watson}} Go-SDKs an den {{site.data.keyword.vr}}.
+* Ihre App sendet Benutzereingaben unter Verwendung des {{site.data.keyword.watson}} Go-SDKs an den {{site.data.keyword.visualrecognitionshort}}.
 * Das {{site.data.keyword.watson}} Go-SDK stellt eine Verbindung zu einem Arbeitsbereich her, der ein Container für Ihren Dialogablauf und die Trainingsdaten ist.
 * Der Arbeitsbereich interpretiert die Benutzereingaben und steuert den Ablauf des Dialogs. Dabei wird eine Antwort an Ihre App gesendet.
 * Ihre App zeigt die Antwort für den Benutzer an.
 
 ## Vorbereitende Schritte
-{: #before-you-begin}
+{: #prereqs-vr}
 
 Installieren Sie das {{site.data.keyword.watson}} Go-SDK:
 ```bash
 go get github.com/watson-developer-cloud/go-sdk
 ```
 ## Visual Recognition zu Ihrer App hinzufügen
-{: #add-a-virtual-assistant-to-your-app}
+{: #add-vr}
 
 1. Öffnen Sie nach dem Herunterladen des Codes Ihr Projekt. 
 2. Fügen Sie eine Importanweisung für {{site.data.keyword.conversationshort}} hinzu.
@@ -182,18 +182,18 @@ func main() {
 {: codeblock}
 
 ## Starter-Kits verwenden
-{: #vr_starterkits}
+{: #starterkits-vr}
 
-Mithilfe von Starter-Kits können Sie das Leistungsspektrum von {{site.data.keyword.cloud_notm}} rasch und ohne großen Aufwand nutzen. Mit Starter-Kits können Sie {{site.data.keyword.vr}} zu jedem beliebigen serverseitigen Back-End-Programm hinzufügen. Das Starter-Kit 'Chatbot for iOS with Watson' veranschaulicht, wie Sie die Deep-Learning-Funktionalität von {{site.data.keyword.vr}} nutzen können, indem Sie zu Ihrer Anwendung eine Schnittstelle für natürliche Sprache hinzufügen, die die Interaktionen mit den Benutzern automatisiert.
+Mithilfe von Starter-Kits können Sie das Leistungsspektrum von {{site.data.keyword.cloud_notm}} rasch und ohne großen Aufwand nutzen. Mit Starter-Kits können Sie {{site.data.keyword.visualrecognitionshort}} zu jedem beliebigen serverseitigen Back-End-Programm hinzufügen. Das Starter-Kit 'Chatbot for iOS with Watson' veranschaulicht, wie Sie die Deep-Learning-Funktionalität von {{site.data.keyword.visualrecognitionshort}} nutzen können, indem Sie zu Ihrer Anwendung eine Schnittstelle für natürliche Sprache hinzufügen, die die Interaktionen mit den Benutzern automatisiert.
 
-1. Wählen Sie das [Starter-Kit](https://console.bluemix.net/developer/appledevelopment/starter-kits){:new_window} aus, mit dem Sie arbeiten möchten.
+1. Wählen Sie das [Starter-Kit](https://cloud.ibm.com/developer/appledevelopment/starter-kits){:new_window} aus, mit dem Sie arbeiten möchten.
 2. Erstellen Sie das Projekt mit den Standardservices.
-3. Klicken Sie auf **Ressourcen hinzufügen > Watson > {{site.data.keyword.vr}}**.
+3. Klicken Sie auf **Ressourcen hinzufügen > Watson > {{site.data.keyword.visualrecognitionshort}}**.
 4. Laden Sie das Projekt herunter, indem Sie auf **Code herunterladen** klicken. Die entsprechenden Serviceberechtigungsnachweise befinden sich in der Datei `config/local-dev.json`.
 
 ## Nächste Schritte
-{: #assistant_next}
+{: #next-vr}
 
 Hervorragende Arbeit! Sie haben Visual Recognition zu Ihrer App hinzugefügt. Erhalten Sie die Dynamik aufrecht, indem Sie eine der folgenden Optionen ausprobieren:
 * Informieren Sie sich über das [Go-SDK für {{site.data.keyword.watson}}](https://github.com/watson-developer-cloud/go-sdk){:new_window}.
-* Nutzen Sie alle Features, die [{{site.data.keyword.vr}}](/docs/services/vr/index.html) zu bieten hat.
+* Nutzen Sie alle Features, die [{{site.data.keyword.visualrecognitionshort}}](/docs/services/vr/index.html) zu bieten hat.

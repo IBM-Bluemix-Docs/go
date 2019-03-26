@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018
-lastupdated: "2018-10-02"
+  years: 2018, 2019
+lastupdated: "2019-01-14"
 
 ---
 
@@ -14,7 +14,7 @@ lastupdated: "2018-10-02"
 {:tip: .tip}
 
 # Utilización de métricas de aplicación con apps Go
-{: #metrics}
+{: #appmetrics}
 
 Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Puede utilizar un servicio de nube como el [escalado automático](/docs/services/Auto-Scaling/index.html) de Cloud Foundry, que se basa en métricas para escalar dinámicamente las instancias para que coincidan con la carga de trabajo actual. Con el uso de métricas de aplicación, estará informado forma precisa para saber cuando se deben aumentar, reducir o borrar las instancias que ya no se necesitan para mantener los costes bajos.
 
@@ -34,17 +34,17 @@ Para añadir una supervisión de rendimiento a la aplicación Go, puede utilizar
 El paquete `promhttp` tiene muchos puntos de extensión, incluida la [Configuración de Prometheus](https://github.com/prometheus/client_golang).
 
 1. Por ejemplo, utilice la siguiente aplicación sencilla "Hello World" Go + Gin:
-  ```go
-  // imports above
-  func main() {
-      router := gin.Default()
-      router.GET("/", func(c *gin.Context) {
-          c.String(http.StatusOK, "Hello, World!")
-      }
-      router.Run(":3000")
-  }
-  ```
-  {: codeblock}
+    ```go
+    // imports above
+    func main() {
+        router := gin.Default()
+        router.GET("/", func(c *gin.Context) {
+            c.String(http.StatusOK, "Hello, World!")
+        }
+        router.Run(":3000")
+    }
+    ```
+    {: codeblock}
 
 2. Obtenga el paquete con el mandato siguiente:
   ```
@@ -75,6 +75,7 @@ El paquete `promhttp` tiene muchos puntos de extensión, incluida la [Configurac
   {: codeblock}
 
 ## Utilización de métricas de aplicación en kits de inicio
+{: #starterkits-appmetrics}
 
 Las aplicaciones server-side que se crean desde Kits de inicio incluyen automáticamente el [punto final Prometheus](https://prometheus.io/) bajo `http://<hostname>:<port>/metrics`. El código para este punto final se encuentra en `server.go`.
 
