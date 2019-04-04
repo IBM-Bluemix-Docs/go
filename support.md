@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-04"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -40,4 +40,4 @@ To learn more, visit [IBM Digital Marketplace](https://www.ibm.com/us-en/marketp
 ## Buildpack Support Statement
 {: #buildpack-go}
 
-Issues can be reported against any version of the built-in IBM buildpack currently supported on {{site.data.keyword.cloud_notm}}, however, they must be verified against the latest version. If a defect is found, IBM will provide a fix in a future level of the runtime and corresponding buildpack. For more information, see the [buildpack support statement](/docs/runtimes/common?topic=runtime-common-buildpack_support_statement#buildpack_support_statement).
+Issues can be reported against any version of the built-in IBM buildpack currently supported on {{site.data.keyword.cloud_notm}}, however, they must be verified against the latest version. If a defect is found, IBM will provide a fix in a future level of the runtime and corresponding buildpack. For more information, see the [buildpack support statement](/docs/runtimes-common?topic=runtimes-common-buildpack_support_statement).
