@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-04-04"
+
+keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
+
+subcollection: go
 
 ---
 
@@ -14,14 +18,14 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Configurazione della traccia nelle applicazioni Go
-{: #e2e-tracing}
+{: #go-e2e-tracing}
 
-La seguente esercitazione si concentra sui pacchetti Opentracing e Jaeger per la traccia delle applicazioni Go. Per ulteriori informazioni sull'utilizzo di Jaeger, consulta il [portale della documentazione di Jaeger](https://www.jaegertracing.io/docs/).
+La seguente esercitazione si concentra sui pacchetti Opentracing e Jaeger per la traccia delle applicazioni Go. Per ulteriori informazioni sull'utilizzo di Jaeger, vedi il [portale della documentazione di Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
 Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di frontend e una di backend) per la traccia tra due endpoint utilizzando il modulo Jaeger. Puoi iniziare da zero oppure applicare i principi qui descritti alle tue applicazioni Go esistenti.
 
 ## Passo 1. Installazione e abilitazione dei pacchetti Opentracing e Jaeger
-{: #install-packages}
+{: #install-go-opentracing}
 
 1. Nella stessa ubicazione del file `Gopkg.toml` della tua applicazione Go, immetti i seguenti comandi per aggiungere i pacchetti richiesti nel tuo elenco di dipendenze:
   ```go
@@ -43,7 +47,7 @@ Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di fr
   {: codeblock}
 
 ### Aggiunta della traccia alla tua applicazione server
-{: #tracing-go}
+{: #add-tracing-go}
 
 Sono necessarie alcune istruzioni per aggiungere la traccia alla tua applicazione server. Prima di tutto, devi creare un programma di traccia.
 
@@ -206,7 +210,7 @@ L'agent può essere collegato sulla porta `5775`, mentre la query sulla porta `1
 ### Configurazione di un server Jaeger distribuito a Kubernetes
 {: #jaeger-kube}
 
-Come per lo sviluppo in locale, Jaeger fornisce un servizio omnicomprensivo per lo sviluppo in Kubernetes. Utilizza il servizio omnicomprensivo solo per lo sviluppo, non per il codice di produzione. Per ulteriori informazioni sulla distribuzione a Kubernetes per la produzione, consulta la [guida Jaeger Kubernetes Templates](https://github.com/jaegertracing/jaeger-kubernetes#production-setup).
+Come per lo sviluppo in locale, Jaeger fornisce un servizio omnicomprensivo per lo sviluppo in Kubernetes. Utilizza il servizio omnicomprensivo solo per lo sviluppo, non per il codice di produzione. Per ulteriori informazioni sulla distribuzione di Kubernetes per la produzione, vedi la [guida ai template Jaeger Kubernetes](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
 Per distribuire il server Jaeger, completa questa procedura:
 1. Assicurati che il tuo cluster sia configurato eseguendo `ibmcloud cs cluster-config <cluster name>` e segui le istruzioni.
@@ -227,7 +231,7 @@ Per distribuire il server Jaeger, completa questa procedura:
 Puoi trovare la porta eseguendo `kubectl get service jaeger-query`.
 
 ## Passo 3. Verifica di uno scenario di esempio
-{: #example-scenario}
+{: #test-go-tracing}
 
 Quando segui la precedente procedura, è facile creare due applicazioni Go separate che supportano la traccia. Puoi aggiungere un instradamento a uno dei progetti con il seguente codice:
 ```go

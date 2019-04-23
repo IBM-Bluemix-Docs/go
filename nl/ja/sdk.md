@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: go sdk, go client sdk, add sdk go app, mongodb go sdk, postgres go sdk, redis go sdk, couchdb go sdk
+
+subcollection: go
 
 ---
 
@@ -12,8 +16,8 @@ lastupdated: "2019-01-14"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-#  SDK
-{: #sdk-go}
+#  Go アプリへの SDK の追加
+{: #add-sdk-go}
 
 {{site.data.keyword.cloud_notm}} SDK をアプリに追加するには、使用する SDK を選択し、依存関係マネージャーを構成して SDK をアプリにプルします。
 
@@ -21,10 +25,10 @@ lastupdated: "2019-01-14"
 {: #client_sdk-go}
 
 Go アプリケーションでは、以下の SDK を使用できます。
-* [MongoDB Go SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/mongodb/mongo-go-driver)
-* [Postgres Go SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/lib/pq)
-* [Redis Go SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/go-redis/redis)
-* [CouchDB Go SDK ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")](https://github.com/leesper/couchdb-golang)
+* [MongoDB Go SDK ](https://github.com/mongodb/mongo-go-driver){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+* [Postgres Go SDK ](https://github.com/lib/pq){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+* [Redis Go SDK ](https://github.com/go-redis/redis){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+* [CouchDB Go SDK ](https://github.com/leesper/couchdb-golang){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
 
 <!--
 ## Services
