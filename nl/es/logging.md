@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-12"
+
+keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
+
+subcollection: go
 
 ---
 
@@ -14,16 +18,16 @@ lastupdated: "2019-02-28"
 {:tip: .tip}
 
 # Registro en Go
-{: #logging_golang}
+{: #logging-golang}
 
-Los mensajes de registro son series con información contextual sobre el estado y la actividad del microservicio en el momento en que se realiza la entrada de registro. Los registros son necesarios para diagnosticar cómo y por qué fallan los servicios, y desempeñan un rol de soporte a las [métricas](/docs/go/appmetrics.html) en la supervisión del estado de la aplicación.
+Los mensajes de registro son series con información contextual sobre el estado y la actividad del microservicio en el momento en que se realiza la entrada de registro. Los registros son necesarios para diagnosticar cómo y por qué fallan los servicios, y desempeñan un rol de soporte a las [métricas](/docs/go?topic=go-appmetrics#appmetrics) en la supervisión del estado de la aplicación.
 
 Dada la naturaleza transitoria de los procesos en entornos de nube, los registros deben recopilarse y enviarse a otro lugar, normalmente a una ubicación centralizada para su análisis. La forma más coherente de iniciar sesión en entornos de nube es enviar entradas de registro a la salida estándar y a las secuencias de error, que deja que la infraestructura maneje el resto.
 
 ## Adición de soporte para Logrus en la app Go
-{: #add_logrus}
+{: #add-logrus-go}
 
-[Logrus](https://github.com/sirupsen/logrus) es una infraestructura de registro popular para Go, y proporciona muchas ventajas nativas, como: 
+[Logrus](https://github.com/sirupsen/logrus){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") es una infraestructura de registro muy utilizada para Go y proporciona muchas ventajas nativas, como por ejemplo: 
  * Registro en `stdout` o `stderr`
  * Diversas opciones de adición
  * Diseño y patrones de mensajes de registro configurables
@@ -50,17 +54,17 @@ Dada la naturaleza transitoria de los procesos en entornos de nube, los registro
   ```
   {: screen}
 
-Para obtener más información sobre la personalización de los mensajes de registro con agregadores, niveles de registro y detalles de configuración, consulte la [documentación de Logrus](https://godoc.org/gopkg.in/Sirupsen/logrus.v0) oficial.
+Para obtener más información sobre cómo personalizar los mensajes de registro con agregadores, niveles de registro y detalles de configuración, consulte la [documentación de Logrus](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") oficial.
 
 ## Pasos siguientes
-{: #next_steps-logging}
+{: #go-logging-next notoc}
 
-Obtenga más información sobre la visualización de los registros en cada uno de los entornos de despliegue:
-* [Registros de Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
-* [Registros de Cloud Foundry](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - Auditoría y registro](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
-* [Registro y supervisión de {{site.data.keyword.openwhisk}}](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+Obtenga más información sobre la visualización de los registros en cada uno de los destinos de despliegue:
+* [Registros de Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")
+* [Registros de Cloud Foundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - Auditoría y registro](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
+* [Registros y supervisión de {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
 
 Más información sobre el uso de un agregador de registros:
-* [Análisis de registros de {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
-* [Pila de ELK {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)
+* [Análisis de registros de {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
+* [Pila de ELK de {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo")

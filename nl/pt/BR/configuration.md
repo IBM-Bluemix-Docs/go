@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-04"
+lastupdated: "2019-03-08"
+
+keywords: configure go environment, go environment
+
+subcollection: go
 
 ---
 
@@ -14,19 +18,19 @@ lastupdated: "2019-02-04"
 {:tip: .tip}
 
 # Configurando o ambiente do Go
-{: #configuration}
+{: #configure-go-env}
 
 Diretrizes padronizadas estão disponíveis para seguir para o desenvolvimento de aplicativos Go que ajudam a manter a portabilidade consistente. As considerações a serem feitas incluem gerenciamento de credencial, salvamento de dados, armazenamento de dados e publicação de conteúdo na nuvem. Seguindo as práticas de Nuvem Nativa, um aplicativo Go pode mover de um ambiente para outro facilmente. Por exemplo, do teste para a produção, sem mudar o código, ou exercitando de outra forma caminhos de código não testados.
 
-Se for necessário incluir o suporte de Nuvem nos aplicativos Go existentes ou criar aplicativos Go com Kits do Iniciador, o objetivo será fornecer portabilidade para uso com qualquer plataforma de desenvolvimento.
+Se for necessário incluir suporte de nuvem em aplicativos Go existentes ou criar aplicativos Go com os Kits do iniciador, o objetivo será fornecer portabilidade para uso com qualquer plataforma de desenvolvimento.
 
 ## Incluindo suporte de Nuvem em aplicativos Go existentes
-{: #add-cloud-support}
+{: #go-add-cloud-support}
 
-O módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang) agrega variáveis de ambiente de vários provedores em Nuvem, como CloudFoundry e Kubernetes, portanto, o aplicativo é independente do ambiente.
+O módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") agrega variáveis de ambiente de vários provedores em nuvem, tais como o Cloud Foundry e o Kubernetes, portanto, o aplicativo é independente do ambiente.
 
 ### Instalando o módulo `ibm-cloud-env-golang`
-{: #install-module}
+{: #go-install-env-module}
 
 1. Instale o módulo `ibm-cloud-env-golang` com o comando a seguir:
   ```bash
@@ -67,8 +71,8 @@ O módulo [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-en
   ```
   {: codeblock}
 
-### Usando os valores em um app Go
-{: #values-config}
+### Recuperando credenciais de serviço
+{: #go-get-creds}
 
 Recupere os valores em seu aplicativo usando os comandos a seguir.
 
@@ -87,6 +91,8 @@ Recupere os valores em seu aplicativo usando os comandos a seguir.
 Agora seu aplicativo pode ser implementado em qualquer ambiente de tempo de execução, abstraindo as diferenças introduzidas por meio de diferentes provedores de cálculo em nuvem.
 
 ### Filtrando os valores para tags e rótulos
+{: #go-filter-creds}
+
 É possível filtrar credenciais que são geradas pelo módulo com base nas tags de serviço e nos rótulos de serviço, conforme mostrado no exemplo a seguir:
 ```golang
 filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credentials)); // returns a Json with credentials for specified service tag and label
@@ -94,16 +100,18 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 {: codeblock}
 
 ## Usando o gerenciador de configuração Go dos apps do Kit do Iniciador
-Os apps Go que são criados com [Kits do Iniciador](https://cloud.ibm.com/developer/appservice/starter-kits/) vêm automaticamente com credenciais e configurações necessárias para execução em muitos ambientes de implementação na nuvem (CF, K8s e Functions).
+{: #go-config-manager}
+
+Os aplicativos Go que são criados com os [Kits do iniciador](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") vêm automaticamente com credenciais e configurações necessárias para execução em muitos destinos de implementação na nuvem, tais como o Cloud Foundry, o Kubernetes, o VSI e o Functions.
 
 ### Entendendo credenciais de serviço
-{: credentials-config}
+{: #go-credentials-config}
 
 Suas informações de configuração de aplicativo para serviços são armazenadas no arquivo `localdev-config.json` no diretório `/server/config`. O arquivo fica no diretório `.gitignore` para evitar que informações confidenciais sejam armazenadas no Git. As informações de conexão de qualquer serviço configurado que é executado localmente, como nome do usuário, senha e nome do host, são armazenadas nesse arquivo.
 
 O aplicativo usa o gerenciador de configuração para ler as informações de conexão e de configuração do ambiente e desse arquivo. Ele usa um `mappings.json` customizado, que está localizado no diretório `server/config`, para comunicar onde as credenciais podem ser localizadas para cada serviço.
 
-Se o aplicativo estiver em execução localmente, ele poderá se conectar a serviços do {{site.data.keyword.cloud_notm}} usando credenciais desvinculadas que são lidas do arquivo `mappings.json`. Mas, se for necessário criar credenciais desvinculadas, será possível fazer isso pelo console da web do {{site.data.keyword.cloud_notm}} (exemplo) ou usando o comando `cf create-service-key` da [CLI do CloudFoundry](https://docs.cloudfoundry.org/cf-cli/).
+Se o aplicativo estiver em execução localmente, ele poderá se conectar a serviços do {{site.data.keyword.cloud_notm}} usando credenciais desvinculadas que são lidas do arquivo `mappings.json`. Mas, se for necessário criar credenciais desvinculadas, será possível fazer isso no console da web do {{site.data.keyword.cloud_notm}} (exemplo) ou usando o comando `cf create-service-key` da [CLI do CloudFoundry](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
 
 Quando você enviar seu aplicativo por push para o {{site.data.keyword.cloud_notm}}, esses valores não serão mais usados. Em vez disso, o aplicativo se conecta automaticamente aos serviços ligados usando variáveis de ambiente. 
 
@@ -114,6 +122,6 @@ Quando você enviar seu aplicativo por push para o {{site.data.keyword.cloud_not
 * **{{site.data.keyword.cloud_notm}} Container Service**: credenciais de serviço são obtidas de instâncias do servidor virtual ou do {{site.data.keyword.openwhisk}} (Openwhisk).
 
 ## Próximas Etapas
-{: #next_steps-config notoc}
+{: #go-next-steps-config notoc}
 
-O `ibm-cloud-env-golang` suporta a procura de valores usando quatro tipos de padrão de procura: `user-provided`, `cloudfoundry`, `env` e `file`. Se quiser verificar outros padrões de procura suportados e exemplos de padrão de procura, verifique a seção [Uso](https://github.com/ibm-developer/ibm-cloud-env-golang#usage).
+O `ibm-cloud-env-golang` suporta a procura de valores usando quatro tipos de padrão de procura: `user-provided`, `cloudfoundry`, `env` e `file`. Se você quiser verificar outros padrões de procura suportados e exemplos de padrões de procura, verifique a seção [Uso](https://github.com/ibm-developer/ibm-cloud-env-golang#usage){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").

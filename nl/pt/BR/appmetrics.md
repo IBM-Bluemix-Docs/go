@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
+
+subcollection: go
 
 ---
 
@@ -14,9 +18,9 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Usando as métricas do aplicativo com apps Go
-{: #appmetrics}
+{: #go-appmetrics}
 
-Métricas de aplicativo são importantes para monitorar o desempenho de seu aplicativo. Ter uma visualização em tempo real de métricas como métricas de CPU, Memória, Latência e HTTP é essencial para assegurar que seu aplicativo esteja em execução efetivamente ao longo do tempo. É possível usar um serviço de nuvem como o [autoscaling](/docs/services/Auto-Scaling/index.html) do Cloud Foundry que depende de métricas para escalar dinamicamente instâncias para corresponder à carga de trabalho atual. Ao usar métricas do aplicativo, você é informado com precisão quando aumentar a escala, reduzir a escala ou limpar instâncias que não são mais necessárias para manter os custos baixos.
+Métricas de aplicativo são importantes para monitorar o desempenho de seu aplicativo. Ter uma visualização em tempo real de métricas como métricas de CPU, Memória, Latência e HTTP é essencial para assegurar que seu aplicativo esteja em execução efetivamente ao longo do tempo. É possível usar um serviço de nuvem como o [autoscaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) do Cloud Foundry que depende de métricas para escalar dinamicamente instâncias para corresponder à carga de trabalho atual. Ao usar métricas do aplicativo, você é informado com precisão quando aumentar a escala, reduzir a escala ou limpar instâncias que não são mais necessárias para manter os custos baixos.
 
 As métricas do aplicativo são capturadas como dados de série temporal. A agregação e a visualização de métricas capturadas podem ajudar a identificar problemas comuns de desempenho, como:
 
@@ -27,11 +31,12 @@ As métricas do aplicativo são capturadas como dados de série temporal. A agre
 * Uso de memória alto ou crescente (potencial fuga de memória)
 
 ## Incluindo as métricas do aplicativo em seu aplicativo Go existente
-{: #add-appmetrics-existing}
+{: #go-add-appmetrics-existing}
 
 Para incluir monitoramento de desempenho em seu aplicativo Go, é possível usar a agregação abrangente de métricas que são fornecidas pelo pacote `promhttp`.
 
-O pacote `promhttp` possui muitos pontos de extensão, incluindo a [configuração de Prometheus](https://github.com/prometheus/client_golang).
+O pacote `promhttp` tem muitos pontos de extensão, incluindo a [Configuração do
+Prometheus](https://github.com/prometheus/client_golang){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
 
 1. Por exemplo, use o aplicativo simples “Hello World” Go + Gin a seguir:
     ```go
@@ -75,8 +80,8 @@ O pacote `promhttp` possui muitos pontos de extensão, incluindo a [configuraç�
   {: codeblock}
 
 ## Usando as métricas do aplicativo em kits do iniciador
-{: #starterkits-appmetrics}
+{: #go-starterkits-appmetrics}
 
-Os aplicativos Go do lado do servidor que são criados pelos Kits do Iniciador vêm automaticamente com o [terminal Prometheus](https://prometheus.io/) sob `http://<hostname>:<port>/metrics`. O código para esse terminal está em `server.go`.
+Os aplicativos Go do lado do servidor que são criados usando os Kits do iniciador vêm automaticamente com o [Terminal do Prometheus](https://prometheus.io/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") em `http://<hostname>:<port>/metrics`. O código para esse terminal está em `server.go`.
 
-Para obter mais informações, consulte o [Repositório GitHub para Prometheus](https://github.com/prometheus/client_golang/).
+Para obter mais informações, consulte o [Repositório GitHub para o Prometheus](https://github.com/prometheus/client_golang/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
