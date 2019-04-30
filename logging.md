@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
+lastupdated: "2019-04-30"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -20,7 +20,7 @@ subcollection: go
 # Logging in Go
 {: #logging-golang}
 
-Log messages are strings with contextual information in them about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [metrics](/docs/go?topic=go-appmetrics#appmetrics) in monitoring application health.
+Log messages are strings with contextual information in them about the state and activity of the microservice at the time that the log entry is made. Logs are required to diagnose how and why services fail, and plays a supporting role to [metrics](/docs/go?topic=go-go-appmetrics) in monitoring application health.
 
 Given the transient nature of processes in cloud environments, logs must be collected and sent elsewhere, usually to a centralized location for analysis. The most consistent way to log in cloud environments is to send log entries to standard output and error streams, which leaves the infrastructure to handle the rest.
 
