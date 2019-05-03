@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
-
-keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,14 +14,14 @@ subcollection: go
 {:tip: .tip}
 
 # Go アプリでのトレースのセットアップ
-{: #go-e2e-tracing}
+{: #e2e-tracing}
 
-以下のチュートリアルでは、Go アプリケーションをトレースするための Opentracing および Jaeger のパッケージを中心に説明します。 Jaeger の使用について詳しくは、[Jaeger 資料ポータル](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
+以下のチュートリアルでは、Go アプリケーションをトレースするための Opentracing および Jaeger のパッケージを中心に説明します。 Jaeger の使用について詳しくは、[Jaeger 資料ポータル](https://www.jaegertracing.io/docs/)を参照してください。
 
 以下のステップでは、2 つの小さなアプリケーション (1 つはフロントエンド、もう 1 つはバックエンド) を使用して、2 つのエンドポイント間で Jaeger モジュールを使用したトレースが行われます。 最初から開始することも、既存の Go アプリケーションにここで説明する原則を適用することもできます。
 
 ## ステップ 1. Opentracing および Jaeger パッケージのインストールと有効化
-{: #install-go-opentracing}
+{: #install-packages}
 
 1. Go アプリケーションの `Gopkg.toml` ファイルと同じ場所で、以下のコマンドを入力して、必要なパッケージを依存関係リストに追加します。
   ```go
@@ -47,7 +43,7 @@ subcollection: go
   {: codeblock}
 
 ### サーバー・アプリケーションへのトレースの追加
-{: #add-tracing-go}
+{: #tracing-go}
 
 サーバー・アプリケーションにトレースを追加するには、いくつかのステートメントが必要です。 まず、トレーサーを作成する必要があります。
 
@@ -210,7 +206,7 @@ docker run -d --name jaeger \
 ### Kubernetes にデプロイした Jaeger サーバーのセットアップ
 {: #jaeger-kube}
 
-ローカル開発と同様に、Jaeger は Kubernetes 開発用のオールインワン・サービスを提供します。 オールインワン・サービスは開発用のみに使用し、実動コードには使用しないでください。 実動用に Kubernetes にデプロイする方法について詳しくは、[Jaeger Kubernetes テンプレート・ガイド](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
+ローカル開発と同様に、Jaeger は Kubernetes 開発用のオールインワン・サービスを提供します。 オールインワン・サービスは開発用のみに使用し、実動コードには使用しないでください。 実動用に Kubernetes にデプロイする方法について詳しくは、[Jaeger Kubernetes テンプレート・ガイド](https://github.com/jaegertracing/jaeger-kubernetes#production-setup)を参照してください。
 
 Jaeger サーバーをデプロイするには、以下の手順を実行します。
 1. クラスターは必ず `ibmcloud cs cluster-config <cluster name>` を実行してセットアップし、説明に従ってください。
@@ -231,7 +227,7 @@ Jaeger サーバーをデプロイするには、以下の手順を実行しま�
 `kubectl get service jaeger-query` を実行すると、ポートを検出できます。
 
 ## ステップ 3. シナリオ例のテスト
-{: #test-go-tracing}
+{: #example-scenario}
 
 前のステップを実行すると、トレースをサポートする 2 つの別個の Go アプリケーションを簡単に作成できます。 以下のコードを使用して、いずれかのプロジェクトに経路を追加できます。
 ```go

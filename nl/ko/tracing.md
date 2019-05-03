@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
-
-keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,14 +14,14 @@ subcollection: go
 {:tip: .tip}
 
 # Go 앱에서 추적 설정
-{: #go-e2e-tracing}
+{: #e2e-tracing}
 
-다음 튜토리얼에서는 Go 애플리케이션 추적을 위한 Opentracing 및 Jaeger 패키지에 초점을 맞춥니다. Jaeger 사용에 대한 자세한 정보는 [Jaeger 문서 포털](https://www.jaegertracing.io/docs/1.11/){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")을 참조하십시오.
+다음 튜토리얼에서는 Go 애플리케이션 추적을 위한 Opentracing 및 Jaeger 패키지에 초점을 맞춥니다. Jaeger 사용에 대한 자세한 정보는 [Jaeger 문서 포털](https://www.jaegertracing.io/docs/)을 참조하십시오.
 
 다음 단계에서 두 개의 소형 애플리케이션(프론트 엔드와 백엔드)은 Jaeger 모듈을 사용하여 두 엔드포인트 사이를 추적하는 데 사용됩니다. 처음부터 시작하거나 기존 Go 애플리케이션에 여기에 설명되어 있는 원칙을 적용할 수 있습니다.
 
 ## 1단계. Opentracing 및 Jaeger 패키지 설치 및 사용
-{: #install-go-opentracing}
+{: #install-packages}
 
 1. Go 애플리케이션의 `Gopkg.toml` 파일과 동일한 위치에 다음 명령을 입력하여 종속성 목록에 필수 패키지를 추가하십시오.
   ```go
@@ -47,7 +43,7 @@ subcollection: go
   {: codeblock}
 
 ### 서버 애플리케이션에 추적 추가
-{: #add-tracing-go}
+{: #tracing-go}
 
 서버 애플리케이션에 추적을 추가하려면 몇 가지 명령문이 필요합니다. 먼저 추적 프로그램을 작성해야 합니다.
 
@@ -210,7 +206,7 @@ docker run -d --name jaeger \
 ### 배치된 Jaeger 서버를 Kubernetes로 설정
 {: #jaeger-kube}
 
-Jaeger는 로컬 개발의 경우와 같이 Kubernetes 개발을 위해 올인원 서비스를 제공합니다. 프로덕션 코드가 아닌 개발을 위해서만 올인원 서비스를 사용하십시오. 프로덕션을 위해 Kubernetes에 배치하는 데 대해 자세히 보려면 [Jaeger Kubernetes 템플리트 안내서](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")를 참조하십시오.
+Jaeger는 로컬 개발의 경우와 같이 Kubernetes 개발을 위해 올인원 서비스를 제공합니다. 프로덕션 코드가 아닌 개발을 위해서만 올인원 서비스를 사용하십시오. 프로덕션을 위해 Kubernetes에 배치하는 데 대해 자세히 보려면 [Jaeger Kubernetes 템플리트 안내서](https://github.com/jaegertracing/jaeger-kubernetes#production-setup)를 참조하십시오.
 
 Jaeger 서버를 배치하려면 다음 단계를 완료하십시오.
 1. `ibmcloud cs cluster-config<cluster name>`를 실행하여 클러스터가 설정되었는지 확인하고 지시사항을 따르십시오.
@@ -231,7 +227,7 @@ Jaeger 서버를 배치하려면 다음 단계를 완료하십시오.
 `kubectl get service jaeger-query`를 실행하여 포트를 찾을 수 있습니다.
 
 ## 3단계. 시나리오 예 테스트
-{: #test-go-tracing}
+{: #example-scenario}
 
 이전 단계를 수행하는 경우 추적을 지원하는 두 개의 개별 Go 애플리케이션을 작성하는 것이 간단합니다. 다음 코드를 사용하여 프로젝트 중 하나에 라우트를 추가할 수 있습니다.
 ```go

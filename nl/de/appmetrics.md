@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,9 +14,9 @@ subcollection: go
 {:tip: .tip}
 
 # Anwendungsmetriken mit Go-Apps verwenden
-{: #go-appmetrics}
+{: #appmetrics}
 
-Anwendungsmetriken sind wichtig für die Überwachung der Leistung Ihrer Anwendung. Eine Liveansicht von Metriken wie CPU, Speicher, Latenzzeit und HTTP-Metriken ist unverzichtbar, um sicherzustellen, dass Ihre Anwendung im Zeitablauf effektiv ausgeführt wird. Zur Anpassung an die aktuelle Workload durch dynamische Skalierung von Instanzen können Sie einen Cloud-Service wie den [Auto-Scaling-Service](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started) von Cloud Foundry verwenden, der sich auf Metriken stützt. Durch die Verwendung von Anwendungsmetriken werden Sie genau informiert, wann Sie Instanzen durch Scale-up oder Scale-down vertikal nach oben bzw. nach unten skalieren oder nicht mehr benötigte Instanzen bereinigen müssen, um die Kosten niedrig zu halten.
+Anwendungsmetriken sind wichtig für die Überwachung der Leistung Ihrer Anwendung. Eine Liveansicht von Metriken wie CPU, Speicher, Latenzzeit und HTTP-Metriken ist unverzichtbar, um sicherzustellen, dass Ihre Anwendung im Zeitablauf effektiv ausgeführt wird. Zur Anpassung an die aktuelle Workload durch dynamische Skalierung von Instanzen können Sie einen Cloud-Service wie den [Auto-Scaling-Service](/docs/services/Auto-Scaling/index.html) von Cloud Foundry verwenden, der sich auf Metriken stützt. Durch die Verwendung von Anwendungsmetriken werden Sie genau informiert, wann Sie Instanzen durch Scale-up oder Scale-down vertikal nach oben bzw. nach unten skalieren oder nicht mehr benötigte Instanzen bereinigen müssen, um die Kosten niedrig zu halten.
 
 Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Aggregieren und Visualisieren erfasster Metriken kann dabei helfen, allgemeine Leistungsprobleme zu erkennen, wie zum Beispiel die Folgenden:
 
@@ -31,11 +27,11 @@ Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Aggregieren und Visua
 * Hohe oder zunehmende Speicherbelegung (potenzielles Speicherleck)
 
 ## Anwendungsmetriken zu Ihrer vorhandenen Go-Anwendung hinzufügen
-{: #go-add-appmetrics-existing}
+{: #add-appmetrics-existing}
 
 Zum Hinzufügen der Leistungsüberwachung zu Ihrer Go-Anwendung können Sie die umfassende Aggregation von Metriken nutzen, die das Paket `promhttp` bereitstellt.
 
-Das Paket `promhttp` hat viele Erweiterungspunkte, darunter [Prometheus-Konfiguration](https://github.com/prometheus/client_golang){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Das Paket `promhttp` enthält zahlreiche Erweiterungspunkte, unter anderem auch [Prometheus-Konfiguration](https://github.com/prometheus/client_golang).
 
 1. Sie können zum Beispiel die folgende einfache Go- und Gin-Anwendung vom Typ 'Hello World' verwenden:
     ```go
@@ -79,8 +75,8 @@ Das Paket `promhttp` hat viele Erweiterungspunkte, darunter [Prometheus-Konfigur
   {: codeblock}
 
 ## Anwendungsmetriken in Starter-Kits verwenden
-{: #go-starterkits-appmetrics}
+{: #starterkits-appmetrics}
 
-Aus Starter-Kits erstellte serverseitige Go-Anwendungen werden automatisch mit dem [Prometheus-Endpunkt](https://prometheus.io/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") unter `http://<hostname>:<port>/metrics` ausgestattet. Der Code für diesen Endpunkt befindet sich in `server.go`.
+Die serverseitigen Go-Anwendungen, die aus Starter-Kits erstellt werden, sind automatisch mit dem [Prometheus-Endpunkt](https://prometheus.io/) unter `http://<hostname>:<port>/metrics` ausgestattet. Der Code für diesen Endpunkt befindet sich in `server.go`.
 
-Weitere Informationen enthält das [GitHub-Repository für Prometheus](https://github.com/prometheus/client_golang/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Weitere Informationen enthält das [GitHub-Repository für Prometheus](https://github.com/prometheus/client_golang/).

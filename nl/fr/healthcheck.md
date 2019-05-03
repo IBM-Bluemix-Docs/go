@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,12 +14,12 @@ subcollection: go
 {:tip: .tip}
 
 # Utilisation d'un diagnostic d'intégrité dans votre application Go
-{: #go-healthcheck}
+{: #healthcheck}
 
-Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Les environnements de cloud, tels [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") et [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe"), peuvent être configurés pour sonder périodiquement les noeuds finaux d'intégrité afin de déterminer si une instance de votre service est prête à accepter du trafic.
+Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Les environnements de cloud tels que [Kubernetes](https://www.ibm.com/cloud/container-service) et [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) peuvent être configurés pour sonder les noeuds finaux d'intégrité périodiquement afin de déterminer si une instance de votre service est prête à recevoir du trafic.
 
 ## Présentation des diagnostics d'intégrité
-{: #go-healtcheck-overview}
+{: #overview}
 
 Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Ils sont généralement accessibles via HTTP et utilisent des codes de retour standard pour indiquer les états UP ou DOWN. La valeur de retour d'un diagnostic d'intégrité est variable, mais une réponse JSON minimale telle que `{"status": "UP"}` est typique.
 
@@ -51,7 +47,7 @@ Le tableau suivant donne des indications sur les réponses fournies par les noeu
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
 
 ## Ajout d'un diagnostic d'intégrité à une application Go existante
-{: #go-add-healthcheck-existing}
+{: #add-healthcheck-existing}
 
 Ajoutez un diagnostic d'intégrité ou de vivacité minimal à une application `Gin-Gonic` existante en introduisant une nouvelle route, comme illustré dans l'exemple suivant :
 ```go
@@ -64,10 +60,10 @@ func HealthGET(c *gin.Context) {
 
 Vérifiez l'état de l'application avec un navigateur en accédant au noeud final `/health`.
 
-Il existe des bibliothèques plus étendues, comme [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe"), qui permettent de définir des diagnostics d'intégrité extensibles et prenant en charge la mise en cache des diagnostics exécutés sur les services de sauvegarde. Dans ce cas, il est préférable de séparer le simple test de vivacité de l'exemple de la vérification plus robuste et plus détaillée de l'état de préparation qui est construite à partir du package du diagnostic d'intégrité.
+Il existe des bibliothèques plus étendues, comme [`http-healthcheck`](https://github.com/robzienert/http-healthcheck), qui permettent de définir des diagnostics d'intégrités extensibles et prennent en charge la mise en cache des diagnostics qui sont exécutés sur les services de sauvegarde. Dans ce cas, il est préférable de séparer le simple test de vivacité de l'exemple de la vérification plus robuste et plus détaillée de l'état de préparation qui est construite à partir du package du diagnostic d'intégrité.
 
 ## Accès du noeud final du diagnostic d'intégrité dans les applications Go du kit de démarrage
-{: #go-healthcheck-starterkit}
+{: #healthcheck-starterkit}
 
 Par défaut, lorsque vous générez une application Go à l'aide d'un kit de démarrage, un noeud final de diagnostic d'intégrité de base (non autorisé) est disponible sous `/health` pour vérifier l'état de l'application (UP/DOWN).
 
@@ -88,14 +84,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Recommandations pour les sondes de préparation et de vivacité
-{: #go-recommend-healthcheck}
+{: #recommend-healthcheck}
 
 Les sondes de préparation doivent inclure la viabilité des connexions aux services situés en aval dans leur résultat si aucune rétromigration acceptable n'existe lorsque le service en aval n'est pas disponible. Il ne s'agit pas d'appeler directement le diagnostic d'intégrité qui est fourni par le service en aval, car l'infrastructure le vérifie pour vous. Vous devez plutôt envisager de vérifier l'état des références existantes de votre application aux services en aval : il peut s'agir d'une connexion JMS à WebSphere MQ, ou d'un consommateur ou producteur Kafka initialisé. Si vous vérifiez la viabilité des références internes aux services en aval, mettez en cache le résultat pour minimiser l'impact de la vérification de santé sur votre application.
 
 Une sonde de vivacité, en revanche, est délibérée quant à ce qui est vérifié, car une défaillance entraîne l'arrêt immédiat du processus. Un noeud final HTTP simple qui renvoie toujours `{"status" : "UP"}` avec le code d'état `200` est un choix raisonnable.
 
 ## Configuration des sondes de préparation et de vivacité dans Kubernetes
-{: #go-config-probes-healthcheck}
+{: #config_probes-healthcheck}
 
 Sondez la vivacité et l'état de préparation en même temps que votre déploiement Kubernetes. Les deux sondes utilisent les mêmes paramètres de configuration :
 
@@ -135,4 +131,4 @@ spec:
 ```
 {: codeblock}
 
-Pour plus d'informations, voir [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
+Pour plus d'informations, voir [Configuration des sondes de vivacité et de préparation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).

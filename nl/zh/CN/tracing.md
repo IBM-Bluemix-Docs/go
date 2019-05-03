@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
-
-keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,14 +14,14 @@ subcollection: go
 {:tip: .tip}
 
 # 在 Go 应用程序中设置跟踪
-{: #go-e2e-tracing}
+{: #e2e-tracing}
 
-以下教程关注于用于跟踪 Go 应用程序的 Opentracing 和 Jaeger 包。有关使用 Jaeger 的更多信息，请参阅 [Jaeger 文档门户网站](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+以下教程关注于用于跟踪 Go 应用程序的 Opentracing 和 Jaeger 包。有关使用 Jaeger 的更多信息，请参阅 [Jaeger 文档门户网站](https://www.jaegertracing.io/docs/)。
 
 在以下步骤中，通过 Jaeger 模块使用两个小型应用程序（一个前端，一个后端）在两个端点之间进行跟踪。您可以从头开始，也可以将此处描述的原则应用于现有 Go 应用程序。
 
 ## 步骤 1. 安装和启用 Opentracing 和 Jaeger 包
-{: #install-go-opentracing}
+{: #install-packages}
 
 1. 在与 Go 应用程序的 `Gopkg.toml` 文件相同的位置中，输入以下命令以将必需的包添加到依赖项列表：
   ```go
@@ -47,7 +43,7 @@ subcollection: go
   {: codeblock}
 
 ### 向服务器应用程序添加跟踪
-{: #add-tracing-go}
+{: #tracing-go}
 
 需要一些语句以向服务器应用程序添加跟踪。首先，必须创建跟踪器。
 
@@ -210,7 +206,7 @@ docker run -d --name jaeger \
 ### 将已部署的 Jaeger 服务器设置为 Kubernetes
 {: #jaeger-kube}
 
-与本地开发一样，Jaeger 针对 Kubernetes 开发提供一个一体化服务。仅将一体化服务用于开发，而非生产代码。要了解有关针对生产部署到 Kubernetes 的更多信息，请参阅 [Jaeger Kubernetes 模板指南](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+与本地开发一样，Jaeger 针对 Kubernetes 开发提供一个一体化服务。仅将一体化服务用于开发，而非生产代码。要了解有关针对生产部署到 Kubernetes 的更多信息，请参阅 [Jaeger Kubernetes 模板指南](https://github.com/jaegertracing/jaeger-kubernetes#production-setup)。
 
 要部署 Jaeger 服务器，请完成以下步骤：
 1. 确保通过运行 `ibmcloud cs cluster-config <cluster name>` 设置集群，并遵循指示信息。
@@ -231,7 +227,7 @@ docker run -d --name jaeger \
 您可以通过运行 `kubectl get service jaeger-query` 来查找端口。
 
 ## 步骤 3. 测试示例场景
-{: #test-go-tracing}
+{: #example-scenario}
 
 在遵循先前步骤时，创建支持跟踪的两个单独的 Go 应用程序很简单。可以使用以下代码向其中一个项目添加路由：
 ```go

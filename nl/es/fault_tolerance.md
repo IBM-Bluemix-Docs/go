@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -20,7 +16,7 @@ subcollection: go
 # Configuración de la tolerancia al error en apps Go
 {: #fault-tolerance}
 
-La tolerancia al error permite que una aplicación continúe ejecutándose si un componente falla o deja de responder. Puede añadir la tolerancia a errores a una aplicación Go existente o habilitar estas características desde una aplicación Go generada. Esta guía de aprendizaje se centra en el uso del [paquete de Hystrix](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") para añadir soporte de tolerancia de errores a una aplicación Go.
+La tolerancia al error permite que una aplicación continúe ejecutándose si un componente falla o deja de responder. Puede añadir la tolerancia a errores a una aplicación Go existente o habilitar estas características desde una aplicación Go generada. Esta guía de aprendizaje se centra en el uso del [paquete de Hystrix](https://godoc.org/github.com/afex/hystrix-go/hystrix) para añadir soporte a una aplicación Go.
 
 ## Adición de la tolerancia a errores a una app Go existente
 {: #add-fault-tolerance}

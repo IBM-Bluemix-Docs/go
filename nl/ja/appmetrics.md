@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,9 +14,9 @@ subcollection: go
 {:tip: .tip}
 
 # Go アプリでのアプリケーション・メトリックの使用
-{: #go-appmetrics}
+{: #appmetrics}
 
-アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 CPU、メモリー、待ち時間、HTTP などのメトリックをライブで表示できることは、時間の経過とともにアプリケーションが効果的に実行されていることを確認するために不可欠です。 メトリックに依存するクラウド・サービス (例えば、Cloud Foundry の[自動スケーリング](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)など) を使用して、現行作業負荷に合わせて動的にインスタンスをスケーリングできます。 アプリケーション・メトリックを使用することによって、インスタンスのスケーリングや不要インスタンスのクリーンアップを行うタイミングを正確に把握して、コストを低く抑えることができます。
+アプリケーション・メトリックは、アプリケーションのパフォーマンスをモニターするのに重要です。 CPU、メモリー、待ち時間、HTTP などのメトリックをライブで表示できることは、時間の経過とともにアプリケーションが効果的に実行されていることを確認するために不可欠です。 メトリックに依存するクラウド・サービス (例えば、Cloud Foundry の[自動スケーリング](/docs/services/Auto-Scaling/index.html)など) を使用して、現行作業負荷に合わせて動的にインスタンスをスケーリングできます。 アプリケーション・メトリックを使用することによって、インスタンスのスケーリングや不要インスタンスのクリーンアップを行うタイミングを正確に把握して、コストを低く抑えることができます。
 
 アプリケーション・メトリックは、時系列データとして収集されます。 収集されたメトリックを集約して視覚化することは、以下のような一般的なパフォーマンス上の問題を特定するのに役立ちます。
 
@@ -31,11 +27,11 @@ subcollection: go
 * メモリー使用量が多いか、増加している (メモリー・リークの可能性)
 
 ## 既存の Go アプリケーションへのアプリケーション・メトリックの追加
-{: #go-add-appmetrics-existing}
+{: #add-appmetrics-existing}
 
 Go アプリケーションにパフォーマンス・モニターを追加するために、`promhttp` パッケージが提供するメトリックの包括的な集約を使用できます。
 
-`promhttp` パッケージには、[Prometheus 構成](https://github.com/prometheus/client_golang){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") など、多くの拡張ポイントがあります。
+`promhttp` パッケージには、[Prometheus 構成](https://github.com/prometheus/client_golang)など、多くの拡張ポイントがあります。
 
 1. 例として、以下の単純な Go + Gin アプリケーション「Hello World」を使用します。
     ```go
@@ -79,8 +75,8 @@ Go アプリケーションにパフォーマンス・モニターを追加す�
   {: codeblock}
 
 ## スターター・キットでのアプリケーション・メトリックの使用
-{: #go-starterkits-appmetrics}
+{: #starterkits-appmetrics}
 
-スターター・キットで作成されたサーバー・サイドの Go アプリケーションには、`http://<hostname>:<port>/metrics` の [Prometheus エンドポイント](https://prometheus.io/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") が自動的に付属します。このエンドポイントのコードは `server.go` にあります。
+スターター・キットで作成されたサーバー・サイドの Go アプリケーションには、`http://<hostname>:<port>/metrics` の下に [Prometheus エンドポイント](https://prometheus.io/)が自動的に付属します。 このエンドポイントのコードは `server.go` にあります。
 
-詳しくは、[GitHub Repository for Prometheus](https://github.com/prometheus/client_golang/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
+詳しくは、[GitHub Repository for Prometheus](https://github.com/prometheus/client_golang/) を参照してください。

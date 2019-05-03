@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -20,7 +16,7 @@ subcollection: go
 # 在 Go 應用程式中設定容錯
 {: #fault-tolerance}
 
-容錯可讓應用程式在元件失敗或變得無回應時繼續執行。您可以將容錯功能新增至現有的 Go 應用程式，或從產生的 Go 應用程式啟用這些特性。本指導教學著重在使用 [Hystrix 套件](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")，將容錯支援新增至 Go 應用程式。
+容錯可讓應用程式在元件失敗或變得無回應時繼續執行。您可以將容錯功能新增至現有的 Go 應用程式，或從產生的 Go 應用程式啟用這些特性。本指導教學著重在使用 [Hystrix 套件](https://godoc.org/github.com/afex/hystrix-go/hystrix)，將容錯支援新增至 Go 應用程式。
 
 ## 將容錯新增至現有的 Go 應用程式
 {: #add-fault-tolerance}

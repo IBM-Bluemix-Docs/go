@@ -2,11 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-08"
-
-keywords: go sdk, go client sdk, add sdk go app, mongodb go sdk, postgres go sdk, redis go sdk, couchdb go sdk
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -16,8 +12,8 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-#  SDKs zu Go-Apps hinzufügen
-{: #add-sdk-go}
+#  SDKs
+{: #sdk-go}
 
 Wenn Sie {{site.data.keyword.cloud_notm}}-SDKs zu Ihrer App hinzufügen wollen, wählen Sie zunächst die SDKs aus, die Sie verwenden wollen, und konfigurieren Sie dann Ihren Abhängigkeitsmanager so, dass er die SDKs mit einer Pull-Operation in Ihre App extrahiert.
 
@@ -25,10 +21,10 @@ Wenn Sie {{site.data.keyword.cloud_notm}}-SDKs zu Ihrer App hinzufügen wollen, 
 {: #client_sdk-go}
 
 Sie können die folgenden SDKs in Ihrer Go-Anwendung verwenden:
-* [Go-SDK für MongoDB ](https://github.com/mongodb/mongo-go-driver){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
-* [Go-SDK für Postgres ](https://github.com/lib/pq){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
-* [Go-SDK für Redis ](https://github.com/go-redis/redis){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
-* [Go-SDK für CouchDB ](https://github.com/leesper/couchdb-golang){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+* [Go-SDK für MongoDB ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/mongodb/mongo-go-driver)
+* [Go-SDK für Postgres ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/lib/pq)
+* [Go-SDK für Redis ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/go-redis/redis)
+* [Go-SDK für CouchDB ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")](https://github.com/leesper/couchdb-golang)
 
 <!--
 ## Services

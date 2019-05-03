@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
-
-keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,16 +14,16 @@ subcollection: go
 {:tip: .tip}
 
 # Tracing in Go-Apps einrichten
-{: #go-e2e-tracing}
+{: #e2e-tracing}
 
-Das folgende Lernprogramm konzentriert sich auf OpenTracing- und Jaeger-Pakete für das Tracing von Go-Anwendungen. Weitere Informationen zur Verwendung von Jaeger finden Sie im [Jaeger-Dokumentationsportal](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Das folgende Lernprogramm konzentriert sich auf OpenTracing- und Jaeger-Pakete für das Tracing von Go-Anwendungen. Weitere Informationen zur Verwendung von Jaeger finden Sie im [Jaeger-Dokumentationsportal](https://www.jaegertracing.io/docs/).
 
 In den folgenden Schritten werden zwei kleine Anwendungen (eine Front-End-Anwendung, eine Back-End-Anwendung) für das Tracing zwischen zwei Endpunkten mithilfe des Jaeger-Moduls verwendet. Dabei können Sie bei Null anfangen oder aber die hier beschriebenen Prinzipien auf Ihre vorhandenen Go-Anwendungen anwenden.
 
 ## Schritt 1. OpenTracing- und Jaeger-Pakete installieren und aktivieren
-{: #install-go-opentracing}
+{: #install-packages}
 
-1. Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet:
+1. Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet: 
   ```go
   dep ensure -add "github.com/opentracing/opentracing-go"
   dep ensure -add "github.com/uber/jaeger-client-go"
@@ -47,7 +43,7 @@ In den folgenden Schritten werden zwei kleine Anwendungen (eine Front-End-Anwend
   {: codeblock}
 
 ### Tracing zur Serveranwendung hinzufügen
-{: #add-tracing-go}
+{: #tracing-go}
 
 Es sind einige Anweisungen notwendig, um Tracing zu Ihrer Serveranwendung hinzuzufügen. Als Erstes müssen Sie einen Tracer erstellen.
 
@@ -210,7 +206,7 @@ Der Agent kann mit Port `5775` verbunden sein, während die Abfrage mit Port `16
 ### Bereitgestellten Jaeger-Server in Kubernetes einrichten
 {: #jaeger-kube}
 
-Wie es bei der lokalen Entwicklung der Fall ist, stellt Jaeger einen allumfassenden Service für die Entwicklung von Kubernetes bereit. Verwenden Sie den allumfassenden Service nur für Entwicklungscode, nicht aber für Produktionscode. Weitere Informationen zur Bereitstellung auf Kubernetes für die Produktion enthält der [Leitfaden zu Jaeger-Kubernetes-Vorlagen](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Wie es bei der lokalen Entwicklung der Fall ist, stellt Jaeger einen allumfassenden Service für die Entwicklung von Kubernetes bereit. Verwenden Sie den allumfassenden Service nur für Entwicklungscode, nicht aber für Produktionscode. Weitere Informationen zur Bereitstellung auf Kubernetes für die Produktion enthält der Leitfaden zu [Jaeger-Vorlagen für Kubernetes](https://github.com/jaegertracing/jaeger-kubernetes#production-setup).
 
 Führen Sie zum Bereitstellen des Jaeger-Servers die folgenden Schritte aus:
 1. Stellen Sie sicher, dass Ihr Cluster eingerichtet. Führen Sie dazu `ibmcloud cs cluster-config <cluster name>` aus und folgen Sie den Anweisungen.
@@ -231,7 +227,7 @@ Führen Sie zum Bereitstellen des Jaeger-Servers die folgenden Schritte aus:
 Die Portnummer können Sie durch Ausführen von `kubectl get service jaeger-query` in Erfahrung bringen.
 
 ## Schritt 3. Beispielszenario testen
-{: #test-go-tracing}
+{: #example-scenario}
 
 Wenn Sie anhand der vorherigen Schritte vorgehen, ist es einfach, zwei separate Go-Anwendungen zu erstellen, die das Tracing unterstützen. Mit dem folgenden Code können Sie eine Route zu einem der Projekte hinzufügen:
 ```go

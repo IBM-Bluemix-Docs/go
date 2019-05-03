@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,12 +14,12 @@ subcollection: go
 {:tip: .tip}
 
 # 在 Go 应用程序中使用运行状况检查
-{: #go-healthcheck}
+{: #healthcheck}
 
-运行状况检查提供了一种简单的机制，用于确定服务器端应用程序是否在正常运行。云环境（如 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 和 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")）可以配置为对运行状况端点定期进行轮询，以确定服务实例是否已准备好接受流量。
+运行状况检查提供了一种简单的机制，用于确定服务器端应用程序是否在正常运行。云环境（例如 [Kubernetes](https://www.ibm.com/cloud/container-service) 和 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry)）可以配置为定期轮询运行状况端点，以确定服务的实例是否已准备好接受流量。
 
 ## 运行状况检查概述
-{: #go-healtcheck-overview}
+{: #overview}
 
 运行状况检查提供了一种简单的机制，用于确定服务器端应用程序是否在正常运行。运行状况检查通常通过 HTTP 进行访问，并使用标准返回码来指示 UP 或 DOWN 状态。运行状况检查的返回值是可变的，但极简 JSON 响应（如 `{"status": "UP"}`）则采用典型值。
 
@@ -51,7 +47,7 @@ Kubernetes 对于进程运行状况的概念有细微差别。它定义了两个
 | 出错     | 500 - 服务器错误            | 500 - 服务器错误            | 500 - 服务器错误            |
 
 ## 向现有 Go 应用程序添加运行状况检查
-{: #go-add-healthcheck-existing}
+{: #add-healthcheck-existing}
 
 您可以通过引入新路径向现有 `Gin-Gonic` 应用程序添加极简的运行状况或活性检查，如以下示例中所示：
 ```go
@@ -64,10 +60,10 @@ func HealthGET(c *gin.Context) {
 
 通过访问 `/health` 端点，使用浏览器检查应用程序的状态。
 
-提供有更广泛的库，如 [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")，这允许定义可扩展运行状况检查，其中支持高速缓存针对后备服务运行的检查。在此情况下，您需要将示例中的简单活性测试与从运行状况检查包构建的更稳健的详细就绪性检查分隔开。
+提供有更广泛的库，如 [`http-healthcheck`](https://github.com/robzienert/http-healthcheck)，这允许定义可扩展运行状况检查，支持高速缓存针对支持服务运行的检查。在此情况下，您需要将示例中的简单活性测试与从运行状况检查包构建的更稳健的详细就绪性检查分隔开。
 
 ## 在 Go 入门模板工具包应用程序中访问运行状况检查端点
-{: #go-healthcheck-starterkit}
+{: #healthcheck-starterkit}
 
 缺省情况下，使用入门模板工具包来生成 Go 应用程序时，`/health` 处提供了基本（未授权）运行状况检查端点，可用于检查应用程序的状态 (UP/DOWN)。
 
@@ -88,14 +84,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## 针对就绪性和活性探测器的建议
-{: #go-recommend-healthcheck}
+{: #recommend-healthcheck}
 
 如果下游服务不可用，那么在没有可接受的回退时，就绪性探测器应该在其结果中包含连接到下游服务的可行性。这并不意味着直接调用下游服务提供的运行状况检查，因为基础架构会为您执行该检查。请转而考虑验证应用程序对下游服务的现有引用的运行状况：这可能是 WebSphere MQ 的 JMS 连接，或者是初始化的 Kafka 使用者或生产者。如果您确实检查了下游服务的内部引用的可行性，请将结果高速缓存以尽可能减小运行状况检查对应用程序的影响。
 
 相比之下，活性探测器会注重检查的内容，因为故障会导致该进程立即终止。一个始终使用状态码 `200` 返回 `{"status": "UP"}` 的简单 HTTP 端点是比较合理的选项。
 
 ## 在 Kubernetes 中配置就绪性和活性探测器
-{: #go-config-probes-healthcheck}
+{: #config_probes-healthcheck}
 
 随 Kubernetes 部署一起声明活性和就绪性探测器。这两个探测器使用相同的配置参数：
 
@@ -135,4 +131,4 @@ spec:
 ```
 {: codeblock}
 
-有关更多信息，请参阅如何[配置活性和就绪性探测器](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+有关更多信息，请参阅如何[配置活性和就绪性探测器](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)。

@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
-
-keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
-
-subcollection: go
+lastupdated: "2019-02-28"
 
 ---
 
@@ -18,16 +14,16 @@ subcollection: go
 {:tip: .tip}
 
 # Criação de log no Go
-{: #logging-golang}
+{: #logging_golang}
 
-As mensagens de log são sequências com informações contextuais nelas sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenham uma função de suporte para [métricas](/docs/go?topic=go-appmetrics#appmetrics) no monitoramento do funcionamento do aplicativo.
+As mensagens de log são sequências com informações contextuais nelas sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenham uma função de suporte para [métricas](/docs/go/appmetrics.html) no monitoramento do funcionamento do aplicativo.
 
-Dada a natureza transitória de processos em ambientes de nuvem, os logs devem ser coletados e enviados para outros lugares, geralmente para um local centralizado para análise. A maneira mais consistente de efetuar login em ambientes de nuvem é enviar entradas de log para fluxos de saída e erro padrão, deixando a infraestrutura manipular o restante.
+Dada a natureza temporária de processos em ambientes de nuvem, os logs devem ser coletados e enviados em outro lugar, geralmente para um local centralizado para análise. A maneira mais consistente de efetuar login em ambientes de nuvem é enviar entradas de log para fluxos de saída e erro padrão, deixando a infraestrutura manipular o restante.
 
 ## Incluindo suporte ao Logrus no app Go
-{: #add-logrus-go}
+{: #add_logrus}
 
-[Logrus](https://github.com/sirupsen/logrus){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") é uma estrutura de criação de log popular para o Go e fornece muitos benefícios nativos, que incluem: 
+[Logrus](https://github.com/sirupsen/logrus) é uma estrutura de criação de log popular para Go e fornece muitos benefícios nativos, que incluem: 
  * Criação de log em `stdout` ou `stderr`
  * Várias opções de anexação
  * Layout e padrões configuráveis de mensagem de log
@@ -54,17 +50,17 @@ Dada a natureza transitória de processos em ambientes de nuvem, os logs devem s
   ```
   {: screen}
 
-Para obter mais informações sobre a customização das mensagens de log com anexadores, níveis de log e detalhes de configuração, consulte a [Documentação do Logrus](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") oficial.
+Para obter mais informações sobre a customização das mensagens de log com anexadores, níveis de log e detalhes de configuração, consulte a [Documentação do Logrus](https://godoc.org/gopkg.in/Sirupsen/logrus.v0) oficial.
 
 ## Próximas Etapas
-{: #go-logging-next notoc}
+{: #next_steps-logging}
 
-Saiba mais sobre como visualizar os logs em cada um dos destinos de implementação:
-* [Logs do Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")
-* [Logs do Cloud Foundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - Auditoria e criação de log](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [Logs e monitoramento do {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+Saiba mais sobre como visualizar os logs em cada um dos nossos ambientes de implementação:
+* [Logs do Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
+* [Logs do Cloud Foundry](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - Auditoria e criação de log](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
+* [Logs e monitoramento do {{site.data.keyword.openwhisk}}](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 Saiba mais sobre como usar um agregador de log:
-* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
-* [Pilha ELK do {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo")
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [Pilha ELK do {{site.data.keyword.cloud_notm}} Private](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

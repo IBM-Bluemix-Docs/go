@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -20,12 +16,12 @@ subcollection: go
 # Fehlertoleranz in Go-Apps festlegen
 {: #fault-tolerance}
 
-Eine Fehlertoleranz ermöglicht einer Anwendung die Fortsetzung ihrer Ausführung, wenn eine Komponente ausfällt oder nicht mehr reagiert. Sie können Fehlertoleranz zu einer vorhandenen Go-Anwendung hinzufügen oder diese Features von einer generierten Go-Anwendung aus aktivieren. Das vorliegende Lernprogramm konzentriert sich auf die Verwendung des [Hystrix-Pakets](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"), um einer Go-Anwendung Unterstützung für Fehlertoleranz hinzuzufügen. 
+Eine Fehlertoleranz ermöglicht einer Anwendung die Fortsetzung ihrer Ausführung, wenn eine Komponente ausfällt oder nicht mehr reagiert. Sie können Fehlertoleranz zu einer vorhandenen Go-Anwendung hinzufügen oder diese Features von einer generierten Go-Anwendung aus aktivieren. Das vorliegende Lernprogramm konzentriert sich auf die Verwendung des [Hystrix-Pakets](https://godoc.org/github.com/afex/hystrix-go/hystrix), um Unterstützung für Fehlertoleranz zu einer Go-Anwendung hinzuzufügen.
 
 ## Fehlertoleranz zu einer vorhandenen Go-App hinzufügen
 {: #add-fault-tolerance}
 
-Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet:
+Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet: 
 ```
 dep ensure -add "github.com/afex/hystrix-go/hystrix"
 ```

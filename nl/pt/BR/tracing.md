@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
-
-keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,14 +14,14 @@ subcollection: go
 {:tip: .tip}
 
 # Configurando o rastreio em apps Go
-{: #go-e2e-tracing}
+{: #e2e-tracing}
 
-O tutorial a seguir foca nos pacotes Opentracing e Jaeger para rastrear aplicativos Go. Para obter mais informações sobre como usar o Jaeger, consulte o [Portal de documentação do Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
+O tutorial a seguir foca nos pacotes Opentracing e Jaeger para rastrear aplicativos Go. Para obter mais informações sobre como usar o Jaeger, consulte o [Portal de documentação do Jaeger](https://www.jaegertracing.io/docs/).
 
 Nas etapas a seguir, dois aplicativos pequenos (um front-end, um back-end) são usados para rastrear entre dois terminais usando o módulo Jaeger. É possível iniciar do zero ou aplicar os princípios que estão descritos aqui em seus aplicativos Go existentes.
 
 ## Etapa 1. Instalando e ativando os pacotes Opentracing e Jaeger
-{: #install-go-opentracing}
+{: #install-packages}
 
 1. No mesmo local que o arquivo `Gopkg.toml` do aplicativo Go, insira os comandos a seguir para incluir os pacotes necessários em sua lista de dependências:
   ```go
@@ -47,7 +43,7 @@ Nas etapas a seguir, dois aplicativos pequenos (um front-end, um back-end) são 
   {: codeblock}
 
 ### Incluindo rastreio no aplicativo do servidor
-{: #add-tracing-go}
+{: #tracing-go}
 
 Algumas instruções são necessárias para incluir o rastreio em seu aplicativo do servidor. Primeiro, deve-se criar um rastreador.
 
@@ -210,7 +206,7 @@ O agente pode ser conectado na porta `5775`, enquanto a consulta pode ser conect
 ### Configurando um servidor Jaeger implementado para Kubernetes
 {: #jaeger-kube}
 
-Tal como o desenvolvimento local, o Jaeger fornece um serviço tudo em um para o desenvolvimento do Kubernetes. Use o serviço tudo em um somente para desenvolvimento, não para código de produção. Para saber mais sobre como implementar no Kubernetes para produção, consulte o [Guia de modelos do Kubernetes do Jaeger](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
+Tal como o desenvolvimento local, o Jaeger fornece um serviço tudo em um para o desenvolvimento do Kubernetes. Use o serviço tudo em um somente para desenvolvimento, não para código de produção. Para saber mais sobre a implementação no Kubernetes para produção, consulte o [Guia de modelos do Kubernetes do Jaeger](https://github.com/jaegertracing/jaeger-kubernetes#production-setup).
 
 Para implementar o servidor Jaeger, conclua estas etapas:
 1. Certifique-se de que o cluster esteja configurado executando `ibmcloud cs cluster-config <cluster name>` e siga as instruções.
@@ -231,7 +227,7 @@ Para implementar o servidor Jaeger, conclua estas etapas:
 É possível localizar a porta executando `kubectl get service jaeger-query`.
 
 ## Etapa 3. Testando um Cenário de Exemplo
-{: #test-go-tracing}
+{: #example-scenario}
 
 Ao seguir as etapas anteriores, é simples criar dois aplicativos Go separados que suportam rastreio. É possível incluir uma rota em um dos projetos com o código a seguir:
 ```go

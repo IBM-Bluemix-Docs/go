@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
-
-keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
-
-subcollection: go
+lastupdated: "2019-02-28"
 
 ---
 
@@ -18,16 +14,16 @@ subcollection: go
 {:tip: .tip}
 
 # Go でのロギング
-{: #logging-golang}
+{: #logging_golang}
 
-ログ・メッセージは、ログ・エントリーが作成された時点のマイクロサービスの状態およびアクティビティーに関するコンテキスト情報を含むストリングです。 ログは、サービスでの障害がなぜどのように起こったのかを診断するために必要なもので、アプリケーション正常性のモニタリングにおいて[メトリック](/docs/go?topic=go-appmetrics#appmetrics)の補助的な役割を果たします。
+ログ・メッセージは、ログ・エントリーが作成された時点のマイクロサービスの状態およびアクティビティーに関するコンテキスト情報を含むストリングです。 ログは、サービスでの障害がなぜどのように起こったのかを診断するために必要なもので、アプリケーション正常性のモニタリングにおいて[メトリック](/docs/go/appmetrics.html)の補助的な役割を果たします。
 
-クラウド環境のプロセスの一過性の性質を考慮すると、ログを収集したら、分析のために他の場所 (通常は一元管理の場所) に送信する必要があります。クラウド環境でロギングを行う最も一貫性のある方法は、ログ・エントリーを標準出力とエラー・ストリームに送信する方法です (こうするとインフラストラクチャーが残りを処理します)。
+クラウド環境でのプロセスの一過性の性質を考慮すると、ログは収集されて、分析のために他の場所 (通常は一元管理の場所) に送信される必要があります。 クラウド環境でロギングを行う最も一貫性のある方法は、ログ・エントリーを標準出力とエラー・ストリームに送信する方法です (こうするとインフラストラクチャーが残りを処理します)。
 
 ## Go アプリへの Logrus サポートの追加
-{: #add-logrus-go}
+{: #add_logrus}
 
-[Logrus](https://github.com/sirupsen/logrus){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")は、Go 用の一般的なロギング・フレームワークであり、以下のような多くの固有の利点があります。 
+[Logrus](https://github.com/sirupsen/logrus) は、Go 用の一般的なロギング・フレームワークであり、以下のような多くの固有の利点があります。 
  * `stdout` または `stderr` へのログの書き込み
  * 各種の付加オプション
  * 構成可能なログ・メッセージ・レイアウトおよびパターン
@@ -54,17 +50,17 @@ subcollection: go
   ```
   {: screen}
 
-アペンダー、ログ・レベル、および構成詳細でのログ・メッセージのカスタマイズについて詳しくは、公式の [Logrus 資料](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: new_window}  ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
+アペンダー、ログ・レベル、および構成詳細でのログ・メッセージのカスタマイズについて詳しくは、公式の [Logrus 資料](https://godoc.org/gopkg.in/Sirupsen/logrus.v0)を参照してください。
 
 ## 次のステップ
-{: #go-logging-next notoc}
+{: #next_steps-logging}
 
-各デプロイメント・ターゲットでのログの表示について詳しくは、次の各ページを参照してください。
-* [Kubernetes のログ](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
-* [Cloud Foundry のログ](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - 監査とロギング](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} のログおよびモニタリング](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+各デプロイメント環境でのログの表示について詳しくは、次の各ページを参照してください。
+* [Kubernetes のログ](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
+* [Cloud Foundry のログ](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - 監査とロギング](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
+* [{{site.data.keyword.openwhisk}} のログおよびモニタリング](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
 
 ログ統合機能の使用について詳しくは、以下を参照してください。
-* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
-* [{{site.data.keyword.cloud_notm}} Private ELK スタック](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")
+* [{{site.data.keyword.cloud_notm}} Log Analysis](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
+* [{{site.data.keyword.cloud_notm}} Private ELK スタック](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)

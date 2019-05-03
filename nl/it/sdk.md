@@ -2,11 +2,7 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-03-08"
-
-keywords: go sdk, go client sdk, add sdk go app, mongodb go sdk, postgres go sdk, redis go sdk, couchdb go sdk
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -16,8 +12,8 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-#  Aggiunta di SDK alle applicazioni Go
-{: #add-sdk-go}
+#  SDK
+{: #sdk-go}
 
 Per aggiungere gli SDK {{site.data.keyword.cloud_notm}} alla tua applicazione, scegli gli SDK che vuoi utilizzare e configura il tuo gestore delle dipendenze per eseguire il pull degli SDK nella tua applicazione.
 
@@ -25,10 +21,10 @@ Per aggiungere gli SDK {{site.data.keyword.cloud_notm}} alla tua applicazione, s
 {: #client_sdk-go}
 
 Puoi utilizzare i seguenti SDK nella tua applicazione Go:
-* [SDK Go MongoDB ](https://github.com/mongodb/mongo-go-driver){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
-* [SDK Go Postgres ](https://github.com/lib/pq){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
-* [SDK Go Redis ](https://github.com/go-redis/redis){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
-* [SDK Go CouchDB ](https://github.com/leesper/couchdb-golang){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
+* [SDK Go MongoDB ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://github.com/mongodb/mongo-go-driver)
+* [SDK Go Postgres ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://github.com/lib/pq)
+* [SDK Go Redis ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://github.com/go-redis/redis)
+* [SDK Go CouchDB ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")](https://github.com/leesper/couchdb-golang)
 
 <!--
 ## Services

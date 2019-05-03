@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -20,7 +16,7 @@ subcollection: go
 # Configurando a tolerância a falhas em apps Go
 {: #fault-tolerance}
 
-A tolerância a falhas permite que um aplicativo continue em execução se um componente falhar ou se tornar não responsivo. É possível incluir tolerância a falhas em um aplicativo Go existente ou ativar esses recursos por um Aplicativo Go gerado. Este tutorial se concentra no uso do [Pacote Hystrix ](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") para incluir suporte a tolerância a falhas para um aplicativo Go.
+A tolerância a falhas permite que um aplicativo continue em execução se um componente falhar ou se tornar não responsivo. É possível incluir tolerância a falhas em um aplicativo Go existente ou ativar esses recursos por um Aplicativo Go gerado. Este tutorial foca no uso do [pacote Hystrix](https://godoc.org/github.com/afex/hystrix-go/hystrix) para incluir suporte de tolerância a falhas em um aplicativo Go.
 
 ## Incluindo tolerância a falhas em um app Go existente
 {: #add-fault-tolerance}

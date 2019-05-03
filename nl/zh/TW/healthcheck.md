@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -18,12 +14,12 @@ subcollection: go
 {:tip: .tip}
 
 # 在 Go 應用程式中使用性能檢查
-{: #go-healthcheck}
+{: #healthcheck}
 
-性能檢查提供一種簡單機制，可判定伺服器端應用程式是否適當地運作。雲端環境（例如 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 及 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")）可以配置為定期輪詢性能端點，以判定您的服務實例是否準備好接受資料流量。
+性能檢查提供一種簡單機制，可判定伺服器端應用程式是否適當地運作。雲端環境（例如 [Kubernetes](https://www.ibm.com/cloud/container-service) 及 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry)）可以配置為定期輪詢性能端點，以判斷服務實例是否準備好接受資料流量。
 
 ## 性能檢查概觀
-{: #go-healtcheck-overview}
+{: #overview}
 
 性能檢查提供一種簡單機制，可判定伺服器端應用程式是否適當地運作。它們通常是透過 HTTP 來存取，並使用標準回覆碼來指出 UP 或 DOWN 狀態。性能檢查的回覆值是可變的，但是最小 JSON 回應（例如 `{"status": "UP"}`）是相同的。
 
@@ -51,7 +47,7 @@ Kubernetes 具有細緻入微的處理程序性能記號。它定義兩個探測
 | Errored  |500 - 伺服器錯誤|500 - 伺服器錯誤|500 - 伺服器錯誤|
 
 ## 將性能檢查新增至現有的 Go 應用程式
-{: #go-add-healthcheck-existing}
+{: #add-healthcheck-existing}
 
 您可以引進新的路徑，將最低性能或 liveness 檢查新增至現有的 `Gin-Gonic` 應用程式，如下列範例所示：
 ```go
@@ -64,10 +60,10 @@ func HealthGET(c *gin.Context) {
 
 使用瀏覽器，透過存取 `/health` 端點的方式，來檢查應用程式的狀態。
 
-有更廣泛的程式庫（例如 [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")）可供使用，這容許定義可延伸的性能檢查，並支援針對支持服務執行的快取檢查。在此情況下，您可能想要將範例中的簡易 liveness 測試，與從性能檢查套件建置的較健全、詳細 readiness 檢查分開。
+有更廣泛的程式庫（例如 [``](https://github.com/robzienert/http-healthcheck)）可供使用，這容許定義可延伸的性能檢查，並支援針對支持服務執行的快取檢查。在此情況下，您可能想要將範例中的簡易 liveness 測試，與從性能檢查套件建置的較健全、詳細 readiness 檢查分開。
 
 ## 存取 Go 入門範本套件應用程式中的性能檢查端點
-{: #go-healthcheck-starterkit}
+{: #healthcheck-starterkit}
 
 依預設，當您使用「入門範本套件」來產生 Go 應用程式時，在 `/health` 上可以使用基本（未獲授權）性能檢查端點，用來檢查應用程式的狀態 (UP/DOWN)。
 
@@ -88,14 +84,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## readiness 及 liveness 探測的建議
-{: #go-recommend-healthcheck}
+{: #recommend-healthcheck}
 
 如果下游服務無法使用時沒有可接受的撤回措施，readiness 探測應該在其結果中包含下游服務連線的可行性。這並不表示直接呼叫下游服務所提供的性能檢查，因為基礎架構會為您檢查。相反地，請考慮驗證您應用程式對下游服務之現有參照的性能：這可能是與 WebSphere MQ 的 JMS 連線，或已起始設定的 Kafka 消費者或生產者。如果您檢查了對下游服務之內部參照的可行性，請將結果予以快取，將性能檢查對您應用程式的影響降至最低。
 
 相反地，liveness 探測對於檢查的對象很慎重，因為失敗會導致立即終止處理程序。簡單的 http 端點、一律傳回 `{"status": "UP"}` 與狀態碼 `200`，便是一個合理的選項。
 
 ## 在 Kubernetes 中配置 readiness 和 liveness 探測
-{: #go-config-probes-healthcheck}
+{: #config_probes-healthcheck}
 
 請與 Kubernetes 部署同時宣告 liveness 和 readiness 探測。兩種探測都使用相同的配置參數：
 
@@ -135,4 +131,4 @@ spec:
 ```
 {: codeblock}
 
-如需相關資訊，請參閱如何 [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
+如需相關資訊，請參閱如何 [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)。

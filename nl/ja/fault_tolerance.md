@@ -2,11 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
-
-keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
-
-subcollection: go
+lastupdated: "2019-01-14"
 
 ---
 
@@ -20,7 +16,7 @@ subcollection: go
 # Go アプリでのフォールト・トレランスのセットアップ
 {: #fault-tolerance}
 
-フォールト・トレランスを使用すると、コンポーネントで障害が発生した場合や応答しなくなった場合に、アプリケーションを実行し続けることができます。 既存の Go アプリケーションにフォールト・トレランスを追加したり、生成された Go アプリケーションからこれらの機能を有効にしたりすることもできます。 このチュートリアルでは、[Hystrix パッケージ](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を使用して Go アプリケーションにフォールト・トレランス・サポートを追加する方法を中心に説明します。
+フォールト・トレランスを使用すると、コンポーネントで障害が発生した場合や応答しなくなった場合に、アプリケーションを実行し続けることができます。 既存の Go アプリケーションにフォールト・トレランスを追加したり、生成された Go アプリケーションからこれらの機能を有効にしたりすることもできます。 このチュートリアルでは、[Hystrix パッケージ](https://godoc.org/github.com/afex/hystrix-go/hystrix)を使用して Go アプリケーションにフォールト・トレランス・サポートを追加する方法を中心に説明します。
 
 ## 既存の Go アプリへのフォールト・トレランスの追加
 {: #add-fault-tolerance}
