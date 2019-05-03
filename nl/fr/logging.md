@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-28"
+lastupdated: "2019-03-12"
+
+keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
+
+subcollection: go
 
 ---
 
@@ -14,16 +18,16 @@ lastupdated: "2019-02-28"
 {:tip: .tip}
 
 # Journalisation de Go
-{: #logging_golang}
+{: #logging-golang}
 
-Les messages de journal sont des chaînes qui contiennent des informations contextuelles sur l'état et l'activité du micro-service au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques](/docs/go/appmetrics.html) dans la surveillance de l'intégrité des applications.
+Les messages de journal sont des chaînes qui contiennent des informations contextuelles sur l'état et l'activité du micro-service au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques](/docs/go?topic=go-appmetrics#appmetrics) dans la surveillance de l'intégrité des applications.
 
-Compte tenu de la nature transitoire des processus dans les environnements cloud, les journaux doivent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé, pour être analysés. Le moyen le plus cohérent de consigner des événements dans les environnements de cloud est d'envoyer les entrées de journal dans des flux d'erreur et de sortie standard, ce qui permet à l'infrastructure de traiter le reste.
+Compte tenu de la nature transitoire des processus dans les environnements de cloud, les journaux doivent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé pour analyse. Le moyen le plus cohérent de consigner des événements dans les environnements de cloud est d'envoyer les entrées de journal dans des flux d'erreur et de sortie standard, ce qui permet à l'infrastructure de traiter le reste.
 
 ## Ajout de la prise en charge de Logrus à une application Go
-{: #add_logrus}
+{: #add-logrus-go}
 
-[Logrus](https://github.com/sirupsen/logrus) est une infrastructure de journalisation populaire pour Go qui offre de nombreux avantages natifs, tels que : 
+[Logrus](https://github.com/sirupsen/logrus){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") est une infrastructure de journalisation populaire pour Go qui offre de nombreux avantages natifs, tels que : 
  * Journalisation dans `stdout` ou `stderr`
  * Diverses options d'ajout
  * Agencement et modèles de message de journal configurables
@@ -50,17 +54,17 @@ Compte tenu de la nature transitoire des processus dans les environnements cloud
   ```
   {: screen}
 
-Pour plus d'informations sur la personnalisation des messages de journal avec des appenders, des niveaux de journal et des détails de configuration, consultez la [documentation Logrus](https://godoc.org/gopkg.in/Sirupsen/logrus.v0) officielle.
+Pour plus d'informations sur la personnalisation des messages de journal avec des programmes d'ajout, des niveaux de journal et des détails de configuration, voir la [documentation Logrus](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") officielle.
 
 ## Etapes suivantes
-{: #next_steps-logging}
+{: #go-logging-next notoc}
 
-Pour en savoir plus sur l'affichage des journaux dans chacun des environnements de déploiement :
-* [Journaux Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
-* [Journaux Cloud Foundry](/docs/cli/reference/bluemix_cli/bx_cli.html#ibmcloud_app_logs)
-* [Cloud Foundry Enterprise Environment - Audit et journalisation](/docs/cloud-foundry/auditing-logging.html#auditing-logging)
-* [Journaux {{site.data.keyword.openwhisk}} et surveillance](/docs/openwhisk/openwhisk_logs.html#openwhisk_logs)
+En savoir plus sur l'affichage des journaux dans chacune de vos cibles de déploiement :
+* [Journaux Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")
+* [Journaux Cloud Foundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
+* [Cloud Foundry Enterprise Environment - Audit et journalisation](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
+* [Journaux {{site.data.keyword.openwhisk}} et surveillance](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
 
 Pour en savoir plus sur l'utilisation d'un regroupeur de journaux :
-* [Analyse de journal {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis/log_analysis_ov.html#log_analysis_ov)
-* [Pile ELK privée {{site.data.keyword.cloud_notm}} ](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html)
+* [Analyse de journal {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
+* [Pile ELK privée {{site.data.keyword.cloud_notm}}](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")

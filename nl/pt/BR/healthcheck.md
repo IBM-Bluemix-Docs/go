@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
+
+subcollection: go
 
 ---
 
@@ -14,12 +18,12 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Usando uma verificação de funcionamento em seu app Go
-{: #healthcheck}
+{: #go-healthcheck}
 
-As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Ambientes de nuvem como o [Kubernetes](https://www.ibm.com/cloud/container-service) e o [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) podem ser configurados para consultar terminais de funcionamento periodicamente para determinar se uma instância de seu serviço está pronta para aceitar o tráfego.
+As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Ambientes de nuvem, como o [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo") e o [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo"), podem ser configurados para pesquisar terminais de funcionamento periodicamente para determinar se uma instância de seu serviço está pronta para aceitar o tráfego.
 
 ## Visão geral da verificação de
-{: #overview}
+{: #go-healtcheck-overview}
 
 As verificações de funcionamento fornecem um mecanismo simples para determinar se um aplicativo do lado do servidor está se comportando adequadamente. Elas geralmente são acessadas por meio de HTTP e usam códigos de retorno padrão para indicar o status UP ou DOWN. O valor de retorno de uma verificação de funcionamento é variável, mas uma resposta JSON mínima, como `{"status": "UP"}`, é típica.
 
@@ -47,7 +51,7 @@ A tabela a seguir fornece orientação sobre as respostas que os terminais de pr
 | Com erro  | 500 - Erro do servidor          | 500 - Erro do servidor         | 500 - Erro do servidor        |
 
 ## Incluindo uma verificação de funcionamento em um app Go existente
-{: #add-healthcheck-existing}
+{: #go-add-healthcheck-existing}
 
 É possível incluir uma verificação mínima de funcionamento ou de atividade em um aplicativo `Gin-Gonic` existente introduzindo uma nova rota, conforme mostrado no exemplo a seguir:
 ```go
@@ -60,10 +64,10 @@ func HealthGET(c *gin.Context) {
 
 Verifique o status do app com um navegador, acessando o terminal `/health`.
 
-Há bibliotecas mais extensivas disponíveis, como [`http-healthcheck`](https://github.com/robzienert/http-healthcheck), que permitem a definição de verificações de funcionamento extensíveis com suporte para verificações de armazenamento em cache que são executadas nos serviços auxiliares. Nesse caso, você desejaria separar o teste de atividade simples no exemplo da verificação de prontidão detalhada mais robusta que é construída pelo pacote de verificação de funcionamento.
+Há bibliotecas mais extensivas disponíveis, como [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo"), que permitem a definição de verificações de funcionamento extensíveis com suporte para verificações de armazenamento em cache executadas em serviços de backup. Nesse caso, você desejaria separar o teste de atividade simples no exemplo da verificação de prontidão detalhada mais robusta que é construída pelo pacote de verificação de funcionamento.
 
 ## Acessando o terminal de verificação de funcionamento em apps do Go Starter Kit
-{: #healthcheck-starterkit}
+{: #go-healthcheck-starterkit}
 
 Por padrão, quando você gera um app Go usando um Kit do Iniciador,
 um terminal de verificação de funcionamento básico (não autorizado) está disponível em `/health` para verificar o status do app (UP/DOWN).
@@ -85,14 +89,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Recomendações para análises de prontidão e de atividade
-{: #recommend-healthcheck}
+{: #go-recommend-healthcheck}
 
 Análises de prontidão deverão incluir a viabilidade das conexões com serviços de recebimento de dados em seu resultado quando não houver um fallback aceitável, caso o serviço de recebimento de dados esteja indisponível. Isso não significa chamar a verificação de funcionamento que é fornecida pelo serviço de recebimento de dados diretamente, pois a infraestrutura verifica isso para você. Em vez disso, considere verificar o funcionamento das referências existentes que seu aplicativo possui para os serviços de recebimento de dados: essa pode ser uma conexão JMS com o WebSphere MQ ou um consumidor ou produtor Kafka inicializado. Se você verificar a viabilidade das referências internas com relação aos serviços de recebimento de dados, armazene em cache o resultado para minimizar o impacto que a verificação de funcionamento tem em seu aplicativo.
 
 Em contrapartida, uma análise de atividade é deliberada sobre o que é verificado, uma vez que uma falha resulta em finalização imediata do processo. Um terminal HTTP simples que sempre retorna `{"status": "UP"}` com código de status `200` é uma opção razoável.
 
 ## Configurando análises de prontidão e de atividade no Kubernetes
-{: #config_probes-healthcheck}
+{: #go-config-probes-healthcheck}
 
 Declare análises de atividade e prontidão juntamente com a implementação do Kubernetes. Ambas as análises usam os mesmos parâmetros de configuração:
 
@@ -132,4 +136,4 @@ spec:
 ```
 {: codeblock}
 
-Para obter mais informações, consulte como [Configurar análises de atividade e de prontidão](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Para obter mais informações, veja como [Configurar análises de atividade e de prontidão](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").

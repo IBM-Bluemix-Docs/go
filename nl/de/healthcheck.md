@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
+
+subcollection: go
 
 ---
 
@@ -14,12 +18,12 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Statusprüfung in Go-App verwenden
-{: #healthcheck}
+{: #go-healthcheck}
 
-Statusprüfungen stellen einen einfachen Mechanismus bereit, mit dem festgestellt werden kann, ob sich eine serverseitige Anwendung korrekt verhält. Cloudumgebungen wie [Kubernetes](https://www.ibm.com/cloud/container-service) und [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry) können so konfiguriert werden, dass sie die Statusendpunkte in regelmäßigen Intervallen abfragen und so bestimmen, ob eine Instanz Ihres Service für die Annahme von Datenverkehr bereit ist.
+Statusprüfungen stellen einen einfachen Mechanismus bereit, mit dem festgestellt werden kann, ob sich eine serverseitige Anwendung korrekt verhält. Cloudumgebungen wie [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") und [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können so konfiguriert werden, dass in regelmäßigen Abständen Statusendpunkte abgefragt werden, um festzustellen, ob eine Instanz Ihres Service bereit ist, Datenverkehr zu akzeptieren. 
 
 ## Statusprüfungen im Überblick
-{: #overview}
+{: #go-healtcheck-overview}
 
 Statusprüfungen stellen einen einfachen Mechanismus bereit, mit dem festgestellt werden kann, ob sich eine serverseitige Anwendung korrekt verhält. Sie werden normalerweise über HTTP aufgerufen und geben den Status UP (AKTIV) oder DOWN (INAKTIV) mit Standardrückgabecodes an. Der Rückgabewert einer Statusprüfung ist variabel, aber eine minimale JSON-Antwort wie etwa `{"status": "UP"}` ist typisch.
 
@@ -47,7 +51,7 @@ Die folgende Tabelle stellt eine Orientierungshilfe für die Antworten dar, die 
 | Mit Fehler(n)  | 500 - Serverfehler          | 500 - Serverfehler         | 500 - Serverfehler        |
 
 ## Statusprüfung zu einer vorhandenen Go-App hinzufügen
-{: #add-healthcheck-existing}
+{: #go-add-healthcheck-existing}
 
 Zu einer vorhandenen `Gin-Gonic`-Anwendung können Sie eine minimale Prüfung des Status oder der Aktivität (Liveness) hinzufügen, indem Sie eine neue Route einführen, wie im folgenden Beispiel dargestellt:
 ```go
@@ -60,10 +64,10 @@ func HealthGET(c *gin.Context) {
 
 Sie können den Status der App mit einem Browser überprüfen, indem Sie auf den Endpunkt `/health` zugreifen.
 
-Es gibt umfangreichere Bibliotheken wie [`http-healthcheck`](https://github.com/robzienert/http-healthcheck), die das Definieren von erweiterbaren Statusprüfungen mit Unterstützung für Cacheprüfungen ermöglichen, die für Unterstützungsservices ausgeführt werden. In diesem Fall wäre es erstrebenswert, den einfachen Aktivitätstest im Beispiel von der robusteren, ausführlicheren Bereitschaftsprüfung zu trennen, die mit dem Paket für Statusprüfungen erstellt wird.
+Es sind umfangreichere Bibliotheken wie [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") verfügbar. Diese ermöglichen die Definition von erweiterbaren Statusprüfungen mit Unterstützung für Cacheprüfungen, die für Unterstützungsservices ausgeführt werden. In diesem Fall wäre es erstrebenswert, den einfachen Aktivitätstest im Beispiel von der robusteren, ausführlicheren Bereitschaftsprüfung zu trennen, die mit dem Paket für Statusprüfungen erstellt wird.
 
 ## Auf den Statusprüfungsendpunkt in Go-Starter-Kit-Apps zugreifen
-{: #healthcheck-starterkit}
+{: #go-healthcheck-starterkit}
 
 Wenn Sie eine Go-App mithilfe eines Starter-Kits generieren, ist standardmäßig unter `/health` ein grundlegender (berechtigungsloser) Endpunkt für Statusprüfungen verfügbar, über den der Status (UP/DOWN) der App geprüft werden kann.
 
@@ -84,14 +88,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Empfehlungen für Prüfungen der Bereitschaft (Readiness) und Aktivität (Liveness)
-{: #recommend-healthcheck}
+{: #go-recommend-healthcheck}
 
 Prüfungen der Bereitschaft (Readiness) sollten die Funktionsfähigkeit von Verbindungen zu nachgeschalteten Services in ihrem Ergebnis berücksichtigen, wenn es keine vertretbare Fallbacklösung für den Fall gibt, dass der nachgeschaltete Service nicht verfügbar ist. Dies bedeutet nicht, dass die durch den nachgeschalteten Service bereitgestellte Statusprüfung direkt aufgerufen wird, da die Infrastruktur dies für Sie prüft. Erwägen Sie stattdessen eine Überprüfung des Status der vorhandenen Referenzen, die Ihre Anwendung zu nachgeschalteten Services hat. Dabei könnte es sich um eine JMS-Verbindung zu WebSphere MQ oder um einen initialisierten Kafka-Konsumenten oder -Produzenten handeln. Wenn Sie die Funktionsfähigkeit interner Referenzen zu nachgeschalteten Services überprüfen, sollten Sie das Ergebnis zwischenspeichern, um die Auswirkungen der Statusüberprüfung auf Ihre Anwendung zu minimieren.
 
 Im Gegensatz dazu wird bei einer Prüfung der Aktivität (Liveness) ganz bewusst entschieden, was geprüft wird, da ein Fehlschlagen der Prüfung die sofortige Beendigung des Prozesses zur Folge hat. Ein einfacher HTTP-Endpunkt, der stets `{"status": "UP"}` mit dem Statuscode `200` zurückgibt, ist eine angemessene Wahl.
 
 ## Prüfungen der Bereitschaft (Readiness) und Aktivität (Liveness) in Kubernetes konfigurieren
-{: #config_probes-healthcheck}
+{: #go-config-probes-healthcheck}
 
 Deklarieren Sie gemeinsam mit Ihrer Kubernetes-Bereitstellung Prüfungen der Bereitschaft (Readiness) und der Aktivität (Liveness). Beide Prüfungen verwenden dieselben Konfigurationsparameter:
 
@@ -131,4 +135,4 @@ spec:
 ```
 {: codeblock}
 
-Weitere Informationen finden Sie im Abschnitt zum Konfigurieren von Prüfungen auf Bereitschaft (Readiness) und Aktivität (Liveness) in [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Weitere Informationen finden Sie in [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 

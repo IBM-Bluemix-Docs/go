@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
+
+subcollection: go
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-14"
 # Configuration de la tolérance aux pannes dans les applications Go
 {: #fault-tolerance}
 
-La tolérance aux pannes permet à une application de continuer de s'exécuter si un composant tombe en panne ou ne répond plus. Vous pouvez ajouter une tolérance aux pannes à une application Go existante ou activer ces fonctions à partir d'une application Go générée. Ce tutoriel se explique comment utiliser le [package Hystrix](https://godoc.org/github.com/afex/hystrix-go/hystrix) pour ajouter une prise en charge de la tolérance aux pannes à une application Go.
+La tolérance aux pannes permet à une application de continuer de s'exécuter si un composant tombe en panne ou ne répond plus. Vous pouvez ajouter une tolérance aux pannes à une application Go existante ou activer ces fonctions à partir d'une application Go générée. Ce tutoriel explique comment utiliser le [package Hystrix](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") pour ajouter une prise en charge de la tolérance aux pannes à une application Go.
 
 ## Ajout de la tolérance aux pannes à une application Go existante
 {: #add-fault-tolerance}

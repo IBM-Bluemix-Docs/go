@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
+
+subcollection: go
 
 ---
 
@@ -14,12 +18,12 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Utilizzo di un controllo di integrità nella tua applicazione Go
-{: #healthcheck}
+{: #go-healthcheck}
 
-I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service) e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry), possono essere configurati per eseguire il polling degli endpoint di integrità con cadenza periodica per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") possono essere configurati per eseguire il polling degli endpoint di integrità periodicamente per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
 
 ## Panoramica sul controllo di integrità
-{: #overview}
+{: #go-healtcheck-overview}
 
 I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Normalmente è possibile accedervi tramite HTTP e utilizzano i codici di ritorno standard per indicare lo stato UP o DOWN. Il valore di ritorno di un controllo di integrità è variabile, ma una risposta JSON minima, come `{"status": "UP"}`, è normale.
 
@@ -47,7 +51,7 @@ La seguente tabella fornisce le indicazioni sulle risposte che devono essere for
 | In errore  | 500 - Errore server          | 500 - Errore server         | 500 - Errore server        |
 
 ## Aggiunta di un controllo di integrità a un'applicazione Go esistente
-{: #add-healthcheck-existing}
+{: #go-add-healthcheck-existing}
 
 Puoi aggiungere un controllo di attività o di integrità minimo a un'applicazione `Gin-Gonic` esistente introducendo un nuovo instradamento come illustrato nel seguente esempio:
 ```go
@@ -60,10 +64,10 @@ func HealthGET(c *gin.Context) {
 
 Controlla lo stato dell'applicazione con un browser accedendo all'endpoint `/health`.
 
-Ci sono ulteriori librerie estese disponibili, come [`http-healthcheck`](https://github.com/robzienert/http-healthcheck), che consentono la definizione di controlli di integrità estensibili con il supporto per la memorizzazione nella cache dei controlli che vengono eseguiti nei servizi di backup. In questo caso, vuoi separare il test di attività semplice nell'esempio dal controllo di disponibilità più dettagliato e solido creato dal pacchetto del controllo di integrità.
+Ci sono ulteriori librerie estese disponibili, come [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno"), che consentono la definizione di controlli di integrità estensibili con il supporto per la memorizzazione nella cache dei controlli che vengono eseguiti sui servizi di backup. In questo caso, vuoi separare il test di attività semplice nell'esempio dal controllo di disponibilità più dettagliato e solido creato dal pacchetto del controllo di integrità.
 
 ## Accesso all'endpoint del controllo di integrità nelle applicazioni kit starter Go
-{: #healthcheck-starterkit}
+{: #go-healthcheck-starterkit}
 
 Per impostazione predefinita, quando generi un'applicazione Go utilizzando un kit starter,
 è disponibile un endpoint del controllo di integrità (non autorizzato) di base in `/health` per verificare lo stato dell'applicazione (UP/DOWN).
@@ -85,14 +89,14 @@ func HealthGET(c *gin.Context) {
 {: codeblock}
 
 ## Suggerimenti per i probe di disponibilità e di attività
-{: #recommend-healthcheck}
+{: #go-recommend-healthcheck}
 
 I probe di disponibilità dovrebbero includere l'applicabilità delle connessioni ai servizi in downstream nei propri risultati quando non è presente un fallback accettabile se il servizio in downstream non è disponibile. Questo non significa di chiamare il controllo di integrità fornito direttamente dal servizio in downstream, perché l'infrastruttura esegue il controllo per te. Invece, prendi in considerazione di verificare l'integrità dei riferimenti esistenti che la tua applicazione ha con i servizi in downstream: che potrebbero essere una connessione JMS a WebSphere MQ o un consumatore o produttore Kafka inizializzato. Se non controlli l'applicabilità dei riferimenti interni ai servizi in downstream, memorizza nella cache il risultato per ridurre al minimo l'impatto del controllo di integrità sulla tua applicazione.
 
 Un probe di attività, al contrario, è cauto su cosa viene controllato, perché un errore comporta una terminazione immediata del processo. Un endpoint HTTP semplice che restituisce sempre `{"status": "UP"}` con il codice di stato `200` è una scelta ragionevole.
 
 ## Configurazione dei probe di disponibilità e di attività in Kubernetes
-{: #config_probes-healthcheck}
+{: #go-config-probes-healthcheck}
 
 Dichiara i probe di disponibilità e di attività insieme alla tua distribuzione Kubernetes. Entrambi i probe utilizzano gli stessi parametri di configurazione.
 
@@ -132,4 +136,4 @@ spec:
 ```
 {: codeblock}
 
-Per ulteriori informazioni, consulta [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/).
+Per ulteriori informazioni, consulta [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").

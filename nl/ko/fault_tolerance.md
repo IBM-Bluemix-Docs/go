@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
+
+subcollection: go
 
 ---
 
@@ -16,7 +20,7 @@ lastupdated: "2019-01-14"
 # Go 앱에서 결함 허용 설정
 {: #fault-tolerance}
 
-결함 허용을 사용하면 컴포넌트가 실패하거나 응답하지 않는 경우에도 애플리케이션이 계속 실행됩니다. 기존 Go 애플리케이션에 결함 허용을 추가하거나 생성된 Go 애플리케이션에서 이러한 기능을 사용할 수 있습니다. 이 튜토리얼에서는 [Hystrix 패키지](https://godoc.org/github.com/afex/hystrix-go/hystrix)를 사용하여 Go 애플리케이션에 결함 허용 지원을 추가하는 데 초점을 맞춥니다.
+결함 허용을 사용하면 컴포넌트가 실패하거나 응답하지 않는 경우에도 애플리케이션이 계속 실행됩니다. 기존 Go 애플리케이션에 결함 허용을 추가하거나 생성된 Go 애플리케이션에서 이러한 기능을 사용할 수 있습니다. 이 튜토리얼에서는 [Hystrix 패키지](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")를 사용하여 Go 애플리케이션에 결함 허용 지원을 추가하는 데 초점을 맞춥니다.
 
 ## 기존 Go 앱에 결함 허용 추가
 {: #add-fault-tolerance}

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: go sdk, go client sdk, add sdk go app, mongodb go sdk, postgres go sdk, redis go sdk, couchdb go sdk
+
+subcollection: go
 
 ---
 
@@ -12,8 +16,8 @@ lastupdated: "2019-01-14"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-#  SDK
-{: #sdk-go}
+#  將 SDK 新增至 Go 應用程式
+{: #add-sdk-go}
 
 若要將 {{site.data.keyword.cloud_notm}} SDK 新增至您的應用程式，請選擇您要使用的 SDK，並配置相依關係管理程式以將 SDK 取回至應用程式。
 
@@ -21,10 +25,10 @@ lastupdated: "2019-01-14"
 {: #client_sdk-go}
 
 您可以在 Go 應用程式中使用下列 SDK：
-* [MongoDB Go SDK ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/mongodb/mongo-go-driver)
-* [Postgres Go SDK ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/lib/pq)
-* [Redis Go SDK ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/go-redis/redis)
-* [CouchDB Go SDK ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")](https://github.com/leesper/couchdb-golang)
+* [MongoDB Go SDK ](https://github.com/mongodb/mongo-go-driver){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")
+* [Postgres Go SDK ](https://github.com/lib/pq){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")
+* [Redis Go SDK ](https://github.com/go-redis/redis){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")
+* [CouchDB Go SDK ](https://github.com/leesper/couchdb-golang){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")
 
 <!--
 ## Services

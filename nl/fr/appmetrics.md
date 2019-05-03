@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-14"
+lastupdated: "2019-03-08"
+
+keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
+
+subcollection: go
 
 ---
 
@@ -14,9 +18,9 @@ lastupdated: "2019-01-14"
 {:tip: .tip}
 
 # Utilisation des métriques d'application avec les applications Go
-{: #appmetrics}
+{: #go-appmetrics}
 
-Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel d'avoir une vue en temps réel des métriques telles que l'unité centrale, la mémoire, la latence et des métriques HTTP pour garantir le bon fonctionnement de votre application dans le temps. Vous pouvez utiliser un service cloud comme Cloud Foundry [Auto-Scaling](/docs/services/Auto-Scaling/index.html), qui repose sur des métriques pour adapter dynamiquement les instances aux charges de travail actuelles. En utilisant des métriques d'application, vous êtes informé précisément lorsqu'il faut augmenter ou réduire des instances, ou les nettoyer lorsqu'elles ne sont plus nécessaires, le tout pour limiter les coûts.
+Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel d'avoir une vue en temps réel des métriques telles que l'unité centrale, la mémoire, la latence et des métriques HTTP pour garantir le bon fonctionnement de votre application dans le temps. Vous pouvez utiliser un service cloud comme Cloud Foundry [Auto-Scaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started), qui repose sur des métriques pour adapter dynamiquement les instances aux charges de travail actuelles. En utilisant des métriques d'application, vous êtes informé précisément lorsqu'il faut augmenter ou réduire des instances, ou les nettoyer lorsqu'elles ne sont plus nécessaires, le tout pour limiter les coûts.
 
 Les métriques d'application sont capturées sous forme de données de série temporelles. L'agrégation et la visualisation des métriques capturées peut permettre d'identifier des problèmes de performance courants :
 
@@ -27,11 +31,11 @@ Les métriques d'application sont capturées sous forme de données de série te
 * Utilisation de la mémoire élevée ou en augmentation (possible fuite de mémoire)
 
 ## Ajout de métriques d'application à votre application Go existante
-{: #add-appmetrics-existing}
+{: #go-add-appmetrics-existing}
 
 Pour ajouter une surveillance des performances à votre application Go, vous pouvez utiliser l'agrégation complète des métriques fournies par le package `promhttp`.
 
-Le package `promhttp` possède de nombreux points d'extension, notamment la [configuration de Prometheus](https://github.com/prometheus/client_golang).
+Le package `promhttp` inclut de nombreux points d'extension, notamment la [configuration de Prometheus](https://github.com/prometheus/client_golang){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
 
 1. Par exemple, utilisez l'application simple Go + Gin “Hello World” suivante :
     ```go
@@ -75,8 +79,8 @@ Le package `promhttp` possède de nombreux points d'extension, notamment la [con
   {: codeblock}
 
 ## Utilisation de métriques d'application dans les kits de démarrage
-{: #starterkits-appmetrics}
+{: #go-starterkits-appmetrics}
 
-Les applications Go côté serveur qui sont créées à partir des kits de démarrage possèdent automatiquement le [noeud final Prometheus](https://prometheus.io/) sous `http://<hostname>:<port>/metrics`. Le code de ce noeud final se trouve dans `server.go`.
+Les applications Go côté serveur créées à partir des kits de démarrage incluent automatiquement le [noeud final Prometheus](https://prometheus.io/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") sous `http://<hostname>:<port>/metrics`. Le code de ce noeud final se trouve dans `server.go`.
 
-Pour plus d'informations, voir le [référentiel GitHub pour Prometheus](https://github.com/prometheus/client_golang/).
+Pour plus d'informations, voir le [référentiel GitHub pour Prometheus](https://github.com/prometheus/client_golang/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
