@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-19"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -35,7 +35,7 @@ IBM Foundation Support for Runtimes の適応範囲は Node.js、Swift、Java、
 
 Go ランタイム・サポートは、アプリケーション内で使用しているすべてのモジュールで使用できます。 ランタイムをデプロイする場所 (自分のコンピューター、{{site.data.keyword.cloud_notm}}、またはその他の場所) がどこであっても、サポートは使用可能です。
 
-詳しくは、[IBM デジタル・マーケットプレイス](https://www.ibm.com/us-en/marketplace/support-for-runtimes){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
+詳しくは、[IBM デジタル・マーケットプレイス](https://www.ibm.com/cloud/support-for-runtimes){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を参照してください。
 
 ## ビルドパックのサポートに関する記述
 {: #buildpack-go}

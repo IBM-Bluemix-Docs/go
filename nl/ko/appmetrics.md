@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -20,7 +20,7 @@ subcollection: go
 # Go 앱에서 애플리케이션 메트릭 사용
 {: #go-appmetrics}
 
-애플리케이션 메트릭은 애플리케이션의 성능을 모니터하는 데 필요합니다. 애플리케이션이 계속하여 효율적으로 실행되도록 하려면 CPU, 메모리, 대기 시간, HTTP 메트릭과 같은 메트릭을 실시간으로 보는 것이 중요합니다. 메트릭에 의존하는 Cloud Foundry의 [Auto-Scaling](/docs/services/Auto-Scaling?topic=services/Auto-Scaling-get-started#get-started)과 같은 클라우드 서비스를 사용하여 현재 워크로드에 맞게 동적으로 인스턴스를 스케일링할 수 있습니다. 애플리케이션 메트릭을 사용하면 인스턴스를 확장하거나 축소하거나, 비용을 낮게 유지하기 위해 더 이상 필요하지 않은 인스턴스를 정리할 시기를 정확하게 알 수 있습니다.
+애플리케이션 메트릭은 애플리케이션의 성능을 모니터하는 데 필요합니다. 애플리케이션이 계속하여 효율적으로 실행되도록 하려면 CPU, 메모리, 대기 시간, HTTP 메트릭과 같은 메트릭을 실시간으로 보는 것이 중요합니다. 메트릭에 의존하는 Cloud Foundry의 [Auto-Scaling](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started)과 같은 클라우드 서비스를 사용하여 현재 워크로드에 맞게 동적으로 인스턴스를 스케일링할 수 있습니다. 애플리케이션 메트릭을 사용하면 인스턴스를 확장하거나 축소하거나, 비용을 낮게 유지하기 위해 더 이상 필요하지 않은 인스턴스를 정리할 시기를 정확하게 알 수 있습니다.
 
 애플리케이션 메트릭은 시계열 데이터로 캡처됩니다. 캡처된 메트릭을 집계하고 시각화하면 다음과 같은 공통 성능 문제점을 식별하는 데 도움이 될 수 있습니다.
 

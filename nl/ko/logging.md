@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
+lastupdated: "2019-04-30"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -20,7 +20,7 @@ subcollection: go
 # Go에 로그인
 {: #logging-golang}
 
-로그 메시지는 로그 항목이 작성되었을 때의 마이크로서비스 상태 및 활동에 대한 컨텍스트 정보가 포함된 문자열입니다. 로그는 서비스가 실패한 이유와 과정을 진단하는 데 필요하며 애플리케이션 상태 모니터링에서 [메트릭](/docs/go?topic=go-appmetrics#appmetrics)에 대한 지원 역할을 수행합니다.
+로그 메시지는 로그 항목이 작성되었을 때의 마이크로서비스 상태 및 활동에 대한 컨텍스트 정보가 포함된 문자열입니다. 로그는 서비스가 실패한 이유와 과정을 진단하는 데 필요하며 애플리케이션 상태 모니터링에서 [메트릭](/docs/go?topic=go-go-appmetrics)에 대한 지원 역할을 수행합니다.
 
 클라우드 환경에서 프로세스의 일시적인 네이처를 고려할 때, 로그를 수집하여 다른 위치에(대개 분석을 위해 중앙 위치에) 보내야 합니다. 클라우드 환경에 로그인하는 가장 일관된 방식은 표준 출력 및 오류 스트림에 로그 항목을 전송하는 것이며, 인프라가 나머지를 처리하게 합니다.
 

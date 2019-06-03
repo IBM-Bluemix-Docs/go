@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-19"
 
 keywords: configure go environment, go environment
 
@@ -102,7 +102,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Utilisation du gestionnaire de configuration Go depuis les applications du kit de démarrage
 {: #go-config-manager}
 
-Les applications Go créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") incluent automatiquement des données d'identification et des configurations qui sont requises pour une exécution dans de nombreuses cibles de déploiement de cloud, telles Cloud Foundry, Kubernetes, VSI et Functions.
+Les applications Go créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") incluent automatiquement des données d'identification et des configurations qui sont requises pour une exécution dans de nombreuses cibles de déploiement de cloud, telles Cloud Foundry, Kubernetes, VSI et Functions.
 
 ### Présentation des données d'identification de service
 {: #go-credentials-config}

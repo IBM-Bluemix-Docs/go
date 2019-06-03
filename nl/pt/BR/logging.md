@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
+lastupdated: "2019-04-30"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -20,7 +20,7 @@ subcollection: go
 # Criação de log no Go
 {: #logging-golang}
 
-As mensagens de log são sequências com informações contextuais nelas sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenham uma função de suporte para [métricas](/docs/go?topic=go-appmetrics#appmetrics) no monitoramento do funcionamento do aplicativo.
+As mensagens de log são sequências com informações contextuais nelas sobre o estado e a atividade do microsserviço no momento em que a entrada de log é feita. Os logs são necessários para diagnosticar como e por que os serviços falham e desempenham uma função de suporte para [métricas](/docs/go?topic=go-go-appmetrics) no monitoramento do funcionamento do aplicativo.
 
 Dada a natureza transitória de processos em ambientes de nuvem, os logs devem ser coletados e enviados para outros lugares, geralmente para um local centralizado para análise. A maneira mais consistente de efetuar login em ambientes de nuvem é enviar entradas de log para fluxos de saída e erro padrão, deixando a infraestrutura manipular o restante.
 

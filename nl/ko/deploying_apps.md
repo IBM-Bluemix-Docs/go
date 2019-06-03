@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Go 앱 배치 및 통합
 {: #go-deploy-apps}
 
-도구 체인을 사용하거나 명령행 인터페이스를 사용하여 Go 앱을 배치할 수 있습니다. 도구 체인은 애플리케이션 배치를 빌드하고 자동화하는 데 도움이 되는 도구 통합 세트입니다. 도구 체인 및 작동 방식에 대해 자세히 보려면 [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started)를 참조하십시오. 이 주제는 CLI, Kubernetes, 컨테이너, VSI 및 프라이빗 클라우드와 같은 Go 애플리케이션의 여러 배치 방법에 대한 유용한 정보를 찾는 데 도움이 됩니다.
+도구 체인을 사용하거나 명령행 인터페이스를 사용하여 Go 앱을 배치할 수 있습니다. 도구 체인은 애플리케이션 배치를 빌드하고 자동화하는 데 도움이 되는 도구 통합 세트입니다. 도구 체인 및 작동 방식에 대해 자세히 보려면 [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started)를 참조하십시오. 이 주제는 CLI, Kubernetes, 컨테이너, VSI 및 프라이빗 클라우드와 같은 Go 애플리케이션의 여러 배치 방법에 대한 유용한 정보를 찾는 데 도움이 됩니다.
 
 ## Kubernetes 클러스터에 배치
 {: #deploy_kube-go}

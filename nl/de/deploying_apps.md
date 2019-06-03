@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Go-Apps bereitstellen und integrieren
 {: #go-deploy-apps}
 
-Sie können Ihre Go-Apps mit einer Toolchain oder über die Befehlszeilenschnittstelle bereitstellen. Eine Toolchain ist eine Gruppe von Toolintegrationen, die bei der Erstellung und Automatisierung der Anwendungsbereitstellung helfen. Weitere Informationen zu Toolchains und ihrer Funktionsweise finden Sie in [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started). Dieser Abschnitt hilft Ihnen, nützliche Informationen zu unterschiedlichen Bereitstellungsmethoden für Go-Anwendungen wie CLI, Kubernetes, Container, VSI und Private Cloud zu finden.
+Sie können Ihre Go-Apps mit einer Toolchain oder über die Befehlszeilenschnittstelle bereitstellen. Eine Toolchain ist eine Gruppe von Toolintegrationen, die bei der Erstellung und Automatisierung der Anwendungsbereitstellung helfen. Weitere Informationen zu Toolchains und ihrer Funktionsweise finden Sie in [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Dieser Abschnitt hilft Ihnen, nützliche Informationen zu unterschiedlichen Bereitstellungsmethoden für Go-Anwendungen wie CLI, Kubernetes, Container, VSI und Private Cloud zu finden.
 
 ## In Kubernetes-Cluster bereitstellen
 {: #deploy_kube-go}
@@ -28,8 +28,8 @@ Sie können Ihre Go-Apps mit einer Toolchain oder über die Befehlszeilenschnitt
 Sie können erfahren, wie Sie den Kubernetes-Service von {{site.data.keyword.cloud_notm}} zur Bereitstellung einer containerisierten Go-App verwenden. Weitere Informationen zum Einrichten eines Kubernetes-Clusters in {{site.data.keyword.cloud_notm}} finden Sie in den entsprechenden [Schritten des Lernprogramms](/docs/containers?topic=containers-cs_cluster_tutorial#cs_cluster_tutorial).
 
 Zugehörige Blogs, die die Befehlszeilenschnittstelle (CLI) verwenden:
-* [Bereitstellung in Kubernetes mit der {{site.data.keyword.dev_cli_long}}-CLI](https://www.ibm.com/blogs/bluemix/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") 
-* [Bereitstellung in IBM Cloud Private mit der {{site.data.keyword.dev_cli_short}}-CLI](https://www.ibm.com/blogs/bluemix/2017/09/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") 
+* [Bereitstellung in Kubernetes mit der {{site.data.keyword.dev_cli_long}}-CLI](https://www.ibm.com/blogs/bluemix/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
+* [Bereitstellung in IBM Cloud Private mit der {{site.data.keyword.dev_cli_short}}-CLI](https://www.ibm.com/blogs/bluemix/2017/09/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link")
 
 ## In Container-Services mit der CLI bereitstellen
 {: #go-deploy-container}

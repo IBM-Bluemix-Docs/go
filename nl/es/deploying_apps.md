@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Despliegue e integración de apps Go
 {: #go-deploy-apps}
 
-Puede desplegar las apps Go con una cadena de herramientas o utilizando la interfaz de línea de mandatos. Una cadena de herramientas es un conjunto de integraciones de herramientas para ayudar a compilar y automatizar el despliegue de aplicaciones. Para obtener más información sobre las cadenas de herramientas y cómo funcionan, consulte [Entrega continua](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started). Este tema le ayuda a encontrar información útil sobre distintas metodologías de despliegue para aplicaciones Go como CLI, Kubernetes, contenedores, VSI y la nube privada.
+Puede desplegar las apps Go con una cadena de herramientas o utilizando la interfaz de línea de mandatos. Una cadena de herramientas es un conjunto de integraciones de herramientas para ayudar a compilar y automatizar el despliegue de aplicaciones. Para obtener más información sobre las cadenas de herramientas y cómo funcionan, consulte [Entrega continua](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Este tema le ayuda a encontrar información útil sobre distintas metodologías de despliegue para aplicaciones Go como CLI, Kubernetes, contenedores, VSI y la nube privada.
 
 ## Despliegue en un clúster de Kubernetes
 {: #deploy_kube-go}

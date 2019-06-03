@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Go アプリのデプロイと統合
 {: #go-deploy-apps}
 
-Go アプリは、ツールチェーンまたはコマンド・ライン・インターフェースを使用してデプロイできます。 ツールチェーンは、アプリケーション・デプロイメントのビルドと自動化に役立つツール統合のセットです。 ツールチェーンとその機能について詳しくは、[継続的デリバリー](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started)を参照してください。このトピックは、CLI、Kubernetes、コンテナー、VSI、プライベート・クラウドなど、Go アプリケーションのさまざまなデプロイメント方法に関する有用な情報を見つけるのに役立ちます。
+Go アプリは、ツールチェーンまたはコマンド・ライン・インターフェースを使用してデプロイできます。 ツールチェーンは、アプリケーション・デプロイメントのビルドと自動化に役立つツール統合のセットです。 ツールチェーンとその機能について詳しくは、[継続的デリバリー](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started)を参照してください。 このトピックは、CLI、Kubernetes、コンテナー、VSI、プライベート・クラウドなど、Go アプリケーションのさまざまなデプロイメント方法に関する有用な情報を見つけるのに役立ちます。
 
 ## Kubernetes クラスターへのデプロイ
 {: #deploy_kube-go}

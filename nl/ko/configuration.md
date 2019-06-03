@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-19"
 
 keywords: configure go environment, go environment
 
@@ -102,7 +102,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## 스타터 킷 앱에서 Go 구성 관리자 사용
 {: #go-config-manager}
 
-[스타터 킷](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window}![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")으로 작성된 Go 앱은 많은 클라우드 배치 대상(Cloud Foundry, Kubernetes, VSI 및 Functions)에서 실행하는 데 필요한 인증 정보 및 구성과 함께 자동으로 제공됩니다.
+[스타터 킷](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window}![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")으로 작성된 Go 앱은 많은 클라우드 배치 대상(Cloud Foundry, Kubernetes, VSI 및 Functions)에서 실행하는 데 필요한 인증 정보 및 구성과 함께 자동으로 제공됩니다.
 
 ### 서비스 인증 정보 이해
 {: #go-credentials-config}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-19"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -35,7 +35,7 @@ IBM Foundation Support for Runtimes fornisce la copertura per Node.js, Swift, Ja
 
 Il supporto di runtime per Go è disponibile per tutti i moduli che stai utilizzando all'interno della tua applicazione. Il supporto è disponibile per dovunque tu voglia distribuire il runtime, che si tratti dei tuoi computer, di {{site.data.keyword.cloud_notm}} o altrove.
 
-Per saperne di più, visita il [Digital Marketplace di IBM](https://www.ibm.com/us-en/marketplace/support-for-runtimes){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+Per saperne di più, visita il [Digital Marketplace di IBM](https://www.ibm.com/cloud/support-for-runtimes){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
 ## Istruzione per il supporto del pacchetto di build
 {: #buildpack-go}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # 部署和集成 Go 应用程序
 {: #go-deploy-apps}
 
-可以使用工具链或命令行界面来部署 Go 应用程序。工具链是一组工具集成，可帮助构建和自动化应用程序部署。要了解有关工具链及其工作方式的更多信息，请参阅 [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started)。本主题帮助您查找有关 Go 应用程序的不同部署方法（例如，CLI、Kubernetes、容器、VSI 和私有云）的有用信息。
+可以使用工具链或命令行界面来部署 Go 应用程序。工具链是一组工具集成，可帮助构建和自动化应用程序部署。要了解有关工具链及其工作方式的更多信息，请参阅 [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started)。本主题帮助您查找有关 Go 应用程序的不同部署方法（例如，CLI、Kubernetes、容器、VSI 和私有云）的有用信息。
 
 ## 部署到 Kubernetes 集群
 {: #deploy_kube-go}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
+lastupdated: "2019-04-30"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -20,7 +20,7 @@ subcollection: go
 # Journalisation de Go
 {: #logging-golang}
 
-Les messages de journal sont des chaînes qui contiennent des informations contextuelles sur l'état et l'activité du micro-service au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques](/docs/go?topic=go-appmetrics#appmetrics) dans la surveillance de l'intégrité des applications.
+Les messages de journal sont des chaînes qui contiennent des informations contextuelles sur l'état et l'activité du micro-service au moment où l'entrée de journal est créée. Les journaux sont nécessaires pour diagnostiquer comment et pourquoi les services échouent, et jouent un rôle de support pour les [métriques](/docs/go?topic=go-go-appmetrics) dans la surveillance de l'intégrité des applications.
 
 Compte tenu de la nature transitoire des processus dans les environnements de cloud, les journaux doivent être collectés et envoyés ailleurs, généralement dans un emplacement centralisé pour analyse. Le moyen le plus cohérent de consigner des événements dans les environnements de cloud est d'envoyer les entrées de journal dans des flux d'erreur et de sortie standard, ce qui permet à l'infrastructure de traiter le reste.
 

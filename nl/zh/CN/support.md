@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-19"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -35,7 +35,7 @@ IBM Foundation Support for Runtimes 的覆盖范围包括 Node.js、Swift、Java
 
 Go 运行时支持可用于在应用程序中使用的任何模块。不管您要在何处部署运行时（部署在您自己的计算机上、部署在 {{site.data.keyword.cloud_notm}} 中或部署在其他地方），也都可以使用支持。
 
-要了解更多信息，请访问 [IBM 数字市场](https://www.ibm.com/us-en/marketplace/support-for-runtimes){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+要了解更多信息，请访问 [IBM 数字市场](https://www.ibm.com/cloud/support-for-runtimes){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 
 ## Buildpack 支持声明
 {: #buildpack-go}

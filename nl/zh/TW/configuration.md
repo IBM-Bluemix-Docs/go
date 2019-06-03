@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-19"
 
 keywords: configure go environment, go environment
 
@@ -102,7 +102,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## 使用來自入門範本套件應用程式的 Go 配置管理程式
 {: #go-config-manager}
 
-使用[入門範本套件](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 建立的 Go 應用程式會自動隨附在許多雲端部署環境（例如 Cloud Foundry、Kubernetes、VSI 及 Functions）中執行所需的認證及配置。
+使用[入門範本套件](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示") 建立的 Go 應用程式會自動隨附在許多雲端部署環境（例如 Cloud Foundry、Kubernetes、VSI 及 Functions）中執行所需的認證及配置。
 
 ### 瞭解服務認證
 {: #go-credentials-config}

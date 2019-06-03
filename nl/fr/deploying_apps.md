@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Déploiement et intégration des applications Go
 {: #go-deploy-apps}
 
-Vous pouvez déployer vos applications Go avec une chaîne d'outils ou en utilisant l'interface de ligne de commande. Une chaîne d'outils est un ensemble d'intégrations d'outils qui permettent de créer et d'automatiser un déploiement d'application. Pour mieux connaître les chaînes d'outils et comprendre comment elles fonctionnent, consultez la rubrique [Distribution continue](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started). Cette rubrique vous donnera des renseignements utiles sur les différentes méthodologies de déploiement pour les applications Go, telles que l'interface de ligne de commandes, Kubernetes, les conteneurs, VSI et le cloud privé.
+Vous pouvez déployer vos applications Go avec une chaîne d'outils ou en utilisant l'interface de ligne de commande. Une chaîne d'outils est un ensemble d'intégrations d'outils qui permettent de créer et d'automatiser un déploiement d'application. Pour mieux connaître les chaînes d'outils et comprendre comment elles fonctionnent, consultez la rubrique [Distribution continue](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Cette rubrique vous donnera des renseignements utiles sur les différentes méthodologies de déploiement pour les applications Go, telles que l'interface de ligne de commandes, Kubernetes, les conteneurs, VSI et le cloud privé.
 
 ## Déploiement dans un cluster Kubernetes
 {: #deploy_kube-go}

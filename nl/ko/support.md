@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-04-19"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -35,7 +35,7 @@ IBM Foundation Support for Runtimes는 Node.js, Swift, Java 및 Go에 대한 적
 
 Go 런타임 지원은 애플리케이션 내에서 사용 중인 모든 모듈에서 사용 가능합니다. 런타임을 배치할 위치 어디든(사용자의 컴퓨터, {{site.data.keyword.cloud_notm}} 아니면 다른 위치) 지원이 가능합니다.
 
-자세히 보려면 [IBM 디지털 마켓플레이스](https://www.ibm.com/us-en/marketplace/support-for-runtimes){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")를 방문하십시오.
+자세히 보려면 [IBM 디지털 마켓플레이스](https://www.ibm.com/cloud/support-for-runtimes){: new_window} ![외부 링크 아이콘](../icons/launch-glyph.svg "외부 링크 아이콘")를 방문하십시오.
 
 ## 빌드팩 지원 명령문
 {: #buildpack-go}

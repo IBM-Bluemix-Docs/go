@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Implementando e integrando apps Go
 {: #go-deploy-apps}
 
-É possível implementar seus apps Go com uma cadeia de ferramentas ou usando a interface da linha de comandos. Uma cadeia de ferramentas é um conjunto de integrações de ferramentas para ajudar a construir e automatizar a implementação do aplicativo. Para entender mais sobre as cadeias de ferramentas e como elas funcionam, consulte [Entrega contínua](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started). Esse tópico ajuda a localizar informações úteis sobre diferentes metodologias de implementação para aplicativos Go como CLI, Kubernetes, contêineres, VSI e nuvem privada.
+É possível implementar seus apps Go com uma cadeia de ferramentas ou usando a interface da linha de comandos. Uma cadeia de ferramentas é um conjunto de integrações de ferramentas para ajudar a construir e automatizar a implementação do aplicativo. Para entender mais sobre as cadeias de ferramentas e como elas funcionam, consulte [Entrega contínua](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Esse tópico ajuda a localizar informações úteis sobre diferentes metodologias de implementação para aplicativos Go como CLI, Kubernetes, contêineres, VSI e nuvem privada.
 
 ## Implementando em um cluster do Kubernetes
 {: #deploy_kube-go}

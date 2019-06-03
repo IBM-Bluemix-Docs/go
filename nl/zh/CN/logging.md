@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-12"
+lastupdated: "2019-04-30"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -20,7 +20,7 @@ subcollection: go
 # Go 中的日志记录
 {: #logging-golang}
 
-日志消息是其中包含上下文信息的字符串，这些信息与创建日志条目时微服务的状态和活动相关。需要日志才能诊断服务失败的方式和原因，将[度量值](/docs/go?topic=go-appmetrics#appmetrics)与日志配置使用后，可以更好地监视应用程序运行状况。
+日志消息是其中包含上下文信息的字符串，这些信息与创建日志条目时微服务的状态和活动相关。需要日志才能诊断服务失败的方式和原因，将[度量值](/docs/go?topic=go-go-appmetrics)与日志配置使用后，可以更好地监视应用程序运行状况。
 
 考虑到云环境中进程的瞬态性质，必须收集日志并将其发送到其他位置（通常是集中位置）以供分析。在云环境中进行日志记录最一致的方法是将日志条目发送到标准输出和错误流，从而使基础架构处理其余事务。
 

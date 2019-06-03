@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-19"
 
 keywords: configure go environment, go environment
 
@@ -22,12 +22,12 @@ subcollection: go
 
 Es stehen standardisierte Richtlinien zur Verfügung, deren Einhaltung bei der Entwicklung von Go-Anwendungen dabei hilft, die Portierbarkeit durchgängig sicherzustellen. Zu den Aspekten, die berücksichtigt werden müssen, zählen unter anderem die Verwaltung von Berechtigungsnachweisen, die Speicherung von Daten und die Publikation von Inhalten in der Cloud. Die Einhaltung von Cloud Native-Verfahren ermöglicht, dass eine Go-Anwendung problemlos von einer Umgebung zu einer anderen wechseln kann. So ist zum Beispiel der Wechsel von einer Test- zu einer Produktionsumgebung ohne Änderungen am Code und ohne Beanspruchung anderweitig nicht getesteter Codepfade möglich.
 
-Unabhängig davon, ob Sie Cloudunterstützung zu vorhandenen Go-Anwendungen hinzufügen oder Go-Apps mit Starter-Kits erstellen müssen, besteht das Ziel darin, Portierbarkeit für die Verwendung auf einer beliebigen Entwicklungsplattform bereitzustellen. 
+Unabhängig davon, ob Sie Cloudunterstützung zu vorhandenen Go-Anwendungen hinzufügen oder Go-Apps mit Starter-Kits erstellen müssen, besteht das Ziel darin, Portierbarkeit für die Verwendung auf einer beliebigen Entwicklungsplattform bereitzustellen.
 
 ## Cloudunterstützung zu vorhandenen Go-Anwendungen hinzufügen
 {: #go-add-cloud-support}
 
-Das Modul [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") fasst Umgebungsvariablen von verschiedenen Cloud-Providern wie Cloud Foundry und Kubernetes zusammen, sodass die Anwendung von der Umgebung unabhängig ist. 
+Das Modul [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") fasst Umgebungsvariablen von verschiedenen Cloud-Providern wie Cloud Foundry und Kubernetes zusammen, sodass die Anwendung von der Umgebung unabhängig ist.
 
 ### Modul `ibm-cloud-env-golang` installieren
 {: #go-install-env-module}
@@ -102,7 +102,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Go-Konfigurationsmanager von Starter-Kit-Apps verwenden
 {: #go-config-manager}
 
-Mit [Starter-Kits](https://cloud.ibm.com/developer/appservice/starter-kits/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") erstellte Go-Apps werden automatisch mit Berechtigungsnachweisen und Konfigurationen ausgestattet, die für die Ausführung in vielen Cloudbereitstellungszielen wie Cloud Foundry, Kubernetes, VSI und Functions erforderlich sind. 
+Mit [Starter-Kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") erstellte Go-Apps werden automatisch mit Berechtigungsnachweisen und Konfigurationen ausgestattet, die für die Ausführung in vielen Cloudbereitstellungszielen wie Cloud Foundry, Kubernetes, VSI und Functions erforderlich sind.
 
 ### Wissenswertes zu Serviceberechtigungsnachweisen
 {: #go-credentials-config}
@@ -111,7 +111,7 @@ Ihre Anwendungskonfigurationsdaten für Services werden in der Datei `localdev-c
 
 Zum Lesen der Verbindungs- und Konfigurationsinformationen aus der Umgebung und dieser Datei verwendet die Anwendung den Konfigurationsmanager. Mittels einer kundenspezifischen Datei `mappings.json`, die sich im Verzeichnis `server/config` befindet, kommuniziert sie, wo sich die Berechtigungsnachweise für die einzelnen Services befinden.
 
-Lokal ausgeführte Anwendungen können mithilfe von nicht gebundenen Berechtigungsnachweisen, die aus der Datei `mappings.json` gelesen werden, eine Verbindung zu {{site.data.keyword.cloud_notm}}-Services herstellen. Wenn Sie nicht gebundene Berechtigungsnachweise erstellen müssen, können Sie dazu die {{site.data.keyword.cloud_notm}}-Webkonsole (Beispiel) oder den Befehl `cf create-service-key` der [Cloud Foundry-CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") verwenden. 
+Lokal ausgeführte Anwendungen können mithilfe von nicht gebundenen Berechtigungsnachweisen, die aus der Datei `mappings.json` gelesen werden, eine Verbindung zu {{site.data.keyword.cloud_notm}}-Services herstellen. Wenn Sie nicht gebundene Berechtigungsnachweise erstellen müssen, können Sie dazu die {{site.data.keyword.cloud_notm}}-Webkonsole (Beispiel) oder den Befehl `cf create-service-key` der [Cloud Foundry-CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") verwenden.
 
 Wenn Sie Ihre Anwendung mit einer Push-Operation an {{site.data.keyword.cloud_notm}} übertragen, werden diese Werte nicht mehr verwendet. Stattdessen stellt die Anwendung mithilfe von Umgebungsvariablen automatisch eine Verbindung zu gebundenen Services her. 
 
@@ -124,4 +124,4 @@ Wenn Sie Ihre Anwendung mit einer Push-Operation an {{site.data.keyword.cloud_no
 ## Nächste Schritte
 {: #go-next-steps-config notoc}
 
-Das Modul `ibm-cloud-env-golang` unterstützt die Suche nach Werten unter Verwendung von vier Suchmustertypen: `user-provided`, `cloudfoundry`, `env` und `file`. Wenn Sie sich weitere unterstützte Suchmuster und Suchmusterbeispiele ansehen möchten, lesen Sie den Abschnitt zur [Syntax](https://github.com/ibm-developer/ibm-cloud-env-golang#usage){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Das Modul `ibm-cloud-env-golang` unterstützt die Suche nach Werten unter Verwendung von vier Suchmustertypen: `user-provided`, `cloudfoundry`, `env` und `file`. Wenn Sie sich weitere unterstützte Suchmuster und Suchmusterbeispiele ansehen möchten, lesen Sie den Abschnitt zur [Syntax](https://github.com/ibm-developer/ibm-cloud-env-golang#usage){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").

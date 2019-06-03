@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-04-30"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Distribuzione e integrazione delle applicazioni Go
 {: #go-deploy-apps}
 
-Puoi distribuire le tue applicazioni Go con una toolchain oppure utilizzando l'interfaccia riga di comando. Una toolchain è una serie di integrazioni dello strumento che aiuta a creare e automatizzare la distribuzione dell'applicazione. Per ulteriori informazioni sulle toolchain e su come funzionano, consulta [Fornitura continua](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-cd_getting_started#cd_getting_started). Questo argomento ti aiuta a trovare informazioni utili sulle diverse metodologie di distribuzione per le applicazioni Go come ad esempio la CLI, Kubernetes, i contenitori, la VSI e il cloud privato.
+Puoi distribuire le tue applicazioni Go con una toolchain oppure utilizzando l'interfaccia riga di comando. Una toolchain è una serie di integrazioni dello strumento che aiuta a creare e automatizzare la distribuzione dell'applicazione. Per ulteriori informazioni sulle toolchain e su come funzionano, consulta [Fornitura continua](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Questo argomento ti aiuta a trovare informazioni utili sulle diverse metodologie di distribuzione per le applicazioni Go come ad esempio la CLI, Kubernetes, i contenitori, la VSI e il cloud privato.
 
 ## Distribuzione a un cluster Kubernetes
 {: #deploy_kube-go}
