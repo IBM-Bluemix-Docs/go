@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-05"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -49,6 +49,7 @@ The following table provides guidance on the responses that readiness, liveness,
 | Stopping | 503 - Unavailable           | 200 - OK                   | 503 - Unavailable         |
 | Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
+{: caption="Table 1. HTTP status codes" caption-side="bottom"}
 
 ## Adding a health check to an existing Go app
 {: #go-add-healthcheck-existing}
