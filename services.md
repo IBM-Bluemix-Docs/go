@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-06"
 
 keywords: watson services go, add watson go app, visual recognition gos
 
@@ -32,9 +32,9 @@ You can use the Watson Assistant service to build Go applications that understan
 ## Adding text-to-speech support
 {: #add-text-to-speech-go}
 
-You can use the Watson Text-to-Speech service to build Go applications that understand natural-language text input, and convert it into audio.
+You can use the Watson Text to Speech Service to build Go applications that understand natural-language text input, and convert it into audio.
 
-## Adding visual recognition
+## Adding Visual Recognition
 {: #add-vr-watson-go}
 
-You can use the Watons Visual Recognition service to build Go applications that understand natural-language input, and respond to users with human-like conversation.
+You can use the Watson Visual Recognition service to build Go applications that understand natural-language input, and respond to users with human-like conversation.

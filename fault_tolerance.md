@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-06"
 
 keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
 
@@ -68,15 +68,15 @@ router.Use(HystrixHandler("mycommand"))
 ## Exposing Hystrix metrics to Prometheus (Optional)
 {: #hystrix-optional}
 
-Before adding Hystrix to Prometheus, your app must be configured with application metrics. You can follow the steps in the [Using Application Metrics with Go apps](/docs/go/appmetrics.html) topic to add appmetrics support.
+Before you add Hystrix to Prometheus, your app must be configured with application metrics. You can follow the steps in the [Using Application Metrics with Go apps](/go?topic=go-go-appmetrics) topic to add appmetrics support.
 
-Hystrix provides users the ability to take metrics data and expose them to a metric collector. In order to expose Hystrix to prometheus, the metric_collector package must also be added:
+Hystrix provides users the ability to take metrics data and expose them to a metric collector. To expose Hystrix to prometheus, the metric_collector package must also be added:
 ```
 dep ensure -add "github.com/afex/hystrix-go/hystrix/metric_collector"
 ```
 {: codeblock}
 
-In addition to `metric_collector`, an additional file, `prometheus_collector.go`, must be added to your Go application. This file can be found [here](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go). This file should be added to the `plugins` package.
+In addition to `metric_collector`, an additional file, `prometheus_collector.go`, must be added to your Go application. This file can be found [here](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go). Add this file to the `plugins` package.
 
 Two additional imports are required:
 ```go
@@ -87,7 +87,7 @@ import(
 ```
 {: codeblock}
 
-In the `main` function, add the folowing statements:
+In the `main` function, add the following statements:
 ```go
 collector := plugins.InitializePrometheusCollector(plugins.PrometheusCollectorConfig{
   Namespace: "<app name>",

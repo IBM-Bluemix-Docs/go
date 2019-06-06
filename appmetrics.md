@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-06"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -20,14 +20,14 @@ subcollection: go
 # Using Application Metrics with Go apps
 {: #go-appmetrics}
 
-Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure your application is running effectively over time. You can use a cloud service like Cloud Foundry's [autoscaling](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) that relies on metrics to dynamically scale instances to match current workload. By using application metrics, you are informed precisely when to scale up, down, or clean up instances that are no longer needed to keep costs low.
+Application metrics are important for monitoring the performance of your application. Having a live view of metrics like CPU, Memory, Latency, and HTTP metrics is essential to ensure that your application is running effectively over time. You can use a cloud service like Cloud Foundry's [autoscaling](/docs/services/Auto-Scaling?topic=Auto-Scaling) that relies on metrics to dynamically scale instances to match current workload. By using application metrics, you are informed precisely when to scale up, down, or clean up instances that are no longer needed to keep costs low.
 
 Application metrics are captured as time series data. Aggregating and visualizing captured metrics can help to identify common performance problems such as:
 
 * Slow HTTP response times on some or all routes
 * Poor throughput in the application
 * Spikes in demand that cause slowdown
-* Higher than expected CPU usage for the level of throughput/load
+* Higher than expected CPU usage for the level of throughput or load
 * High or growing memory usage (potential memory leak)
 
 ## Adding Application Metrics to your existing Go application

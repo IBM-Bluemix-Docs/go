@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-06"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -26,7 +26,7 @@ You can quickly get help with your Go application by asking questions on dWanswe
 ## Asking for help on dWanswers
 {: #dwanswers-go}
 
-Ask questions on [dWAnswers](https://developer.ibm.com/answers/topics/golang.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by using the `#golang` tag.
+Ask questions on [dWAnswers](https://developer.ibm.com/answers/topics/go/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by using the `#golang` or `#go` tag.
 
 ## Using official IBM Support for Runtimes
 {: #runtimes-go}

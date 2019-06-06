@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-06"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -51,7 +51,7 @@ In the following steps, two small applications (one front-end, one back-end) are
 
 A few statements are needed to add tracing to your server application. First, you must create a tracer.
 
-To create a tracer, supply the following:
+To create a tracer, supply the following items:
  * Transporter
  * Reporter
  * Optional metrics exporter
@@ -107,7 +107,7 @@ In this tutorial, Jaeger exports Prometheus-style metrics. A metrics object allo
   ```
   {: codeblock}
 
-5. A sampler object determines in which situations or how often spans are reported. For development purposes, an application should report all spans that it receives. However, for production, reporting all the spans might not be feasible. To report all spans, you can use the ConstSampler object:
+5. A sampler object determines in which situations or how often spans are reported. For development purposes, an application reports all spans that it receives. However, for production, reporting all the spans might not be feasible. To report all spans, you can use the ConstSampler object:
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
