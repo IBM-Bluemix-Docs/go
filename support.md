@@ -26,7 +26,7 @@ You can quickly get help with your Go application by asking questions on dWanswe
 ## Asking for help on dWanswers
 {: #dwanswers-go}
 
-Ask questions on [dWAnswers](https://developer.ibm.com/answers/topics/go/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by using the `#golang` or `#go` tag.
+Ask questions on [dWAnswers](https://developer.ibm.com/answers/topics/go){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by using the `#golang` or `#go` tag.
 
 ## Using official IBM Support for Runtimes
 {: #runtimes-go}

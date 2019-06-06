@@ -68,7 +68,7 @@ router.Use(HystrixHandler("mycommand"))
 ## Exposing Hystrix metrics to Prometheus (Optional)
 {: #hystrix-optional}
 
-Before you add Hystrix to Prometheus, your app must be configured with application metrics. You can follow the steps in the [Using Application Metrics with Go apps](/go?topic=go-go-appmetrics) topic to add appmetrics support.
+Before you add Hystrix to Prometheus, your app must be configured with application metrics. You can follow the steps in the [Using Application Metrics with Go apps](/docs/go?topic=go-go-appmetrics) topic to add appmetrics support.
 
 Hystrix provides users the ability to take metrics data and expose them to a metric collector. To expose Hystrix to prometheus, the metric_collector package must also be added:
 ```
