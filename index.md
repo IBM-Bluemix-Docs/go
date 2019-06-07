@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -20,7 +20,7 @@ subcollection: go
 # Getting started tutorial
 {: #getting-started}
 
-The following tutorial walks you through the steps to create and deploy a Go app by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-ibmcloud-cli) on the command line or the web-based [{{site.data.keyword.cloud}} {{site.data.keyword.dev_console}}](https://{DomainName}/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go application in just minutes.
+The following tutorial walks you through the steps to create and deploy a Go app by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud}} {{site.data.keyword.dev_console}}](https://{DomainName}/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go application in just minutes.
 
 ## Step 1. Creating a custom Go app in the dashboard
 {: #create-go-app}
@@ -30,7 +30,7 @@ The following tutorial walks you through the steps to create and deploy a Go app
  * Select a starter kit that is written in `Go`, and then click **Create app** on the **Starter kit details** page.
  * Select the blank starter app, and click **Create App**.
 3. Provide a name for your app, or use the generic app name that is provided.
-4. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cloud-cli-ibmcloud-cli).
+4. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cloud-cli-getting-started).
 
 ## Step 2. Adding {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}
 {: #add-resource-go}
@@ -72,7 +72,7 @@ You can use the {{site.data.keyword.dev_cli_long}} to work with your Go app loca
 3. A health check endpoint is available at `http://localhost:8080/health`.
 4. You can access metrics at `http://localhost:3000/metrics`.
 
-To learn more about the {{site.data.keyword.dev_cli_notm}}, see the complete [CLI documentation](/docs/cli?topic=cloud-cli-ibmcloud-cli).
+To learn more about the {{site.data.keyword.dev_cli_notm}}, see the complete [CLI documentation](/docs/cli?topic=cloud-cli-getting-started).
 
 You are now ready to build out your application with the {{site.data.keyword.texttospeechshort}} service!
 

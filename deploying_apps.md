@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-07"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -42,7 +42,7 @@ ibmcloud dev deploy –target container
 ```
 {: codeblock}
 
-For more information about `ibmcloud dev` commands, see [Developing and deploying your apps](/docs/cli?topic=cloud-cli-ibmcloud-cli).
+For more information about `ibmcloud dev` commands, see [Developing and deploying your apps](/docs/cli?topic=cloud-cli-getting-started).
 
 ## Deploying to Cloud Foundry
 {: #go-deploy-cf}
