@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-06"
+lastupdated: "2019-06-10"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # Setting up tracing in Go apps
 {: #go-e2e-tracing}
 
-The following tutorial focuses on Opentracing and Jaeger packages for tracing Go applications. For more information about using Jaeger, see the [Jaeger documentation portal](https://www.jaegertracing.io/docs/1.11/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+The following tutorial focuses on OpenTracing and Jaeger packages for tracing Go applications. For more information about using Jaeger, see the [Jaeger documentation portal](https://www.jaegertracing.io/docs/1.11/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
 In the following steps, two small applications (one front-end, one back-end) are used to trace between two endpoints by using the Jaeger module. You can start from scratch or apply the principles that are described here to your existing Go applications.
 
-## Step 1. Installing and enabling the Opentracing and Jaeger packages
+## Step 1. Installing and enabling the OpenTracing and Jaeger packages
 {: #install-go-opentracing}
 
 1. In the same location as your Go application’s `Gopkg.toml` file, enter the following commands to add the required packages into your dependency list:
