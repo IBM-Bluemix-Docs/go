@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-10"
 
 keywords: configure go environment, go environment
 
@@ -20,14 +20,14 @@ subcollection: go
 # Configuring the Go environment
 {: #configure-go-env}
 
-Standardized guidelines are available to follow for developing Go applications that help to maintain consistent portability. Considerations to make include credential management, saving data, storing data, and publishing content to the cloud. By following Cloud Native practices, a Go application can move from one environment to another easily. For example, from testing into production, without changing code, or exercising otherwise untested code paths.
+Standardized guidelines are available to follow for developing Go applications that help to maintain consistent portability. Considerations to make include credential management, saving data, storing data, and publishing content to the cloud. By following cloud-native practices, a Go app can move from one environment to another easily. For example, from testing into production, without changing code, or exercising otherwise untested code paths.
 
-Whether you need to add cloud support to existing Go applications or create Go apps with Starter Kits, the goal is to provide portability for use with any development platform.
+Whether you need to add cloud support to existing Go apps or create Go apps with Starter Kits, the goal is to provide portability for use with any development platform.
 
-## Adding Cloud support to existing Go applications
+## Adding Cloud support to existing Go apps
 {: #go-add-cloud-support}
 
-The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") module aggregates environment variables from various Cloud providers, such as CloudFoundry and Kubernetes, so the application is independent of the environment.
+The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") module aggregates environment variables from various Cloud providers, such as CloudFoundry and Kubernetes, so the app is independent of the environment.
 
 ### Installing the `ibm-cloud-env-golang` module
 {: #go-install-env-module}
@@ -74,7 +74,7 @@ The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-gola
 ### Retrieving service credentials
 {: #go-get-creds}
 
-Retrieve the values in your application by using the following commands.
+Retrieve the values in your app by using the following commands.
 
 1. Retrieve variable `service1credentials`:
   ```golang
@@ -88,7 +88,7 @@ Retrieve the values in your application by using the following commands.
   ```
   {: codeblock}
 
-Now your application can be implemented in any runtime-environment by abstracting the differences that are introduced from different Cloud compute providers.
+Now your app can be implemented in any runtime-environment by abstracting the differences that are introduced from different Cloud compute providers.
 
 ### Filtering the values for tags and labels
 {: #go-filter-creds}
@@ -99,27 +99,27 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ```
 {: codeblock}
 
-## Using the Go configuration manager from Starter Kit apps
+## Using the Go Configuration Manager from starter kit apps
 {: #go-config-manager}
 
-Go apps that are created with [Starter Kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as Cloud Foundry, Kubernetes, VSI, and Functions).
+Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as Cloud Foundry, Kubernetes, VSI, and Functions).
 
 ### Understanding service credentials
 {: #go-credentials-config}
 
-Your application configuration information for services is stored in the `localdev-config.json` file in the `/server/config` directory. The file is in the `.gitignore` directory to prevent sensitive information from being stored in Git. The connection information for any configured service that runs locally, such as user name, password, and host name, is stored in this file.
+Your app configuration information for services is stored in the `localdev-config.json` file in the `/server/config` directory. The file is in the `.gitignore` directory to prevent sensitive information from being stored in Git. The connection information for any configured service that runs locally, such as user name, password, and host name, is stored in this file.
 
-The application uses the configuration manager to read the connection and configuration information from the environment and this file. It uses a custom-built `mappings.json`, which is located in the `server/config` directory, to communicate where the credentials can be found for each service.
+The app uses the Configuration Manager to read the connection and configuration information from the environment and this file. It uses a custom-built `mappings.json`, which is located in the `server/config` directory, to communicate where the credentials can be found for each service.
 
-If the application is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials that are read from the `mappings.json` file. But if you need to create unbound credentials, you can do so from the {{site.data.keyword.cloud_notm}} web console (example), or by using the [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") `cf create-service-key` command.
+If the app is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials that are read from the `mappings.json` file. But if you need to create unbound credentials, you can do so from the {{site.data.keyword.cloud_notm}} web console (example), or by using the [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") `cf create-service-key` command.
 
-When you push your application to {{site.data.keyword.cloud_notm}}, these values are no longer used. Instead, the application automatically connects to bound services by using environment variables. 
+When you push your app to {{site.data.keyword.cloud_notm}}, these values are no longer used. Instead, the app automatically connects to bound services by using environment variables. 
 
 * **Cloud Foundry**: Service credentials are taken from the `VCAP_SERVICES` environment variable.
 
 * **Kubernetes**: Service credentials are taken from individual environment variables per service.
 
-* **{{site.data.keyword.cloud_notm}} Container Service**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}} (Openwhisk).
+* **{{site.data.keyword.cloud_notm}} Container Service**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}}.
 
 ## Next Steps
 {: #go-next-steps-config notoc}

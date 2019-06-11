@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-07"
+lastupdated: "2019-06-10"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
 
@@ -20,7 +20,7 @@ subcollection: go
 # Deploying and integrating Go apps
 {: #go-deploy-apps}
 
-You can deploy your Go apps with a toolchain or by using the command-line interface. A toolchain is a set of tool integrations to help build and automate application deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment methodologies for Go applications such as CLI, Kubernetes, containers, VSI, and private cloud.
+You can deploy your Go applications with a toolchain or by using the command line interface. A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment methodologies for Go apps such as CLI, Kubernetes, containers, VSI, and private cloud.
 
 ## Deploying to a Kubernetes cluster
 {: #deploy_kube-go}
@@ -51,7 +51,7 @@ This option deploys your cloud-native app without you needing to manage the unde
 
 If you plan to deploy your app to [{{site.data.keyword.cfee_full}}](/docs/cloud-foundry?topic=cloud-foundry-about), you must [prepare your {{site.data.keyword.cloud_notm}} account](/docs/cloud-foundry?topic=cloud-foundry-prepare).
 
-If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry applications exclusively for your enterprise.
+If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
 
 ## Deploying to a virtual server
 {: #go-vsi-deploy}

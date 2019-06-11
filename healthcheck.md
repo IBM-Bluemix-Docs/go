@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-05"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,7 +20,7 @@ subcollection: go
 # Using a health check in your Go app
 {: #go-healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon"), can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 
 ## Health check overview
 {: #go-healtcheck-overview}
@@ -92,7 +92,7 @@ func HealthGET(c *gin.Context) {
 ## Recommendations for readiness and liveness probes
 {: #go-recommend-healthcheck}
 
-Readiness probes should include the viability of connections to downstream services in their result when there isn’t an acceptable fallback if the downstream service is unavailable. This doesn't mean calling the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services: this might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
+Readiness probes must include the viability of connections to downstream services in their result when there isn’t an acceptable fallback if the downstream service is unavailable. You don't have to call the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services. For example, the references might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
 
 A liveness probe, by contrast, is deliberate about what is checked, as a failure results in immediate termination of the process. A simple HTTP endpoint that always returns `{"status": "UP"}` with status code `200` is a reasonable choice.
 
@@ -101,7 +101,7 @@ A liveness probe, by contrast, is deliberate about what is checked, as a failure
 
 Declare liveness and readiness probes alongside your Kubernetes deployment. Both probes use the same configuration parameters:
 
-* The kubelet waits for `initialDelaySeconds` before the first probe.
+* The kubelet waits for `initialDelaySeconds` before the initial probe.
 
 * The kubelet probes the service every `periodSeconds` seconds. The default is 1.
 
@@ -115,7 +115,7 @@ Declare liveness and readiness probes alongside your Kubernetes deployment. Both
 
 To avoid restart cycles, set `livenessProbe.initialDelaySeconds` to be safely longer than it takes your service to initialize. You can then use a shorter value for `readinessProbe.initialDelaySeconds` to route requests to the service as soon as it's ready.
 
-An example configuration might look something like this:
+See the following example configuration:
 ```yaml
 spec:
   containers:
