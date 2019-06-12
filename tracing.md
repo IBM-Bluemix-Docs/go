@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -249,7 +249,7 @@ This route sends a `GET` request from one application to another.
 
 To view spans, go to `http://localhost:16686`. You can search traces by service, operation, and tags, and then click **Find Traces**.
 
-![Jaeger UI](images/JaegerUI.png)
+![Jaeger UI](images/JaegerUI.png "Jaeger UI"){: caption="Figure 1. Viewing spans in the Jaeger UI" caption-side="bottom"}
 
 Click a specific trace to view more information about it:
-![Trace Example](images/TraceExample.png)
+![Trace Example](images/TraceExample.png "Trace example"){: caption="Figure 2. Example trace details" caption-side="bottom"}
