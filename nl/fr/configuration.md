@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-13"
 
 keywords: configure go environment, go environment
 
@@ -16,11 +16,12 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Configuration de l'environnement Go
 {: #configure-go-env}
 
-Des directives normalisées sont disponibles pour le développement d'applications Go qui aident à maintenir une portabilité constante. Les considérations à prendre en compte incluent la gestion des données d'identification, l'enregistrement des données, le stockage des données et la publication du contenu dans le cloud. En suivant les pratiques de Cloud Native, une application Go peut passer facilement d'un environnement à un autre. Par exemple, du test à la production, sans changer de code, ou en utilisant des chemins de code autrement non testés.
+Des directives normalisées sont disponibles pour le développement d'applications Go qui aident à maintenir une portabilité constante. Les considérations à prendre en compte incluent la gestion des données d'identification, l'enregistrement des données, le stockage des données et la publication du contenu dans le cloud. En suivant les pratiques natives cloud, une application Go peut passer facilement d'un environnement à un autre. Par exemple, du test à la production, sans changer de code, ou en utilisant des chemins de code autrement non testés.
 
 Que vous ayez besoin d'ajouter la prise en charge du cloud aux applications Go existantes ou de créer des applications Go avec des kits de démarrage, l'objectif est de fournir une portabilité pour permettre une utilisation avec n'importe quelle plateforme de développement.
 
@@ -102,7 +103,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Utilisation du gestionnaire de configuration Go depuis les applications du kit de démarrage
 {: #go-config-manager}
 
-Les applications Go créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") incluent automatiquement des données d'identification et des configurations qui sont requises pour une exécution dans de nombreuses cibles de déploiement de cloud, telles Cloud Foundry, Kubernetes, VSI et Functions.
+Les applications Go créées avec les [kits de démarrage](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") incluent automatiquement des données d'identification et des configurations qui sont requises pour une exécution sur de nombreuses cibles de déploiement de cloud, telles [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf), [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about), [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial) ou [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started).
+
+  Le déploiement de VSI est disponible pour certains kits de démarrage. Pour utiliser cette fonctionnalité, accédez au [tableau de bord {{site.data.keyword.cloud_notm}}](https://{DomainName}) et cliquez sur **Créer une application** dans la vignette **Applications**.
+  {: note}
 
 ### Présentation des données d'identification de service
 {: #go-credentials-config}
@@ -119,7 +123,7 @@ Lorsque vous envoyez par commande push votre application à {{site.data.keyword.
 
 * **Kubernetes** : Les données d'identification du service sont récupérées par service, à partir de variables d'environnement individuelles.
 
-* **{{site.data.keyword.cloud_notm}} Container Service** : Les données d'identification du service sont récupérées des instances de serveurs virtuels ou d'{{site.data.keyword.openwhisk}} (Openwhisk).
+* **{{site.data.keyword.cloud_notm}} Container Service** : Les données d'identification du service sont récupérées des instances de serveurs virtuels ou d'{{site.data.keyword.openwhisk}}.
 
 ## Etapes suivantes
 {: #go-next-steps-config notoc}

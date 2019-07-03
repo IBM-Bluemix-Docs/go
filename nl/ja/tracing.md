@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # Go アプリでのトレースのセットアップ
 {: #go-e2e-tracing}
 
-以下のチュートリアルでは、Go アプリケーションをトレースするための Opentracing および Jaeger のパッケージを中心に説明します。 Jaeger の使用について詳しくは、[Jaeger 資料ポータル](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
+以下のチュートリアルでは、Go アプリケーションをトレースするための OpenTracing および Jaeger のパッケージを中心に説明します。 Jaeger の使用について詳しくは、[Jaeger 資料ポータル](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")を参照してください。
 
 以下のステップでは、2 つの小さなアプリケーション (1 つはフロントエンド、もう 1 つはバックエンド) を使用して、2 つのエンドポイント間で Jaeger モジュールを使用したトレースが行われます。 最初から開始することも、既存の Go アプリケーションにここで説明する原則を適用することもできます。
 
-## ステップ 1. Opentracing および Jaeger パッケージのインストールと有効化
+## ステップ 1. OpenTracing および Jaeger パッケージのインストールと有効化
 {: #install-go-opentracing}
 
 1. Go アプリケーションの `Gopkg.toml` ファイルと同じ場所で、以下のコマンドを入力して、必要なパッケージを依存関係リストに追加します。
@@ -51,7 +51,7 @@ subcollection: go
 
 サーバー・アプリケーションにトレースを追加するには、いくつかのステートメントが必要です。 まず、トレーサーを作成する必要があります。
 
-トレーサーを作成するには、以下を指定します。
+トレーサーを作成するには、以下の項目を指定します。
  * トランスポーター
  * レポーター
  * オプションのメトリック・エクスポーター
@@ -107,7 +107,7 @@ subcollection: go
   ```
   {: codeblock}
 
-5. sampler オブジェクトは、スパンを報告するシチュエーションまたは頻度を決定します。 開発目的の場合、アプリケーションは受信するすべてのスパンを報告する必要があります。 しかし実稼働環境では、すべてのスパンの報告が実現可能ではない場合があります。 すべてのスパンを報告するには、ConstSampler オブジェクトを使用できます。
+5. sampler オブジェクトは、スパンを報告するシチュエーションまたは頻度を決定します。 開発が目的の場合、アプリケーションは受信するすべてのスパンを報告します。しかし実稼働環境では、すべてのスパンの報告が実現可能ではない場合があります。 すべてのスパンを報告するには、ConstSampler オブジェクトを使用できます。
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -249,7 +249,7 @@ client.Do(req)
 
 スパンを表示するには、`http://localhost:16686` に移動します。 トレースを検索するには、サービス、操作、およびタグを入力して**「トレースの検索 (Find Traces)」**をクリックします。
 
-![Jaeger UI](images/JaegerUI.png)
+![Jaeger UI](images/JaegerUI.png "Jaeger UI")
 
 特定のトレースをクリックすると、その詳細情報が表示されます。
-![トレースの例](images/TraceExample.png)
+![トレースの例](images/TraceExample.png "トレースの例")

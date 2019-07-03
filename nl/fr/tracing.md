@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # Configuration du traçage dans les applications Go
 {: #go-e2e-tracing}
 
-Ce tutoriel est consacré aux packages Opentracing et Jaeger pour le traçage des applications Go. Pour plus d'informations sur l'utilisation de Jaeger, accédez au [portail de documentation Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
+Le tutoriel suivant est consacré aux packages OpenTracing et Jaeger pour le traçage des applications Go. Pour plus d'informations sur l'utilisation de Jaeger, accédez au [portail de documentation Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe").
 
 Dans les étapes suivantes, deux petites applications (une frontale et une dorsale) sont utilisées pour effectuer un traçage entre deux points finaux à l'aide du module Jaeger. Vous pouvez démarrer à partir de zéro ou appliquer les principes décrits ici à vos applications Go existantes.
 
-## Etape 1. Installation et activation des packages Opentracing et Jaeger
+## Etape 1. Installation et activation des packages OpenTracing et Jaeger
 {: #install-go-opentracing}
 
 1. Dans l'emplacement où se trouve le fichier `Gopkg.toml` de votre application Go, entrez les commandes suivantes pour ajouter les packages requis à votre liste de dépendances :
@@ -51,7 +51,7 @@ Dans les étapes suivantes, deux petites applications (une frontale et une dorsa
 
 Quelques instructions sont nécessaires pour ajouter un traçage à votre application serveur. Vous devez commencer par créer un traceur.
 
-Pour créer un traceur, fournissez les informations suivantes :
+Pour créer un traceur, indiquez les éléments suivants :
  * Transporteur
  * Générateur de rapport
  * Exporteur de métriques facultatif
@@ -107,7 +107,7 @@ Dans ce tutoriel, Jaeger exporte des métriques de style Prometheus. Un objet me
   ```
   {: codeblock}
 
-5. Un objet sampler détermine dans quelles situations ou avec quelle fréquence les intervalles sont signalés. Pour le développement, une application doit signaler tous les intervalles qu'il reçoit. Par contre, pour la production, il se peut que le signalement de tous les intervalles ne soit pas possible. Pour signaler tous les intervalles, vous pouvez utiliser l'objet ConstSampler :
+5. Un objet sampler détermine dans quelles situations ou avec quelle fréquence les intervalles sont signalés. Pour le développement, une application signale tous les intervalles qu'elle reçoit. Par contre, pour la production, il se peut que le signalement de tous les intervalles ne soit pas possible. Pour signaler tous les intervalles, vous pouvez utiliser l'objet ConstSampler :
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -249,7 +249,7 @@ Cette route envoie une demande `GET` d'une application à une autre.
 
 Pour afficher l'intervalle, accédez à `http://localhost:16686`. Recherchez des traces par service, opération et balises, puis cliquez sur **Find Traces**.
 
-![Interface utilisateur Jaeger](images/JaegerUI.png)
+![Interface utilisateur Jaeger](images/JaegerUI.png "Interface utilisateur Jaeger")
 
 Cliquez sur une trace spécifique pour afficher des informations supplémentaires à son sujet :
-![Exemple de trace](images/TraceExample.png)
+![Exemple de trace](images/TraceExample.png "Exemple de trace")

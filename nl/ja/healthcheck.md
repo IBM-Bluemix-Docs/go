@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,8 +20,7 @@ subcollection: go
 # Go アプリでのヘルス・チェックの使用
 {: #go-healthcheck}
 
-ヘルス・チェックには、サーバー・サイド・アプリケーションが正常に動作しているかどうかを判別するための単純なメカニズムが備わっています。 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") や [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") のようなクラウド環境は、サービスのインスタンスがトラフィックを受け入れる準備ができているかどうかを判別するためにヘルス・エンドポイントを定期的にポーリングするように構成できます。
-
+ヘルス・チェックには、サーバー・サイド・アプリケーションが正常に動作しているかどうかを判別するための単純なメカニズムが備わっています。 定期的に health エンドポイントをポーリングして、サービスのインスタンスがトラフィックを受け入れる準備ができているかどうかを判断するよう、[Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") や [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") などのクラウド環境を構成することができます。
 
 ## ヘルス・チェックの概要
 {: #go-healtcheck-overview}
@@ -50,6 +49,7 @@ Kubernetes には、プロセス正常性についての詳細な概念があり
 | Stopping | 503 - 使用不可           | 200 - OK                   | 503 - 使用不可         |
 | Down     | 503 - 使用不可           | 503 - 使用不可          | 503 - 使用不可         |
 | Errored  | 500 - サーバー・エラー          | 500 - サーバー・エラー         | 500 - サーバー・エラー        |
+{: caption="表 1. HTTP 状況コード" caption-side="bottom"}
 
 ## 既存の Go アプリへのヘルス・チェックの追加
 {: #go-add-healthcheck-existing}
@@ -65,7 +65,7 @@ func HealthGET(c *gin.Context) {
 
 ブラウザーで `/health` エンドポイントにアクセスして、アプリの状況を検査します。
 
-[`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")など、より広範囲のライブラリーが用意されています。これらのライブラリーを使用することにより、バッキング・サービスに対して実行される検査のキャッシングのサポートによって拡張可能なヘルス・チェックを定義できます。この場合は、この例の単純な liveness テストを、ヘルス・チェック・パッケージから作成される、より堅固で詳細な readiness チェックから分離することが必要になります。
+[`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン")など、より広範囲のライブラリーが用意されています。これらのライブラリーを使用することにより、バッキング・サービスに対して実行される検査のキャッシングのサポートによって拡張可能なヘルス・チェックを定義できます。 この場合は、この例の単純な liveness テストを、ヘルス・チェック・パッケージから作成される、より堅固で詳細な readiness チェックから分離することが必要になります。
 
 ## Go スターター・キット・アプリでのヘルス・チェック・エンドポイントへのアクセス
 {: #go-healthcheck-starterkit}
@@ -91,7 +91,7 @@ func HealthGET(c *gin.Context) {
 ## readiness プローブと liveness プローブに関する推奨事項
 {: #go-recommend-healthcheck}
 
-ダウンストリーム・サービスが使用不可の場合、使用できるフォールバックがなければ、ダウンストリーム・サービスへの接続の実行可能性を readiness プローブの結果に含める必要があります。 これは、ダウンストリーム・サービスが備えているヘルス・チェックを直接呼び出すということではありません。それはインフラストラクチャーが検査することになります。 代わりに、アプリケーションにおけるダウンストリーム・サービスへの既存の参照の正常性を検査することを検討してください。これに該当するものとして、WebSphere MQ への JMS 接続、あるいは初期化された Kafka コンシューマーまたはプロデューサーが考えられます。 ダウンストリーム・サービスへの内部参照の実行可能性を実際に検査する場合は、ヘルス・チェックがアプリケーションに与える影響を最小限に抑えるために、結果をキャッシュしてください。
+ダウンストリーム・サービスが使用不可の場合、使用できるフォールバックがなければ、ダウンストリーム・サービスへの接続の実行可能性を readiness プローブの結果に含める必要があります。 ダウンストリーム・サービスで提供されるヘルス・チェックを直接呼び出す必要はありません。インフラストラクチャーが自動的に検査するからです。代わりに、アプリケーションにおけるダウンストリーム・サービスへの既存の参照の正常性を検査することを検討してください。 例えば、WebSphere MQ への JMS 接続、あるいは初期化された Kafka コンシューマーまたはプロデューサーが考えられます。 ダウンストリーム・サービスへの内部参照の実行可能性を実際に検査する場合は、ヘルス・チェックがアプリケーションに与える影響を最小限に抑えるために、結果をキャッシュしてください。
 
 一方、liveness プローブは、検査対象について注意が必要です。失敗は結果としてプロセスの即時終了につながるからです。 状況コードが `200` の `{"status": "UP"}` を常に返す単純な HTTP エンドポイントが妥当な選択です。
 
@@ -100,7 +100,7 @@ func HealthGET(c *gin.Context) {
 
 Kubernetes デプロイメントと併せて liveness プローブと readiness プローブを宣言します。 両方のプローブが同じ構成パラメーターを使用します。
 
-* kubelet は最初のプローブの前に `initialDelaySeconds` 秒間待機します。
+* kubelet は初期プローブの前に `initialDelaySeconds` 秒間待機します。
 
 * `periodSeconds` 秒おきに kubelet がサービスをプローブします。 デフォルトは、1 です。
 
@@ -114,7 +114,7 @@ Kubernetes デプロイメントと併せて liveness プローブと readiness 
 
 再始動サイクルを避けるために、安全を見てサービスの初期化時間よりも十分に長い時間を `livenessProbe.initialDelaySeconds` の値として設定してください。 `readinessProbe.initialDelaySeconds` にそれよりも短い値を使用することで、サービスの準備ができ次第、要求をサービスにルーティングできるようにします。
 
-構成例は以下のようになります。
+以下の構成例を参照してください。
 ```yaml
 spec:
   containers:

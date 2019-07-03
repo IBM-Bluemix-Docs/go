@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,7 +20,7 @@ subcollection: go
 # Utilisation d'un diagnostic d'intégrité dans votre application Go
 {: #go-healthcheck}
 
-Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Les environnements de cloud, tels [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") et [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe"), peuvent être configurés pour sonder périodiquement les noeuds finaux d'intégrité afin de déterminer si une instance de votre service est prête à accepter du trafic.
+Les diagnostics d'intégrité fournissent un mécanisme simple pour déterminer si une application côté serveur se comporte de manière appropriée. Les environnements cloud tels que [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") et [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") peuvent être configurés pour sonder périodiquement les noeuds finaux d'intégrité afin de déterminer si une instance de votre service est prête à accepter du trafic.
 
 ## Présentation des diagnostics d'intégrité
 {: #go-healtcheck-overview}
@@ -49,6 +49,7 @@ Le tableau suivant donne des indications sur les réponses fournies par les noeu
 | Stopping | 503 - Unavailable           | 200 - OK                   | 503 - Unavailable         |
 | Down     | 503 - Unavailable           | 503 - Unavailable          | 503 - Unavailable         |
 | Errored  | 500 - Server Error          | 500 - Server Error         | 500 - Server Error        |
+{: caption="Tableau 1. Codes d'état HTTP" caption-side="bottom"}
 
 ## Ajout d'un diagnostic d'intégrité à une application Go existante
 {: #go-add-healthcheck-existing}
@@ -90,7 +91,7 @@ func HealthGET(c *gin.Context) {
 ## Recommandations pour les sondes de préparation et de vivacité
 {: #go-recommend-healthcheck}
 
-Les sondes de préparation doivent inclure la viabilité des connexions aux services situés en aval dans leur résultat si aucune rétromigration acceptable n'existe lorsque le service en aval n'est pas disponible. Il ne s'agit pas d'appeler directement le diagnostic d'intégrité qui est fourni par le service en aval, car l'infrastructure le vérifie pour vous. Vous devez plutôt envisager de vérifier l'état des références existantes de votre application aux services en aval : il peut s'agir d'une connexion JMS à WebSphere MQ, ou d'un consommateur ou producteur Kafka initialisé. Si vous vérifiez la viabilité des références internes aux services en aval, mettez en cache le résultat pour minimiser l'impact de la vérification de santé sur votre application.
+Les sondes de préparation doivent inclure la viabilité des connexions aux services situés en aval dans leur résultat si aucune rétromigration acceptable n'existe lorsque le service en aval n'est pas disponible. Vous n'avez pas besoin d'appeler directement le diagnostic d'intégrité qui est fourni par le service en aval, car l'infrastructure le vérifie pour vous. En revanche, vous devez envisager de vérifier l'intégrité des références existantes de votre application aux services en aval. Par exemple, il peut s'agir d'une connexion JMS à WebSphere MQ, ou d'un consommateur ou producteur Kafka initialisé. Si vous vérifiez la viabilité des références internes aux services en aval, mettez en cache le résultat pour minimiser l'impact de la vérification de santé sur votre application.
 
 Une sonde de vivacité, en revanche, est délibérée quant à ce qui est vérifié, car une défaillance entraîne l'arrêt immédiat du processus. Un noeud final HTTP simple qui renvoie toujours `{"status" : "UP"}` avec le code d'état `200` est un choix raisonnable.
 
@@ -99,7 +100,7 @@ Une sonde de vivacité, en revanche, est délibérée quant à ce qui est vérif
 
 Sondez la vivacité et l'état de préparation en même temps que votre déploiement Kubernetes. Les deux sondes utilisent les mêmes paramètres de configuration :
 
-* L'agent kubelet attend la durée définie par `initialDelaySeconds` avant la première sonde.
+* L'agent kubelet attend la durée définie par `initialDelaySeconds` avant la sonde initiale.
 
 * L'agent kubelet sonde le service toutes les `periodSeconds` secondes. La valeur par défaut est 1.
 

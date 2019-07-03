@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -20,14 +20,14 @@ subcollection: go
 # Utilisation des métriques d'application avec les applications Go
 {: #go-appmetrics}
 
-Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel d'avoir une vue en temps réel des métriques telles que l'unité centrale, la mémoire, la latence et des métriques HTTP pour garantir le bon fonctionnement de votre application dans le temps. Vous pouvez utiliser un service cloud comme Cloud Foundry [Auto-Scaling](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started), qui repose sur des métriques pour adapter dynamiquement les instances aux charges de travail actuelles. En utilisant des métriques d'application, vous êtes informé précisément lorsqu'il faut augmenter ou réduire des instances, ou les nettoyer lorsqu'elles ne sont plus nécessaires, le tout pour limiter les coûts.
+Les métriques d'application sont importantes pour la surveillance des performances de votre application. Il est essentiel de disposer d'une vue en direct de métriques types UC, mémoire, latence et HTTP, pour garantir un fonctionnement efficace de votre application dans le temps. Vous pouvez utiliser un service cloud comme Cloud Foundry [Auto-Scaling](/docs/services/Auto-Scaling?topic=Auto-Scaling), qui repose sur des métriques pour adapter dynamiquement les instances aux charges de travail actuelles. En utilisant des métriques d'application, vous êtes informé précisément lorsqu'il faut augmenter ou réduire des instances, ou les nettoyer lorsqu'elles ne sont plus nécessaires, le tout pour limiter les coûts.
 
 Les métriques d'application sont capturées sous forme de données de série temporelles. L'agrégation et la visualisation des métriques capturées peut permettre d'identifier des problèmes de performance courants :
 
 * Faibles temps de réponse HTTP sur tout ou partie des routes
 * Débit médiocre dans l'application
 * Pics de demandes entraînant des ralentissements
-* Utilisation de l'unité centrale plus élevée que prévu pour le niveau de débit/charge
+* Utilisation de l'unité centrale plus élevée que prévu pour le niveau de débit ou de charge
 * Utilisation de la mémoire élevée ou en augmentation (possible fuite de mémoire)
 
 ## Ajout de métriques d'application à votre application Go existante

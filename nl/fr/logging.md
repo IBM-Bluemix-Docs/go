@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -60,10 +60,10 @@ Pour plus d'informations sur la personnalisation des messages de journal avec de
 {: #go-logging-next notoc}
 
 En savoir plus sur l'affichage des journaux dans chacune de vos cibles de déploiement :
-* [Journaux Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")
-* [Journaux Cloud Foundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
+* [Journaux Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe")
+* [Journaux Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps?topic=cloudloganalysis-logging_cf_apps)
 * [Cloud Foundry Enterprise Environment - Audit et journalisation](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [Journaux {{site.data.keyword.openwhisk}} et surveillance](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [Journaux {{site.data.keyword.openwhisk}} et surveillance](/docs/openwhisk?topic=cloud-functions-logs)
 
 Pour en savoir plus sur l'utilisation d'un regroupeur de journaux :
 * [Analyse de journal {{site.data.keyword.cloud_notm}}](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

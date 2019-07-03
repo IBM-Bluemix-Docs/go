@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-10"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -26,12 +26,12 @@ Vous pouvez obtenir rapidement de l'aide concernant votre application Go en posa
 ## Demander de l'aide sur dWanswers
 {: #dwanswers-go}
 
-Posez des questions sur [dWAnswers](https://developer.ibm.com/answers/topics/golang.html){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") en utilisant le hashtag `#golang`.
+Posez des questions sur [dWAnswers](https://developer.ibm.com/answers/topics/go){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") en utilisant l'étiquette `#golang` ou `#go`. 
 
 ## Utilisation du support officiel IBM Support for Runtimes
 {: #runtimes-go}
 
-IBM Foundation Support for Runtimes couvre Node.js, Swift, Java et Go. Des informations de support sont disponibles pour Go 1.10 dans la communauté [golang.org](https://golang.org/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") ainsi que pour IBM Watson SDK for Go. 
+IBM Foundation Support for Runtimes couvre Node.js, Swift, Java&trade; et Go. Des informations de support sont disponibles pour Go 1.10 dans la communauté [golang.org](https://golang.org/){: new_window} ![Icône de lien externe](../icons/launch-glyph.svg "Icône de lien externe") ainsi que pour IBM Watson SDK for Go. 
 
 Le support d'exécution de Go est disponible pour n'importe quel module que vous utilisez dans votre application. Un support est disponible peu importe l'endroit où vous souhaitez déployer l'exécution, que ce soit sur votre ordinateur, dans {{site.data.keyword.cloud_notm}} ou ailleurs.
 

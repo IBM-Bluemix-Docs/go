@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-10"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -26,12 +26,12 @@ dWanswers で質問したり、ランタイムに関する公式の IBM サポ�
 ## dWanswers での支援依頼
 {: #dwanswers-go}
 
-`#golang` タグを使用して、[dWAnswers](https://developer.ibm.com/answers/topics/golang.html){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") で質問します。
+`#golang` タグまたは `#go` タグを使用して、[dWAnswers](https://developer.ibm.com/answers/topics/go){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") で質問します。
 
 ## 公式 IBM Support for Runtimes の使用
 {: #runtimes-go}
 
-IBM Foundation Support for Runtimes の適応範囲は Node.js、Swift、Java、Go です。 IBM Watson SDK for Go を含む Go 1.10 のサポートは [golang.org](https://golang.org/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") コミュニティーから利用できます。 
+IBM Foundation Support for Runtimes の適応範囲は Node.js、Swift、Java&trade;、Go です。 IBM Watson SDK for Go を含む Go 1.10 のサポートは [golang.org](https://golang.org/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") コミュニティーから利用できます。 
 
 Go ランタイム・サポートは、アプリケーション内で使用しているすべてのモジュールで使用できます。 ランタイムをデプロイする場所 (自分のコンピューター、{{site.data.keyword.cloud_notm}}、またはその他の場所) がどこであっても、サポートは使用可能です。
 

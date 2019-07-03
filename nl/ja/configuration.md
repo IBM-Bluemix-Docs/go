@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-13"
 
 keywords: configure go environment, go environment
 
@@ -16,18 +16,19 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Go 環境の構成
 {: #configure-go-env}
 
-一貫性のある移植性を維持できるようになる Go アプリケーションを開発する際に従うべき、標準化されたガイドラインがあります。 考慮事項としては、資格情報の管理、データの保存、データの保管、およびクラウドへのコンテンツの公開があります。 クラウド・ネイティブのプラクティスに従うことによって、Go アプリケーションを環境間で簡単に移行できます。 例えば、コードを変更したり、テストされていないコード・パスを使用したりすることなく、テスト環境から実稼働環境に移行できます。
+一貫性のある移植性を維持できるようになる Go アプリケーションを開発する際に従うべき、標準化されたガイドラインがあります。 考慮事項としては、資格情報の管理、データの保存、データの保管、およびクラウドへのコンテンツの公開があります。 クラウド・ネイティブのプラクティスに従うことによって、Go アプリを環境間で簡単に移行できます。 例えば、コードを変更したり、テストされていないコード・パスを使用したりすることなく、テスト環境から実稼働環境に移行できます。
 
-既存の Go アプリケーションにクラウド・サポートを追加する必要があるか、スターター・キットを使用して Go アプリを作成するかにかかわらず、目標はどのような開発プラットフォームに対しても移植性を確保することです。
+既存の Go アプリにクラウド・サポートを追加する必要があるか、スターター・キットを使用して Go アプリを作成するかにかかわらず、目標はどのような開発プラットフォームに対しても移植性を確保することです。
 
-## 既存の Go アプリケーションへのクラウド・サポートの追加
+## 既存の Go アプリへのクラウド・サポートの追加
 {: #go-add-cloud-support}
 
-[`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") モジュールはさまざまなクラウド・プロバイダー (CloudFoundry や Kubernetes など) からの環境変数を集約するため、アプリケーションは環境から独立しています。
+[`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") モジュールはさまざまなクラウド・プロバイダー (CloudFoundry や Kubernetes など) からの環境変数を集約するため、アプリは環境から独立しています。
 
 ### `ibm-cloud-env-golang` モジュールのインストール
 {: #go-install-env-module}
@@ -74,7 +75,7 @@ subcollection: go
 ### サービス資格情報の取得
 {: #go-get-creds}
 
-以下のコマンドを使用して、アプリケーション内で値を取得します。
+以下のコマンドを使用して、アプリ内で値を取得します。
 
 1. 変数 `service1credentials` を取得します。
   ```golang
@@ -88,7 +89,7 @@ subcollection: go
   ```
   {: codeblock}
 
-これで、さまざまなクラウド計算プロバイダーから生じる相違点を抽象化することによって、任意のランタイム環境にアプリケーションを実装できるようになります。
+これで、さまざまなクラウド計算プロバイダーから生じる相違点を抽象化することによって、任意のランタイム環境にアプリを実装できるようになります。
 
 ### タグおよびラベルの値のフィルタリング
 {: #go-filter-creds}
@@ -102,24 +103,27 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## スターター・キット・アプリからの Go 構成マネージャーの使用
 {: #go-config-manager}
 
-[スターター・キット](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を使用して作成された Go アプリには、多くのクラウド・デプロイメント・ターゲット (Cloud Foundry、Kubernetes、VSI、および Functions など) での実行に必要な資格情報と構成が自動的に付属します。
+[スターター・キット](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") を使用して作成された Go アプリには、多くのクラウド・デプロイメント・ターゲット ([Kubernetes](/docs/containers?topic=containers-getting-started)、[Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)、[{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about)、[仮想サーバー (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial)、または [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started) など) での実行に必要な資格情報と構成が自動的に付属します。
+
+  いくつかのスターター・キットで VSI デプロイメントを使用できます。この機能を使用するには、[{{site.data.keyword.cloud_notm}} ダッシュボード](https://{DomainName})に移動し、**「アプリ」**タイルで**「アプリの作成」**をクリックします。
+  {: note}
 
 ### サービス資格情報について
 {: #go-credentials-config}
 
-サービスに関するアプリケーション構成情報は `/server/config` ディレクトリーの `localdev-config.json` ファイルに保管されます。 このファイルは、Git に機密情報が保管されるのを防ぐために、`.gitignore` ディレクトリーにあります。 ローカルで実行される構成済みサービス用の接続情報 (ユーザー名、パスワード、およびホスト名など) がこのファイルに保管されます。
+サービスに関するアプリ構成情報は `/server/config` ディレクトリーの `localdev-config.json` ファイルに保管されます。 このファイルは、Git に機密情報が保管されるのを防ぐために、`.gitignore` ディレクトリーにあります。 ローカルで実行される構成済みサービス用の接続情報 (ユーザー名、パスワード、およびホスト名など) がこのファイルに保管されます。
 
-アプリケーションは、構成マネージャーを使用して、環境およびこのファイルから接続情報および構成情報を読み取ります。 また、`server/config` ディレクトリーにあるカスタムビルトの `mappings.json` を使用して、各サービスの資格情報がある場所を伝達します。
+アプリは、構成マネージャーを使用して、環境およびこのファイルから接続情報および構成情報を読み取ります。 また、`server/config` ディレクトリーにあるカスタムビルトの `mappings.json` を使用して、各サービスの資格情報がある場所を伝達します。
 
-ローカルで実行されているアプリケーションは、`mappings.json` ファイルから読み取ったアンバインドされた資格情報を使用して、{{site.data.keyword.cloud_notm}} サービスに接続できます。 ただし、アンバインドされた資格情報を作成する必要がある場合は、{{site.data.keyword.cloud_notm}} Web コンソール (例) から行うか、[CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") `cf create-service-key` コマンドを使用して行うことができます。
+ローカルで実行されているアプリは、`mappings.json` ファイルから読み取ったアンバインドされた資格情報を使用して、{{site.data.keyword.cloud_notm}} サービスに接続できます。 ただし、アンバインドされた資格情報を作成する必要がある場合は、{{site.data.keyword.cloud_notm}} Web コンソール (例) から行うか、[CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![外部リンク・アイコン](../icons/launch-glyph.svg "外部リンク・アイコン") `cf create-service-key` コマンドを使用して行うことができます。
 
-アプリケーションを {{site.data.keyword.cloud_notm}} にプッシュすると、これらの値は使用されなくなります。 代わりに、アプリケーションは環境変数を使用して、バインドされたサービスに自動的に接続します。 
+アプリを {{site.data.keyword.cloud_notm}} にプッシュすると、これらの値は使用されなくなります。 代わりに、アプリは環境変数を使用して、バインドされたサービスに自動的に接続します。 
 
 * **Cloud Foundry**: サービス資格情報は、`VCAP_SERVICES` 環境変数から取得されます。
 
 * **Kubernetes**: サービス資格情報は、サービスごとに個別の環境変数から取得されます。
 
-* **{{site.data.keyword.cloud_notm}} Container Service**: サービス資格情報は、仮想サーバー・インスタンスまたは {{site.data.keyword.openwhisk}} (Openwhisk) から取得されます。
+* **{{site.data.keyword.cloud_notm}} Container Service**: サービス資格情報は、仮想サーバー・インスタンスまたは {{site.data.keyword.openwhisk}} から取得されます。
 
 ## 次のステップ
 {: #go-next-steps-config notoc}
