@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,7 +20,7 @@ subcollection: go
 # Utilizzo di un controllo di integrità nella tua applicazione Go
 {: #go-healthcheck}
 
-I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") possono essere configurati per eseguire il polling degli endpoint di integrità periodicamente per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
+I controlli di integrità forniscono un semplice meccanismo per determinare se un'applicazione lato server sta funzionando correttamente o meno. Gli ambienti cloud come [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") e [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") possono essere configurati per eseguire periodicamente il polling degli endpoint di integrità per determinare se un'istanza del tuo servizio è pronta ad accettare traffico.
 
 ## Panoramica sul controllo di integrità
 {: #go-healtcheck-overview}
@@ -49,6 +49,7 @@ La seguente tabella fornisce le indicazioni sulle risposte che devono essere for
 | In arresto | 503 - Non disponibile           | 200 - OK                   | 503 - Non disponibile         |
 | Non attivo     | 503 - Non disponibile           | 503 - Non disponibile          | 503 - Non disponibile         |
 | In errore  | 500 - Errore server          | 500 - Errore server         | 500 - Errore server        |
+{: caption="Tabella 1. Codici di stato HTTP " caption-side="bottom"}
 
 ## Aggiunta di un controllo di integrità a un'applicazione Go esistente
 {: #go-add-healthcheck-existing}
@@ -91,7 +92,7 @@ func HealthGET(c *gin.Context) {
 ## Suggerimenti per i probe di disponibilità e di attività
 {: #go-recommend-healthcheck}
 
-I probe di disponibilità dovrebbero includere l'applicabilità delle connessioni ai servizi in downstream nei propri risultati quando non è presente un fallback accettabile se il servizio in downstream non è disponibile. Questo non significa di chiamare il controllo di integrità fornito direttamente dal servizio in downstream, perché l'infrastruttura esegue il controllo per te. Invece, prendi in considerazione di verificare l'integrità dei riferimenti esistenti che la tua applicazione ha con i servizi in downstream: che potrebbero essere una connessione JMS a WebSphere MQ o un consumatore o produttore Kafka inizializzato. Se non controlli l'applicabilità dei riferimenti interni ai servizi in downstream, memorizza nella cache il risultato per ridurre al minimo l'impatto del controllo di integrità sulla tua applicazione.
+I probe di disponibilità devono includere l'applicabilità delle connessioni ai servizi in downstream nei propri risultati quando non è presente un fallback accettabile se il servizio in downstream non è disponibile. Non devi chiamare il controllo di integrità fornito direttamente dal servizio in downstream, perché l'infrastruttura esegue il controllo per te. Invece, prendi in considerazione di verificare l'integrità dei riferimenti esistenti che la tua applicazione ha con i servizi in downstream. Ad esempio, i riferimenti potrebbero essere una connessione JMS a WebSphere MQ o un consumatore o produttore Kafka inizializzato. Se non controlli l'applicabilità dei riferimenti interni ai servizi in downstream, memorizza nella cache il risultato per ridurre al minimo l'impatto del controllo di integrità sulla tua applicazione.
 
 Un probe di attività, al contrario, è cauto su cosa viene controllato, perché un errore comporta una terminazione immediata del processo. Un endpoint HTTP semplice che restituisce sempre `{"status": "UP"}` con il codice di stato `200` è una scelta ragionevole.
 
@@ -100,7 +101,7 @@ Un probe di attività, al contrario, è cauto su cosa viene controllato, perché
 
 Dichiara i probe di disponibilità e di attività insieme alla tua distribuzione Kubernetes. Entrambi i probe utilizzano gli stessi parametri di configurazione.
 
-* Il kubelet attende i secondi del ritardo iniziale (`initialDelaySeconds`) prima del primo probe.
+* Il kubelet attende i secondi del ritardo iniziale (`initialDelaySeconds`) prima del probe iniziale. 
 
 * Il kubelet analizza il servizio ogni `periodSeconds` secondi. Il valore predefinito è 1.
 
@@ -114,7 +115,7 @@ Dichiara i probe di disponibilità e di attività insieme alla tua distribuzione
 
 Per evitare i cicli di riavvio, imposta `livenessProbe.initialDelaySeconds` in modo da essere tranquillamente più lungo del tempo necessario al tuo servizio per l'inizializzazione. Puoi poi utilizzare un valore più corto per `readinessProbe.initialDelaySeconds` per instradare le richieste al servizio come è pronto.
 
-Una configurazione di esempio è simile a quanto segue:
+Consulta la seguente configurazione di esempio:
 ```yaml
 spec:
   containers:

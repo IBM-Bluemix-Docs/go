@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # Configurando o rastreio em apps Go
 {: #go-e2e-tracing}
 
-O tutorial a seguir foca nos pacotes Opentracing e Jaeger para rastrear aplicativos Go. Para obter mais informações sobre como usar o Jaeger, consulte o [Portal de documentação do Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
+O tutorial a seguir concentra-se nos pacotes do OpenTracing e do Jaeger para rastrear aplicativos Go. Para obter mais informações sobre como usar o Jaeger, consulte o [Portal de documentação do Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
 
 Nas etapas a seguir, dois aplicativos pequenos (um front-end, um back-end) são usados para rastrear entre dois terminais usando o módulo Jaeger. É possível iniciar do zero ou aplicar os princípios que estão descritos aqui em seus aplicativos Go existentes.
 
-## Etapa 1. Instalando e ativando os pacotes Opentracing e Jaeger
+## Etapa 1. Instalando e ativando os pacotes do OpenTracing e do Jaeger
 {: #install-go-opentracing}
 
 1. No mesmo local que o arquivo `Gopkg.toml` do aplicativo Go, insira os comandos a seguir para incluir os pacotes necessários em sua lista de dependências:
@@ -51,7 +51,7 @@ Nas etapas a seguir, dois aplicativos pequenos (um front-end, um back-end) são 
 
 Algumas instruções são necessárias para incluir o rastreio em seu aplicativo do servidor. Primeiro, deve-se criar um rastreador.
 
-Para criar um rastreador, forneça o seguinte:
+Para criar um rastreador, forneça os itens a seguir:
  * Transportador
  * Ferramenta de Relatório
  * Exportador de métricas opcional
@@ -107,7 +107,7 @@ Neste tutorial, o Jaeger exporta métricas de estilo Prometheus. Um objeto de m�
   ```
   {: codeblock}
 
-5. Um objeto de amostra determina em quais situações ou com que frequência os spans são relatados. Para propósitos de desenvolvimento, um aplicativo deve relatar todos os spans que ele recebe. No entanto, para produção, relatar todos os spans pode não ser viável. Para relatar todos os spans, é possível usar o objeto ConstSampler:
+5. Um objeto de amostra determina em quais situações ou com que frequência os spans são relatados. Para propósitos de desenvolvimento, um aplicativo relata todos os spans que ele recebe. No entanto, para produção, relatar todos os spans pode não ser viável. Para relatar todos os spans, é possível usar o objeto ConstSampler:
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -213,8 +213,8 @@ O agente pode ser conectado na porta `5775`, enquanto a consulta pode ser conect
 Tal como o desenvolvimento local, o Jaeger fornece um serviço tudo em um para o desenvolvimento do Kubernetes. Use o serviço tudo em um somente para desenvolvimento, não para código de produção. Para saber mais sobre como implementar no Kubernetes para produção, consulte o [Guia de modelos do Kubernetes do Jaeger](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![Ícone de link externo](../icons/launch-glyph.svg "Ícone de link externo").
 
 Para implementar o servidor Jaeger, conclua estas etapas:
-1. Certifique-se de que o cluster esteja configurado executando `ibmcloud cs cluster-config <cluster name>` e siga as instruções.
-2. Execute o comando a seguir:
+1. Certifique-se de que o seu cluster esteja configurado executando `ibmcloud cs cluster-config <cluster name>` e siga as instruções.
+2. Execute o seguinte comando:
   ```go
   kubectl create -f https://raw.githubusercontent.com/jaegertracing/jaeger-kubernetes/master/all-in-one/jaeger-all-in-one-template.yml
   ```
@@ -249,7 +249,7 @@ Essa rota envia uma solicitação `GET` de um aplicativo para outro.
 
 Para visualizar spans, acesse `http://localhost:16686`. É possível procurar rastreios por serviço, operação e tags e, em seguida, clicar em **Localizar rastreios**.
 
-![IU do Jaeger](images/JaegerUI.png)
+![IU do Jaeger](images/JaegerUI.png "IU do Jaeger")
 
 Clique em um rastreio específico para visualizar mais informações sobre ele:
-![Exemplo de rastreio](images/TraceExample.png)
+![Exemplo de rastreio](images/TraceExample.png "Exemplo de rastreio")

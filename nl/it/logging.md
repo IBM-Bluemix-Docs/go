@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -60,10 +60,10 @@ Per ulteriori informazioni sulla personalizzazione dei messaggi di log con gli a
 {: #go-logging-next notoc}
 
 Ulteriori informazioni sulla visualizzazione dei log in ciascuna delle tue destinazioni di distribuzione;
-* [Log Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
-* [Log Cloud Foundry](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
+* [Log Kubernetes](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno")
+* [Log Cloud Foundry](/docs/services/CloudLogAnalysis/cfapps?topic=cloudloganalysis-logging_cf_apps)
 * [Cloud Foundry Enterprise Environment - Controllo e registrazione](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [Log e monitoraggio {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [Log e monitoraggio {{site.data.keyword.openwhisk}}](/docs/openwhisk?topic=cloud-functions-logs)
 
 Ulteriori informazioni sull'utilizzo di un aggregatore di log:
 * [Analisi log {{site.data.keyword.cloud_notm}} ](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)

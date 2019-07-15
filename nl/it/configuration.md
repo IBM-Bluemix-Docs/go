@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-13"
 
 keywords: configure go environment, go environment
 
@@ -16,6 +16,7 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # Configurazione dell'ambiente Go
 {: #configure-go-env}
@@ -102,7 +103,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Utilizzo del gestore configurazione Go dalle applicazioni kit starter
 {: #go-config-manager}
 
-Le applicazioni Go create con i [Kit starter](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") vengono automaticamente fornite con le credenziali e le configurazioni necessarie per l'esecuzione in molte destinazioni di distribuzione cloud, come ad esempio Cloud Foundry, Kubernetes, VSI e Functions).
+Le applicazioni Go create con i [Kit starter](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno") vengono automaticamente fornite con le credenziali e le configurazioni necessarie per l'esecuzione in molte destinazioni di distribuzione cloud, come ad esempio [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf), [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about), [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial) o [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started).
+
+  La distribuzione di VSI è disponibile per alcuni kit starter. Per utilizzare questa funzione, vai al [dashboard {{site.data.keyword.cloud_notm}}](https://{DomainName}) e fai clic su **Create an app** nel tile **Apps**.
+  {: note}
 
 ### Descrizione delle credenziali del servizio
 {: #go-credentials-config}
@@ -113,13 +117,13 @@ L'applicazione utilizza il gestore configurazione per leggere le informazioni su
 
 Se l'applicazione viene eseguita in locale, può essere collegata ai servizi {{site.data.keyword.cloud_notm}} utilizzando le credenziali non associate lette dal file `mappings.json`. Se devi invece creare delle credenziali in uscita, puoi farlo dalla console web {{site.data.keyword.cloud_notm}} (esempio) oppure utilizzando il comando `cf create-service-key` della [CLI CloudFoundry](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
-Quando esegui il push della tua applicazione a {{site.data.keyword.cloud_notm}}, questi valori non vengono più utilizzati. L'applicazione stabilisce invece automaticamente una connessione ai servizi di cui è stato eseguito il bind utilizzando le variabili di ambiente. 
+Quando esegui il push della tua applicazione a {{site.data.keyword.cloud_notm}}, questi valori non vengono più utilizzati. L'applicazione stabilisce invece automaticamente una connessione ai servizi di cui è stato eseguito il bind utilizzando le variabili di ambiente.  
 
 * **Cloud Foundry**: le credenziali del servizio vengono prese dalla variabile di ambiente `VCAP_SERVICES`.
 
 * **Kubernetes**: le credenziali del servizio vengono prese dalle singole variabili di ambiente per ogni servizio.
 
-* **{{site.data.keyword.cloud_notm}} Container Service**: le credenziali del servizio vengono prese dalle istanze del server virtuale o {{site.data.keyword.openwhisk}} (Openwhisk).
+* **{{site.data.keyword.cloud_notm}} Container Service**: le credenziali del servizio vengono prese dalle istanze del server virtuale o {{site.data.keyword.openwhisk}}.
 
 ## Passi successivi
 {: #go-next-steps-config notoc}

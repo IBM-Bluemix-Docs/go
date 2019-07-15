@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # Configurazione della traccia nelle applicazioni Go
 {: #go-e2e-tracing}
 
-La seguente esercitazione si concentra sui pacchetti Opentracing e Jaeger per la traccia delle applicazioni Go. Per ulteriori informazioni sull'utilizzo di Jaeger, vedi il [portale della documentazione di Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
+La seguente esercitazione si concentra sui pacchetti OpenTracing e Jaeger per la traccia delle applicazioni Go. Per ulteriori informazioni sull'utilizzo di Jaeger, vedi il [portale della documentazione di Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icona link esterno](../icons/launch-glyph.svg "Icona link esterno").
 
 Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di frontend e una di backend) per la traccia tra due endpoint utilizzando il modulo Jaeger. Puoi iniziare da zero oppure applicare i principi qui descritti alle tue applicazioni Go esistenti.
 
-## Passo 1. Installazione e abilitazione dei pacchetti Opentracing e Jaeger
+## Passo 1. Installazione e abilitazione dei pacchetti OpenTracing e Jaeger
 {: #install-go-opentracing}
 
 1. Nella stessa ubicazione del file `Gopkg.toml` della tua applicazione Go, immetti i seguenti comandi per aggiungere i pacchetti richiesti nel tuo elenco di dipendenze:
@@ -51,7 +51,7 @@ Nella seguente procedura, vengono utilizzate due piccole applicazioni (una di fr
 
 Sono necessarie alcune istruzioni per aggiungere la traccia alla tua applicazione server. Prima di tutto, devi creare un programma di traccia.
 
-Per creare un programma di traccia, fornisci quanto segue:
+Per creare un programma di traccia, fornisci i seguenti elementi:
  * Programma di trasporto
  * Programma di report
  * Programma di esportazione delle metriche facoltativo
@@ -107,7 +107,7 @@ In questa esercitazione, Jaeger esporta le metriche in stile Prometheus. Un ogge
   ```
   {: codeblock}
 
-5. Un oggetto di campionamento determina in quali situazioni o quanto spesso vengono segnalate le estensioni. Per scopi di sviluppo, un'applicazione deve segnalare tutte le estensioni che riceve. Tuttavia, per la produzione, la segnalazione di tutte le estensioni potrebbe non essere fattibile. Per segnalare tutte le estensioni, puoi utilizzare l'oggetto ConstSampler:
+5. Un oggetto di campionamento determina in quali situazioni o quanto spesso vengono segnalate le estensioni. Per scopi di sviluppo, un'applicazione segnala tutte le estensioni che riceve. Tuttavia, per la produzione, la segnalazione di tutte le estensioni potrebbe non essere fattibile. Per segnalare tutte le estensioni, puoi utilizzare l'oggetto ConstSampler:
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -249,7 +249,7 @@ Questo instradamento invia una richiesta `GET` da un'applicazione a un'altra.
 
 Per visualizzare le estensioni, vai all'indirizzo `http://localhost:16686`. Puoi ricercare le tracce dal servizio, dall'operazione e dalle tag, e poi fare clic su **Find Traces**.
 
-![IU Jaeger](images/JaegerUI.png)
+![IU Jaeger](images/JaegerUI.png "IU Jaeger")
 
 Fai clic su una traccia specifica per visualizzare ulteriori informazioni su di essa:
-![Esempio di traccia](images/TraceExample.png)
+![Esempio di traccia](images/TraceExample.png "Esempio di traccia")

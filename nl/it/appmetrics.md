@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -20,14 +20,14 @@ subcollection: go
 # Utilizzo delle metriche dell'applicazione con le applicazioni Go
 {: #go-appmetrics}
 
-Le metriche dell'applicazione sono importanti per il monitoraggio delle prestazioni della tua applicazione. Avere una visualizzazione in diretta delle metriche come CPU, Memoria, Latenza e HTTP è essenziale per garantire che la tua applicazione sia in esecuzione in modo efficace nel tempo. Puoi utilizzare un servizio cloud come il [ridimensionamento automatico](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) di Cloud Foundry che si basa sulle metriche per modificare dinamicamente le dimensioni delle istanze in modo che corrispondano all'attuale carico di lavoro. Utilizzando le metriche dell'applicazione, sei informato precisamente quando aumentare o ridurre le istanze oppure quando eliminare quelle che non sono più necessarie per mantenere bassi i costi.
+Le metriche dell'applicazione sono importanti per il monitoraggio delle prestazioni della tua applicazione. Avere una vista in diretta delle metriche come CPU, memoria, latenza e HTTP è essenziale per garantire che l'esecuzione della tua applicazione sia efficace nel tempo. Puoi utilizzare un servizio cloud come il [ridimensionamento automatico](/docs/services/Auto-Scaling?topic=Auto-Scaling) di Cloud Foundry che si basa sulle metriche per modificare dinamicamente le dimensioni delle istanze in modo che corrispondano all'attuale carico di lavoro. Utilizzando le metriche dell'applicazione, sei informato precisamente quando aumentare o ridurre le istanze oppure quando eliminare quelle che non sono più necessarie per mantenere bassi i costi.
 
 Le metriche dell'applicazione vengono acquisite come dati delle serie temporali. L'aggregazione e la visualizzazione delle metriche acquisite possono essere di ausilio nell'identificazione di problemi delle prestazioni comuni quali:
 
 * Tempi di risposta HTTP lenti su qualche instradamento o su tutti gli instradamenti
 * Una scarsa velocità effettiva nell'applicazione
 * Dei picchi di richiesta che causano un rallentamento
-* Un utilizzo della CPU più elevato del previsto per il livello di velocità effettiva/carico
+* Un utilizzo della CPU più elevato del previsto per il livello di velocità effettiva o carico
 * Un utilizzo della memoria elevato o crescente (potenziale perdita di memoria)
 
 ## Aggiunta di metriche dell'applicazione alla tua applicazione Go esistente
