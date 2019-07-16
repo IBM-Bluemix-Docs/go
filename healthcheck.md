@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-16"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -92,7 +92,7 @@ func HealthGET(c *gin.Context) {
 ## Recommendations for readiness and liveness probes
 {: #go-recommend-healthcheck}
 
-Readiness probes must include the viability of connections to downstream services in their result when there isn’t an acceptable fallback if the downstream service is unavailable. You don't have to call the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application has to downstream services. For example, the references might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
+Readiness probes must include the viability of connections to downstream services in their result when there isn’t an acceptable fallback if the downstream service is unavailable. You don't need to call the health check that is provided by the downstream service directly, as infrastructure checks that for you. Instead, consider verifying the health of the existing references your application must downstream services. For example, the references might be a JMS connection to WebSphere MQ, or an initialized Kafka consumer or producer. If you do check the viability of internal references to downstream services, cache the result to minimize the impact health checking has on your application.
 
 A liveness probe, by contrast, is deliberate about what is checked, as a failure results in immediate termination of the process. A simple HTTP endpoint that always returns `{"status": "UP"}` with status code `200` is a reasonable choice.
 

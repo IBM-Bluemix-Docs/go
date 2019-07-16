@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-07-16"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -44,7 +44,7 @@ You can now add {{site.data.keyword.watson}} services to your Go app. For this t
 
 You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") dependency is added to the `Gopkg.toml` file, and simple instrumentation code is available for the service in the `services/` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
 
-To download the code, click **Download code** on the **App details** page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") included, as well as some basic initialization code.
+To download the code, click **Download code** on the **App details** page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") included, and some basic initialization code.
 
 ## Step 3. Deploying your app from the console
 {: #deploy-go}
@@ -52,7 +52,7 @@ To download the code, click **Download code** on the **App details** page. The d
 1. From the **App details** page, click **Configure continuous delivery**.
 2. Set up your deployment target according to the instructions for the method you choose:
   * **Deploy to [IBM Kubernetes Service](/docs/containers?topic=containers-app)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available app containers. You can create a cluster or deploy to an existing cluster.
-  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**, which you can use to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
+  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)** or **[Enterprise Environment](/docs/cloud-foundry-public?topic=cloud-foundry-public-cfee)**. You can use the deployer type to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
   * **Deploy to a [Virtual Server](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the deployment cycle for you.
 
 3. After you set up your deployment target, click **Next**.
