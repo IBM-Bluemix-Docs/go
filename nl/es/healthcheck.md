@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,7 +20,8 @@ subcollection: go
 # Utilización de una comprobación de estado en la app Go
 {: #go-healthcheck}
 
-Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube, como [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") y [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo"), se pueden configurar de modo que sondeen periódicamente el estado de los puntos finales para determinar si una instancia del servicio está lista para aceptar tráfico.
+Las comprobaciones de estado proporcionan un mecanismo simple para determinar si una aplicación del lado del servidor se está comportando correctamente. Los entornos de nube como [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") y
+[Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") se pueden configurar para que sondeen puntos finales de estado de manera periódica para determinar si una instancia del servicio está preparada para aceptar tráfico.
 
 ## Visión general de la comprobación de estado
 {: #go-healtcheck-overview}
@@ -49,6 +50,7 @@ La tabla siguiente proporciona una orientación sobre las respuestas que los pun
 | Deteniendo | 503 - No disponible           | 200 - Correcto                   | 503 - No disponible         |
 | Inactivo     | 503 - No disponible           | 503 - No disponible          | 503 - No disponible         |
 | Con errores  | 500 - Error del servidor          | 500 - Error del servidor         | 500 - Error del servidor        |
+{: caption="Tabla 1. Códigos de estado HTTP" caption-side="bottom"}
 
 ## Adición de una comprobación de estado a una app de Go existente
 {: #go-add-healthcheck-existing}
@@ -90,7 +92,7 @@ func HealthGET(c *gin.Context) {
 ## Recomendaciones para pruebas de actividad y preparación
 {: #go-recommend-healthcheck}
 
-Las pruebas de comprobación deben incluir la viabilidad de conexiones a servicios en sentido descendente en el resultado cuando no haya una reserva aceptable si el servicio en sentido descendente no está disponible. Esto no implica llamar a la comprobación de estado que proporciona directamente el servicio en sentido descendente, puesto que la infraestructura realiza la comprobación. En su lugar, considere la posibilidad de verificar el estado de las referencias existentes que tiene la aplicación en los servicios en sentido descendente: puede ser una conexión JMS a WebSphere MQ o un consumidor o productor Kafka inicializado. Si comprueba la viabilidad de referencias internas en servicios en sentido descendente, almacene en memoria caché el resultado para minimizar el impacto que tiene la comprobación de estado en la aplicación.
+Las pruebas de comprobación deben incluir la viabilidad de conexiones a servicios en sentido descendente en el resultado cuando no haya una reserva aceptable si el servicio en sentido descendente no está disponible. No es necesario llamar a la comprobación de estado que proporciona directamente el servicio en sentido descendente, puesto que la infraestructura realiza la comprobación. En su lugar, considere la posibilidad de verificar el estado de las referencias existentes que tiene la aplicación en los servicios en sentido descendente. Por ejemplo, las referencias pueden ser una conexión JMS a WebSphere MQ o un consumidor o productor Kafka inicializado. Si comprueba la viabilidad de referencias internas en servicios en sentido descendente, almacene en memoria caché el resultado para minimizar el impacto que tiene la comprobación de estado en la aplicación.
 
 Una prueba de actividad, por el contrario, tiene en cuenta lo que se comprueba, ya que un error puede provocar una terminación inmediata del proceso. Un punto final HTTP simple que siempre devuelva `{"status": "UP"}` con el código de estado `200` es una elección razonable.
 
@@ -99,7 +101,7 @@ Una prueba de actividad, por el contrario, tiene en cuenta lo que se comprueba, 
 
 Declare las pruebas de actividad y preparación junto con el despliegue de Kubernetes. Ambas pruebas utilizan los mismos parámetros de configuración:
 
-* El kubelet espera a `initialDelaySeconds` antes de la primera prueba.
+* El kubelet espera a `initialDelaySeconds` antes de la prueba inicial.
 
 * El kubelet prueba el servicio cada `periodSeconds` segundos. El valor predeterminado es 1.
 
@@ -113,7 +115,7 @@ Declare las pruebas de actividad y preparación junto con el despliegue de Kuber
 
 Para evitar los ciclos de reinicio, establezca `livenessProbe.initialDelaySeconds` para que sea seguro más tiempo del que necesita el servicio para inicializarse. Puede utilizar un valor más corto para `readinessProbe.initialDelaySeconds`, para direccionar solicitudes al servicio en cuanto esté listo.
 
-Un ejemplo de configuración tiene un aspecto similar al siguiente:
+Consulte la siguiente configuración de ejemplo:
 ```yaml
 spec:
   containers:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-10"
 
 keywords: go support, go help, dwanswers go, go runtimes, go buildpack, ibm support go, foundation support go, runtime support
 
@@ -26,12 +26,12 @@ Puede obtener ayuda con la aplicación Go formulando preguntas sobre dWanswers, 
 ## Solicitud de ayuda en dWanswers
 {: #dwanswers-go}
 
-Formule preguntas en [dWAnswers](https://developer.ibm.com/answers/topics/golang.html){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") utilizando la etiqueta `#golang`.
+Formule preguntas en [dWAnswers](https://developer.ibm.com/answers/topics/go){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo") utilizando la etiqueta `#golang` o `#go`.
 
 ## Utilización del soporte oficial de IBM Support for Runtimes
 {: #runtimes-go}
 
-IBM Foundation Support for Runtimes proporciona cobertura para Node.js, Swift, Java y Go. Dispone de soporte para Go 1.10 en la comunidad [golang.org](https://golang.org/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo"), que incluye el SDK de IBM Watson para Go. 
+IBM Foundation Support for Runtimes proporciona cobertura para Node.js, Swift, Java&trade; y Go. Dispone de soporte para Go 1.10 en la comunidad [golang.org](https://golang.org/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo"), que incluye el SDK de IBM Watson para Go. 
 
 El soporte para el tiempo de ejecución de Go está disponible en cualquier módulo que esté utilizando en la aplicación. El soporte está disponible siempre que desee desplegar el tiempo de ejecución, ya sea en sus propios sistemas, en {{site.data.keyword.cloud_notm}} o en cualquier otra parte.
 

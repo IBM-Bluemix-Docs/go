@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -20,14 +20,14 @@ subcollection: go
 # Utilización de métricas de aplicación con apps Go
 {: #go-appmetrics}
 
-Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma efectiva a lo largo del tiempo. Puede utilizar un servicio de nube como el [escalado automático](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) de Cloud Foundry, que se basa en métricas para escalar dinámicamente las instancias para que coincidan con la carga de trabajo actual. Con el uso de métricas de aplicación, estará informado forma precisa para saber cuando se deben aumentar, reducir o borrar las instancias que ya no se necesitan para mantener los costes bajos.
+Las métricas de aplicación son importantes para supervisar el rendimiento de la aplicación. Tener una vista en directo de métricas como CPU, memoria, latencia y métricas HTTP es esencial para asegurarse de que la aplicación se ejecuta de forma eficiente a lo largo del tiempo. Puede utilizar un servicio de nube como el [escalado automático](/docs/services/Auto-Scaling?topic=Auto-Scaling) de Cloud Foundry, que se basa en métricas para escalar dinámicamente las instancias para que coincidan con la carga de trabajo actual. Con el uso de métricas de aplicación, estará informado forma precisa para saber cuando se deben aumentar, reducir o borrar las instancias que ya no se necesitan para mantener los costes bajos.
 
 Las métricas de aplicación se capturan como datos de serie temporal. La agregación y visualización de métricas capturadas puede ayudar a identificar problemas de rendimiento comunes como, por ejemplo:
 
 * Tiempos de respuesta HTTP lentos en algunas o en todas las rutas
 * Rendimiento bajo en la aplicación
 * Aumentos considerables en la demanda que provocan la desaceleración
-* Uso de CPU mayor del esperado para el nivel de rendimiento/carga
+* Uso de CPU mayor del esperado para el nivel de rendimiento o carga
 * Uso de memoria alto o creciente (fuga de memoria potencial)
 
 ## Adición de métricas de aplicación a una aplicación Go existente

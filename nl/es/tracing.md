@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # Configuración del rastreo en apps Go
 {: #go-e2e-tracing}
 
-La guía de aprendizaje siguiente se centra en los paquetes Opentracing y Jaeger para el rastreo de aplicaciones Go. Para obtener más información sobre cómo utilizar Jaeger, consulte el [portal de documentación de Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
+La guía de aprendizaje siguiente se centra en los paquetes OpenTracing y Jaeger para el rastreo de aplicaciones Go. Para obtener más información sobre cómo utilizar Jaeger, consulte el [portal de documentación de Jaeger](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Icono de enlace externo](../icons/launch-glyph.svg "Icono de enlace externo").
 
 En los pasos siguientes, se utilizan dos pequeñas aplicaciones (una frontal y una de fondo) para rastrear entre dos puntos finales utilizando el módulo Jaeger. Puede empezar de cero o aplicar los principios que se describen aquí en las aplicaciones Go existentes.
 
-## Paso 1. Instalación y habilitación de los paquetes Opentracing y Jaeger
+## Paso 1. Instalación y habilitación de los paquetes OpenTracing y Jaeger
 {: #install-go-opentracing}
 
 1. En la misma ubicación que el archivo `Gopkg.toml` de la aplicación Go, escriba los siguientes mandatos para añadir los paquetes necesarios a la lista de dependencias:
@@ -51,7 +51,7 @@ En los pasos siguientes, se utilizan dos pequeñas aplicaciones (una frontal y u
 
 Son necesarias unas sentencias para añadir el rastreo a la aplicación de servidor. Primero, debe crear un rastreador.
 
-Para crear un rastreador, proporcione lo siguiente:
+Para crear un rastreador, proporcione los siguientes elementos:
  * Transportador
  * Reporter
  * Exportador de métricas opcional
@@ -107,7 +107,7 @@ En esta guía de aprendizaje, Jaeger exporta métricas de estilo Prometheus. Un 
   ```
   {: codeblock}
 
-5. Un objeto de muestra determina en qué situaciones o con qué frecuencia se notifican las distribuciones. A efecto de desarrollo, una aplicación debe informar sobre todas las distribuciones que recibe. Sin embargo, para la producción, es posible que no se puedan producir informes de todas las distribuciones. Para informar acerca de todas las distribuciones, puede utilizar el objeto ConstSampler:
+5. Un objeto de muestra determina en qué situaciones o con qué frecuencia se notifican las distribuciones. A efecto de desarrollo, una aplicación informa sobre todas las distribuciones que recibe. Sin embargo, para la producción, es posible que no se puedan producir informes de todas las distribuciones. Para informar acerca de todas las distribuciones, puede utilizar el objeto ConstSampler:
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -249,6 +249,6 @@ Esta ruta envía una solicitud `GET` de una aplicación a otra.
 
 Para ver las distribuciones, vaya a `http://localhost:16686`. Puede buscar rastreos por servicio, operación y etiquetas y, a continuación, pulsar en **Buscar rastreos**.
 
-![IU de Jaeger](images/JaegerUI.png)
+![IU de Jaeger](images/JaegerUI.png "IU de Jaeger")
 
-Pulse en un rastreo específico para ver más información sobre el mismo: ![Ejemplo de rastreo](images/TraceExample.png)
+Pulse en un rastreo específico para ver más información sobre el mismo: ![Ejemplo de rastreo](images/TraceExample.png "Ejemplo de rastreo")
