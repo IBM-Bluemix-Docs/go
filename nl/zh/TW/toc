@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="go" audience="platform" arm="4088037" href="/docs/go/index.html" path="go"}
+{: .toc subcollection="go" audience="platform,devops" arm="4088037" href="/docs/go?topic=go-getting-started" path="go"}
 在 IBM Cloud 上使用 Go 進行程式設計
 
     {: .navgroup id="learn"}

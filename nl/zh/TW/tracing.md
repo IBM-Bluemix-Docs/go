@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # 在 Go 應用程式中設定追蹤
 {: #go-e2e-tracing}
 
-下列指導教學著重於用來追蹤 Go 應用程式的 Opentracing 及 Jaeger 套件。如需使用 Jaeger 的相關資訊，請參閱 [Jaeger 文件入口網站](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
+下列指導教學著重於用於追蹤 Go 應用程式的 OpenTracing 和 Jaeger 套件。如需使用 Jaeger 的相關資訊，請參閱 [Jaeger 文件入口網站](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")。
 
 在下列步驟中，將使用兩個小型應用程式（一個用於前端，一個用於後端），利用 Jaeger 模組在兩個端點之間進行追蹤。您可以從頭開始，或將這裡說明的原則套用至現有的 Go 應用程式。
 
-## 步驟 1. 安裝並啟用 Opentracing 及 Jaeger 套件
+## 步驟 1. 安裝和啟用 OpenTracing 和 Jaeger 套件
 {: #install-go-opentracing}
 
 1. 在與 Go 應用程式之 `Gopkg.toml` 檔案相同的位置中，輸入下列指令，將必要套件新增至相依關係清單：
@@ -51,7 +51,7 @@ subcollection: go
 
 需要有一些陳述式，才能將追蹤新增至伺服器應用程式。首先，您必須建立一個追蹤器。
 
-若要建立追蹤器，請提供下列項目：
+若要建立跟蹤器，請提供下列項目：
  * 傳輸器
  * 報告程式
  * 選用的度量值匯出器
@@ -107,7 +107,7 @@ subcollection: go
   ```
   {: codeblock}
 
-5. sampler 物件會決定報告跨距的狀況或頻率。為了進行開發，應用程式應該報告它收到的所有跨距。不過，若為正式作業，報告所有跨距可能不可行。若要報告所有跨距，您可以使用 ConstSpler 物件：
+5. sampler 物件會決定報告跨距的狀況或頻率。為了進行開發，應用程式可報告它所接收的所有跨距。不過，若為正式作業，報告所有跨距可能不可行。若要報告所有跨距，您可以使用 ConstSpler 物件：
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -221,7 +221,7 @@ docker run -d --name jaeger \
   {: codeblock}
 
   此指令會將 Jaeger 代理程式、收集器及查詢部署至 Kubernetes 叢集。
-3. 將 Go 應用程式部署至 Kubernetes 之前，您必須先更新「UDP 傳輸」，以正確地指向 Jaeger 代理程式。前一個步驟中的 `kubectl` 指令會建立名為 `"jaeger-agent:5775"` 的內部端點。請使用這個新的端點來更新傳輸。
+3. 將 Go 應用程式部署至 Kubernetes 之前，您必須先更新「UDP 傳輸」，以正確地指向 Jaeger 代理程式。前一個步驟中的 `kubectl` 指令會建立名稱為 `"jaeger-agent:5775"` 的內部端點。請使用這個新的端點來更新傳輸。
   ```go
   transport, err := jaeger.NewUDPTransport("jaeger-agent:5775", 0)
   ```
@@ -249,7 +249,7 @@ client.Do(req)
 
 若要檢視跨距，請移至 `http://localhost:16686`。您可以依服務、作業和標籤來搜尋追蹤資料，然後按一下**尋找追蹤資料**。
 
-![Jaeger 使用者介面](images/JaegerUI.png)
+![Jaeger 使用者介面](images/JaegerUI.png "Jaeger 使用者介面")
 
-按一下特定追蹤以檢視其相關資訊：
-![追蹤範例](images/TraceExample.png)
+按一下特定追蹤以檢視該追蹤的相關資訊：
+![追蹤範例](images/TraceExample.png "追蹤範例")

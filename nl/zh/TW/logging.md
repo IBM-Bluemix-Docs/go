@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -60,10 +60,10 @@ subcollection: go
 {: #go-logging-next notoc}
 
 進一步瞭解在每一個部署目標中檢視日誌：
-* [Kubernetes 日誌](https://kubernetes.io/docs/concepts/cluster-administration/logging/){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")
-* [Cloud Foundry 日誌](/docs/cli/reference/bluemix_cli?topic=cloud-cli-ibmcloud_cli#ibmcloud_app_logs)
+* [Kubernetes 日誌](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![外部鏈結圖示](../icons/launch-glyph.svg "外部鏈結圖示")
+* [Cloud Foundry 日誌](/docs/services/CloudLogAnalysis/cfapps?topic=cloudloganalysis-logging_cf_apps)
 * [Cloud Foundry Enterprise Environment - 審核及記載](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} 日誌及監視](/docs/openwhisk?topic=cloud-functions-openwhisk_logs#openwhisk_logs)
+* [{{site.data.keyword.openwhisk}} 日誌及監視](/docs/openwhisk?topic=cloud-functions-logs)
 
 進一步瞭解如何使用日誌聚集器：
 * [{{site.data.keyword.cloud_notm}} Log analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
