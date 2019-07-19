@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-30"
+lastupdated: "2019-06-10"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -20,7 +20,7 @@ subcollection: go
 # Anwendungsmetriken mit Go-Apps verwenden
 {: #go-appmetrics}
 
-Anwendungsmetriken sind wichtig für die Überwachung der Leistung Ihrer Anwendung. Eine Liveansicht von Metriken wie CPU, Speicher, Latenzzeit und HTTP-Metriken ist unverzichtbar, um sicherzustellen, dass Ihre Anwendung im Zeitablauf effektiv ausgeführt wird. Zur Anpassung an die aktuelle Workload durch dynamische Skalierung von Instanzen können Sie einen Cloud-Service wie den [Auto-Scaling-Service](/docs/services/Auto-Scaling?topic=Auto-Scaling-get-started) von Cloud Foundry verwenden, der sich auf Metriken stützt. Durch die Verwendung von Anwendungsmetriken werden Sie genau informiert, wann Sie Instanzen durch Scale-up oder Scale-down vertikal nach oben bzw. nach unten skalieren oder nicht mehr benötigte Instanzen bereinigen müssen, um die Kosten niedrig zu halten.
+Anwendungsmetriken sind wichtig für die Überwachung der Leistung Ihrer Anwendung. Eine Liveansicht von Metriken wie CPU-, Speicher-, Latenz- und HTTP-Metriken ist notwendig, um sicherzustellen, dass Ihre Anwendung jederzeit effektiv ausgeführt wird. Zur Anpassung an die aktuelle Workload durch dynamische Skalierung von Instanzen können Sie einen Cloud-Service wie den [Auto-Scaling-Service](/docs/services/Auto-Scaling?topic=Auto-Scaling) von Cloud Foundry verwenden, der sich auf Metriken stützt. Durch die Verwendung von Anwendungsmetriken werden Sie genau informiert, wann Sie Instanzen durch Scale-up oder Scale-down vertikal nach oben bzw. nach unten skalieren oder nicht mehr benötigte Instanzen bereinigen müssen, um die Kosten niedrig zu halten.
 
 Anwendungsmetriken werden als Zeitreihendaten erfasst. Das Aggregieren und Visualisieren erfasster Metriken kann dabei helfen, allgemeine Leistungsprobleme zu erkennen, wie zum Beispiel die Folgenden:
 

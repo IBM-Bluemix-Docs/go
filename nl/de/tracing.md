@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,7 +20,7 @@ subcollection: go
 # Tracing in Go-Apps einrichten
 {: #go-e2e-tracing}
 
-Das folgende Lernprogramm konzentriert sich auf OpenTracing- und Jaeger-Pakete für das Tracing von Go-Anwendungen. Weitere Informationen zur Verwendung von Jaeger finden Sie im [Jaeger-Dokumentationsportal](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Das folgende Lernprogramm konzentriert sich auf OpenTracing- und Jaeger-Pakete für das Tracing von Go-Anwendungen. Weitere Informationen zur Verwendung von Jaeger finden Sie im [Jaeger-Dokumentationsportal](https://www.jaegertracing.io/docs/1.11/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
 
 In den folgenden Schritten werden zwei kleine Anwendungen (eine Front-End-Anwendung, eine Back-End-Anwendung) für das Tracing zwischen zwei Endpunkten mithilfe des Jaeger-Moduls verwendet. Dabei können Sie bei Null anfangen oder aber die hier beschriebenen Prinzipien auf Ihre vorhandenen Go-Anwendungen anwenden.
 
@@ -51,7 +51,7 @@ In den folgenden Schritten werden zwei kleine Anwendungen (eine Front-End-Anwend
 
 Es sind einige Anweisungen notwendig, um Tracing zu Ihrer Serveranwendung hinzuzufügen. Als Erstes müssen Sie einen Tracer erstellen.
 
-Geben Sie zum Erstellen eines Tracers Folgendes an:
+Geben Sie zum Erstellen eines Tracers die folgenden Elemente an: 
  * Transporter
  * Reporter
  * Optionale Exportkomponente für Metriken
@@ -107,7 +107,7 @@ In diesem Lernprogramm exportiert Jaeger Metriken im Stil von Prometheus. Ein Me
   ```
   {: codeblock}
 
-5. Ein Samplerobjekt für Stichproben bestimmt, in welchen Situationen und wann Spans gemeldet werden. Zu Entwicklungszwecken sollte eine Anwendung die Daten für alle Spans melden, die sie erhält. Im Produktionsbetrieb ist es unter Umständen jedoch nicht möglich, alle Spans zu melden. Wenn alle Spans gemeldet werden sollen, können Sie hierzu das Objekt 'ConstSampler' verwenden:
+5. Ein Samplerobjekt für Stichproben bestimmt, in welchen Situationen und wann Spans gemeldet werden. Zu Entwicklungszwecken meldet eine Anwendung die Daten für alle Spans, die sie erhält. Im Produktionsbetrieb ist es unter Umständen jedoch nicht möglich, alle Spans zu melden. Wenn alle Spans gemeldet werden sollen, können Sie hierzu das Objekt 'ConstSampler' verwenden:
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -210,7 +210,7 @@ Der Agent kann mit Port `5775` verbunden sein, während die Abfrage mit Port `16
 ### Bereitgestellten Jaeger-Server in Kubernetes einrichten
 {: #jaeger-kube}
 
-Wie es bei der lokalen Entwicklung der Fall ist, stellt Jaeger einen allumfassenden Service für die Entwicklung von Kubernetes bereit. Verwenden Sie den allumfassenden Service nur für Entwicklungscode, nicht aber für Produktionscode. Weitere Informationen zur Bereitstellung auf Kubernetes für die Produktion enthält der [Leitfaden zu Jaeger-Kubernetes-Vorlagen](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Wie es bei der lokalen Entwicklung der Fall ist, stellt Jaeger einen allumfassenden Service für die Entwicklung von Kubernetes bereit. Verwenden Sie den allumfassenden Service nur für Entwicklungscode, nicht aber für Produktionscode. Weitere Informationen zur Bereitstellung auf Kubernetes für die Produktion enthält der [Leitfaden zu Jaeger-Kubernetes-Vorlagen](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").
 
 Führen Sie zum Bereitstellen des Jaeger-Servers die folgenden Schritte aus:
 1. Stellen Sie sicher, dass Ihr Cluster eingerichtet. Führen Sie dazu `ibmcloud cs cluster-config <cluster name>` aus und folgen Sie den Anweisungen.
@@ -249,7 +249,7 @@ Diese Route sendet eine `GET`-Anforderung von einer Anwendung an eine andere.
 
 Rufen Sie zum Anzeigen von Spans die Adresse `http://localhost:16686` auf. Sie können Traces nach Service, Operation und Tags durchsuchen und dann auf **Traces suchen** klicken.
 
-![Jaeger-Benutzerschnittstelle](images/JaegerUI.png)
+![Jaeger-Benutzerschnittstelle](images/JaegerUI.png "Jaeger-Benutzerschnittstelle")
 
 Wenn Sie weitere Informationen zu einem bestimmten Trace anzeigen wollen, klicken Sie auf den entsprechen Trace:
-![Tracebeispiel](images/TraceExample.png)
+![Tracebeispiel](images/TraceExample.png "Tracebeispiel")

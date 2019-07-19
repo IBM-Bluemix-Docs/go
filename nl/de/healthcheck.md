@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,7 +20,7 @@ subcollection: go
 # Statusprüfung in Go-App verwenden
 {: #go-healthcheck}
 
-Statusprüfungen stellen einen einfachen Mechanismus bereit, mit dem festgestellt werden kann, ob sich eine serverseitige Anwendung korrekt verhält. Cloudumgebungen wie [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") und [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können so konfiguriert werden, dass in regelmäßigen Abständen Statusendpunkte abgefragt werden, um festzustellen, ob eine Instanz Ihres Service bereit ist, Datenverkehr zu akzeptieren. 
+Statusprüfungen stellen einen einfachen Mechanismus bereit, mit dem festgestellt werden kann, ob sich eine serverseitige Anwendung korrekt verhält. Cloud-Umgebungen wie [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") und [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link") können so konfiguriert werden, dass sie in regelmäßigen Abständen Statusendpunkte abfragen, um zu ermitteln, ob eine Instanz Ihres Service für die Annahme von Datenverkehr bereit ist.
 
 ## Statusprüfungen im Überblick
 {: #go-healtcheck-overview}
@@ -49,6 +49,7 @@ Die folgende Tabelle stellt eine Orientierungshilfe für die Antworten dar, die 
 | Wird gestoppt | 503 - Nicht verfügbar           | 200 - OK                   | 503 - Nicht verfügbar         |
 | Inaktiv     | 503 - Nicht verfügbar           | 503 - Nicht verfügbar          | 503 - Nicht verfügbar         |
 | Mit Fehler(n)  | 500 - Serverfehler          | 500 - Serverfehler         | 500 - Serverfehler        |
+{: caption="Tabelle 1. HTTP-Statuscodes" caption-side="bottom"}
 
 ## Statusprüfung zu einer vorhandenen Go-App hinzufügen
 {: #go-add-healthcheck-existing}
@@ -90,7 +91,7 @@ func HealthGET(c *gin.Context) {
 ## Empfehlungen für Prüfungen der Bereitschaft (Readiness) und Aktivität (Liveness)
 {: #go-recommend-healthcheck}
 
-Prüfungen der Bereitschaft (Readiness) sollten die Funktionsfähigkeit von Verbindungen zu nachgeschalteten Services in ihrem Ergebnis berücksichtigen, wenn es keine vertretbare Fallbacklösung für den Fall gibt, dass der nachgeschaltete Service nicht verfügbar ist. Dies bedeutet nicht, dass die durch den nachgeschalteten Service bereitgestellte Statusprüfung direkt aufgerufen wird, da die Infrastruktur dies für Sie prüft. Erwägen Sie stattdessen eine Überprüfung des Status der vorhandenen Referenzen, die Ihre Anwendung zu nachgeschalteten Services hat. Dabei könnte es sich um eine JMS-Verbindung zu WebSphere MQ oder um einen initialisierten Kafka-Konsumenten oder -Produzenten handeln. Wenn Sie die Funktionsfähigkeit interner Referenzen zu nachgeschalteten Services überprüfen, sollten Sie das Ergebnis zwischenspeichern, um die Auswirkungen der Statusüberprüfung auf Ihre Anwendung zu minimieren.
+Prüfungen der Bereitschaft (Readiness) müssen die Funktionsfähigkeit von Verbindungen zu nachgeschalteten Services in ihrem Ergebnis berücksichtigen, wenn es keine annehmbare Fallback-Lösung für den Fall gibt, dass der nachgeschaltete Service nicht verfügbar ist. Es ist nicht erforderlich, dass Sie die durch den nachgeschalteten Service bereitgestellte Statusprüfung direkt aufrufen, da die Infrastruktur dies für Sie prüft. Erwägen Sie stattdessen eine Überprüfung des Status der vorhandenen Referenzen Ihrer Anwendung zu nachgeschalteten Services. Dabei könnte es sich um eine JMS-Verbindung zu WebSphere MQ oder um einen initialisierten Kafka-Consumer oder -Producer handeln. Wenn Sie die Funktionsfähigkeit interner Referenzen zu nachgeschalteten Services überprüfen, sollten Sie das Ergebnis zwischenspeichern, um die Auswirkungen der Statusüberprüfung auf Ihre Anwendung zu minimieren.
 
 Im Gegensatz dazu wird bei einer Prüfung der Aktivität (Liveness) ganz bewusst entschieden, was geprüft wird, da ein Fehlschlagen der Prüfung die sofortige Beendigung des Prozesses zur Folge hat. Ein einfacher HTTP-Endpunkt, der stets `{"status": "UP"}` mit dem Statuscode `200` zurückgibt, ist eine angemessene Wahl.
 
@@ -99,7 +100,7 @@ Im Gegensatz dazu wird bei einer Prüfung der Aktivität (Liveness) ganz bewusst
 
 Deklarieren Sie gemeinsam mit Ihrer Kubernetes-Bereitstellung Prüfungen der Bereitschaft (Readiness) und der Aktivität (Liveness). Beide Prüfungen verwenden dieselben Konfigurationsparameter:
 
-* Das Kubelet wartet bis zur Durchführung der ersten Prüfung einen Zeitraum von `initialDelaySeconds` ab.
+* Das Kubelet wartet bis zur Durchführung der ersten Prüfung einen Zeitraum von `initialDelaySeconds` ab. 
 
 * Das Kubelet prüft den Service in Zeitabständen von `periodSeconds` Sekunden. Der Standardwert beträgt 1.
 
@@ -113,7 +114,7 @@ Deklarieren Sie gemeinsam mit Ihrer Kubernetes-Bereitstellung Prüfungen der Ber
 
 Zur Vermeidung von zyklischen Neustarts sollten Sie für `livenessProbe.initialDelaySeconds` einen Wert festlegen, der sicherheitshalber einen längeren Zeitraum an den angibt, der eigentlich für die Initialisierung Ihres Service notwendig wäre. Für `readinessProbe.initialDelaySeconds` können Sie dann einen niedrigeren Wert verwenden, um Anforderungen an den Service weiterzuleiten, sobald dieser bereit ist.
 
-Eine Beispielkonfiguration könnte wie folgt aussehen:
+Sehen Sie sich die folgende Beispielkonfiguration an:
 ```yaml
 spec:
   containers:
@@ -135,4 +136,4 @@ spec:
 ```
 {: codeblock}
 
-Weitere Informationen finden Sie in [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"). 
+Weitere Informationen finden Sie in [Configure Liveness and Readiness Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link").

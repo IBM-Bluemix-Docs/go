@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
 
@@ -20,12 +20,12 @@ subcollection: go
 # Fehlertoleranz in Go-Apps festlegen
 {: #fault-tolerance}
 
-Eine Fehlertoleranz ermöglicht einer Anwendung die Fortsetzung ihrer Ausführung, wenn eine Komponente ausfällt oder nicht mehr reagiert. Sie können Fehlertoleranz zu einer vorhandenen Go-Anwendung hinzufügen oder diese Features von einer generierten Go-Anwendung aus aktivieren. Das vorliegende Lernprogramm konzentriert sich auf die Verwendung des [Hystrix-Pakets](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"), um einer Go-Anwendung Unterstützung für Fehlertoleranz hinzuzufügen. 
+Eine Fehlertoleranz ermöglicht einer Anwendung die Fortsetzung ihrer Ausführung, wenn eine Komponente ausfällt oder nicht mehr reagiert. Sie können Fehlertoleranz zu einer vorhandenen Go-App hinzufügen oder diese Features von einer generierten Go-App aus aktivieren. Das vorliegende Lernprogramm konzentriert sich auf die Verwendung des [Hystrix-Pakets](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![Symbol für externen Link](../icons/launch-glyph.svg "Symbol für externen Link"), um einer Go-App Unterstützung für Fehlertoleranz hinzuzufügen. 
 
 ## Fehlertoleranz zu einer vorhandenen Go-App hinzufügen
 {: #add-fault-tolerance}
 
-Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-Anwendung befindet:
+Fügen Sie die erforderlichen Pakete in Ihre Abhängigkeitsliste ein. Geben Sie dazu die folgenden Befehle an derselben Position ein, an der sich die Datei `Gopkg.toml` Ihrer Go-App befindet: 
 ```
 dep ensure -add "github.com/afex/hystrix-go/hystrix"
 ```
@@ -47,7 +47,7 @@ func HystrixHandler(command string) gin.HandlerFunc {
 ``` 
 {: codeblock}
 
-Die Behandlung von Fehlern kann je nach Art der verwendeten Go-Anwendung variieren. Bei Web-Apps erfolgt bei einem Fehler die Weiterleitung zu einer Seite für einen Fehler 500, während Microservices ein JSON-Objekt zurückgeben, das den Fehler angibt.
+Die Behandlung von Fehlern kann je nach Art der verwendeten Go-App variieren. Bei Web-Apps erfolgt bei einem Fehler die Weiterleitung zu einer Seite für einen Fehler 500, während Microservices ein JSON-Objekt zurückgeben, das den Fehler angibt.
 
 Diese Middleware verwendet eine Zeichenfolge, bei der es sich um einen konfigurierten Befehl handelt. Das Konfigurieren eines Befehls muss in der Funktion `main` wie folgt vorgenommen werden:
 ```go
@@ -68,17 +68,17 @@ router.Use(HystrixHandler("mycommand"))
 ## Hystrix-Metriken gegenüber Prometheus zugänglich machen (optional)
 {: #hystrix-optional}
 
-Bevor Sie Hystrix zu Prometheus hinzufügen können, muss Ihre App mit Anwendungsmetriken konfiguriert werden. Zum Hinzufügen von Unterstützung für das Modul 'appmetrics' können Sie gemäß den Schritten im Abschnitt [Anwendungsmetriken mit Go-Apps](/docs/go/appmetrics.html) vorgehen.
+Bevor Sie Hystrix zu Prometheus hinzufügen können, muss Ihre App mit App-Metriken konfiguriert werden. Sie können die im Thema [Anwendungsmetriken mit Go-Apps verwenden](/docs/go?topic=go-go-appmetrics) beschriebenen Schritte ausführen, um Unterstützung für App-Metriken hinzuzufügen. 
 
-Hystrix bietet Benutzern die Möglichkeit, die erfassten Metrikdaten einem Collector für Metriken zugänglich zu machen. Um Hystrix gegenüber Prometheus offenzulegen, muss außerdem auch das Paket 'metric_collector' hinzugefügt werden:
+Hystrix bietet Benutzern die Möglichkeit, die erfassten Metrikdaten einem Collector für Metriken zugänglich zu machen. Um Hystrix für Prometheus zugänglich zu machen, muss außerdem das Paket 'metric_collector' hinzugefügt werden: 
 ```
 dep ensure -add "github.com/afex/hystrix-go/hystrix/metric_collector"
 ```
 {: codeblock}
 
-Zusätzlich zu `metric_collector` muss eine weitere Datei namens `prometheus_collector.go` zu Ihrer Go-Anwendung hinzugefügt werden. Die Datei können Sie [hier](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go) finden. Diese Datei muss zum Paket `plugins` hinzugefügt werden.
+Zusätzlich zu `metric_collector` muss die Datei `prometheus_collector.go` zu Ihrer Go-App hinzugefügt werden. Die Datei können Sie [hier](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go) finden. Fügen Sie diese Datei dem Paket `plugins` hinzu. 
 
-Zusätzlich sind noch die folgenden zwei Importe erforderlich:
+Zwei Importe sind erforderlich: 
 ```go
 import(
   "github.com/afex/hystrix-go/hystrix/metric_collector"
@@ -87,7 +87,7 @@ import(
 ```
 {: codeblock}
 
-Fügen Sie in der Funktion `main` die folgenden Anweisungen hinzu:
+Fügen Sie in der Funktion `main` die folgenden Anweisungen hinzu: 
 ```go
 collector := plugins.InitializePrometheusCollector(plugins.PrometheusCollectorConfig{
   Namespace: "<name_der_anwendung>",
