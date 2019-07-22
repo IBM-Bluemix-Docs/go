@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: fault tolerance go, hystrix go, add fault tolerance, prometheus go, debug go apps
 
@@ -20,7 +20,7 @@ subcollection: go
 # 在 Go 应用程序中设置容错
 {: #fault-tolerance}
 
-容错允许应用程序在组件发生故障或者变为无响应的情况下继续运行。您可以向现有 Go 应用程序添加容错，或者从生成的 Go 应用程序启用这些功能。本教程关注于使用 [Hystrix 包](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 向 Go 应用程序添加容错支持。
+容错允许应用程序在组件发生故障或者变为无响应的情况下继续运行。您可以向现有 Go 应用程序添加容错，或者从生成的 Go 应用程序启用这些功能。本教程重点描述了如何使用 [Hystrix 包](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 向 Go 应用程序添加容错支持。
 
 ## 向现有 Go 应用程序添加容错
 {: #add-fault-tolerance}
@@ -68,17 +68,17 @@ router.Use(HystrixHandler("mycommand"))
 ## 向 Prometheus 公开 Hystrix 度量值（可选）
 {: #hystrix-optional}
 
-在将 Hystrix 添加到 Prometheus 之前，必须使用应用程序度量值配置应用程序。您可以遵循[将应用程序度量值用于 Go 应用程序](/docs/go/appmetrics.html)主题中的步骤来添加 appmetrics 支持。
+在将 Hystrix 添加到 Prometheus 之前，必须使用应用程序度量值配置应用程序。您可以遵循[将应用程序度量值用于 Go 应用程序](/docs/go?topic=go-go-appmetrics)主题中的步骤来添加应用程序度量值支持。
 
-Hystrix 使用户能够获取度量值数据并公开给度量值收集器。为向 prometheus 公开 Hystrix，还必须添加 metric_collector 包：
+Hystrix 使用户能够获取度量值数据并公开给度量值收集器。要向 prometheus 公开 Hystrix，还必须添加 metric_collector 包：
 ```
 dep ensure -add "github.com/afex/hystrix-go/hystrix/metric_collector"
 ```
 {: codeblock}
 
-除了 `metric_collector`，必须将额外的文件 `prometheus_collector.go` 添加到 Go 应用程序。可在[此处](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go)找到此文件。应该将此文件添加到 `plugins` 包。
+除了 `metric_collector`，必须将文件 `prometheus_collector.go` 添加到 Go 应用程序。可在[此处](https://github.com/ibm-developer/generator-ibm-core-golang-gin/blob/develop/generators/app/templates/plugins/prometheus_collector.go)找到此文件。将此文件添加到 `plugins` 包。
 
-需要两个额外导入：
+需要两个导入：
 ```go
 import(
   "github.com/afex/hystrix-go/hystrix/metric_collector"

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-19"
+lastupdated: "2019-06-13"
 
 keywords: configure go environment, go environment
 
@@ -16,6 +16,7 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:note: .note}
 
 # 配置 Go 环境
 {: #configure-go-env}
@@ -27,7 +28,7 @@ subcollection: go
 ## 向现有 Go 应用程序添加云支持
 {: #go-add-cloud-support}
 
-[`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 模块聚集了各种云提供者（例如，Cloud Foundry 和 Kubernetes）的环境变量，因此应用程序独立于环境。
+[` ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 模块聚集了各种云提供者（例如，Cloud Foundry 和 Kubernetes）的环境变量，因此应用程序独立于环境。
 
 ### 安装 `ibm-cloud-env-golang` 模块
 {: #go-install-env-module}
@@ -102,7 +103,10 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## 通过入门模板工具包应用程序使用 Go 配置管理器
 {: #go-config-manager}
 
-使用[入门模板工具包](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 创建的 Go 应用程序会自动随附在许多云部署目标（如 Cloud Foundry、Kubernetes、VSI 和 Functions）中运行所需的凭证和配置。
+使用[入门模板工具包](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 创建的 Go 应用程序会自动随附在许多云部署目标中运行所需的凭证和配置，例如 [Kubernetes](/docs/containers?topic=containers-getting-started)、[Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf)、[{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about)、[Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial) 或 [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started)。
+
+  VSI 部署可用于某些入门模板工具包。要使用此功能，请转至 [{{site.data.keyword.cloud_notm}} 仪表板](https://{DomainName})，然后单击**应用程序**磁贴中的**创建应用程序**。
+  {: note}
 
 ### 了解服务凭证
 {: #go-credentials-config}
@@ -119,7 +123,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 
 * **Kubernetes**：从每个服务的不同环境变量获取服务凭证。
 
-* **{{site.data.keyword.cloud_notm}} Container Service**：从虚拟服务器实例或 {{site.data.keyword.openwhisk}} (Openwhisk) 获取服务凭证。
+* **{{site.data.keyword.cloud_notm}} Container Service**：从虚拟服务器实例或 {{site.data.keyword.openwhisk}} 获取服务凭证。
 
 ## 后续步骤
 {: #go-next-steps-config notoc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-04-04"
+lastupdated: "2019-06-12"
 
 keywords: how to trace go apps, tracing go, jaeger go, opentracing go, jaeger packages, debug go app, troubleshoot go, go app help
 
@@ -20,11 +20,11 @@ subcollection: go
 # 在 Go 应用程序中设置跟踪
 {: #go-e2e-tracing}
 
-以下教程关注于用于跟踪 Go 应用程序的 Opentracing 和 Jaeger 包。有关使用 Jaeger 的更多信息，请参阅 [Jaeger 文档门户网站](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
+以下教程侧重于用于跟踪 Go 应用程序的 OpenTracing 和 Jaeger 包。有关使用 Jaeger 的更多信息，请参阅 [Jaeger 文档门户网站](https://www.jaegertracing.io/docs/1.11/){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")。
 
 在以下步骤中，通过 Jaeger 模块使用两个小型应用程序（一个前端，一个后端）在两个端点之间进行跟踪。您可以从头开始，也可以将此处描述的原则应用于现有 Go 应用程序。
 
-## 步骤 1. 安装和启用 Opentracing 和 Jaeger 包
+## 步骤 1. 安装和启用 OpenTracing 和 Jaeger 包
 {: #install-go-opentracing}
 
 1. 在与 Go 应用程序的 `Gopkg.toml` 文件相同的位置中，输入以下命令以将必需的包添加到依赖项列表：
@@ -51,7 +51,7 @@ subcollection: go
 
 需要一些语句以向服务器应用程序添加跟踪。首先，必须创建跟踪器。
 
-要创建跟踪器，请提供以下内容：
+要创建跟踪器，请提供以下项：
  * 传输器
  * 报告器
  * 可选度量值导出器
@@ -107,7 +107,7 @@ subcollection: go
   ```
   {: codeblock}
 
-5. 采样器对象确定报告范围的情况或频率。对于开发目的，应用程序应报告它收到的所有范围。但是，对于生产，报告所有范围可能不可行。要报告所有范围，您可以使用 ConstSampler 对象：
+5. 采样器对象确定报告范围的情况或频率。对于开发目的，应用程序可报告它收到的所有范围。但是，对于生产，报告所有范围可能不可行。要报告所有范围，您可以使用 ConstSampler 对象：
   ```go
   sampler := jaeger.NewConstSampler(true)
   ```
@@ -249,6 +249,6 @@ client.Do(req)
 
 要查看范围，请转至 `http://localhost:16686`。可以按服务、操作和标记搜索跟踪，然后单击**查找跟踪**。
 
-![Jaeger UI](images/JaegerUI.png)
+![Jaeger UI](images/JaegerUI.png "Jaeger UI")
 
-单击特定跟踪以查看有关该跟踪的更多信息：![跟踪示例](images/TraceExample.png)
+单击特定跟踪以查看有关该跟踪的更多信息：![跟踪示例](images/TraceExample.png "跟踪示例")

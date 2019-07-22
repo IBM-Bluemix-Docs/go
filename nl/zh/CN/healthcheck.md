@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-03-08"
+lastupdated: "2019-06-10"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -20,7 +20,8 @@ subcollection: go
 # 在 Go 应用程序中使用运行状况检查
 {: #go-healthcheck}
 
-运行状况检查提供了一种简单的机制，用于确定服务器端应用程序是否在正常运行。云环境（如 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 和 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")）可以配置为对运行状况端点定期进行轮询，以确定服务实例是否已准备好接受流量。
+运行状况检查提供了一种简单的机制，用于确定服务器端应用程序是否在正常运行。您可以将云环境（如 [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标") 和 [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![外部链接图标](../icons/launch-glyph.svg "外部链接图标")）配置为定期轮询运行状况端点，以确定您的服务实例是否已准备好接受流量。
+
 
 ## 运行状况检查概述
 {: #go-healtcheck-overview}
@@ -49,6 +50,7 @@ Kubernetes 对于进程运行状况的概念有细微差别。它定义了两个
 | 正在停止 | 503 - 不可用                | 200 - 正常                  | 503 - 不可用                |
 | 关闭     | 503 - 不可用                | 503 - 不可用                | 503 - 不可用                |
 | 出错     | 500 - 服务器错误            | 500 - 服务器错误            | 500 - 服务器错误            |
+{: caption="表 1. HTTP 状态码" caption-side="bottom"}
 
 ## 向现有 Go 应用程序添加运行状况检查
 {: #go-add-healthcheck-existing}
@@ -90,7 +92,7 @@ func HealthGET(c *gin.Context) {
 ## 针对就绪性和活性探测器的建议
 {: #go-recommend-healthcheck}
 
-如果下游服务不可用，那么在没有可接受的回退时，就绪性探测器应该在其结果中包含连接到下游服务的可行性。这并不意味着直接调用下游服务提供的运行状况检查，因为基础架构会为您执行该检查。请转而考虑验证应用程序对下游服务的现有引用的运行状况：这可能是 WebSphere MQ 的 JMS 连接，或者是初始化的 Kafka 使用者或生产者。如果您确实检查了下游服务的内部引用的可行性，请将结果高速缓存以尽可能减小运行状况检查对应用程序的影响。
+如果下游服务不可用，那么在没有可接受的回退时，就绪性探测器必须在其结果中包含连接到下游服务的可行性。不必调用下游服务直接提供的运行状况检查，因为基础架构会为您执行该项检查。请考虑验证应用程序对下游服务的现有引用的运行状况。例如，这些引用可能是与 WebSphere MQ 的 JMS 连接，也可能是已初始化的 Kafka 使用者或生产者。如果您确实检查了下游服务的内部引用的可行性，请将结果高速缓存以尽可能减小运行状况检查对应用程序的影响。
 
 相比之下，活性探测器会注重检查的内容，因为故障会导致该进程立即终止。一个始终使用状态码 `200` 返回 `{"status": "UP"}` 的简单 HTTP 端点是比较合理的选项。
 
@@ -99,7 +101,7 @@ func HealthGET(c *gin.Context) {
 
 随 Kubernetes 部署一起声明活性和就绪性探测器。这两个探测器使用相同的配置参数：
 
-* kubelet 等待 `initialDelaySeconds` 秒之后进行第一次探测。
+* 在进行首次探测之前，kubelet 会等待 `initialDelaySeconds`。
 
 * kubelet 每 `periodSeconds` 秒探测一次服务。缺省值为 1。
 
@@ -113,7 +115,7 @@ func HealthGET(c *gin.Context) {
 
 要避免重新启动循环，请将 `livenessProbe.initialDelaySeconds` 设置为比服务初始化更长且安全的时间。然后您可以对 `readinessProbe.initialDelaySeconds` 使用更短的值，以在服务就绪后尽快将请求路由到服务。
 
-示例配置可能类似于以下内容：
+请参阅以下示例配置：
 ```yaml
 spec:
   containers:
