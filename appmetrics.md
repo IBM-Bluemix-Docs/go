@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-06-10"
+lastupdated: "2019-10-29"
 
 keywords: prometheus go, application metrics go, view metrics go app, add metrics go, promhttp go, autoscaling go
 
@@ -37,7 +37,7 @@ To add performance monitoring to your Go application, you can use the comprehens
 
 The `promhttp` package has many extension points, including [Prometheus configuration](https://github.com/prometheus/client_golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
 
-1. For example, use the following simple “Hello World” Go + Gin application:
+1. For example, use the following simple "Hello World" Go + Gin application:
     ```go
     // imports above
     func main() {
@@ -78,9 +78,3 @@ The `promhttp` package has many extension points, including [Prometheus configur
   ```
   {: codeblock}
 
-## Using Application Metrics in Starter Kits
-{: #go-starterkits-appmetrics}
-
-The server-side Go applications that are created from Starter Kits automatically come with the [Prometheus endpoint](https://prometheus.io/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") under `http://<hostname>:<port>/metrics`. The code for this endpoint is in `server.go`.
-
-For more information, see the [GitHub Repository for Prometheus](https://github.com/prometheus/client_golang/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-10-29"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -70,7 +70,6 @@ You can use the {{site.data.keyword.dev_cli_long}} to work with your Go app loca
 1. Use the `ibmcloud dev build` command to build your app.
 2. Use the `ibmcloud dev run` command to run the app locally. Your app is run in the Docker containers on your local system. You can test your app in a browser by accessing `http://localhost:8080`.
 3. A health check endpoint is available at `http://localhost:8080/health`.
-4. You can access metrics at `http://localhost:3000/metrics`.
 
 To learn more about the {{site.data.keyword.dev_cli_notm}}, see the complete [CLI documentation](/docs/cli?topic=cloud-cli-getting-started).
 
