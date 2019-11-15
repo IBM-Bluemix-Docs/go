@@ -103,7 +103,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Using the Go Configuration Manager from starter kit apps
 {: #go-config-manager}
 
-Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-about-cf), [{{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-about), [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial), or [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting_started).
+Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry and {{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry), [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial), or [{{site.data.keyword.openwhisk_short}}](/docs/openwhisk?topic=cloud-functions-getting-started).
 
   VSI deployment is available for some starter kits. To use this feature, go to the [{{site.data.keyword.cloud_notm}} dashboard](https://{DomainName}), and click **Create an app** in the **Apps** tile.
   {: note}
