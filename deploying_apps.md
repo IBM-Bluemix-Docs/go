@@ -26,7 +26,7 @@ You can deploy your Go applications with a toolchain or by using the command-lin
 ## Deploying to a Kubernetes cluster
 {: #deploy_kube-go}
 
-You can learn how to use {{site.data.keyword.cloud_notm}} Kubernetes Service to deploy a containerized Go app. Check out the [tutorial steps](/docs/containers?topic=containers-cs_cluster_tutorial) for more information on setting up a Kubernetes cluster in {{site.data.keyword.cloud_notm}}.
+You can learn how to use {{site.data.keyword.containerlong_notm}} to deploy a containerized Go app. Check out the [tutorial steps](/docs/containers?topic=containers-cs_cluster_tutorial) for more information on setting up a Kubernetes cluster in {{site.data.keyword.cloud_notm}}.
 
 Related blogs that use the CLI:
 * [Deploying to Kubernetes with the {{site.data.keyword.dev_cli_long}} CLI](https://www.ibm.com/blogs/cloud-archive/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
@@ -37,7 +37,7 @@ Related blogs that use the CLI:
 
 Use the `ibmcloud dev deploy` command to deploy to {{site.data.keyword.cloud_notm}}. 
 
-To deploy to IBM Container Services in {{site.data.keyword.cloud_notm}}, use the following command:
+To deploy to containers in {{site.data.keyword.containerlong_notm}}, use the following command:
 ```
 ibmcloud dev deploy –target container 
 ```

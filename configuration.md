@@ -123,7 +123,7 @@ When you push your app to {{site.data.keyword.cloud_notm}}, these values are no 
 
 * **Kubernetes**: Service credentials are taken from individual environment variables per service.
 
-* **{{site.data.keyword.cloud_notm}} Container Service**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}}.
+* **{{site.data.keyword.containerlong_notm}}**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}}.
 
 ## Next Steps
 {: #go-next-steps-config notoc}

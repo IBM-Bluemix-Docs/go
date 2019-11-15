@@ -51,7 +51,7 @@ To download the code, click **Download code** on the **App details** page. The d
 
 1. From the **App details** page, click **Configure continuous delivery**.
 2. Set up your deployment target according to the instructions for the method you choose:
-  * **Deploy to [IBM Kubernetes Service](/docs/containers?topic=containers-app)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available app containers. You can create a cluster or deploy to an existing cluster.
+  * **Deploy to [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-app)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available app containers. You can create a cluster or deploy to an existing cluster.
   * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud or Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry#ibmcf-offerings)**. You can use the deployer type to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
   * **Deploy to a [Virtual Server](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the deployment cycle for you.
 
