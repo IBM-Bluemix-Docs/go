@@ -2,9 +2,9 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-07-16"
+lastupdated: "2019-12-04"
 
-keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry, go deploy virtual
+keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry
 
 subcollection: go
 
@@ -21,7 +21,7 @@ subcollection: go
 # Deploying and integrating Go apps
 {: #go-deploy-apps}
 
-You can deploy your Go applications with a toolchain or by using the command-line interface. A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, containers, VSI, and private cloud.
+You can deploy your Go applications with a toolchain or by using the command-line interface. A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, Cloud Foundry, and private cloud.
 
 ## Deploying to a Kubernetes cluster
 {: #deploy_kube-go}
@@ -54,15 +54,4 @@ If you plan to deploy your app to [{{site.data.keyword.cfee_full}}](/docs/cloud-
 
 If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either [Public Cloud or Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry#ibmcf-offerings), which you can use to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
 
-## Deploying to a virtual server
-{: #go-vsi-deploy}
-
-Deploy {{site.data.keyword.cloud}} App Service apps into virtual server instances to enable your platform and infrastructure developer activities to work together and increase app control and flexibility.
-
-A virtual server instance offers better transparency, predictability, and automation for all workload types when compared to other configurations. Combine it with a bare metal server to create unique workload combinations. For example, you can create high-performance database logic or machine learning with bare metal and GPU configurations that run a Debian Linux-based operating system.
-
-  VSI deployment is available for some starter kits. To use this feature, go to the [{{site.data.keyword.cloud_notm}} dashboard](https://{DomainName}), and click **Create an app** in the **Apps** tile.
-  {: note}
-
-For more information, see [Deploying to a virtual server](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server).
 

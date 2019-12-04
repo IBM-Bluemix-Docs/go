@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-10-29"
+lastupdated: "2019-12-04"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -53,7 +53,6 @@ To download the code, click **Download code** on the **App details** page. The d
 2. Set up your deployment target according to the instructions for the method you choose:
   * **Deploy to [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-app)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available app containers. You can create a cluster or deploy to an existing cluster.
   * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud or Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry#ibmcf-offerings)**. You can use the deployer type to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
-  * **Deploy to a [Virtual Server](/docs/vsi?topic=virtual-servers-deploying-to-a-virtual-server)**. This option provisions a virtual server instance, loads an image that includes your app, creates a DevOps toolchain, and initiates the deployment cycle for you.
 
 3. After you set up your deployment target, click **Next**.
 4. Select your configuration options, and then click **Create**. A toolchain is created for you, and your app is automatically deployed.

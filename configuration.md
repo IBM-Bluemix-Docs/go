@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-12-02"
+lastupdated: "2019-12-04"
 
 keywords: configure go environment, go environment, service credentials, credentials, variables, configuration
 
@@ -103,10 +103,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Using the Go Configuration Manager from starter kit apps
 {: #go-config-manager}
 
-Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as [Kubernetes](/docs/containers?topic=containers-getting-started), [Cloud Foundry and {{site.data.keyword.cfee_full_notm}}](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry), or [Virtual Server (VSI)](/docs/vsi?topic=virtual-servers-getting-started-tutorial).
-
-  VSI deployment is available for some starter kits. To use this feature, go to the [{{site.data.keyword.cloud_notm}} dashboard](https://{DomainName}), and click **Create an app** in the **Apps** tile.
-  {: note}
+Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as [Kubernetes](/docs/containers?topic=containers-getting-started) and [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry).
 
 ### Understanding service credentials
 {: #go-credentials-config}
@@ -123,9 +120,7 @@ When you push your app to {{site.data.keyword.cloud_notm}}, these values are no 
 
 * **Kubernetes**: Service credentials are taken from individual environment variables per service.
 
-* **{{site.data.keyword.containerlong_notm}}**: Service credentials are taken from virtual server instances or {{site.data.keyword.openwhisk}}.
-
-## Next Steps
+## Next steps
 {: #go-next-steps-config notoc}
 
 The `ibm-cloud-env-golang` supports searching for values by using four search pattern types: `user-provided`, `cloudfoundry`, `env`, and `file`. If you would like to check out other supported search patterns and search pattern examples, check the [Usage](https://github.com/ibm-developer/ibm-cloud-env-golang#usage){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") section.
