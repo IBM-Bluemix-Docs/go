@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-12-04"
+lastupdated: "2019-12-19"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -25,44 +25,56 @@ The following tutorial walks you through the steps to create and deploy a Go app
 ## Step 1. Creating a custom Go app in the dashboard
 {: #create-go-app}
 
-1. Log in to an {{site.data.keyword.cloud_notm}} account to create an app. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-2. From the [Starter Kits](https://{DomainName}/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") page in the {{site.data.keyword.dev_console}}, do one of the following options:
- * Select a starter kit that is written in `Go`, and then click **Create app** on the **Starter kit details** page.
- * Select the blank starter app, and click **Create App**.
-3. Provide a name for your app, or use the generic app name that is provided.
-4. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cloud-cli-getting-started).
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+2. Go to the [App Service Starter Kits](https://{DomainName}/developer/appservice/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") page in the {{site.data.keyword.dev_console}} console, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit.
+3. In the App details page for the starter kit, name your app, and select a resource group.
+4. Optional. Provide tags to classify your app. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
+5. Optional. To inspect the source code before you add services or deploy your app, click **View source code**. The app code includes a `README.md` file that contains technical details about the app. Check the `README.md` file to find out whether you need to take more actions to get your app up and running.
+6. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cloud-cli-getting-started).
 
 ## Step 2. Adding {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}
 {: #add-resource-go}
 
 You can now add {{site.data.keyword.watson}} services to your Go app. For this tutorial, add the {{site.data.keyword.texttospeechshort}} service to your Go app, which takes verbal input and converts it to text by using a cloud API.
 
-1. From the **App details** page, click **Add service**.
+1. From the App details page, click **Add service**.
 2. Select **AI**, and click **Next**.
 3. Select **{{site.data.keyword.texttospeechshort}}**, and click **Next**.
 4. Click **Create**.
 
 You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") dependency is added to the `Gopkg.toml` file, and simple instrumentation code is available for the service in the `services/` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
 
-To download the code, click **Download code** on the **App details** page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") included, and some basic initialization code.
+To download the code, click **View sample repo** on the App details page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") included, and some basic initialization code.
 
 ## Step 3. Deploying your app from the console
 {: #deploy-go}
 
-1. From the **App details** page, click **Configure continuous delivery**.
-2. Set up your deployment target according to the instructions for the method you choose:
-  * **Deploy to [{{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-app)**. This option creates a cluster of hosts, called worker nodes, to deploy and manage highly available app containers. You can create a cluster or deploy to an existing cluster.
-  * **Deploy to Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. If your account has access to {{site.data.keyword.cfee_full_notm}}, you can select a deployer type of either **[Public Cloud or Enterprise Environment](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry#ibmcf-offerings)**. You can use the deployer type to create and manage isolated environments for hosting Cloud Foundry apps exclusively for your enterprise.
+To deploy your app, you must select your deployment target and configure continuous delivery. This process automatically creates a toolchain and starts the app deployment.
 
-3. After you set up your deployment target, click **Next**.
-4. Select your configuration options, and then click **Create**. A toolchain is created for you, and your app is automatically deployed.
+To deploy your app, complete the following steps:
+
+1. On the App details page for your app, click **Deploy your app**.
+2. On the Deploy your app page, select a deployment target. Set up your deployment target according to the instructions for the target that you select:
+  * **IBM Kubernetes Service**. With this option, you can either create a cluster or [deploy to an existing Kubernetes cluster](/docs/containers?topic=containers-app). If you create a cluster, allow 10 - 20 minutes for the cluster to be provisioned. Select a deployment type of **Helm** or **Knative**, and then select the region and cluster name.
+  * **Red Hat OpenShift on IBM Cloud**. If you have an available [OpenShift cluster](/docs/openshift?topic=openshift-openshift_apps), you can select it from the **Cluster name** list. If you don't have an available cluster, you must create one before you continue. Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing component take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes.
+  * **Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. For more information, see [Deploying apps to Cloud Foundry Public](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps).
+3. Provide a name for your toolchain.
+4. Select the region to create your toolchain in, and then select the [resource group](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-iam-security) that provides access to your new toolchain.
+5. Click **Create**.
+
+The DevOps toolchain is created automatically, and the deployment process begins.
+
+  You can deploy your app from the command line by running the [**ibmcloud dev deploy**](/docs/cli/idt?topic=cloud-cli-idt-cli#deploy) command. For more information, see [Deploying apps with the CLI](/docs/apps?topic=creating-apps-deploying-apps#deploy-cli).
+  {: note}
+
+For more information about deploying your app, see [Deploying apps](/docs/apps?topic=creating-apps-deploying-apps).
 
 ## Step 4. Testing and accessing your Go app locally
 {: #run_local-go}
 
-On the **App details** page, you can:
+On the App details page, you can:
 * View your repo by clicking **View repo**.
-* View and modify your toolchain by clicking **View toolchain**.
+* View and modify your toolchain by clicking the name of the toolchain.
 
 You can use the {{site.data.keyword.dev_cli_long}} to work with your Go app locally by using `ibmcloud dev` commands. These tools help you quickly iterate locally and push your changes to the cloud.
 
