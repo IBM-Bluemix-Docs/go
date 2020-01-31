@@ -17,6 +17,7 @@ subcollection: go
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Getting Go support
 {: #support-go}
@@ -26,16 +27,16 @@ You can quickly get help with your Go application by asking questions on dWanswe
 ## Asking for help on dWanswers
 {: #dwanswers-go}
 
-Ask questions on [dWAnswers](https://developer.ibm.com/answers/topics/go){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") by using the `#golang` or `#go` tag.
+Ask questions on [dWAnswers](https://developer.ibm.com/answers/topics/go){: external} by using the `#golang` or `#go` tag.
 
 ## Using official IBM Support for Runtimes
 {: #runtimes-go}
 
-IBM Foundation Support for Runtimes provides coverage for Node.js, Swift, Java&trade;, and Go. Support is available for Go 1.10 from the [golang.org](https://golang.org/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") community, including the IBM Watson SDK for Go. 
+IBM Foundation Support for Runtimes provides coverage for Node.js, Swift, Java&trade;, and Go. Support is available for Go 1.10 from the [golang.org](https://golang.org/){: external} community, including the IBM Watson SDK for Go. 
 
 The Go runtime support is available for any modules that you're using within your application. Support is available for wherever you want to deploy the runtime, whether that’s on your own computers, in {{site.data.keyword.cloud_notm}}, or elsewhere.
 
-To learn more, visit [IBM Digital Marketplace](https://www.ibm.com/cloud/support-for-runtimes){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+To learn more, visit [IBM Digital Marketplace](https://www.ibm.com/cloud/support-for-runtimes){: external}.
 
 ## Buildpack Support Statement
 {: #buildpack-go}

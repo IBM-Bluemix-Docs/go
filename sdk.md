@@ -15,6 +15,7 @@ subcollection: go
 {:screen: .screen}
 {:codeblock: .codeblock}
 {:pre: .pre}
+{:external: target="_blank" .external}
 
 #  Adding SDKs to Go apps
 {: #add-sdk-go}
@@ -25,15 +26,15 @@ To add {{site.data.keyword.cloud_notm}} SDKs to your app, choose the SDKs that y
 {: #client_sdk-go}
 
 You can use the following SDKs in your Go application:
-* [MongoDB Go SDK ](https://github.com/mongodb/mongo-go-driver){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [Postgres Go SDK](https://github.com/lib/pq){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [Redis Go SDK](https://github.com/go-redis/redis){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
-* [CouchDB Go SDK](https://github.com/leesper/couchdb-golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [MongoDB Go SDK ](https://github.com/mongodb/mongo-go-driver){: external}
+* [Postgres Go SDK](https://github.com/lib/pq){: external}
+* [Redis Go SDK](https://github.com/go-redis/redis){: external}
+* [CouchDB Go SDK](https://github.com/leesper/couchdb-golang){: external}
 
 <!--
 ## Services
 {: #services}
 
-* [Watson Go SDK ![External link icon](../icons/launch-glyph.svg "External link icon")](https://github.com/watson-developer-cloud/go-sdk)
+* [Watson Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external}
 -->
 

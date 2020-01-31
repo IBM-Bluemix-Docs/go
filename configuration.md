@@ -17,6 +17,7 @@ subcollection: go
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Configuring the Go environment
 {: #configure-go-env}
@@ -28,7 +29,7 @@ Whether you need to add cloud support to existing Go apps or create Go apps with
 ## Adding Cloud support to existing Go apps
 {: #go-add-cloud-support}
 
-The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") module aggregates environment variables from various Cloud providers, such as CloudFoundry and Kubernetes, so the app is independent of the environment.
+The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: external} module aggregates environment variables from various Cloud providers, such as CloudFoundry and Kubernetes, so the app is independent of the environment.
 
 ### Installing the `ibm-cloud-env-golang` module
 {: #go-install-env-module}
@@ -103,7 +104,7 @@ filtered_credentials := IBMCloudEnv.GetCredentialsForService(tag, label, credent
 ## Using the Go Configuration Manager from starter kit apps
 {: #go-config-manager}
 
-Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as [Kubernetes](/docs/containers?topic=containers-getting-started) and [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry).
+Go apps that are created with [starter kits](https://cloud.ibm.com/developer/appservice/starter-kits){: external} automatically come with credentials and configurations that are needed to run in many cloud deployment targets, such as [Kubernetes](/docs/containers?topic=containers-getting-started) and [Cloud Foundry](/docs/cloud-foundry?topic=cloud-foundry-what-is-cloud-foundry).
 
 ### Understanding service credentials
 {: #go-credentials-config}
@@ -112,7 +113,7 @@ Your app configuration information for services is stored in the `localdev-confi
 
 The app uses the Configuration Manager to read the connection and configuration information from the environment and this file. It uses a custom-built `mappings.json`, which is located in the `server/config` directory, to communicate where the credentials can be found for each service.
 
-If the app is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials that are read from the `mappings.json` file. But if you need to create unbound credentials, you can do so from the {{site.data.keyword.cloud_notm}} web console (example), or by using the [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") `cf create-service-key` command.
+If the app is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials that are read from the `mappings.json` file. But if you need to create unbound credentials, you can do so from the {{site.data.keyword.cloud_notm}} web console (example), or by using the [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: external} `cf create-service-key` command.
 
 When you push your app to {{site.data.keyword.cloud_notm}}, these values are no longer used. Instead, the app automatically connects to bound services by using environment variables. 
 
@@ -123,4 +124,4 @@ When you push your app to {{site.data.keyword.cloud_notm}}, these values are no 
 ## Next steps
 {: #go-next-steps-config notoc}
 
-The `ibm-cloud-env-golang` supports searching for values by using four search pattern types: `user-provided`, `cloudfoundry`, `env`, and `file`. If you would like to check out other supported search patterns and search pattern examples, check the [Usage](https://github.com/ibm-developer/ibm-cloud-env-golang#usage){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") section.
+The `ibm-cloud-env-golang` supports searching for values by using four search pattern types: `user-provided`, `cloudfoundry`, `env`, and `file`. If you would like to check out other supported search patterns and search pattern examples, check the [Usage](https://github.com/ibm-developer/ibm-cloud-env-golang#usage){: external} section.

@@ -16,6 +16,7 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:external: target="_blank" .external}
 
 # Using Application Metrics with Go apps
 {: #go-appmetrics}
@@ -35,7 +36,7 @@ Application metrics are captured as time series data. Aggregating and visualizin
 
 To add performance monitoring to your Go application, you can use the comprehensive aggregation of metrics that are provided by the `promhttp` package.
 
-The `promhttp` package has many extension points, including [Prometheus configuration](https://github.com/prometheus/client_golang){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+The `promhttp` package has many extension points, including [Prometheus configuration](https://github.com/prometheus/client_golang){: external}.
 
 1. For example, use the following simple "Hello World" Go + Gin application:
     ```go

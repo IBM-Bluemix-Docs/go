@@ -16,6 +16,7 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:external: target="_blank" .external}
 
 # Logging in Go
 {: #logging-golang}
@@ -27,7 +28,7 @@ Given the transient nature of processes in cloud environments, logs must be coll
 ## Adding Logrus support to Go app
 {: #add-logrus-go}
 
-[Logrus](https://github.com/sirupsen/logrus){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") is a popular logging framework for Go and provides many native benefits, which include: 
+[Logrus](https://github.com/sirupsen/logrus){: external} is a popular logging framework for Go and provides many native benefits, which include: 
  * Logging to `stdout` or `stderr`
  * Various appending options
  * Configurable log message layout and patterns
@@ -54,17 +55,17 @@ Given the transient nature of processes in cloud environments, logs must be coll
   ```
   {: screen}
 
-For more information about customizing the log messages with appenders, log levels, and configuration details, see the official [Logrus documentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+For more information about customizing the log messages with appenders, log levels, and configuration details, see the official [Logrus documentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: external}.
 
 ## Next Steps
 {: #go-logging-next notoc}
 
 Learn more about viewing the logs in each of your deployment targets:
-* [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: external}
 * [Cloud Foundry logs](/docs/services/CloudLogAnalysis/cfapps?topic=cloudloganalysis-logging_cf_apps)
 * [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
 * [{{site.data.keyword.openwhisk}} Logs and monitoring](/docs/openwhisk?topic=cloud-functions-logs)
 
 Learn more about using a log aggregator:
 * [{{site.data.keyword.cloud_notm}} Log analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
-* [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon")
+* [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: external}

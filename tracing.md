@@ -16,11 +16,12 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:external: target="_blank" .external}
 
 # Setting up tracing in Go apps
 {: #go-e2e-tracing}
 
-The following tutorial focuses on OpenTracing and Jaeger packages for tracing Go applications. For more information about using Jaeger, see the [Jaeger documentation portal](https://www.jaegertracing.io/docs/1.11/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+The following tutorial focuses on OpenTracing and Jaeger packages for tracing Go applications. For more information about using Jaeger, see the [Jaeger documentation portal](https://www.jaegertracing.io/docs/1.11/){: external}.
 
 In the following steps, two small applications (one front-end, one back-end) are used to trace between two endpoints by using the Jaeger module. You can start from scratch or apply the principles that are described here to your existing Go applications.
 
@@ -210,7 +211,7 @@ The agent can be connected on port `5775`, while the query can be connected to p
 ### Setting up a deployed Jaeger server to Kubernetes
 {: #jaeger-kube}
 
-Like local development, Jaeger provides an all-in-one service for Kubernetes development. Use the all-in-one service only for development, not production code. To learn more about deploying to Kubernetes for production, see the [Jaeger Kubernetes Templates guide](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+Like local development, Jaeger provides an all-in-one service for Kubernetes development. Use the all-in-one service only for development, not production code. To learn more about deploying to Kubernetes for production, see the [Jaeger Kubernetes Templates guide](https://github.com/jaegertracing/jaeger-kubernetes#production-setup){: external}.
 
 To deploy the Jaeger server, complete these steps:
 1. Make sure that your cluster is set up by running `ibmcloud cs cluster-config <cluster name>`, and follow the instructions.

@@ -17,6 +17,7 @@ subcollection: go
 {:pre: .pre}
 {:tip: .tip}
 {:note: .note}
+{:external: target="_blank" .external}
 
 # Deploying and integrating Go apps
 {: #go-deploy-apps}
@@ -54,5 +55,5 @@ ibmcloud dev deploy –target container
 For more information about `ibmcloud dev` commands, see [Developing and deploying your apps](/docs/cli?topic=cloud-cli-getting-started).
 
 Related blogs that use the CLI:
-* [Deploying to Kubernetes with the {{site.data.keyword.dev_cli_long}} CLI](https://www.ibm.com/blogs/cloud-archive/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-* [Deploying to IBM Cloud Private with {{site.data.keyword.dev_cli_short}} CLI](https://www.ibm.com/cloud/blog/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+* [Deploying to Kubernetes with the {{site.data.keyword.dev_cli_long}} CLI](https://www.ibm.com/blogs/cloud-archive/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: external}.
+* [Deploying to IBM Cloud Private with {{site.data.keyword.dev_cli_short}} CLI](https://www.ibm.com/cloud/blog/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli){: external}.

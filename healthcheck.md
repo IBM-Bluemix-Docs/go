@@ -16,11 +16,12 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:external: target="_blank" .external}
 
 # Using a health check in your Go app
 {: #go-healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: external} and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: external} can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 
 ## Health check overview
 {: #go-healtcheck-overview}
@@ -65,7 +66,7 @@ func HealthGET(c *gin.Context) {
 
 Check the status of the app with a browser by accessing the `/health` endpoint.
 
-There are more extensive libraries available, like [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon"), which allow definition of extensible health checks with support for caching checks that are run against backing services. In this case, you would want to separate the simple liveness test in the example from the more robust, detailed readiness check that is built from the health check package.
+There are more extensive libraries available, like [`http-healthcheck`](https://github.com/robzienert/http-healthcheck){: external}, which allow definition of extensible health checks with support for caching checks that are run against backing services. In this case, you would want to separate the simple liveness test in the example from the more robust, detailed readiness check that is built from the health check package.
 
 ## Accessing the health check endpoint in Go Starter Kit apps
 {: #go-healthcheck-starterkit}
@@ -137,4 +138,4 @@ spec:
 ```
 {: codeblock}
 
-For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
+For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: external}.

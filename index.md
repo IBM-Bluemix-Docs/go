@@ -16,17 +16,18 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:external: target="_blank" .external}
 
 # Getting started tutorial
 {: #getting-started}
 
-The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud}} {{site.data.keyword.dev_console}}](https://{DomainName}/developer/appservice/dashboard){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
+The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud}} {{site.data.keyword.dev_console}}](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
 
 ## Step 1. Creating a custom Go app in the dashboard
 {: #create-go-app}
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon").
-2. Go to the [App Service Starter Kits](https://{DomainName}/developer/appservice/starter-kits){: new_window} ![External link icon](../../icons/launch-glyph.svg "External link icon") page in the {{site.data.keyword.dev_console}} console, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit.
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: external}.
+2. Go to the [App Service Starter Kits](https://{DomainName}/developer/appservice/starter-kits){: external} page in the {{site.data.keyword.dev_console}} console, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit.
 3. In the App details page for the starter kit, name your app, and select a resource group.
 4. Optional. Provide tags to classify your app. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
 5. Optional. To inspect the source code before you add services or deploy your app, click **View source code**. The app code includes a `README.md` file that contains technical details about the app. Check the `README.md` file to find out whether you need to take more actions to get your app up and running.
@@ -42,9 +43,9 @@ You can now add {{site.data.keyword.watson}} services to your Go app. For this t
 3. Select **{{site.data.keyword.texttospeechshort}}**, and click **Next**.
 4. Click **Create**.
 
-You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") dependency is added to the `Gopkg.toml` file, and simple instrumentation code is available for the service in the `services/` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
+You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} dependency is added to the `Gopkg.toml` file, and simple instrumentation code is available for the service in the `services/` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
 
-To download the code, click **View sample repo** on the App details page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") included, and some basic initialization code.
+To download the code, click **View sample repo** on the App details page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} included, and some basic initialization code.
 
 ## Step 3. Deploying your app from the console
 {: #deploy-go}

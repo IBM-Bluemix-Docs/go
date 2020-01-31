@@ -16,11 +16,12 @@ subcollection: go
 {:codeblock: .codeblock}
 {:pre: .pre}
 {:tip: .tip}
+{:external: target="_blank" .external}
 
 # Setting up fault tolerance in Go apps
 {: #fault-tolerance}
 
-Fault tolerance allows an application to continue running if a component fails, or becomes unresponsive. You can add fault tolerance to an existing Go app, or enable these features from a generated Go app. This tutorial focuses on using the [Hystrix package](https://godoc.org/github.com/afex/hystrix-go/hystrix){: new_window} ![External link icon](../icons/launch-glyph.svg "External link icon") to add fault tolerance support to a Go app.
+Fault tolerance allows an application to continue running if a component fails, or becomes unresponsive. You can add fault tolerance to an existing Go app, or enable these features from a generated Go app. This tutorial focuses on using the [Hystrix package](https://godoc.org/github.com/afex/hystrix-go/hystrix){: external} to add fault tolerance support to a Go app.
 
 ## Adding fault tolerance to an existing Go app
 {: #add-fault-tolerance}
