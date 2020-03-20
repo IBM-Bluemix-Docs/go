@@ -1,11 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="go" audience="platform,devops" arm="4088037" href="/docs/go?topic=go-getting-started" path="go"}
+{: .toc subcollection="go" category="devops" audience="platform" arm="4088037" href="/docs/go?topic=go-getting-started" path="go"}
 Programming with Go on IBM Cloud
 
     {: .navgroup id="learn"}
     index.md
+    [What are cloud native apps?](https://www.ibm.com/cloud/learn/cloud-native)
        
     {: .topicgroup}
     Related links

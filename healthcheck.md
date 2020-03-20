@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-09-30"
+  years: 2018, 2020
+lastupdated: "2020-03-19"
 
 keywords: healthcheck go, add healthcheck, healthcheck endpoint, readiness go, liveness go, endpoint go, probes go
 
@@ -21,7 +21,7 @@ subcollection: go
 # Using a health check in your Go app
 {: #go-healthcheck}
 
-Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service){: external} and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: external} can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
+Health checks provide a simple mechanism to determine whether a server-side application is behaving properly. Cloud environments like [Kubernetes](https://www.ibm.com/cloud/container-service/){: external} and [Cloud Foundry](https://www.ibm.com/cloud/cloud-foundry){: external} can be configured to poll health endpoints periodically to determine whether an instance of your service is ready to accept traffic.
 
 ## Health check overview
 {: #go-healtcheck-overview}
@@ -138,4 +138,4 @@ spec:
 ```
 {: codeblock}
 
-For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/){: external}.
+For more information, see how to [Configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/){: external}.
