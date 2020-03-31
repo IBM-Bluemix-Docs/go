@@ -52,8 +52,8 @@ ibmcloud dev deploy –target container
 ```
 {: codeblock}
 
-For more information about `ibmcloud dev` commands, see [Developing and deploying your apps](/docs/cli?topic=cloud-cli-getting-started).
+For more information about `ibmcloud dev` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI and {{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cloud-cli-getting-started).
 
 Related blogs that use the CLI:
-* [Deploying to Kubernetes with the {{site.data.keyword.dev_cli_long}} CLI](https://www.ibm.com/blogs/cloud-archive/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: external}.
-* [Deploying to IBM Cloud Private with {{site.data.keyword.dev_cli_short}} CLI](https://www.ibm.com/cloud/blog/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli){: external}.
+* [Deploying to Kubernetes with the {{site.data.keyword.dev_cli_short}} commands](https://www.ibm.com/blogs/cloud-archive/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: external}.
+* [Deploying to IBM Cloud Private with the {{site.data.keyword.dev_cli_short}} commands](https://www.ibm.com/cloud/blog/deploying-ibm-cloud-private-ibm-cloud-developer-tools-cli){: external}.

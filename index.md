@@ -21,7 +21,7 @@ subcollection: go
 # Getting started tutorial
 {: #getting-started}
 
-The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_long}}](/docs/cli?topic=cloud-cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud}} {{site.data.keyword.dev_console}}](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
+The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cloud-cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud}} {{site.data.keyword.dev_console}}](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
 
 ## Step 1. Creating a custom Go app in the dashboard
 {: #create-go-app}
@@ -77,7 +77,7 @@ On the App details page, you can:
 * View your repo by clicking **View repo**.
 * View and modify your toolchain by clicking the name of the toolchain.
 
-You can use the {{site.data.keyword.dev_cli_long}} to work with your Go app locally by using `ibmcloud dev` commands. These tools help you quickly iterate locally and push your changes to the cloud.
+You can use the {{site.data.keyword.cloud_notm}} CLI to work with your Go app locally by using `ibmcloud dev` commands. These tools help you quickly iterate locally and push your changes to the cloud.
 
 1. Use the `ibmcloud dev build` command to build your app.
 2. Use the `ibmcloud dev run` command to run the app locally. Your app is run in the Docker containers on your local system. You can test your app in a browser by accessing `http://localhost:8080`.
