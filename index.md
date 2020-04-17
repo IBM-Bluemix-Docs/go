@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-03-19"
+lastupdated: "2020-04-14"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -38,14 +38,14 @@ The following tutorial walks you through the steps to create and deploy a Go app
 
 You can now add {{site.data.keyword.watson}} services to your Go app. For this tutorial, add the {{site.data.keyword.texttospeechshort}} service to your Go app, which takes verbal input and converts it to text by using a cloud API.
 
-1. From the App details page, click **Add service**.
+1. From the App details page, click **Create service**.
 2. Select **AI**, and click **Next**.
 3. Select **{{site.data.keyword.texttospeechshort}}**, and click **Next**.
-4. Click **Create**.
+4. Select the Lite pricing plan, and click **Create**.
 
 You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} dependency is added to the `Gopkg.toml` file, and simple instrumentation code is available for the service in the `services/` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
 
-To download the code, click **View sample repo** on the App details page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} included, and some basic initialization code.
+To download the code, click **Download code** on the App details page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} included, and some basic initialization code.
 
 ## Step 3. Deploying your app from the console
 {: #deploy-go}
