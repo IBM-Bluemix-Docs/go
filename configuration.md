@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-04"
+  years: 2018, 2020
+lastupdated: "2020-05-05"
 
 keywords: configure go environment, go environment, service credentials, credentials, variables, configuration
 
@@ -26,7 +26,7 @@ Standardized guidelines are available to follow for developing Go applications t
 
 Whether you need to add cloud support to existing Go apps or create Go apps with Starter Kits, the goal is to provide portability for use with any development platform.
 
-## Adding Cloud support to existing Go apps
+## Adding cloud support to existing Go apps
 {: #go-add-cloud-support}
 
 The [`ibm-cloud-env-golang`](https://github.com/ibm-developer/ibm-cloud-env-golang){: external} module aggregates environment variables from various Cloud providers, such as CloudFoundry and Kubernetes, so the app is independent of the environment.
@@ -113,7 +113,7 @@ Your app configuration information for services is stored in the `localdev-confi
 
 The app uses the Configuration Manager to read the connection and configuration information from the environment and this file. It uses a custom-built `mappings.json`, which is located in the `server/config` directory, to communicate where the credentials can be found for each service.
 
-If the app is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials that are read from the `mappings.json` file. But if you need to create unbound credentials, you can do so from the {{site.data.keyword.cloud_notm}} web console (example), or by using the [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: external} `cf create-service-key` command.
+If the app is running locally, it can connect to {{site.data.keyword.cloud_notm}} services by using unbound credentials that are read from the `mappings.json` file. But if you need to create unbound credentials, you can do so from the [{{site.data.keyword.cloud_notm}} console](https://{DomainName}){: external}, or by using the [CloudFoundry CLI](https://docs.cloudfoundry.org/cf-cli/){: external} `cf create-service-key` command.
 
 When you push your app to {{site.data.keyword.cloud_notm}}, these values are no longer used. Instead, the app automatically connects to bound services by using environment variables. 
 
