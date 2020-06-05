@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-05-05"
+lastupdated: "2020-06-05"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -21,7 +21,7 @@ subcollection: go
 # Getting started tutorial
 {: #getting-started}
 
-The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cloud-cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
+The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
 
 ## Step 1. Creating a custom Go app
 {: #create-go-app}
@@ -30,7 +30,7 @@ The following tutorial walks you through the steps to create and deploy a Go app
 2. Go to the [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/starter-kits){: external}, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit. Then select the **Create** tab.
 3. Name your app, and select a resource group.
 4. Optional. Provide tags to classify your app. For more information, see [Working with tags](/docs/resources?topic=resources-tag).
-5. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cloud-cli-getting-started).
+5. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cli-getting-started).
 
 ## Step 2. Adding {{site.data.keyword.watson}} {{site.data.keyword.texttospeechshort}}
 {: #add-resource-go}
@@ -64,10 +64,10 @@ To deploy your app, complete the following steps:
 
 The DevOps toolchain is created automatically, and the deployment process begins.
 
-  You can deploy your app from the command line by running the [**ibmcloud dev deploy**](/docs/cli/idt?topic=cloud-cli-idt-cli#deploy) command. For more information, see [Deploying apps with the CLI](/docs/apps?topic=creating-apps-deploying-apps#deploy-cli).
+  You can deploy your app from the command line by running the [**ibmcloud dev deploy**](/docs/cli/idt?topic=cloud-cli-idt-cli#deploy) command. For more information, see [Deploying apps with the CLI](/docs/apps?topic=apps-create-deploy-app-cli).
   {: note}
 
-For more information about deploying your app, see [Deploying apps](/docs/apps?topic=creating-apps-deploying-apps).
+For more information about deploying your app, see [Deploying apps](/docs/apps?topic=apps-deploying-apps).
 
 ## Step 4. Testing and accessing your Go app locally
 {: #run_local-go}
@@ -78,7 +78,7 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to work with your Go app lo
 2. Use the `ibmcloud dev run` command to run the app locally. Your app is run in the Docker containers on your local system. You can test your app in a browser by accessing `http://localhost:8080`.
 3. A health check endpoint is available at `http://localhost:8080/health`.
 
-To learn more about the {{site.data.keyword.dev_cli_notm}}, see the complete [CLI documentation](/docs/cli?topic=cloud-cli-getting-started).
+To learn more about the {{site.data.keyword.dev_cli_notm}}, see the complete [CLI documentation](/docs/cli?topic=cli-getting-started).
 
 You are now ready to build out your app with the {{site.data.keyword.texttospeechshort}} service!
 

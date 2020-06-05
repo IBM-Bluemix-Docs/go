@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-12-19"
+  years: 2018, 2020
+lastupdated: "2020-06-05"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry
 
@@ -24,7 +24,7 @@ subcollection: go
 
 You can deploy your Go applications with a toolchain or by using the command-line interface. A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, Cloud Foundry, and private cloud.
 
-For more information, see [Deploying apps](/docs/apps?topic=creating-apps-deploying-apps).
+For more information, see [Deploying apps](/docs/apps?topic=apps-deploying-apps).
 
 ## Deploying to a Kubernetes cluster
 {: #deploy-kube}
@@ -52,7 +52,7 @@ ibmcloud dev deploy –target container
 ```
 {: codeblock}
 
-For more information about `ibmcloud dev` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI and {{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cloud-cli-getting-started).
+For more information about `ibmcloud dev` commands, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI and {{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cli-getting-started).
 
 Related blogs that use the CLI:
 * [Deploying to Kubernetes with the {{site.data.keyword.dev_cli_short}} commands](https://www.ibm.com/blogs/cloud-archive/2017/09/deploying-kubernetes-ibm-cloud-ibm-cloud-developer-tools-cli/){: external}.

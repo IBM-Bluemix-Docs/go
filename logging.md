@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2018, 2019
-lastupdated: "2019-06-10"
+  years: 2018, 2020
+lastupdated: "2020-06-05"
 
 keywords: how to log in go, go logging, debug go apps, go troubleshooting, logrus go, go stdout
 
@@ -57,15 +57,10 @@ Given the transient nature of processes in cloud environments, logs must be coll
 
 For more information about customizing the log messages with appenders, log levels, and configuration details, see the official [Logrus documentation](https://godoc.org/gopkg.in/Sirupsen/logrus.v0){: external}.
 
-## Next Steps
+## Next steps
 {: #go-logging-next notoc}
 
-Learn more about viewing the logs in each of your deployment targets:
-* [Kubernetes logs](https://kubernetes.io/docs/concepts/cluster-administration/logging/#basic-logging-in-kubernetes){: external}
-* [Cloud Foundry logs](/docs/services/CloudLogAnalysis/cfapps?topic=cloudloganalysis-logging_cf_apps)
-* [Cloud Foundry Enterprise Environment - Auditing and logging](/docs/cloud-foundry?topic=cloud-foundry-auditing-logging#auditing-logging)
-* [{{site.data.keyword.openwhisk}} Logs and monitoring](/docs/openwhisk?topic=cloud-functions-logs)
-
-Learn more about using a log aggregator:
-* [{{site.data.keyword.cloud_notm}} Log analysis](/docs/services/CloudLogAnalysis?topic=cloudloganalysis-log_analysis_ov#log_analysis_ov)
-* [{{site.data.keyword.cloud_notm}} Private ELK stack](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_2.1.0.2/manage_metrics/logging_elk.html){: external}
+Learn more about viewing logs in each deployment environment:
+* [Managing Kubernetes cluster logs with IBM Log Analysis with LogDNA](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube)
+* [Managing logs from CF resources](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-monitor_cfapp_logs)
+* [{{site.data.keyword.openwhisk}} Logs & Monitoring](/docs/openwhisk?topic=openwhisk-logs)
