@@ -41,4 +41,4 @@ To learn more, visit [IBM Digital Marketplace](https://www.ibm.com/cloud/support
 ## Buildpack Support Statement
 {: #buildpack-go}
 
-Issues can be reported against any version of the built-in IBM buildpack currently supported on {{site.data.keyword.cloud_notm}}, however, they must be verified against the latest version. If a defect is found, IBM will provide a fix in a future level of the runtime and corresponding buildpack. For more information, see the [buildpack support statement](/docs/runtimes-common?topic=runtimes-common-buildpack_support_statement).
+Issues can be reported against any version of the built-in IBM buildpack currently supported on {{site.data.keyword.cloud_notm}}, however, they must be verified against the latest version. If a defect is found, IBM will provide a fix in a future level of the runtime and corresponding buildpack. For more information, see the [buildpack support statement](/docs/cloud-foundry?topic=cloud-foundry-buildpack_support_statement).
