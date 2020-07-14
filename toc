@@ -7,10 +7,6 @@ Programming with Go on IBM Cloud
     {: .navgroup id="learn"}
     index.md
     [What are cloud native apps?](https://www.ibm.com/cloud/learn/cloud-native)
-       
-    {: .topicgroup}
-    Related links
-        [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures)
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -26,6 +22,10 @@ Programming with Go on IBM Cloud
     {: .navgroup id="reference"}
     [API Docs](https://cloud.ibm.com/apidocs)
     [Sample Go hello world app](https://github.com/IBM-Cloud/get-started-go)
+
+    {: .topicgroup}
+    Related links
+        [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
