@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-08-03"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -20,7 +20,7 @@ subcollection: go
 # Getting started tutorial
 {: #getting-started}
 
-The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud_notm}} provided tools. You can use the [{{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
+The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud}} provided tools. You can use the [{{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
 
 ## Step 1. Creating a custom Go app
 {: #create-go-app}
@@ -77,7 +77,7 @@ You can use the {{site.data.keyword.cloud_notm}} CLI to work with your Go app lo
 2. Use the `ibmcloud dev run` command to run the app locally. Your app is run in the Docker containers on your local system. You can test your app in a browser by accessing `http://localhost:8080`.
 3. A health check endpoint is available at `http://localhost:8080/health`.
 
-To learn more about the {{site.data.keyword.dev_cli_notm}}, see the complete [CLI documentation](/docs/cli?topic=cli-getting-started).
+To learn more about the {{site.data.keyword.dev_cli_notm}} commands, see the complete [CLI documentation](/docs/cli?topic=cli-getting-started).
 
 You are now ready to build out your app with the {{site.data.keyword.texttospeechshort}} service!
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-06-05"
+lastupdated: "2020-08-03"
 
 keywords: deploy go apps, deploy go kubernetes, deploy go cluster, deploy go cli, deploy go cloud foundry
 
@@ -21,7 +21,7 @@ subcollection: go
 # Deploying and integrating Go apps
 {: #go-deploy-apps}
 
-You can deploy your Go applications with a toolchain or by using the command-line interface. A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, Cloud Foundry, and private cloud.
+You can deploy your Go applications with a DevOps toolchain or by using the {{site.data.keyword.cloud}} Command Line Interface (CLI). A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, Cloud Foundry, and private cloud.
 
 For more information, see [Deploying apps](/docs/apps?topic=apps-deploying-apps).
 
