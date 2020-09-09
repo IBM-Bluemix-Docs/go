@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-09-09"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -25,7 +25,7 @@ The following tutorial walks you through the steps to create and deploy a Go app
 ## Step 1. Creating a custom Go app
 {: #create-go-app}
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: external}.
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: external}. For more information, see [Setting up your IBM Cloud account](/docs/account?topic=account-account-getting-started).
 2. Go to the [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/starter-kits){: external}, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit. Then select the **Create** tab.
 3. Name your app, and select a resource group.
 4. Optional. Provide tags to classify your app. For more information, see [Working with tags](/docs/account?topic=account-tag).
