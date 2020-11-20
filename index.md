@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-11-20"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit
 
@@ -22,11 +22,19 @@ subcollection: go
 
 The following tutorial walks you through the steps to create and deploy a Go application by using {{site.data.keyword.cloud}} provided tools. You can use the [{{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands](/docs/cli?topic=cli-getting-started) on the command line or the web-based [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/dashboard){: external} as shown in the following tutorial steps. By using either of these methods, you can generate a production-ready Go app in just minutes.
 
+## Before you begin
+{: #prereq-go-app}
+
+* Depending on your [{{site.data.keyword.cloud}} account type](https://{DomainName}/registration), access to certain resources might be limited or constrained. Depending on your plan limits, certain capabilities that are required by some toolchains might not be available. For more information, see [Setting up your IBM Cloud account](/docs/account?topic=account-account-getting-started).
+* Install the [{{site.data.keyword.cloud_notm}} Command Line Interface (CLI)](/docs/cli?topic=cli-getting-started), which includes the {{site.data.keyword.dev_cli_short}} (`ibmcloud dev`) commands.
+* Create a Docker account, run the Docker app, and sign in. Docker is installed as part of the developer tools. Docker must be running for the build commands to work.
+* All of your `go` dependencies are listed in `go.mod`.
+
 ## Step 1. Creating a custom Go app
 {: #create-go-app}
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account. If you don't have an account, you can [register for a free account](https://{DomainName}/registration){: external}. For more information, see [Setting up your IBM Cloud account](/docs/account?topic=account-account-getting-started).
-2. Go to the [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/starter-kits){: external}, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit. Then select the **Create** tab.
+2. Go to the [{{site.data.keyword.cloud_notm}} App Development console](https://{DomainName}/developer/appservice/starter-kits){: external}, and select a starter kit that is written in `Go`, or select the **Create App** tile to use a blank starter kit. Then, select the **Create** tab.
 3. Name your app, and select a resource group.
 4. Optional. Provide tags to classify your app. For more information, see [Working with tags](/docs/account?topic=account-tag).
 5. Ensure that **Go** is selected as the platform, and then click **Create**. After your app is created, you can add services and then deploy it by using a toolchain, or you can continue to build and deploy your project from the [command line](/docs/cli?topic=cli-getting-started).
@@ -41,7 +49,7 @@ You can now add {{site.data.keyword.watson}} services to your Go app. For this t
 3. Select **{{site.data.keyword.texttospeechshort}}**, and click **Next**.
 4. Select the Lite pricing plan, and click **Create**.
 
-You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} dependency is added to the `Gopkg.toml` file, and simple instrumentation code is available for the service in the `services/` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
+You can see that the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} dependency is added to the `go.mod` file, and simple instrumentation code is available for the service in the `/resources` directory. Additionally, configuration information for accessing the service credentials in the respective environments is included.
 
 To download the code, click **Download code** on the App details page. The downloaded code comes with the [Watson Developer Cloud Go SDK](https://github.com/watson-developer-cloud/go-sdk){: external} included, and some basic initialization code.
 
@@ -69,7 +77,7 @@ The DevOps toolchain is created automatically, and the deployment process begins
 For more information about deploying your app, see [Deploying apps](/docs/apps?topic=apps-deploying-apps).
 
 ## Step 4. Testing and accessing your Go app locally
-{: #run_local-go}
+{: #build-locally-go}
 
 You can use the {{site.data.keyword.cloud_notm}} CLI to work with your Go app locally by using `ibmcloud dev` commands. These tools help you quickly iterate locally and push your changes to the cloud.
 
@@ -81,9 +89,11 @@ To learn more about the {{site.data.keyword.dev_cli_notm}} commands, see the com
 
 You are now ready to build out your app with the {{site.data.keyword.texttospeechshort}} service!
 
-## Exploring alternative deployment methods
-{: #alt-deploy-go notoc}
+## Next steps
+{: #nextsteps-go notoc}
 
 Learn how to deploy your app under the [Deployments tab](/docs/go?topic=go-go-deploy-apps).
 
 To expand your Go app, continue checking out the topics in the Go programming guide.
+
+Check out the [repo for the Go Gin starter kit](https://github.com/IBM/go-gin-app){: #external}!
