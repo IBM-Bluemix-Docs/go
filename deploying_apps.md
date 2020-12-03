@@ -21,7 +21,7 @@ subcollection: go
 # Deploying and integrating Go apps
 {: #go-deploy-apps}
 
-You can deploy your Go applications with a DevOps toolchain or by using the {{site.data.keyword.cloud}} Command Line Interface (CLI). A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/services/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, Cloud Foundry, and private cloud.
+You can deploy your Go applications with a DevOps toolchain or by using the {{site.data.keyword.cloud}} Command Line Interface (CLI). A toolchain is a set of tool integrations to help build and automate app deployment. To understand more about toolchains and how they work, see [Continuous Delivery](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started). Find useful information on different deployment targets for Go apps such as CLI, Kubernetes, Cloud Foundry, and private cloud.
 
 For more information, see [Deploying apps](/docs/apps?topic=apps-deploying-apps).
 
@@ -33,7 +33,7 @@ For more information, see [Deploying apps](/docs/apps?topic=apps-deploying-apps)
 ## Deploying to an OpenShift cluster
 {: #deploy-openshift}
 
-[Red Hat OpenShift on {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-getting-started) is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. [View a comparison between Kubernetes and OpenShift clusters](https://cloud.ibm.com/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
+[Red Hat OpenShift on {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-getting-started) is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With OpenShift, you can consistently deploy your workloads across hybrid cloud providers and environments. [View a comparison between Kubernetes and OpenShift clusters](/docs/openshift?topic=openshift-cs_ov#openshift_kubernetes).
 
 ## Deploying to Cloud Foundry
 {: #deploy-cf}
