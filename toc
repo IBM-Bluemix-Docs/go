@@ -14,7 +14,6 @@ Programming with Go on IBM Cloud
     healthcheck.md
     logging.md
     tracing.md
-    appmetrics.md
     fault_tolerance.md
     deploying_apps.md
     {: .navgroup-end}
