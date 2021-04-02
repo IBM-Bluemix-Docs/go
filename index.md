@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-04-02"
 
 keywords: create go app, ibmcloud dev go, cli go, create go app locally, deploy go app, go starter kit, go tutorial
 content-type: tutorial
@@ -76,9 +76,12 @@ To deploy your app, complete the following steps:
   * **IBM Kubernetes Service**. With this option, you can either create a cluster or [deploy to an existing Kubernetes cluster](/docs/containers?topic=containers-app). If you create a cluster, allow 10 - 20 minutes for the cluster to be provisioned, and then select the region and cluster name.
   * **Red Hat OpenShift on IBM Cloud**. If you have an available [OpenShift cluster](/docs/openshift?topic=openshift-openshift_apps), you can select it from the **Cluster name** list. If you don't have an available cluster, you must create one before you continue. Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and load-balancing component take about 10 more minutes to deploy and update the cluster domain that you use for the OpenShift web console and other routes.
   * **Cloud Foundry**. This option deploys your cloud-native app without you needing to manage the underlying infrastructure. For more information, see [Deploying apps to Cloud Foundry Public](/docs/cloud-foundry-public?topic=cloud-foundry-public-deployingapps).
-3. Provide a name for your toolchain.
-4. Select the region to create your toolchain in, and then select the [resource group](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-iam-security) that provides access to your new toolchain.
-5. Click **Create**.
+  * **Code Engine**. With this option, select your container registry region, container registry namespace, and region. Then, select a project name that exists within your {{site.data.keyword.cloud_notm}} resource group. If you don't have a project, enter a project name, and the DevOps toolchain creates one for you during the deployment process. Optionally, you can create a project in the [{{site.data.keyword.codeengineshort}} console](https://{DomainName}/codeengine/projects).
+3. Create an {{site.data.keyword.cloud_notm}} API key, or select an existing one from a secrets store.
+4. Complete the required fields for your deployment type, and click **Next**.
+5. Provide a name for your DevOps toolchain.
+6. Select the region to create your toolchain in, and then select the [resource group](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains-iam-security) that provides access to your new toolchain.
+7. Click **Create**.
 
 The DevOps toolchain is created automatically, and the deployment process begins.
 
