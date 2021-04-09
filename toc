@@ -24,5 +24,5 @@ Programming with Go on IBM Cloud
 
     {: .topicgroup}
     Related links
-        [Architecture Center](https://www.ibm.com/cloud/garage/category/architectures)
+        [IBM Cloud Architectures](https://www.ibm.com/cloud/architecture/architectures)
     {: .navgroup-end}
